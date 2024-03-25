@@ -32,6 +32,12 @@
             <artifactId>exificient</artifactId>
             <version>1.0.7</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.mina</groupId>
+            <artifactId>mina-core</artifactId>
+            <version>2.1.7</version>
+        </dependency>
     </dependencies>
 
 

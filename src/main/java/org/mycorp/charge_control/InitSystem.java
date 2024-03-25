@@ -12,18 +12,16 @@ import java.util.concurrent.Executors;
 public class InitSystem {
     final private ChargeTransferBlock chargeTransferBlock;
     final private EvCommunicationBlock evCommunicationBlock;
-    final private ChargeControlSystem chargeControlSystem;
-    final private ExecutorService chargingExecutor = Executors.newFixedThreadPool(4);
+    final private ExecutorService chargingExecutor;
 
     @Autowired
-    public InitSystem(EvCommunicationBlock evCommunicationBlock, ChargeControlSystem chargeControlSystem, ChargeTransferBlock chargeTransferBlock) {
+    public InitSystem(EvCommunicationBlock evCommunicationBlock, ChargeTransferBlock chargeTransferBlock) {
         this.evCommunicationBlock = evCommunicationBlock;
-        this.chargeControlSystem = chargeControlSystem;
         this.chargeTransferBlock = chargeTransferBlock;
+        this.chargingExecutor = Executors.newFixedThreadPool(4);
     }
 
     public void initialize(){
-        chargingExecutor.submit(chargeControlSystem);
         chargingExecutor.submit(evCommunicationBlock);
     }
 

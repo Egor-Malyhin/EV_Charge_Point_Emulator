@@ -37,14 +37,14 @@ public class ChargeTransferBlock implements Runnable{
     }
 
     private Duration setDurationTime(float charge){
-        float floatDuration = charge / StationCharacteristics.getInstance().getRatedPower();
+        float floatDuration = charge / StationCharacteristics.ratedPower;
         long longDuration = (long) floatDuration;
         return Duration.ofMinutes(longDuration);
     }
 
     private void updateSampledValue(float durationFromStart){
         SampledValue powerValue = valueList.get(0);
-        powerValue.setValue(StationCharacteristics.getInstance().getRatedPower() * durationFromStart);
+        powerValue.setValue(StationCharacteristics.ratedPower * durationFromStart);
     }
 
     public MeterValues getMeterValues(){

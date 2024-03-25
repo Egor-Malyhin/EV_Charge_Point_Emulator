@@ -11,8 +11,6 @@ public class ChargeTransferBlockInterfaceImpl implements ChargeTransferBlockInte
     public ChargeTransferBlockInterfaceImpl(ChargeTransferBlock chargeTransferBlock) {
         this.chargeTransferBlock = chargeTransferBlock;
     }
-
-
     @Override
     public MeterValues getMeterValues() {
         return chargeTransferBlock.getMeterValues();
