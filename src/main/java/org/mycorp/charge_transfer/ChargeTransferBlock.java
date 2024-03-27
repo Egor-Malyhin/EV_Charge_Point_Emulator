@@ -13,20 +13,21 @@ import java.util.List;
 public class ChargeTransferBlock implements Runnable{
     private Charge charge;
     private MeterValues meterValues;
-    private List<SampledValue> valueList;
+    private boolean isRunning;
 
     public ChargeTransferBlock(){
-        this.charge= new Charge(100);
-        this.valueList = new ArrayList<>();
-        this.valueList.add(new SampledValue(0,"Energy","Outlet", "Wh"));
+        this.charge= new Charge(0);
+        List<SampledValue> valueList = new ArrayList<>();
+        valueList.add(new SampledValue(0,"Energy","Outlet", "Wh"));
         this.meterValues= new MeterValues(Instant.now(), valueList);
+        this.isRunning = true;
     }
 
     @Override
     public void run() {
         Duration durationOfCharging = setDurationTime(charge.kWh());
         Instant startTime = Instant.now();
-        while(Duration.between(startTime, Instant.now()).compareTo(durationOfCharging) < 0){
+        while(Duration.between(startTime, Instant.now()).compareTo(durationOfCharging) < 0 && isRunning){
             try{
                 Thread.sleep(1000);
                 updateSampledValue(Duration.between(startTime, Instant.now()).toMinutes());
@@ -43,16 +44,20 @@ public class ChargeTransferBlock implements Runnable{
     }
 
     private void updateSampledValue(float durationFromStart){
-        SampledValue powerValue = valueList.get(0);
+        SampledValue powerValue = meterValues.getSampledValue().get(0);
         powerValue.setValue(StationCharacteristics.ratedPower * durationFromStart);
     }
 
     public MeterValues getMeterValues(){
         meterValues.setTimestamp(Instant.now());
-        return this.meterValues;
+        return meterValues.clone();
     }
 
     public void setCharge(Charge charge) {
         this.charge = charge;
+    }
+
+    public void stop(){
+        isRunning = false;
     }
 }

@@ -3,30 +3,37 @@ package org.mycorp.charge_control;
 import org.mycorp.charge_transfer.ChargeTransferBlockInterface;
 import org.mycorp.csms_communication.CSMSCommunicationBlockInterface;
 
-import static org.mycorp.charge_control.StationStateEnum.*;
+import static org.mycorp.models.StationStateEnum.*;
 
 import org.mycorp.ev_communication.EvCommunicationBlockInterface;
+import org.mycorp.models.StationState;
 import org.springframework.beans.factory.annotation.Autowired;
+
 
 
 public class ChargeControlSystem implements Runnable {
     private final CSMSCommunicationBlockInterface csmsComm;
+    private final EvCommunicationBlockInterface evCommunicationBlockInterface;
+    private final InitSystem initSystem;
     private final ChargeTransferBlockInterface chargeTransferBlockInterface;
-    private StationState stateCharacterisation;
+    private final StationState stateCharacterisation;
 
     @Autowired
-    public ChargeControlSystem(CSMSCommunicationBlockInterface csmsComm, ChargeTransferBlockInterface chargeTransferBlock) {
+    public ChargeControlSystem(CSMSCommunicationBlockInterface csmsComm, EvCommunicationBlockInterface evCommunicationBlockInterface, InitSystem initSystem, ChargeTransferBlockInterface chargeTransferBlock) {
         this.csmsComm = csmsComm;
+        this.evCommunicationBlockInterface = evCommunicationBlockInterface;
+        this.initSystem = initSystem;
         this.chargeTransferBlockInterface = chargeTransferBlock;
-        this.stateCharacterisation = new StationState(AVAILABLE, null, null);
+        this.stateCharacterisation = new StationState(AVAILABLE, null, null, false);
     }
 
     @Override
     public void run() {
+        initSystem.initialize();
         while (true) {
             System.out.println("Charging Station is Working.");
             try {
-                Thread.sleep(1000);
+                Thread.sleep(100);
                 switch (stateCharacterisation.getState()) {
                     case AUTHORISATION:
                         csmsComm.sendAuthorize(stateCharacterisation.getEvCharacteristic().getIdTag());
@@ -34,11 +41,11 @@ public class ChargeControlSystem implements Runnable {
                             wait();
                         break;
                     case AUTHORIZED:
-                        evCommunicationBlockInterface.sendAuthorizeRes(true);
+                        evCommunicationBlockInterface.sendSessionSetupRes(true);
                         while (stateCharacterisation.getState() == AUTHORIZED)
                             wait();
                         break;
-                    case WAIT_EV_REQUEST:
+                    case WAIT_CHARGING_REQUEST:
                         evCommunicationBlockInterface.sendChargeParameterRes();
                         while (stateCharacterisation.getState() == WAIT_EV_REQUEST)
                             wait();
@@ -48,22 +55,35 @@ public class ChargeControlSystem implements Runnable {
                         while (stateCharacterisation.getState() == PREPARED)
                             wait();
                         break;
-                    case CHARGING:
+                    case START_CHARGING:
                         chargeTransferBlockInterface.setCharge(stateCharacterisation.getPreparedCharge());
                         stateCharacterisation.setPreparedCharge(null);
                         evCommunicationBlockInterface.sendPowerRes(true);
-                        chargingExecutor.submit(chargeTransferBlockThread);
-                        while(stateCharacterisation.getState() == CHARGING) {
-                            Thread.sleep(5000);
-                            csmsComm.sendMeterValues(chargeTransferBlockInterface.getMeterValues());
-                            System.out.println("Charging is proceed....");
-                        }
+                        initSystem.submitChargeTransfer();
+                        initSystem.submitMeterValuesSender();
+                        stateCharacterisation.setChargingOn(true);
+                        while(stateCharacterisation.getState() == START_CHARGING)
+                            wait();
+                        break;
+                    case WAIT_EV_REQUEST:
+                        while(stateCharacterisation.getState() == WAIT_EV_REQUEST)
+                            wait();
+                        break;
+                    case EV_CHARGING_STATUS_REQUEST:
+                        evCommunicationBlockInterface.sendChargingStatusRes(stateCharacterisation.isChargingOn(), chargeTransferBlockInterface.getMeterValues());
+                        stateCharacterisation.setState(WAIT_EV_REQUEST);
                         break;
                     case STOP_CHARGING:
                         csmsComm.sendStopTransaction();
+                        stateCharacterisation.setChargingOn(false);
                         while(stateCharacterisation.getState() == STOP_CHARGING)
                             wait();
                         break;
+                    case EV_END_SESSION:
+                        evCommunicationBlockInterface.sendSessionStopRes();
+                        stateCharacterisation.setState(AVAILABLE);
+                        break;
+
                     case CSMS_DECLINE_CHARGE:
                         evCommunicationBlockInterface.sendPowerRes(false);
                         setStateCharacterisation(AVAILABLE);
@@ -72,9 +92,9 @@ public class ChargeControlSystem implements Runnable {
                         csmsComm.sendEvDecline();
                         setStateCharacterisation(AVAILABLE);
                         break;
-                    case UNAUTORIZED:
-                        evCommunicationBlockInterface.sendAuthorizeRes(false);
-                        while(stateCharacterisation.getState() == UNAUTORIZED)
+                    case UNAUTHORIZED:
+                        evCommunicationBlockInterface.sendSessionSetupRes(false);
+                        while(stateCharacterisation.getState() == UNAUTHORIZED)
                             wait();
                         break;
                     case AVAILABLE:
@@ -86,8 +106,7 @@ public class ChargeControlSystem implements Runnable {
         }
     }
 
-    public void setStateCharacterisation(StationStateEnum state){
-        this.stateCharacterisation.setState(state);
+    public StationState getStationState(){
+        return stateCharacterisation;
     }
-
 }

@@ -1,16 +1,15 @@
 package org.mycorp;
 
-import org.mycorp.charge_control.ChargeControlInterfaceCSMS;
-import org.mycorp.charge_control.ChargeControlInterfaceCSMSImpl;
-import org.mycorp.charge_control.ChargeControlSystem;
-import org.mycorp.charge_control.InitSystem;
+import org.mycorp.charge_control.*;
 import org.mycorp.charge_transfer.ChargeTransferBlock;
 import org.mycorp.charge_transfer.ChargeTransferBlockInterface;
 import org.mycorp.charge_transfer.ChargeTransferBlockInterfaceImpl;
+import org.mycorp.csms_communication.CSMSCommunicationBlock;
 import org.mycorp.csms_communication.CSMSCommunicationBlockInterface;
 import org.mycorp.csms_communication.CSMSCommunicationBlockInterfaceImpl;
 import org.mycorp.ev_communication.EVCommunicationBlockHandler;
 import org.mycorp.ev_communication.EvCommunicationBlock;
+import org.mycorp.ev_communication.EvCommunicationBlockInterface;
 import org.mycorp.ev_communication.XMLConverter;
 import org.mycorp.ev_communication.message_builders.MessageBuildersDirector;
 import org.springframework.context.ApplicationContext;
@@ -23,7 +22,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Main {
-
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(MyConfiguration.class);
         ChargeControlSystem system = context.getBean(ChargeControlSystem.class);
@@ -52,8 +50,13 @@ class MyConfiguration {
     }
 
     @Bean
-    public ChargeControlSystem chargeControlSystem(CSMSCommunicationBlockInterface csmsCommunicationBlockInterface, ChargeTransferBlockInterface chargeTransferBlockInterface) {
-        return new ChargeControlSystem( csmsCommunicationBlockInterface, chargeTransferBlockInterface);
+    MeterValuesSender meterValuesSender(CSMSCommunicationBlockInterface csmsCommunicationBlockInterface, ChargeTransferBlockInterface chargeTransferBlockInterface){
+        return new MeterValuesSender(csmsCommunicationBlockInterface, chargeTransferBlockInterface);
+    }
+
+    @Bean
+    public ChargeControlSystem chargeControlSystem(CSMSCommunicationBlockInterface csmsCommunicationBlockInterface, ChargeTransferBlockInterface chargeTransferBlockInterface, EvCommunicationBlockInterface evCommunicationBlockInterface, InitSystem initSystem) {
+        return new ChargeControlSystem( csmsCommunicationBlockInterface, evCommunicationBlockInterface, initSystem, chargeTransferBlockInterface);
     }
 
     @Bean
@@ -62,8 +65,8 @@ class MyConfiguration {
     }
 
     @Bean
-    public InitSystem initSystem(EvCommunicationBlock evCommunicationBlock, ChargeTransferBlock chargeTransferBlock){
-        return new InitSystem(evCommunicationBlock, chargeTransferBlock);
+    public InitSystem initSystem(EvCommunicationBlock evCommunicationBlock, ChargeTransferBlock chargeTransferBlock, MeterValuesSender meterValuesSender){
+        return new InitSystem(evCommunicationBlock, chargeTransferBlock, meterValuesSender);
     }
     @Bean
     public XMLConverter xmlConverter(){
@@ -74,8 +77,8 @@ class MyConfiguration {
         }
     }
     @Bean
-    public EVCommunicationBlockHandler evCommunicationBlockHandler(XMLConverter xmlConverter){
-        return new EVCommunicationBlockHandler(xmlConverter);
+    public EVCommunicationBlockHandler evCommunicationBlockHandler(XMLConverter xmlConverter, ChargeControlInterfaceEV chargeControlInterfaceEV){
+        return new EVCommunicationBlockHandler(xmlConverter, chargeControlInterfaceEV);
     }
     @Bean
     public EvCommunicationBlock evCommunicationBlock(EVCommunicationBlockHandler evCommunicationBlockHandler){

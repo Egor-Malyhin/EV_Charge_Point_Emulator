@@ -6,4 +6,5 @@ public interface ChargeControlInterfaceEV {
     void stopChargingRequest();
     void getChargingStatus();
     void prepareCharging(float eAmount);
+    void closeSessionRequest();
 }

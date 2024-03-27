@@ -1,5 +1,6 @@
 package org.mycorp.models.v2g_messages;
 
+import javax.xml.bind.DatatypeConverter;
 import java.nio.ByteBuffer;
 
 public class V2GSessionIdCounter {
@@ -23,8 +24,6 @@ public class V2GSessionIdCounter {
     public void incrementCounter(){
         int counterInt = ByteBuffer.wrap(sessionId).getInt();
         counterInt++;
-        ByteBuffer byteBuffer = ByteBuffer.allocate(Integer.BYTES);
-        byteBuffer.putInt(counterInt);
-        sessionId = byteBuffer.array();
+        sessionId = DatatypeConverter.parseHexBinary(Integer.toHexString(counterInt));
     }
 }

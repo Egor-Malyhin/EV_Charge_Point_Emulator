@@ -7,6 +7,6 @@ public interface CSMSCommunicationBlockInterface {
     void sendAuthorize(String idTag);
     void sendStopTransaction();
     void sendMeterValues(MeterValues meterValues);
-    void sendBootNotification(StationConfiguration configuration);
+    void sendBootNotification();
 
 }

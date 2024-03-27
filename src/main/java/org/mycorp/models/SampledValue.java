@@ -1,6 +1,6 @@
 package org.mycorp.models;
 
-public class SampledValue {
+public class SampledValue implements Cloneable{
     private float value;
     private String measurand;
     private String location;
@@ -43,5 +43,14 @@ public class SampledValue {
 
     public void setUnit(String unit) {
         this.unit = unit;
+    }
+
+    @Override
+    public SampledValue clone() {
+        try {
+            return (SampledValue) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }
 }

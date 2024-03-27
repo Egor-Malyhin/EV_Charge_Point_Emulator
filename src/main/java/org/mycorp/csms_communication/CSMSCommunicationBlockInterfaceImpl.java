@@ -2,6 +2,9 @@ package org.mycorp.csms_communication;
 
 import org.mycorp.models.MeterValues;
 import org.springframework.beans.factory.annotation.Autowired;
+import eu.chargetime.ocpp.*;
+import eu.chargetime.ocpp.feature.profile.*;
+import eu.chargetime.ocpp.model.*;
 
 public class CSMSCommunicationBlockInterfaceImpl implements CSMSCommunicationBlockInterface{
 
@@ -14,6 +17,7 @@ public class CSMSCommunicationBlockInterfaceImpl implements CSMSCommunicationBlo
 
     @Override
     public void sendStartTransaction() {
+
 
     }
 
@@ -28,7 +32,7 @@ public class CSMSCommunicationBlockInterfaceImpl implements CSMSCommunicationBlo
     }
 
     @Override
-    public void sendBootNotification(StationConfiguration configuration) {
+    public void sendBootNotification() {
 
     }
 

@@ -1,17 +1,16 @@
-package org.mycorp.charge_control;
-
-import org.mycorp.models.Charge;
-import org.mycorp.models.EVCharacterisation;
+package org.mycorp.models;
 
 public class StationState {
     StationStateEnum state;
     Charge preparedCharge;
     EVCharacterisation evCharacteristic;
+    boolean isChargingOn;
 
-    public StationState(StationStateEnum state, Charge preparedCharge, EVCharacterisation evCharacteristic) {
+    public StationState(StationStateEnum state, Charge preparedCharge, EVCharacterisation evCharacteristic, boolean isChargingOn) {
         this.state = state;
         this.preparedCharge = preparedCharge;
         this.evCharacteristic = evCharacteristic;
+        this.isChargingOn = isChargingOn;
     }
 
     public StationStateEnum getState() {
@@ -26,6 +25,10 @@ public class StationState {
         return evCharacteristic;
     }
 
+    public boolean isChargingOn() {
+        return isChargingOn;
+    }
+
     public void setState(StationStateEnum state) {
         this.state = state;
     }
@@ -36,5 +39,9 @@ public class StationState {
 
     public void setEvCharacteristic(EVCharacterisation evCharacteristic) {
         this.evCharacteristic = evCharacteristic;
+    }
+
+    public void setChargingOn(boolean chargingOn) {
+        isChargingOn = chargingOn;
     }
 }

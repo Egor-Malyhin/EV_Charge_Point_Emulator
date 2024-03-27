@@ -4,31 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76b66a1d-1f2c-4dbf-9a80-cc7d32ab3715" name="Changes" comment="&#10;The development of the project carcass has been initiated. The main charging management module was created, along with a module reflecting the physical charging process. Interfaces for all program modules were also developed. Additionally, classes representing V2G messages and specifically response (RES) messages were created. A class was implemented to convert message class objects into XML format first, and then into EXI.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/ChargeControlInterfaceEV.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/EVCommunicationBlockHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/EvCommunicationBlockInterfaceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_builders/ChargeParameterDiscoveryResBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_builders/ChargingStatusResBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_builders/MessageBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_builders/MessageBuilderImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_builders/MessageBuildersDirector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_builders/PowerDeliveryResBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_builders/SessionSetupResBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_builders/SessionStopResBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/V2GMessagesClassification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/V2GSessionIdCounter.java" afterDir="false" />
+    <list default="true" id="76b66a1d-1f2c-4dbf-9a80-cc7d32ab3715" name="Changes" comment="&#10;The structure of the EV communication block handler was developed, V2G message builders were created, the format of the Station Characteristics class was refactored from singleton to a static class, and new model classes were added to the v2g_messages package, including V2GMessagesClassification, an enum linked to V2G message types. Additionally, an interface for the interaction between the EV communication block and the charging system was developed - EvCommunicationBlockInterface, along with its implementation - EvCommunicationBlockInterfaceImpl. Within this class, V2G messages are assembled using builders and sent via the sendMessage method of the handler to the EVCC.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/ChargeControlInterfaceEVImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/MeterValuesSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/CSMSCommunicationBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/req/ChargeParameterDiscoveryReq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/req/ChargingStatusReq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/req/PowerDeliveryReq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/req/SessionSetupReq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/req/SessionStopReq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/req/V2GMessageReq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/types/AC_EVChargeParameter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/types/ChargeProgress.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/types/ChargingSession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/types/RequestedEnergyTransferMode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/ChargeControlInterfaceCSMSImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/ChargeControlInterfaceCSMSImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/ChargeControlInterfaceEV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/ChargeControlInterfaceEV.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/ChargeControlSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/ChargeControlSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/InitSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/InitSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/StationState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/StationState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/StationStateEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/StationStateEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_transfer/ChargeTransferBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_transfer/ChargeTransferBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_transfer/ChargeTransferBlockInterfaceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_transfer/ChargeTransferBlockInterfaceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/EvCommunicationBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/EvCommunicationBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/EvCommunicationBlockInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/EvCommunicationBlockInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/XMLConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/XMLConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/CSMSCommunicationBlockInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/CSMSCommunicationBlockInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/CSMSCommunicationBlockInterfaceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/CSMSCommunicationBlockInterfaceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/EVCommunicationBlockHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/EVCommunicationBlockHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/MeterValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/MeterValues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/SampledValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/SampledValue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/StationCharacteristics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/StationCharacteristics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/V2GMessagesClassification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/V2GMessagesClassification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/V2GSessionIdCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/V2GSessionIdCounter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +46,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="Enum" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -116,11 +123,20 @@
       <option name="project" value="LOCAL" />
       <updated>1711115395648</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="&#10;The structure of the EV communication block handler was developed, V2G message builders were created, the format of the Station Characteristics class was refactored from singleton to a static class, and new model classes were added to the v2g_messages package, including V2GMessagesClassification, an enum linked to V2G message types. Additionally, an interface for the interaction between the EV communication block and the charging system was developed - EvCommunicationBlockInterface, along with its implementation - EvCommunicationBlockInterfaceImpl. Within this class, V2G messages are assembled using builders and sent via the sendMessage method of the handler to the EVCC.">
+      <option name="closed" value="true" />
+      <created>1711386530559</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1711386530559</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&#10;The development of the project carcass has been initiated. The main charging management module was created, along with a module reflecting the physical charging process. Interfaces for all program modules were also developed. Additionally, classes representing V2G messages and specifically response (RES) messages were created. A class was implemented to convert message class objects into XML format first, and then into EXI." />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;The development of the project carcass has been initiated. The main charging management module was created, along with a module reflecting the physical charging process. Interfaces for all program modules were also developed. Additionally, classes representing V2G messages and specifically response (RES) messages were created. A class was implemented to convert message class objects into XML format first, and then into EXI." />
+    <MESSAGE value="&#10;The structure of the EV communication block handler was developed, V2G message builders were created, the format of the Station Characteristics class was refactored from singleton to a static class, and new model classes were added to the v2g_messages package, including V2GMessagesClassification, an enum linked to V2G message types. Additionally, an interface for the interaction between the EV communication block and the charging system was developed - EvCommunicationBlockInterface, along with its implementation - EvCommunicationBlockInterfaceImpl. Within this class, V2G messages are assembled using builders and sent via the sendMessage method of the handler to the EVCC." />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;The structure of the EV communication block handler was developed, V2G message builders were created, the format of the Station Characteristics class was refactored from singleton to a static class, and new model classes were added to the v2g_messages package, including V2GMessagesClassification, an enum linked to V2G message types. Additionally, an interface for the interaction between the EV communication block and the charging system was developed - EvCommunicationBlockInterface, along with its implementation - EvCommunicationBlockInterfaceImpl. Within this class, V2G messages are assembled using builders and sent via the sendMessage method of the handler to the EVCC." />
   </component>
 </project>
