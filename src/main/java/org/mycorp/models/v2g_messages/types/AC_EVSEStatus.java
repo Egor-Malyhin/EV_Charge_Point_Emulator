@@ -1,7 +1,11 @@
 package org.mycorp.models.v2g_messages.types;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
+@XmlAccessorType(XmlAccessType.FIELD)
 public class AC_EVSEStatus {
     @XmlElement(name = "RCD", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
     private boolean RCD;

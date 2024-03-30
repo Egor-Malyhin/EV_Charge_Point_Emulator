@@ -19,9 +19,10 @@ public class InitSystem {
     final private ExecutorService chargingExecutor;
 
     @Autowired
-    public InitSystem(EvCommunicationBlock evCommunicationBlock, ChargeTransferBlock chargeTransferBlock, MeterValuesSender meterValuesSender) {
+    public InitSystem(EvCommunicationBlock evCommunicationBlock, ChargeTransferBlock chargeTransferBlock, CSMSCommunicationBlock csmsCommunicationBlock, MeterValuesSender meterValuesSender) {
         this.evCommunicationBlock = evCommunicationBlock;
         this.chargeTransferBlock = chargeTransferBlock;
+        this.csmsCommunicationBlock = csmsCommunicationBlock;
         this.meterValuesSender = meterValuesSender;
         this.chargingExecutor = Executors.newFixedThreadPool(4);
     }

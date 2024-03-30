@@ -3,7 +3,12 @@ package org.mycorp.models.v2g_messages.res;
 import org.mycorp.models.v2g_messages.types.ResponseCode;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import java.util.Objects;
 
+@XmlRootElement
+@XmlType(name = "SessionSetupRes", namespace = "urn:iso:15118:2:2013:MsgBody")
 public class SessionSetupRes extends V2GMessageRes {
     @XmlElement(name = "EVSEID", namespace = "urn:iso:15118:2:2013:MsgBody")
     private String evseId;
@@ -14,6 +19,8 @@ public class SessionSetupRes extends V2GMessageRes {
         this.evseId=evseId;
         this.evseTimeStamp=evseTimeStamp;
     }
+
+    public SessionSetupRes(){}
 
     public String getEvseId() {
         return evseId;
@@ -29,5 +36,17 @@ public class SessionSetupRes extends V2GMessageRes {
 
     public void setEvseTimeStamp(long evseTimeStamp) {
         this.evseTimeStamp = evseTimeStamp;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof SessionSetupRes that)) return false;
+        return getEvseTimeStamp() == that.getEvseTimeStamp() && Objects.equals(getEvseId(), that.getEvseId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getEvseId(), getEvseTimeStamp());
     }
 }

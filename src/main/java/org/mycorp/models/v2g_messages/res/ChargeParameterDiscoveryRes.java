@@ -5,7 +5,9 @@ import org.mycorp.models.v2g_messages.types.EVSEProcessing;
 import org.mycorp.models.v2g_messages.types.ResponseCode;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
+@XmlType(name = "ChargeParameterDiscoveryRes", namespace = "urn:iso:15118:2:2013:MsgBody")
 public class ChargeParameterDiscoveryRes extends V2GMessageRes {
     @XmlElement(name = "EVSEProcessing", namespace = "urn:iso:15118:2:2013:MsgBody")
     private EVSEProcessing evseProcessing;

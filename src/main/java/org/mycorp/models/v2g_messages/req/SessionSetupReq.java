@@ -1,7 +1,9 @@
 package org.mycorp.models.v2g_messages.req;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
+@XmlType(name = "SessionSetupReq", namespace = "urn:iso:15118:2:2013:MsgBody")
 public class SessionSetupReq extends V2GMessageReq{
     @XmlElement(name = "EVCCID", namespace = "urn:iso:15118:2:2013:MsgBody")
     private byte[] evccId;

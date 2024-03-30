@@ -5,7 +5,9 @@ import org.mycorp.models.v2g_messages.types.MeterInfo;
 import org.mycorp.models.v2g_messages.types.ResponseCode;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
+@XmlType(name = "ChargingStatusRes", namespace = "urn:iso:15118:2:2013:MsgBody")
 public class ChargingStatusRes extends PowerDeliveryRes{
     @XmlElement(name = "EVSEID", namespace = "urn:iso:15118:2:2013:MsgBody")
     private String evseId;

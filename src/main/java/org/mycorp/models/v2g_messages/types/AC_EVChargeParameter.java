@@ -1,9 +1,12 @@
 package org.mycorp.models.v2g_messages.types;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 
+@XmlAccessorType(XmlAccessType.FIELD)
 public class AC_EVChargeParameter {
-    @XmlElement(name = "EАmountt", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
+    @XmlElement(name = "EАmount", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
     private PhysicalValue eАmount;
     @XmlElement(name = "EVMaxVoltage", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
     private PhysicalValue evMaxVoltage;

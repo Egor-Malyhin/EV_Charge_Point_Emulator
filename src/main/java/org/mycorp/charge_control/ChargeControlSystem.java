@@ -86,11 +86,11 @@ public class ChargeControlSystem implements Runnable {
 
                     case CSMS_DECLINE_CHARGE:
                         evCommunicationBlockInterface.sendPowerRes(false);
-                        setStateCharacterisation(AVAILABLE);
+                        stateCharacterisation.setState(AVAILABLE);
                         break;
                     case EV_DECLINE_CHARGE:
-                        csmsComm.sendEvDecline();
-                        setStateCharacterisation(AVAILABLE);
+                        csmsComm.sendStopTransaction();
+                        stateCharacterisation.setState(AVAILABLE);
                         break;
                     case UNAUTHORIZED:
                         evCommunicationBlockInterface.sendSessionSetupRes(false);
