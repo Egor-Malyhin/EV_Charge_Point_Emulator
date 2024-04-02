@@ -20,10 +20,14 @@ import static org.mockito.Mockito.when;
 
 public class XmlConverterTest {
 
-    private final XMLConverter xmlConverter;
+    private static final XMLConverter xmlConverter;
 
-    public XmlConverterTest() throws JAXBException {
-        this.xmlConverter = new XMLConverter();
+    static {
+        try {
+            xmlConverter = new XMLConverter();
+        } catch (JAXBException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Test
@@ -67,6 +71,4 @@ public class XmlConverterTest {
 
         assertEquals(v2GMessage, decodedMessage);
     }
-
-
 }

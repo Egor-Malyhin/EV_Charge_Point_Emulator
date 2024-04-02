@@ -4,9 +4,12 @@ import org.mycorp.models.MeterValues;
 
 public interface CSMSCommunicationBlockInterface {
     void sendStartTransaction();
-    void sendAuthorize(String idTag);
-    void sendStopTransaction();
-    void sendMeterValues(MeterValues meterValues);
-    void sendBootNotification();
 
+    void sendAuthorize(String idTag);
+
+    void sendStopTransaction();
+
+    void sendMeterValues(MeterValues meterValues);
+
+    void sendBootNotification();
 }

@@ -2,7 +2,8 @@ package org.mycorp.ev_communication;
 
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;
-import org.mycorp.charge_control.ChargeControlInterfaceEV;
+import org.mycorp.mediators.senders.Sender;
+import org.mycorp.models.station_messages.control_system_messages_ev_comm.*;
 import org.mycorp.models.v2g_messages.V2GBodyAbstractType;
 import org.mycorp.models.v2g_messages.V2GMessage;
 import org.mycorp.models.v2g_messages.V2GMessagesClassification;
@@ -16,14 +17,14 @@ import static org.mycorp.models.v2g_messages.types.ChargeProgress.START;
 
 public class EVCommunicationBlockHandler extends IoHandlerAdapter {
     private final XMLConverter xmlConverter;
-    private final ChargeControlInterfaceEV chargeControlInterfaceEV;
+    private final Sender senderEVCommunicationBlock;
     private IoSession session;
     private boolean isEvConnected;
 
     @Autowired
-    public EVCommunicationBlockHandler(XMLConverter xmlConverter, ChargeControlInterfaceEV chargeControlInterfaceEV) {
-        this.chargeControlInterfaceEV = chargeControlInterfaceEV;
+    public EVCommunicationBlockHandler(XMLConverter xmlConverter, Sender senderEVCommunicationBlock) {
         this.xmlConverter = xmlConverter;
+        this.senderEVCommunicationBlock = senderEVCommunicationBlock;
         this.isEvConnected=false;
         this.session=null;
     }
@@ -61,22 +62,22 @@ public class EVCommunicationBlockHandler extends IoHandlerAdapter {
 
         switch (v2gMessageType){
             case SESSION_SETUP_REQ:
-                chargeControlInterfaceEV.startAuthorize(((SessionSetupReq) receivedMessage).getEvccId());
+                senderEVCommunicationBlock.sendMessage(new StartAuthorizeMessage(((SessionSetupReq) receivedMessage).getEvccId()));
                 break;
             case CHARGE_PARAMETER_DISCOVERY_REQ:
-                chargeControlInterfaceEV.prepareCharging(((ChargeParameterDiscoveryReq) receivedMessage).getAcEvChargeParameter().geteАmount().getValue());
+                senderEVCommunicationBlock.sendMessage(new PrepareChargingMessage(((ChargeParameterDiscoveryReq) receivedMessage).getAcEvChargeParameter().geteАmount().getValue()));
                 break;
             case POWER_DELIVERY_REQ:
                 if(((PowerDeliveryReq) receivedMessage).getChargeProgress()==START)
-                    chargeControlInterfaceEV.startChargingRequest();
+                    senderEVCommunicationBlock.sendMessage(new StartChargingRequestMessage());
                 else
-                    chargeControlInterfaceEV.stopChargingRequest();
+                    senderEVCommunicationBlock.sendMessage(new StopChargingRequestMessage());
                 break;
             case CHARGING_STATUS_REQ:
-                chargeControlInterfaceEV.getChargingStatus();
+                senderEVCommunicationBlock.sendMessage(new GetChargingStatusMessage());
                 break;
             case SESSION_STOP_REQ:
-                chargeControlInterfaceEV.closeSessionRequest();
+                senderEVCommunicationBlock.sendMessage(new CloseSessionRequestMessage());
         }
     }
 

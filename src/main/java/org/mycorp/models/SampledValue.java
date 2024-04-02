@@ -1,6 +1,6 @@
 package org.mycorp.models;
 
-public class SampledValue implements Cloneable{
+public class SampledValue implements Cloneable {
     private float value;
     private String measurand;
     private String location;

@@ -1,29 +1,25 @@
 package org.mycorp.charge_control;
 
-import org.mycorp.charge_transfer.ChargeTransferBlockInterface;
-import org.mycorp.csms_communication.CSMSCommunicationBlockInterface;
-
 import static org.mycorp.models.StationStateEnum.*;
 
-import org.mycorp.ev_communication.EvCommunicationBlockInterface;
+import org.mycorp.mediators.senders.SenderChargeControlSystem;
 import org.mycorp.models.StationState;
+import org.mycorp.models.station_messages.charge_transfer_messages.StopChargingByStationMessage;
+import org.mycorp.models.station_messages.control_system_messages_charge_transfer.SetChargeMessage;
+import org.mycorp.models.station_messages.control_system_messages_csms_comm.SendAuthorizeMessage;
+import org.mycorp.models.station_messages.control_system_messages_csms_comm.SendStartTransactionMessage;
+import org.mycorp.models.station_messages.ev_comm_messages.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
-
-
 public class ChargeControlSystem implements Runnable {
-    private final CSMSCommunicationBlockInterface csmsComm;
-    private final EvCommunicationBlockInterface evCommunicationBlockInterface;
+    private final SenderChargeControlSystem senderChargeControlSystem;
     private final InitSystem initSystem;
-    private final ChargeTransferBlockInterface chargeTransferBlockInterface;
     private final StationState stateCharacterisation;
 
     @Autowired
-    public ChargeControlSystem(CSMSCommunicationBlockInterface csmsComm, EvCommunicationBlockInterface evCommunicationBlockInterface, InitSystem initSystem, ChargeTransferBlockInterface chargeTransferBlock) {
-        this.csmsComm = csmsComm;
-        this.evCommunicationBlockInterface = evCommunicationBlockInterface;
+    public ChargeControlSystem(InitSystem initSystem, SenderChargeControlSystem senderChargeControlSystem) {
+        this.senderChargeControlSystem = senderChargeControlSystem;
         this.initSystem = initSystem;
-        this.chargeTransferBlockInterface = chargeTransferBlock;
         this.stateCharacterisation = new StationState(AVAILABLE, null, null, false);
     }
 
@@ -36,32 +32,34 @@ public class ChargeControlSystem implements Runnable {
                 Thread.sleep(100);
                 switch (stateCharacterisation.getState()) {
                     case AUTHORISATION:
-                        csmsComm.sendAuthorize(stateCharacterisation.getEvCharacteristic().getIdTag());
+                        senderChargeControlSystem.sendMessage(new SendAuthorizeMessage(stateCharacterisation.getEvCharacteristic().getIdTag()));
                         while (stateCharacterisation.getState() == AUTHORISATION)
                             wait();
                         break;
                     case AUTHORIZED:
-                        evCommunicationBlockInterface.sendSessionSetupRes(true);
+                        senderChargeControlSystem.sendMessage(new SendSessionSetupRes(true));
                         while (stateCharacterisation.getState() == AUTHORIZED)
                             wait();
                         break;
                     case WAIT_CHARGING_REQUEST:
-                        evCommunicationBlockInterface.sendChargeParameterRes();
+                        senderChargeControlSystem.sendMessage(new SendChargeParameterResMessage());
                         while (stateCharacterisation.getState() == WAIT_EV_REQUEST)
                             wait();
                         break;
                     case PREPARED:
-                        csmsComm.sendStartTransaction();
+                        senderChargeControlSystem.sendMessage(new SendStartTransactionMessage());
                         while (stateCharacterisation.getState() == PREPARED)
                             wait();
                         break;
                     case START_CHARGING:
-                        chargeTransferBlockInterface.setCharge(stateCharacterisation.getPreparedCharge());
+                        senderChargeControlSystem.sendMessage(new SetChargeMessage(stateCharacterisation.getPreparedCharge()));
                         stateCharacterisation.setPreparedCharge(null);
-                        evCommunicationBlockInterface.sendPowerRes(true);
+                        senderChargeControlSystem.sendMessage(new SendPowerResMessage(true));
+
                         initSystem.submitChargeTransfer();
                         initSystem.submitMeterValuesSender();
                         stateCharacterisation.setChargingOn(true);
+
                         while(stateCharacterisation.getState() == START_CHARGING)
                             wait();
                         break;
@@ -70,17 +68,17 @@ public class ChargeControlSystem implements Runnable {
                             wait();
                         break;
                     case EV_CHARGING_STATUS_REQUEST:
-                        evCommunicationBlockInterface.sendChargingStatusRes(stateCharacterisation.isChargingOn(), chargeTransferBlockInterface.getMeterValues());
+                        senderChargeControlSystem.sendMessage(new SendChargingStatusResMessage(stateCharacterisation.isChargingOn(), chargeTransferBlockInterface.getMeterValues()));
                         stateCharacterisation.setState(WAIT_EV_REQUEST);
                         break;
                     case STOP_CHARGING:
-                        csmsComm.sendStopTransaction();
+                        senderChargeControlSystem.sendMessage(new StopChargingByStationMessage());
                         stateCharacterisation.setChargingOn(false);
                         while(stateCharacterisation.getState() == STOP_CHARGING)
                             wait();
                         break;
                     case EV_END_SESSION:
-                        evCommunicationBlockInterface.sendSessionStopRes();
+                        senderChargeControlSystem.sendMessage(new SendSessionStopResMessage());
                         stateCharacterisation.setState(AVAILABLE);
                         break;
 
@@ -98,6 +96,7 @@ public class ChargeControlSystem implements Runnable {
                             wait();
                         break;
                     case AVAILABLE:
+                        stateCharacterisation.setEvCharacteristic(null);
                         System.out.println("Connector is Available");
                 }
             } catch (InterruptedException e) {

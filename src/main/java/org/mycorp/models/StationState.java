@@ -1,10 +1,10 @@
 package org.mycorp.models;
 
 public class StationState {
-    StationStateEnum state;
-    Charge preparedCharge;
-    EVCharacterisation evCharacteristic;
-    boolean isChargingOn;
+    private StationStateEnum state;
+    private Charge preparedCharge;
+    private EVCharacterisation evCharacteristic;
+    private boolean isChargingOn;
 
     public StationState(StationStateEnum state, Charge preparedCharge, EVCharacterisation evCharacteristic, boolean isChargingOn) {
         this.state = state;
