@@ -1,16 +1,10 @@
 package org.mycorp.main;
 
 import org.mycorp.charge_control.ChargeControlSystem;
-import org.mycorp.mediators.Mediator;
-import org.mycorp.mediators.MediatorChargeControlSystem;
 import org.mycorp.mediators.MediatorImpl;
 import org.mycorp.mediators.receivers.*;
-import org.mycorp.mediators.senders.Sender;
-import org.mycorp.mediators.senders.SenderChargeControlSystem;
-import org.mycorp.mediators.senders.SenderImpl;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.*;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

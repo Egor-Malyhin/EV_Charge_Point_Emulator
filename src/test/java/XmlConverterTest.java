@@ -9,15 +9,11 @@ import org.mycorp.models.v2g_messages.res.SessionSetupRes;
 import org.mycorp.models.v2g_messages.types.AC_EVSEStatus;
 import org.mycorp.models.v2g_messages.types.EVSENotification;
 import org.mycorp.models.v2g_messages.types.ResponseCode;
-import org.powermock.api.mockito.PowerMockito;
 
 import javax.xml.bind.JAXBException;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
 
 public class XmlConverterTest {
 
@@ -38,7 +34,7 @@ public class XmlConverterTest {
 
         Method method = xmlConverter.getClass().getDeclaredMethod("convertToXML", V2GMessage.class);
         method.setAccessible(true);
-        Object convertedMessage = method.invoke(xmlConverter,v2GMessage);
+        Object convertedMessage = method.invoke(xmlConverter, v2GMessage);
 
         String messageString = new String((byte[]) convertedMessage);
 
@@ -63,8 +59,8 @@ public class XmlConverterTest {
     }
 
     @Test
-    public void convertV2GToExiTest(){
-        SessionSetupRes sessionSetupRes = new SessionSetupRes(ResponseCode.OK, "1", 3 );
+    public void convertV2GToExiTest() {
+        SessionSetupRes sessionSetupRes = new SessionSetupRes(ResponseCode.OK, "1", 3);
         V2GMessage v2GMessage = new V2GMessage(new V2GHeader(new byte[]{0x01}), new V2GBody(sessionSetupRes));
 
         byte[] convertedMessage = xmlConverter.convertToEXIMessage(v2GMessage);

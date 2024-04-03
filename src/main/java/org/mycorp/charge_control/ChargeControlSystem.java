@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import static org.mycorp.models.StationStateEnum.*;
+import static org.mycorp.models.StationStateEnum.AVAILABLE;
 
 @Component
 public class ChargeControlSystem implements Runnable {

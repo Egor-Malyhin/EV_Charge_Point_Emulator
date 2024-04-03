@@ -18,7 +18,7 @@ public class StationState {
 
     public StationStateEnum getState() {
         synchronized (lock) {
-            while ((!isStateChanged) && (state!=StationStateEnum.AVAILABLE)) {
+            while ((!isStateChanged) && (state != StationStateEnum.AVAILABLE)) {
                 try {
                     lock.wait();
                 } catch (InterruptedException e) {
