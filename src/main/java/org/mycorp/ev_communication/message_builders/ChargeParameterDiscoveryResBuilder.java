@@ -5,9 +5,8 @@ import org.mycorp.models.v2g_messages.res.ChargeParameterDiscoveryRes;
 import org.mycorp.models.v2g_messages.types.*;
 
 import static org.mycorp.models.v2g_messages.types.EVSEProcessing.FINISHED;
-import static org.mycorp.models.v2g_messages.types.ResponseCode.OK;
 
-public class ChargeParameterDiscoveryResBuilder extends MessageBuilderImpl{
+public class ChargeParameterDiscoveryResBuilder extends MessageBuilderImpl {
 
     public ChargeParameterDiscoveryResBuilder(ResponseCode responseCode) {
         super(responseCode);
@@ -19,19 +18,19 @@ public class ChargeParameterDiscoveryResBuilder extends MessageBuilderImpl{
         return this;
     }
 
-    private AC_EVSEStatus createAC_EVSEStatus(){
+    private AC_EVSEStatus createAC_EVSEStatus() {
         return new AC_EVSEStatus(true, 5, EVSENotification.NONE);
     }
 
-    private PhysicalValue createEvseNominalVoltage(){
+    private PhysicalValue createEvseNominalVoltage() {
         return new PhysicalValue(1, "V", StationCharacteristics.ratedVoltage);
     }
 
-    private PhysicalValue createEvseMaxCurrent(){
+    private PhysicalValue createEvseMaxCurrent() {
         return new PhysicalValue(1, "A", StationCharacteristics.maxCurrent);
     }
 
-    private AC_EVSEChargeParameter createChargeParameter(){
+    private AC_EVSEChargeParameter createChargeParameter() {
         return new AC_EVSEChargeParameter(createAC_EVSEStatus(), createEvseNominalVoltage(), createEvseMaxCurrent());
     }
 }

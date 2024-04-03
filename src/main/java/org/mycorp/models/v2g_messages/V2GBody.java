@@ -1,8 +1,6 @@
 package org.mycorp.models.v2g_messages;
 
-import org.mycorp.models.v2g_messages.res.*;
-
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlElementRef;
 import java.util.Objects;
 
 public class V2GBody {
@@ -13,7 +11,8 @@ public class V2GBody {
         this.v2GBodyAbstractType = v2GBodyAbstractType;
     }
 
-    public V2GBody(){}
+    public V2GBody() {
+    }
 
     public V2GBodyAbstractType getV2GBodyAbstractType() {
         return v2GBodyAbstractType;

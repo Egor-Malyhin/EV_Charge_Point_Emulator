@@ -5,7 +5,9 @@ import org.mycorp.models.station_messages.StationMessage;
 import org.mycorp.models.station_messages.control_system_messages_ev_comm.PrepareChargingMessage;
 import org.mycorp.models.station_messages.control_system_messages_ev_comm.StartAuthorizeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ChargeSystemReceiverEVComm implements Receiver {
     private final ChargeControlInterfaceEV chargeControlInterfaceEV;
 

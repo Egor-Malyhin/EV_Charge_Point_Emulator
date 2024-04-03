@@ -14,13 +14,15 @@ public class SessionSetupRes extends V2GMessageRes {
     private String evseId;
     @XmlElement(name = "EVSETimeStamp", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
     private long evseTimeStamp;
+
     public SessionSetupRes(ResponseCode responseCode, String evseId, long evseTimeStamp) {
         super(responseCode);
-        this.evseId=evseId;
-        this.evseTimeStamp=evseTimeStamp;
+        this.evseId = evseId;
+        this.evseTimeStamp = evseTimeStamp;
     }
 
-    public SessionSetupRes(){}
+    public SessionSetupRes() {
+    }
 
     public String getEvseId() {
         return evseId;
@@ -42,11 +44,12 @@ public class SessionSetupRes extends V2GMessageRes {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof SessionSetupRes that)) return false;
+        if (!super.equals(o)) return false;
         return getEvseTimeStamp() == that.getEvseTimeStamp() && Objects.equals(getEvseId(), that.getEvseId());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getEvseId(), getEvseTimeStamp());
+        return Objects.hash(super.hashCode(), getEvseId(), getEvseTimeStamp());
     }
 }

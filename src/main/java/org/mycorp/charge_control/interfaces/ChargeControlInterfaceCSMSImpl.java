@@ -3,7 +3,9 @@ package org.mycorp.charge_control.interfaces;
 import org.mycorp.charge_control.ChargeControlSystem;
 import org.mycorp.models.StationStateEnum;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ChargeControlInterfaceCSMSImpl extends ChargeControlInterfaceImpl implements ChargeControlInterfaceCSMS {
     @Autowired
     public ChargeControlInterfaceCSMSImpl(ChargeControlSystem chargeControlSystem) {

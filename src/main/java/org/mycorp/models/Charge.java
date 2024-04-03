@@ -1,3 +1,4 @@
 package org.mycorp.models;
 
-public record Charge(float kWh) {}
+public record Charge(float kWh) {
+}

@@ -6,9 +6,7 @@ import org.mycorp.models.v2g_messages.types.ResponseCode;
 
 import java.time.Instant;
 
-import static org.mycorp.models.v2g_messages.types.ResponseCode.OK;
-
-public class SessionSetupResBuilder extends MessageBuilderImpl{
+public class SessionSetupResBuilder extends MessageBuilderImpl {
 
     public SessionSetupResBuilder(ResponseCode responseCode) {
         super(responseCode);
@@ -16,7 +14,7 @@ public class SessionSetupResBuilder extends MessageBuilderImpl{
 
     @Override
     public MessageBuilder createBodyType() {
-        v2GBodyAbstractType = new SessionSetupRes(OK, StationCharacteristics.evseId, Instant.now().toEpochMilli());
+        v2GBodyAbstractType = new SessionSetupRes(responseCode, StationCharacteristics.evseId, Instant.now().toEpochMilli());
         return this;
     }
 }

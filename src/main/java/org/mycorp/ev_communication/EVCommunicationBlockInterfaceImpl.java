@@ -6,10 +6,13 @@ import org.mycorp.models.v2g_messages.V2GMessage;
 import org.mycorp.models.v2g_messages.types.EVSENotification;
 import org.mycorp.models.v2g_messages.types.ResponseCode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-import static org.mycorp.models.v2g_messages.types.EVSENotification.*;
+import static org.mycorp.models.v2g_messages.types.EVSENotification.NONE;
+import static org.mycorp.models.v2g_messages.types.EVSENotification.STOPCHARGING;
 import static org.mycorp.models.v2g_messages.types.ResponseCode.*;
 
+@Component
 public class EVCommunicationBlockInterfaceImpl implements EVCommunicationBlockInterface {
     private final EVCommunicationBlockHandler evCommunicationBlockHandler;
 

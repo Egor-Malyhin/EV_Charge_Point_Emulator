@@ -2,17 +2,16 @@ package org.mycorp.csms_communication;
 
 import org.mycorp.models.MeterValues;
 import org.springframework.beans.factory.annotation.Autowired;
-import eu.chargetime.ocpp.*;
-import eu.chargetime.ocpp.feature.profile.*;
-import eu.chargetime.ocpp.model.*;
+import org.springframework.stereotype.Component;
 
-public class CSMSCommunicationBlockInterfaceImpl implements CSMSCommunicationBlockInterface{
+@Component
+public class CSMSCommunicationBlockInterfaceImpl implements CSMSCommunicationBlockInterface {
 
-    private CSMSCommunicationBlock csmsCommunicationBlock;
+    private final CSMSCommunicationBlockClient csmsCommunicationBlockClient;
 
     @Autowired
-    public CSMSCommunicationBlockInterfaceImpl(CSMSCommunicationBlock csmsCommunicationBlock){
-        this.csmsCommunicationBlock = csmsCommunicationBlock;
+    public CSMSCommunicationBlockInterfaceImpl(CSMSCommunicationBlockClient csmsCommunicationBlockClient) {
+        this.csmsCommunicationBlockClient = csmsCommunicationBlockClient;
     }
 
     @Override

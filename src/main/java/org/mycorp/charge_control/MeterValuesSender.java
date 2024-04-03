@@ -1,32 +1,35 @@
 package org.mycorp.charge_control;
 
-import org.mycorp.charge_transfer.ChargeTransferBlockInterface;
-import org.mycorp.csms_communication.CSMSCommunicationBlockInterface;
+import org.mycorp.mediators.senders.SenderChargeControlSystem;
+import org.mycorp.models.station_messages.control_system_messages_csms_comm.SendMeterValuesMessage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
-public class MeterValuesSender implements Runnable{
-
-    private final CSMSCommunicationBlockInterface csmsCommunicationBlockInterface;
-    private final ChargeTransferBlockInterface chargeTransferBlockInterface;
+@Component
+public class MeterValuesSender implements Runnable {
+    private final SenderChargeControlSystem senderChargeControlSystem;
     private boolean isRunning;
+
     @Autowired
-    public MeterValuesSender(CSMSCommunicationBlockInterface csmsCommunicationBlockInterface, ChargeTransferBlockInterface chargeTransferBlockInterface){
-        this.csmsCommunicationBlockInterface = csmsCommunicationBlockInterface;
-        this.chargeTransferBlockInterface = chargeTransferBlockInterface;
-        this.isRunning=true;
+    public MeterValuesSender(@Qualifier("senderChargeControlSystem") SenderChargeControlSystem senderChargeControlSystem) {
+        this.senderChargeControlSystem = senderChargeControlSystem;
+        this.isRunning = true;
     }
+
     @Override
     public void run() {
-        while(isRunning){
+        while (isRunning) {
             try {
                 Thread.sleep(5000);
-                csmsCommunicationBlockInterface.sendMeterValues(chargeTransferBlockInterface.getMeterValues());
+                senderChargeControlSystem.sendMessage(new SendMeterValuesMessage(senderChargeControlSystem.getMeterValues()));
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
         }
     }
-    public void stop(){
-        isRunning=false;
+
+    public void stop() {
+        isRunning = false;
     }
 }

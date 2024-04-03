@@ -3,6 +3,7 @@ import org.mycorp.ev_communication.XMLConverter;
 import org.mycorp.models.v2g_messages.V2GBody;
 import org.mycorp.models.v2g_messages.V2GHeader;
 import org.mycorp.models.v2g_messages.V2GMessage;
+import org.mycorp.models.v2g_messages.V2GSessionIdCounter;
 import org.mycorp.models.v2g_messages.res.PowerDeliveryRes;
 import org.mycorp.models.v2g_messages.res.SessionSetupRes;
 import org.mycorp.models.v2g_messages.types.AC_EVSEStatus;
@@ -33,7 +34,7 @@ public class XmlConverterTest {
     @Test
     public void convertV2GToXmlTest() throws Exception {
         PowerDeliveryRes powerDeliveryRes = new PowerDeliveryRes(ResponseCode.OK, new AC_EVSEStatus(true, 5, EVSENotification.NONE));
-        V2GMessage v2GMessage = new V2GMessage(new V2GHeader(new byte[]{0x01}), new V2GBody(powerDeliveryRes));
+        V2GMessage v2GMessage = new V2GMessage(new V2GHeader(V2GSessionIdCounter.getInstance().getSessionId()), new V2GBody(powerDeliveryRes));
 
         Method method = xmlConverter.getClass().getDeclaredMethod("convertToXML", V2GMessage.class);
         method.setAccessible(true);
@@ -46,7 +47,7 @@ public class XmlConverterTest {
         assertEquals("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n" +
                 "<v2gci_d:V2GMessage xmlns:v2gci_h=\"urn:iso:15118:2:2013:MsgHeader\" xmlns:v2gci_t=\"urn:iso:15118:2:2013:MsgDataTypes\" xmlns:v2gci_b=\"urn:iso:15118:2:2013:MsgBody\" xmlns:v2gci_d=\"urn:iso:15118:2:2013:MsgDef\">\n" +
                 "    <v2gci_d:Header>\n" +
-                "        <v2gci_h:SESSIONID>AQ==</v2gci_h:SESSIONID>\n" +
+                "        <v2gci_h:SESSIONID>AA==</v2gci_h:SESSIONID>\n" +
                 "    </v2gci_d:Header>\n" +
                 "    <v2gci_d:Body>\n" +
                 "        <v2gci_b:PowerDeliveryRes>\n" +

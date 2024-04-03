@@ -11,7 +11,8 @@ public class V2GHeader {
         this.sessionId = sessionId;
     }
 
-    public V2GHeader(){};
+    public V2GHeader() {
+    }
 
     public byte[] getSessionId() {
         return sessionId;

@@ -10,54 +10,54 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MediatorImpl implements Mediator, MediatorChargeControlSystem {
-    protected final List<Colleague> colleagues;
+    protected final List<Receiver> receivers;
 
     public MediatorImpl() {
-        this.colleagues = new ArrayList<>();
+        this.receivers = new ArrayList<>();
     }
 
     @Override
     public void notify(Sender sender, StationMessage message) {
-        for (Colleague colleague : colleagues) {
-            if (shouldProcessMessage(colleague, sender, message))
-                colleague.getReceiver().receiveMessage(message);
+        for (Receiver receiver : receivers) {
+            if (shouldProcessMessage(receiver, sender, message))
+                receiver.receiveMessage(message);
         }
     }
 
     @Override
-    public void addColleague(Colleague colleague) {
-        colleagues.add(colleague);
+    public void addReceiver(Receiver receiver) {
+        receivers.add(receiver);
     }
 
     @Override
     public MeterValues receiveMeterValues() {
-        for (Colleague colleague : colleagues) {
-            if (colleague.getReceiver() instanceof ChargeTransferReceiver)
-                return ((ChargeTransferReceiver) colleague.getReceiver()).receiveMeterValues();
+        for (Receiver receiver : receivers) {
+            if (receiver instanceof ChargeTransferReceiver)
+                return ((ChargeTransferReceiver) receiver).receiveMeterValues();
         }
         throw new RuntimeException("Not include ChargeTransfer Colleague");
     }
 
-    private boolean shouldProcessMessage(Colleague colleague, Sender sender, StationMessage message) {
+    private boolean shouldProcessMessage(Receiver receiver, Sender sender, StationMessage message) {
         if (!(sender instanceof SenderChargeControlSystem)) {
             switch (message.getType()) {
                 case MESSAGE_FROM_EV_COMM:
-                    return colleague.getReceiver() instanceof ChargeSystemReceiverEVComm;
+                    return receiver instanceof ChargeSystemReceiverEVComm;
                 case MESSAGE_FROM_CHARGE_TRANSFER:
-                    return colleague.getReceiver() instanceof ChargeSystemReceiverChargeTransfer;
+                    return receiver instanceof ChargeSystemReceiverChargeTransfer;
                 case MESSAGE_FROM_CSMS_COMM:
-                    return colleague.getReceiver() instanceof ChargeSystemReceiverCSMSComm;
+                    return receiver instanceof ChargeSystemReceiverCSMSComm;
                 default:
                     throw new RuntimeException("Wrong Message Type");
             }
         } else {
             switch (message.getType()) {
                 case MESSAGE_TO_EV_COMM:
-                    return colleague.getReceiver() instanceof EVCommReceiver;
+                    return receiver instanceof EVCommReceiver;
                 case MESSAGE_TO_CHARGE_TRANSFER:
-                    return colleague.getReceiver() instanceof ChargeTransferReceiver;
+                    return receiver instanceof ChargeTransferReceiver;
                 case MESSAGE_TO_CSMS_COMM:
-                    return colleague.getReceiver() instanceof CSMSCommReceiver;
+                    return receiver instanceof CSMSCommReceiver;
                 default:
                     throw new RuntimeException("Wrong Message Type");
             }

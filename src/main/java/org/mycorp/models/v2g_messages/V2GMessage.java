@@ -16,6 +16,7 @@ public class V2GMessage {
         this.header = header;
         this.body = body;
     }
+
     public V2GMessage() {
     }
 

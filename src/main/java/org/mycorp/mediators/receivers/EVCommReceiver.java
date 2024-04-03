@@ -1,12 +1,14 @@
 package org.mycorp.mediators.receivers;
 
 import org.mycorp.ev_communication.EVCommunicationBlockInterface;
+import org.mycorp.models.station_messages.StationMessage;
 import org.mycorp.models.station_messages.ev_comm_messages.SendChargingStatusResMessage;
 import org.mycorp.models.station_messages.ev_comm_messages.SendPowerResMessage;
 import org.mycorp.models.station_messages.ev_comm_messages.SendSessionSetupRes;
-import org.mycorp.models.station_messages.StationMessage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class EVCommReceiver implements Receiver {
     private final EVCommunicationBlockInterface evCommunicationBlockInterface;
 
@@ -17,7 +19,7 @@ public class EVCommReceiver implements Receiver {
 
     @Override
     public void receiveMessage(StationMessage message) {
-        switch (message.getDescription()){
+        switch (message.getDescription()) {
             case SEND_POWER_RES:
                 evCommunicationBlockInterface.sendPowerRes(((SendPowerResMessage) message).isCanCharging());
                 break;

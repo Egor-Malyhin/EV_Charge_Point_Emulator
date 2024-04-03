@@ -12,9 +12,12 @@ import org.mycorp.models.v2g_messages.req.ChargeParameterDiscoveryReq;
 import org.mycorp.models.v2g_messages.req.PowerDeliveryReq;
 import org.mycorp.models.v2g_messages.req.SessionSetupReq;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 import static org.mycorp.models.v2g_messages.types.ChargeProgress.START;
 
+@Component
 public class EVCommunicationBlockHandler extends IoHandlerAdapter {
     private final XMLConverter xmlConverter;
     private final Sender senderEVCommunicationBlock;
@@ -22,16 +25,16 @@ public class EVCommunicationBlockHandler extends IoHandlerAdapter {
     private boolean isEvConnected;
 
     @Autowired
-    public EVCommunicationBlockHandler(XMLConverter xmlConverter, Sender senderEVCommunicationBlock) {
+    public EVCommunicationBlockHandler(XMLConverter xmlConverter, @Qualifier("sender") Sender senderEVCommunicationBlock) {
         this.xmlConverter = xmlConverter;
         this.senderEVCommunicationBlock = senderEVCommunicationBlock;
-        this.isEvConnected=false;
-        this.session=null;
+        this.isEvConnected = false;
+        this.session = null;
     }
 
     @Override
     public void sessionOpened(IoSession sessionReceived) throws Exception {
-        if(isEvConnected)
+        if (isEvConnected)
             sessionReceived.closeNow();
         else {
             isEvConnected = true;
@@ -42,8 +45,8 @@ public class EVCommunicationBlockHandler extends IoHandlerAdapter {
 
     @Override
     public void sessionClosed(IoSession sessionClosed) throws Exception {
-        isEvConnected=false;
-        session=null;
+        isEvConnected = false;
+        session = null;
     }
 
     @Override
@@ -57,10 +60,10 @@ public class EVCommunicationBlockHandler extends IoHandlerAdapter {
 
         V2GMessagesClassification v2gMessageType = findMessageType(receivedMessage);
 
-        if(v2gMessageType==null)
+        if (v2gMessageType == null)
             throw new RuntimeException("Wrong Message type");
 
-        switch (v2gMessageType){
+        switch (v2gMessageType) {
             case SESSION_SETUP_REQ:
                 senderEVCommunicationBlock.sendMessage(new StartAuthorizeMessage(((SessionSetupReq) receivedMessage).getEvccId()));
                 break;
@@ -68,7 +71,7 @@ public class EVCommunicationBlockHandler extends IoHandlerAdapter {
                 senderEVCommunicationBlock.sendMessage(new PrepareChargingMessage(((ChargeParameterDiscoveryReq) receivedMessage).getAcEvChargeParameter().geteАmount().getValue()));
                 break;
             case POWER_DELIVERY_REQ:
-                if(((PowerDeliveryReq) receivedMessage).getChargeProgress()==START)
+                if (((PowerDeliveryReq) receivedMessage).getChargeProgress() == START)
                     senderEVCommunicationBlock.sendMessage(new StartChargingRequestMessage());
                 else
                     senderEVCommunicationBlock.sendMessage(new StopChargingRequestMessage());
@@ -81,14 +84,14 @@ public class EVCommunicationBlockHandler extends IoHandlerAdapter {
         }
     }
 
-    public void sendMessage(V2GMessage v2GMessage){
-        if(session!=null && session.isConnected()) {
+    public void sendMessage(V2GMessage v2GMessage) {
+        if (session != null && session.isConnected()) {
             byte[] exiMessage = xmlConverter.convertToEXIMessage(v2GMessage);
             session.write(exiMessage);
         }
     }
 
-    private V2GMessagesClassification findMessageType(V2GBodyAbstractType receivedMessageBodyType){
+    private V2GMessagesClassification findMessageType(V2GBodyAbstractType receivedMessageBodyType) {
         for (V2GMessagesClassification t : V2GMessagesClassification.values()) {
             if (t.getMessageType().isInstance(receivedMessageBodyType)) {
                 return t;

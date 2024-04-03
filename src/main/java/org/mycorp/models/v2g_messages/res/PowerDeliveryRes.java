@@ -1,6 +1,5 @@
 package org.mycorp.models.v2g_messages.res;
 
-import org.mycorp.models.v2g_messages.req.PowerDeliveryReq;
 import org.mycorp.models.v2g_messages.types.AC_EVSEStatus;
 import org.mycorp.models.v2g_messages.types.ResponseCode;
 
@@ -8,18 +7,22 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
+import java.util.Objects;
+
 @XmlRootElement(name = "PowerDeliveryRes", namespace = "urn:iso:15118:2:2013:MsgBody")
 @XmlSeeAlso({ChargingStatusRes.class})
 @XmlType(name = "PowerDeliveryRes", namespace = "urn:iso:15118:2:2013:MsgBody")
 public class PowerDeliveryRes extends V2GMessageRes {
     @XmlElement(name = "AC_EVSEStatus", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
     private AC_EVSEStatus ac_evseStatus;
+
     public PowerDeliveryRes(ResponseCode responseCode, AC_EVSEStatus ac_evseStatus) {
         super(responseCode);
         this.ac_evseStatus = ac_evseStatus;
     }
 
-    public PowerDeliveryRes(){}
+    public PowerDeliveryRes() {
+    }
 
     public AC_EVSEStatus getAc_evseStatus() {
         return ac_evseStatus;
@@ -27,5 +30,18 @@ public class PowerDeliveryRes extends V2GMessageRes {
 
     public void setAc_evseStatus(AC_EVSEStatus ac_evseStatus) {
         this.ac_evseStatus = ac_evseStatus;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PowerDeliveryRes that)) return false;
+        if (!super.equals(o)) return false;
+        return Objects.equals(getAc_evseStatus(), that.getAc_evseStatus());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getAc_evseStatus());
     }
 }

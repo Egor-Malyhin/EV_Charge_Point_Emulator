@@ -2,9 +2,11 @@ package org.mycorp.charge_control.interfaces;
 
 import org.mycorp.charge_control.ChargeControlSystem;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import static org.mycorp.models.StationStateEnum.*;
 
+@Component
 public class ChargeControlInterfaceEVImpl extends ChargeControlInterfaceImpl implements ChargeControlInterfaceEV {
     @Autowired
     public ChargeControlInterfaceEVImpl(ChargeControlSystem chargeControlSystem) {

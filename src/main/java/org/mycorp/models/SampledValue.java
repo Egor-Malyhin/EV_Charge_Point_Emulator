@@ -1,5 +1,7 @@
 package org.mycorp.models;
 
+import java.util.Objects;
+
 public class SampledValue implements Cloneable {
     private float value;
     private String measurand;
@@ -43,6 +45,28 @@ public class SampledValue implements Cloneable {
 
     public void setUnit(String unit) {
         this.unit = unit;
+    }
+
+    @Override
+    public String toString() {
+        return "SampledValue{" +
+                "value=" + value +
+                ", measurand='" + measurand + '\'' +
+                ", location='" + location + '\'' +
+                ", unit='" + unit + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof SampledValue that)) return false;
+        return Float.compare(getValue(), that.getValue()) == 0 && Objects.equals(getMeasurand(), that.getMeasurand()) && Objects.equals(getLocation(), that.getLocation()) && Objects.equals(getUnit(), that.getUnit());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getValue(), getMeasurand(), getLocation(), getUnit());
     }
 
     @Override

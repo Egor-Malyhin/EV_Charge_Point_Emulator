@@ -9,9 +9,10 @@ import org.mycorp.models.v2g_messages.types.ResponseCode;
 
 import static org.mycorp.models.v2g_messages.types.ResponseCode.OK;
 
-public class ChargingStatusResBuilder extends PowerDeliveryResBuilder{
+public class ChargingStatusResBuilder extends PowerDeliveryResBuilder {
     private final MeterValues meterValues;
-    public ChargingStatusResBuilder(ResponseCode responseCode, EVSENotification evseNotification, MeterValues meterValues){
+
+    public ChargingStatusResBuilder(ResponseCode responseCode, EVSENotification evseNotification, MeterValues meterValues) {
         super(responseCode, evseNotification);
         this.meterValues = meterValues;
     }
@@ -22,7 +23,7 @@ public class ChargingStatusResBuilder extends PowerDeliveryResBuilder{
         return this;
     }
 
-    private MeterInfo createMeterInfo(){
+    private MeterInfo createMeterInfo() {
         return new MeterInfo(StationCharacteristics.meterId, (long) meterValues.getSampledValue().get(0).getValue());
     }
 

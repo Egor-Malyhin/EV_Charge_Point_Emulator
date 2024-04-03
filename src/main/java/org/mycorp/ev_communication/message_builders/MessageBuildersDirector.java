@@ -9,7 +9,7 @@ public class MessageBuildersDirector {
         this.messageBuilder = messageBuilder;
     }
 
-    public V2GMessage create(){
+    public V2GMessage create() {
         return messageBuilder.createBodyType().createBody().createHeader().create();
     }
 }

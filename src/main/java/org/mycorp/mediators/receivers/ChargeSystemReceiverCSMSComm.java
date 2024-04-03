@@ -3,11 +3,12 @@ package org.mycorp.mediators.receivers;
 import org.mycorp.charge_control.interfaces.ChargeControlInterfaceCSMS;
 import org.mycorp.models.station_messages.StationMessage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-import static org.mycorp.models.StationStateEnum.START_CHARGING;
-
+@Component
 public class ChargeSystemReceiverCSMSComm implements Receiver {
     private final ChargeControlInterfaceCSMS chargeControlInterfaceCSMS;
+
     @Autowired
     public ChargeSystemReceiverCSMSComm(ChargeControlInterfaceCSMS chargeControlInterfaceCSMS) {
         this.chargeControlInterfaceCSMS = chargeControlInterfaceCSMS;
@@ -15,7 +16,7 @@ public class ChargeSystemReceiverCSMSComm implements Receiver {
 
     @Override
     public void receiveMessage(StationMessage message) {
-        switch(message.getDescription()){
+        switch (message.getDescription()) {
             case AUTHORIZED:
                 chargeControlInterfaceCSMS.authorized();
                 break;

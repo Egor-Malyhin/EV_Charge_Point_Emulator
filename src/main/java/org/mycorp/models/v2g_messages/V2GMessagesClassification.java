@@ -1,8 +1,6 @@
 package org.mycorp.models.v2g_messages;
 
 import org.mycorp.models.v2g_messages.req.*;
-import org.mycorp.models.v2g_messages.res.ChargeParameterDiscoveryRes;
-import org.mycorp.models.v2g_messages.res.ChargingStatusRes;
 
 public enum V2GMessagesClassification {
     CHARGE_PARAMETER_DISCOVERY_REQ(ChargeParameterDiscoveryReq.class),
@@ -13,11 +11,11 @@ public enum V2GMessagesClassification {
 
     private final Class<? extends V2GBodyAbstractType> messageType;
 
-    V2GMessagesClassification(Class<? extends V2GBodyAbstractType> messageType){
-        this.messageType=messageType;
+    V2GMessagesClassification(Class<? extends V2GBodyAbstractType> messageType) {
+        this.messageType = messageType;
     }
 
-    public Class<? extends V2GBodyAbstractType> getMessageType(){
+    public Class<? extends V2GBodyAbstractType> getMessageType() {
         return messageType;
     }
 }

@@ -5,16 +5,29 @@ public class StationState {
     private Charge preparedCharge;
     private EVCharacterisation evCharacteristic;
     private boolean isChargingOn;
+    private boolean isStateChanged;
+    private final Object lock;
 
     public StationState(StationStateEnum state, Charge preparedCharge, EVCharacterisation evCharacteristic, boolean isChargingOn) {
         this.state = state;
         this.preparedCharge = preparedCharge;
         this.evCharacteristic = evCharacteristic;
         this.isChargingOn = isChargingOn;
+        this.lock = new Object();
     }
 
     public StationStateEnum getState() {
-        return state;
+        synchronized (lock) {
+            while ((!isStateChanged) && (state!=StationStateEnum.AVAILABLE)) {
+                try {
+                    lock.wait();
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+            }
+            isStateChanged = false;
+            return state;
+        }
     }
 
     public Charge getPreparedCharge() {
@@ -30,7 +43,11 @@ public class StationState {
     }
 
     public void setState(StationStateEnum state) {
-        this.state = state;
+        synchronized (lock) {
+            this.state = state;
+            isStateChanged = true;
+            lock.notifyAll();
+        }
     }
 
     public void setPreparedCharge(Charge preparedCharge) {
