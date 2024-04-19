@@ -2,14 +2,14 @@ package org.mycorp.models;
 
 public class EVCharacterisation {
     private String idTag;
-    private float EАmount;
+    private float eАmount;
     private float EVMaxVoltage;
     private float EVMaxCurrent;
     private float EVMinCurrent;
 
-    public EVCharacterisation(String idTag, float EАmount, float EVMaxVoltage, float EVMaxCurrent, float EVMinCurrent) {
+    public EVCharacterisation(String idTag, float eАmount, float EVMaxVoltage, float EVMaxCurrent, float EVMinCurrent) {
         this.idTag = idTag;
-        this.EАmount = EАmount;
+        this.eАmount = eАmount;
         this.EVMaxVoltage = EVMaxVoltage;
         this.EVMaxCurrent = EVMaxCurrent;
         this.EVMinCurrent = EVMinCurrent;
@@ -20,7 +20,7 @@ public class EVCharacterisation {
     }
 
     public float getEАmount() {
-        return EАmount;
+        return eАmount;
     }
 
     public float getEVMaxVoltage() {
@@ -39,8 +39,8 @@ public class EVCharacterisation {
         this.idTag = idTag;
     }
 
-    public void setEАmount(float EАmount) {
-        this.EАmount = EАmount;
+    public void setEАmount(float eАmount) {
+        this.eАmount = eАmount;
     }
 
     public void setEVMaxVoltage(float EVMaxVoltage) {

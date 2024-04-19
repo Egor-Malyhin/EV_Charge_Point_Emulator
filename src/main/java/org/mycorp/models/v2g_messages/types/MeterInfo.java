@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class MeterInfo {
     @XmlElement(name = "MeterId", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
-    private int meterId;
+    private final int meterId;
     @XmlElement(name = "MeterReading", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
-    private long meterReading;
+    private final long meterReading;
 
     public MeterInfo(int meterId, long meterReading) {
         this.meterId = meterId;
@@ -22,13 +22,5 @@ public class MeterInfo {
 
     public long getMeterReading() {
         return meterReading;
-    }
-
-    public void setMeterId(int meterId) {
-        this.meterId = meterId;
-    }
-
-    public void setMeterReading(long meterReading) {
-        this.meterReading = meterReading;
     }
 }

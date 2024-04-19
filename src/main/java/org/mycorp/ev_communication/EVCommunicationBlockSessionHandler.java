@@ -2,6 +2,8 @@ package org.mycorp.ev_communication;
 
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;
+import org.mycorp.ev_communication.message_handlers.*;
+import org.mycorp.ev_communication.protocol_filter.XMLConverter;
 import org.mycorp.mediators.senders.Sender;
 import org.mycorp.models.station_messages.control_system_messages_ev_comm.*;
 import org.mycorp.models.v2g_messages.V2GBodyAbstractType;
@@ -15,19 +17,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import javax.xml.soap.SOAPMessage;
+
 import static org.mycorp.models.v2g_messages.types.ChargeProgress.START;
 
 @Component
-public class EVCommunicationBlockHandler extends IoHandlerAdapter {
-    private final XMLConverter xmlConverter;
-    private final Sender senderEVCommunicationBlock;
+public class EVCommunicationBlockSessionHandler extends IoHandlerAdapter {
+    private final V2GMessageHandlerContext v2GMessageHandlerContext;
     private IoSession session;
     private boolean isEvConnected;
 
     @Autowired
-    public EVCommunicationBlockHandler(XMLConverter xmlConverter, @Qualifier("sender") Sender senderEVCommunicationBlock) {
-        this.xmlConverter = xmlConverter;
-        this.senderEVCommunicationBlock = senderEVCommunicationBlock;
+    public EVCommunicationBlockSessionHandler(V2GMessageHandlerContext v2GMessageHandlerContext) {
+        this.v2GMessageHandlerContext = v2GMessageHandlerContext;
         this.isEvConnected = false;
         this.session = null;
     }
@@ -51,15 +53,13 @@ public class EVCommunicationBlockHandler extends IoHandlerAdapter {
 
     @Override
     public void messageReceived(IoSession session, Object message) throws Exception {
-        if (!(message instanceof byte[] messageByte))
-            throw new RuntimeException("Wrong Communication type");
+        V2GMessage convertedMessage = (V2GMessage) message;
+        V2GBodyAbstractType messageBody = convertedMessage.getBody().getV2GBodyAbstractType();
+        V2GMessageHandler v2gMessageHandler = v2GMessageHandlerContext.getMessageHandlerImpl(messageBody);
 
-        V2GMessage convertedMessage = xmlConverter.convertToObject(messageByte);
-
-        V2GBodyAbstractType receivedMessage = convertedMessage.getBody().getV2GBodyAbstractType();
-
-        V2GMessagesClassification v2gMessageType = findMessageType(receivedMessage);
-
+        v2gMessageHandler.handleMessage(messageBody);
+    }
+/*
         if (v2gMessageType == null)
             throw new RuntimeException("Wrong Message type");
 
@@ -82,21 +82,11 @@ public class EVCommunicationBlockHandler extends IoHandlerAdapter {
             case SESSION_STOP_REQ:
                 senderEVCommunicationBlock.sendMessage(new CloseSessionRequestMessage());
         }
-    }
+    }*/
 
     public void sendMessage(V2GMessage v2GMessage) {
-        if (session != null && session.isConnected()) {
-            byte[] exiMessage = xmlConverter.convertToEXIMessage(v2GMessage);
-            session.write(exiMessage);
-        }
+        if (session != null && session.isConnected())
+            session.write(v2GMessage);
     }
 
-    private V2GMessagesClassification findMessageType(V2GBodyAbstractType receivedMessageBodyType) {
-        for (V2GMessagesClassification t : V2GMessagesClassification.values()) {
-            if (t.getMessageType().isInstance(receivedMessageBodyType)) {
-                return t;
-            }
-        }
-        return null;
-    }
 }

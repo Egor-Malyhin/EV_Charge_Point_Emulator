@@ -8,10 +8,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 import java.util.Objects;
-
 @XmlRootElement(name = "PowerDeliveryRes", namespace = "urn:iso:15118:2:2013:MsgBody")
 @XmlSeeAlso({ChargingStatusRes.class})
-@XmlType(name = "PowerDeliveryRes", namespace = "urn:iso:15118:2:2013:MsgBody")
 public class PowerDeliveryRes extends V2GMessageRes {
     @XmlElement(name = "AC_EVSEStatus", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
     private AC_EVSEStatus ac_evseStatus;
@@ -26,10 +24,6 @@ public class PowerDeliveryRes extends V2GMessageRes {
 
     public AC_EVSEStatus getAc_evseStatus() {
         return ac_evseStatus;
-    }
-
-    public void setAc_evseStatus(AC_EVSEStatus ac_evseStatus) {
-        this.ac_evseStatus = ac_evseStatus;
     }
 
     @Override

@@ -16,6 +16,10 @@ import static org.mycorp.models.StationStateEnum.AVAILABLE;
 
 @Component
 public class ChargeControlSystem implements Runnable {
+    //TODO сделать возможность расширения профилей, пока добавить один - core
+    //TODO предусмотреть возможность расширения, добавлять разные фичи, профайлы.
+    //TODO пересмотреть структуру программы - в первую очередь чардж контрол систем
+    //TODO реализовать конечный автомат
     private final SenderChargeControlSystem senderChargeControlSystem;
     private final InitSystem initSystem;
     private final StationState stateCharacterisation;

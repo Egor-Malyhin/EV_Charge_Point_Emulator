@@ -24,10 +24,6 @@ public abstract class V2GMessageRes extends V2GBodyAbstractType {
         return responseCode;
     }
 
-    public void setResponseCode(ResponseCode responseCode) {
-        this.responseCode = responseCode;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

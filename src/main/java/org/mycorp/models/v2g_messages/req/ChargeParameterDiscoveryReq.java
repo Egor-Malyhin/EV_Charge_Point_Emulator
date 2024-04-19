@@ -25,12 +25,4 @@ public class ChargeParameterDiscoveryReq extends V2GMessageReq {
     public AC_EVChargeParameter getAcEvChargeParameter() {
         return acEvChargeParameter;
     }
-
-    public void setRequestedEnergyTransferMode(RequestedEnergyTransferMode requestedEnergyTransferMode) {
-        this.requestedEnergyTransferMode = requestedEnergyTransferMode;
-    }
-
-    public void setAcEvChargeParameter(AC_EVChargeParameter acEvChargeParameter) {
-        this.acEvChargeParameter = acEvChargeParameter;
-    }
 }

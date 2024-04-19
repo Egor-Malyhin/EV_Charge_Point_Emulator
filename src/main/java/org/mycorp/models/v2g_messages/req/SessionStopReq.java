@@ -5,7 +5,7 @@ import org.mycorp.models.v2g_messages.types.ChargingSession;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlType(name = "SessionStopReq", namespace = "urn:iso:15118:2:2013:MsgBody")
+@XmlType(name = "SessionStopHandler", namespace = "urn:iso:15118:2:2013:MsgBody")
 public class SessionStopReq extends V2GMessageReq {
     @XmlElement(name = "ChargingSession", namespace = "urn:iso:15118:2:2013:MsgBody")
     private ChargingSession chargingSession;

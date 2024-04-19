@@ -20,21 +20,12 @@ public class V2GMessage {
     public V2GMessage() {
     }
 
-
     public V2GHeader getHeader() {
         return header;
     }
 
     public V2GBody getBody() {
         return body;
-    }
-
-    public void setHeader(V2GHeader header) {
-        this.header = header;
-    }
-
-    public void setBody(V2GBody body) {
-        this.body = body;
     }
 
     @Override

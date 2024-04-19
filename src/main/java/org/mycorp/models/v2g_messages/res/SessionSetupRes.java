@@ -7,8 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import java.util.Objects;
 
-@XmlRootElement
-@XmlType(name = "SessionSetupRes", namespace = "urn:iso:15118:2:2013:MsgBody")
+@XmlRootElement(name = "SessionSetupRes", namespace = "urn:iso:15118:2:2013:MsgBody")
 public class SessionSetupRes extends V2GMessageRes {
     @XmlElement(name = "EVSEID", namespace = "urn:iso:15118:2:2013:MsgBody")
     private String evseId;
@@ -30,14 +29,6 @@ public class SessionSetupRes extends V2GMessageRes {
 
     public long getEvseTimeStamp() {
         return evseTimeStamp;
-    }
-
-    public void setEvseId(String evseId) {
-        this.evseId = evseId;
-    }
-
-    public void setEvseTimeStamp(long evseTimeStamp) {
-        this.evseTimeStamp = evseTimeStamp;
     }
 
     @Override

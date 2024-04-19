@@ -18,10 +18,6 @@ public class V2GHeader {
         return sessionId;
     }
 
-    public void setSessionId(byte[] sessionId) {
-        this.sessionId = sessionId;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

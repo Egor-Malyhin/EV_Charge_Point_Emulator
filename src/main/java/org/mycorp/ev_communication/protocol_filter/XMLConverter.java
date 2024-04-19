@@ -1,4 +1,4 @@
-package org.mycorp.ev_communication;
+package org.mycorp.ev_communication.protocol_filter;
 
 import com.siemens.ct.exi.core.EXIFactory;
 import com.siemens.ct.exi.core.exceptions.EXIException;
@@ -19,6 +19,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.sax.SAXSource;
@@ -32,9 +33,14 @@ public class XMLConverter {
     private final EXIFactory exiFactory;
     private final JAXBContext context;
 
-    public XMLConverter() throws JAXBException {
-        this.context = JAXBContext.newInstance(V2GMessage.class);
-        this.exiFactory = DefaultEXIFactory.newInstance();
+    public XMLConverter() {
+        try {
+            this.context = JAXBContext.newInstance(V2GMessage.class);
+            this.exiFactory = DefaultEXIFactory.newInstance();
+        } catch (JAXBException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
     }
 
     private byte[] convertToXML(V2GMessage message) {
@@ -44,13 +50,13 @@ public class XMLConverter {
             marshaller.marshal(message, baos);
             return baos.toByteArray();
         } catch (JAXBException | IOException e) {
+            e.printStackTrace();
             throw new RuntimeException(e);
         }
     }
 
     public byte[] convertToEXIMessage(V2GMessage v2GMessage) {
         byte[] v2GMessageXML = convertToXML(v2GMessage);
-
         try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
              ByteArrayInputStream xmlInputStream = new ByteArrayInputStream(v2GMessageXML)) {
 
@@ -72,7 +78,7 @@ public class XMLConverter {
         }
     }
 
-    private byte[] decodeEXI(byte[] exiMessage) {
+    private byte[] decodeEXI(byte[] exiMessage) throws EXIException, TransformerException {
         try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
              ByteArrayInputStream exiInputStream = new ByteArrayInputStream(exiMessage)) {
 
@@ -83,19 +89,18 @@ public class XMLConverter {
             Transformer transformer = transformerFactory.newTransformer();
             transformer.transform(exiSource, new StreamResult(baos));
             return baos.toByteArray();
-        } catch (IOException | TransformerException | EXIException e) {
+        }
+        catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public V2GMessage convertToObject(byte[] exiMessage) {
+    public V2GMessage convertToObject(byte[] exiMessage) throws JAXBException, EXIException, TransformerException {
         byte[] xmlMessage = decodeEXI(exiMessage);
-
         try (ByteArrayInputStream xmlInputStream = new ByteArrayInputStream(xmlMessage)) {
             Unmarshaller unmarshaller = context.createUnmarshaller();
             return (V2GMessage) unmarshaller.unmarshal(xmlInputStream);
-
-        } catch (JAXBException | IOException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }

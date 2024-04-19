@@ -7,13 +7,13 @@ import javax.xml.bind.annotation.XmlElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class AC_EVChargeParameter {
     @XmlElement(name = "EАmount", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
-    private PhysicalValue eАmount;
+    private final PhysicalValue eАmount;
     @XmlElement(name = "EVMaxVoltage", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
-    private PhysicalValue evMaxVoltage;
+    private final PhysicalValue evMaxVoltage;
     @XmlElement(name = "EVMaxCurrent", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
-    private PhysicalValue evMaxCurrent;
+    private final PhysicalValue evMaxCurrent;
     @XmlElement(name = "EVMinCurrent", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
-    private PhysicalValue evMinCurrent;
+    private final PhysicalValue evMinCurrent;
 
     public AC_EVChargeParameter(PhysicalValue eАmount, PhysicalValue evMaxVoltage, PhysicalValue evMaxCurrent, PhysicalValue evMinCurrent) {
         this.eАmount = eАmount;
@@ -36,21 +36,5 @@ public class AC_EVChargeParameter {
 
     public PhysicalValue getEvMinCurrent() {
         return evMinCurrent;
-    }
-
-    public void seteАmount(PhysicalValue eАmount) {
-        this.eАmount = eАmount;
-    }
-
-    public void setEvMaxVoltage(PhysicalValue evMaxVoltage) {
-        this.evMaxVoltage = evMaxVoltage;
-    }
-
-    public void setEvMaxCurrent(PhysicalValue evMaxCurrent) {
-        this.evMaxCurrent = evMaxCurrent;
-    }
-
-    public void setEvMinCurrent(PhysicalValue evMinCurrent) {
-        this.evMinCurrent = evMinCurrent;
     }
 }

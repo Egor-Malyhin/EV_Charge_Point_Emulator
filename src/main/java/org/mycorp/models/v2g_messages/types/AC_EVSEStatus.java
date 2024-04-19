@@ -8,11 +8,11 @@ import java.util.Objects;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class AC_EVSEStatus {
     @XmlElement(name = "RCD", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
-    private boolean RCD;
+    private final boolean RCD;
     @XmlElement(name = "NotificationMaxDelay", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
-    private int notificationMaxDelay;
+    private final int notificationMaxDelay;
     @XmlElement(name = "EVSENotification", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
-    private EVSENotification evseNotification;
+    private final EVSENotification evseNotification;
 
     public AC_EVSEStatus(boolean RCD, int notificationMaxDelay, EVSENotification evseNotification) {
         this.RCD = RCD;
@@ -30,18 +30,6 @@ public class AC_EVSEStatus {
 
     public EVSENotification getEvseNotification() {
         return evseNotification;
-    }
-
-    public void setRCD(boolean RCD) {
-        this.RCD = RCD;
-    }
-
-    public void setNotificationMaxDelay(int notificationMaxDelay) {
-        this.notificationMaxDelay = notificationMaxDelay;
-    }
-
-    public void setEvseNotification(EVSENotification evseNotification) {
-        this.evseNotification = evseNotification;
     }
 
     @Override

@@ -5,10 +5,10 @@ import org.mycorp.models.v2g_messages.types.MeterInfo;
 import org.mycorp.models.v2g_messages.types.ResponseCode;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import java.util.Objects;
-
-@XmlType(name = "ChargingStatusRes", namespace = "urn:iso:15118:2:2013:MsgBody")
+@XmlRootElement(name = "ChargingStatusRes", namespace = "urn:iso:15118:2:2013:MsgBody")
 public class ChargingStatusRes extends PowerDeliveryRes {
     @XmlElement(name = "EVSEID", namespace = "urn:iso:15118:2:2013:MsgBody")
     private String evseId;
@@ -21,20 +21,15 @@ public class ChargingStatusRes extends PowerDeliveryRes {
         this.meterInfo = meterInfo;
     }
 
+    public ChargingStatusRes(){
+    }
+
     public String getEvseId() {
         return evseId;
     }
 
     public MeterInfo getMeterInfo() {
         return meterInfo;
-    }
-
-    public void setEvseId(String evseId) {
-        this.evseId = evseId;
-    }
-
-    public void setMeterInfo(MeterInfo meterInfo) {
-        this.meterInfo = meterInfo;
     }
 
     @Override

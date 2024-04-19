@@ -14,11 +14,11 @@ import static org.mycorp.models.v2g_messages.types.ResponseCode.*;
 
 @Component
 public class EVCommunicationBlockInterfaceImpl implements EVCommunicationBlockInterface {
-    private final EVCommunicationBlockHandler evCommunicationBlockHandler;
+    private final EVCommunicationBlockSessionHandler evCommunicationBlockSessionHandler;
 
     @Autowired
-    public EVCommunicationBlockInterfaceImpl(EVCommunicationBlockHandler evCommunicationBlockHandler) {
-        this.evCommunicationBlockHandler = evCommunicationBlockHandler;
+    public EVCommunicationBlockInterfaceImpl(EVCommunicationBlockSessionHandler evCommunicationBlockSessionHandler) {
+        this.evCommunicationBlockSessionHandler = evCommunicationBlockSessionHandler;
     }
 
     @Override
@@ -54,7 +54,7 @@ public class EVCommunicationBlockInterfaceImpl implements EVCommunicationBlockIn
         return director.create();
     }
 
-    private void sendMessage(V2GMessage v2gMessage) {
-        evCommunicationBlockHandler.sendMessage(v2gMessage);
+    public void sendMessage(V2GMessage v2gMessage) {
+        evCommunicationBlockSessionHandler.sendMessage(v2gMessage);
     }
 }

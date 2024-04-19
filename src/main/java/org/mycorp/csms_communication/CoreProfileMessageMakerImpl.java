@@ -1,17 +1,18 @@
 package org.mycorp.csms_communication;
 
+import org.mycorp.csms_communication.message_makers.CoreProfileMessageMaker;
 import org.mycorp.models.MeterValues;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CSMSCommunicationBlockInterfaceImpl implements CSMSCommunicationBlockInterface {
+public class CoreProfileMessageMakerImpl implements CoreProfileMessageMaker {
 
-    private final CSMSCommunicationBlockClient csmsCommunicationBlockClient;
+    private final CSMSCommunicationBlock csmsCommunicationBlock;
 
     @Autowired
-    public CSMSCommunicationBlockInterfaceImpl(CSMSCommunicationBlockClient csmsCommunicationBlockClient) {
-        this.csmsCommunicationBlockClient = csmsCommunicationBlockClient;
+    public CoreProfileMessageMakerImpl(CSMSCommunicationBlock csmsCommunicationBlock) {
+        this.csmsCommunicationBlock = csmsCommunicationBlock;
     }
 
     @Override

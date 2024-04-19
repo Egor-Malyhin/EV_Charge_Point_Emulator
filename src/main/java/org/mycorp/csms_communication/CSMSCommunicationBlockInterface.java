@@ -1,15 +1,7 @@
 package org.mycorp.csms_communication;
 
-import org.mycorp.models.MeterValues;
+import org.mycorp.models.ocpp_messages.OCPPMessage;
 
 public interface CSMSCommunicationBlockInterface {
-    void sendStartTransaction();
-
-    void sendAuthorize(String idTag);
-
-    void sendStopTransaction();
-
-    void sendMeterValues(MeterValues meterValues);
-
-    void sendBootNotification();
+    void addToMessageQueue(OCPPMessage ocppMessage);
 }

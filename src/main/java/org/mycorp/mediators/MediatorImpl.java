@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MediatorImpl implements Mediator, MediatorChargeControlSystem {
+
+    //TODO сделать другую систему обмена сообщений - Spring event
     protected final List<Receiver> receivers;
 
     public MediatorImpl() {

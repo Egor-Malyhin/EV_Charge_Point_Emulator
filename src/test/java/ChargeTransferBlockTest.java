@@ -21,15 +21,35 @@ public class ChargeTransferBlockTest {
     @Test
     public void updateMeterValuesTest() throws InterruptedException {
         chargeTransferBlock.setCharge(new Charge(1000));
-        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
 
         executorService.submit(chargeTransferBlock);
 
-        while(chargeTransferBlock.getMeterValues().getSampledValue().get(0).getValue()<900){
-            Thread.sleep(1000);
+        executorService.submit(() -> {
+            while (true){
+                    Thread.sleep(50);
+                    System.out.println("1: " + chargeTransferBlock.getMeterValues());
+            }
+
+        });
+
+        executorService.submit(() -> {
+            while (true){
+                    Thread.sleep(50);
+                    System.out.println("2: " + chargeTransferBlock.getMeterValues());
+                    //Thread.sleep(500);
+            }
+
+        });
+
+
+        while(true){}
+
+       /* while(chargeTransferBlock.getMeterValues().getSampledValue().get(0).getValue()<900){
+            //Thread.sleep(1000);
             System.out.println(chargeTransferBlock.getMeterValues());
-        }
-       executorService.shutdown();
+        }*/
+       //executorService.shutdown();
     }
 
     @Test

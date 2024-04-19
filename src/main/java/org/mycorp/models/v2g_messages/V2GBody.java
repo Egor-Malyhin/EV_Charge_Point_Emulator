@@ -18,10 +18,6 @@ public class V2GBody {
         return v2GBodyAbstractType;
     }
 
-    public void setV2GBodyAbstractType(V2GBodyAbstractType v2GBodyAbstractType) {
-        this.v2GBodyAbstractType = v2GBodyAbstractType;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

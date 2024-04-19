@@ -17,8 +17,4 @@ public class PowerDeliveryReq extends V2GMessageReq {
     public ChargeProgress getChargeProgress() {
         return chargeProgress;
     }
-
-    public void setChargeProgress(ChargeProgress chargeProgress) {
-        this.chargeProgress = chargeProgress;
-    }
 }

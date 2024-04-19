@@ -1,5 +1,6 @@
+import com.siemens.ct.exi.core.exceptions.EXIException;
 import org.junit.Test;
-import org.mycorp.ev_communication.XMLConverter;
+import org.mycorp.ev_communication.protocol_filter.XMLConverter;
 import org.mycorp.models.v2g_messages.V2GBody;
 import org.mycorp.models.v2g_messages.V2GHeader;
 import org.mycorp.models.v2g_messages.V2GMessage;
@@ -11,6 +12,7 @@ import org.mycorp.models.v2g_messages.types.EVSENotification;
 import org.mycorp.models.v2g_messages.types.ResponseCode;
 
 import javax.xml.bind.JAXBException;
+import javax.xml.transform.TransformerException;
 import java.lang.reflect.Method;
 
 import static org.junit.Assert.assertEquals;
@@ -20,11 +22,7 @@ public class XmlConverterTest {
     private static final XMLConverter xmlConverter;
 
     static {
-        try {
-            xmlConverter = new XMLConverter();
-        } catch (JAXBException e) {
-            throw new RuntimeException(e);
-        }
+        xmlConverter = new XMLConverter();
     }
 
     @Test
@@ -59,7 +57,7 @@ public class XmlConverterTest {
     }
 
     @Test
-    public void convertV2GToExiTest() {
+    public void convertV2GToExiTest() throws JAXBException, EXIException, TransformerException {
         SessionSetupRes sessionSetupRes = new SessionSetupRes(ResponseCode.OK, "1", 3);
         V2GMessage v2GMessage = new V2GMessage(new V2GHeader(new byte[]{0x01}), new V2GBody(sessionSetupRes));
 

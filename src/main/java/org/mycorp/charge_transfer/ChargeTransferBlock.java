@@ -13,34 +13,41 @@ import org.springframework.stereotype.Component;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 @Component
 public class ChargeTransferBlock implements Runnable {
+
+    //TODO сохранять значения после выключения програмы
     private final Sender senderChargeTransfer;
     private Charge charge;
     private final MeterValues meterValues;
     private boolean isRunning;
+    private final ReadWriteLock lock;
 
     @Autowired
     public ChargeTransferBlock(@Qualifier("sender") Sender senderChargeTransfer) {
-        this.charge = new Charge(0);
+        this.charge = new Charge("Wh", 0);
         List<SampledValue> valueList = new ArrayList<>();
         valueList.add(new SampledValue(0, "Energy", "Outlet", "Wh"));
         this.meterValues = new MeterValues(Instant.now(), valueList);
         this.isRunning = true;
         this.senderChargeTransfer = senderChargeTransfer;
+        this.lock = new ReentrantReadWriteLock();
     }
 
     @Override
     public void run() {
         isRunning = true;
-        Duration durationOfCharging = setDurationTime(charge.kWh());
+        Duration durationOfCharging = setDurationTime(charge.value());
         Instant startTime = Instant.now();
         while (isRunning) {
             while (Duration.between(startTime, Instant.now()).compareTo(durationOfCharging) < 0) {
                 try {
-                    //Thread.sleep(10);
+                    Thread.sleep(10);
                     updateSampledValue(Duration.between(startTime, Instant.now()).toMillis());
                 } catch (Exception e) {
                     throw new RuntimeException(e);
@@ -50,7 +57,6 @@ public class ChargeTransferBlock implements Runnable {
             senderChargeTransfer.sendMessage(new StopChargingByStationMessage());
         }
     }
-    //Duration.between(startTime, Instant.now()).compareTo(durationOfCharging) < 0
 
     private Duration setDurationTime(float charge) {
         float floatDuration = charge / StationCharacteristics.ratedPower;
@@ -59,13 +65,23 @@ public class ChargeTransferBlock implements Runnable {
     }
 
     private void updateSampledValue(float durationFromStart) {
-        SampledValue powerValue = meterValues.getSampledValue().get(0);
-        powerValue.setValue(StationCharacteristics.ratedPower * 0.001f * durationFromStart);
-        meterValues.setTimestamp(Instant.now());
+        lock.writeLock().lock();
+        try {
+            SampledValue powerValue = meterValues.getSampledValue().get(0);
+            powerValue.setValue(StationCharacteristics.ratedPower * 0.001f * durationFromStart);
+            meterValues.setTimestamp(Instant.now());
+        } finally {
+            lock.writeLock().unlock();
+        }
     }
 
     public MeterValues getMeterValues() {
-        return meterValues.clone();
+        lock.readLock().lock();
+        try {
+            return meterValues;
+        } finally {
+            lock.readLock().unlock();
+        }
     }
 
     public void setCharge(Charge charge) {
