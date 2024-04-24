@@ -1,30 +1,26 @@
 package org.mycorp.main;
 
-import org.mycorp.csms_communication.message_handlers.OCPPMessageHandler;
-import org.mycorp.csms_communication.message_handlers.CoreProfileOCPPMessageHandler;
-import org.mycorp.ev_communication.message_handlers.*;
-import org.mycorp.mediators.Mediator;
-import org.mycorp.mediators.MediatorChargeControlSystem;
-import org.mycorp.mediators.MediatorImpl;
-import org.mycorp.mediators.senders.Sender;
-import org.mycorp.mediators.senders.SenderChargeControlSystem;
-import org.mycorp.mediators.senders.SenderImpl;
-import org.mycorp.models.ocpp_messages.OCPPMessageProfiles;
-import org.mycorp.models.v2g_messages.V2GBodyAbstractType;
-import org.mycorp.models.v2g_messages.V2GMessage;
-import org.mycorp.models.v2g_messages.V2GMessagesClassification;
-import org.mycorp.models.v2g_messages.req.SessionSetupReq;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.mycorp.chargetransfer.eventpublishers.metervaluespresenters.CSMSMeterValuesPresenter;
+import org.mycorp.chargetransfer.eventpublishers.metervaluespresenters.EVMeterValuesPresenter;
+import org.mycorp.chargetransfer.eventpublishers.metervaluespresenters.MeterValuesPresenter;
+import org.mycorp.chargetransfer.eventpublishers.stopcharging.StopChargingByCSMSPublisher;
+import org.mycorp.chargetransfer.eventpublishers.stopcharging.StopChargingByEVPublisher;
+import org.mycorp.chargetransfer.eventpublishers.stopcharging.StopChargingByStationPublisher;
+import org.mycorp.chargetransfer.eventpublishers.stopcharging.StopChargingEventPublisher;
+import org.mycorp.commcsms.message_handlers.OCPPMessageHandler;
+import org.mycorp.commcsms.message_handlers.CoreProfileOCPPMessageHandler;
+import org.mycorp.commev.messagehandlers.*;
+import org.mycorp.models.messages.ocpp.OCPPMessageProfiles;
+import org.mycorp.models.messages.v2g.V2GMessagesClassification;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.mycorp.models.ocpp_messages.OCPPMessageProfiles.CORE_PROFILE;
-import static org.mycorp.models.v2g_messages.V2GMessagesClassification.*;
+import static org.mycorp.models.messages.ocpp.OCPPMessageProfiles.CORE_PROFILE;
+import static org.mycorp.models.messages.v2g.V2GMessagesClassification.*;
 
 @Configuration
 @ComponentScan(basePackages = {"org.mycorp"})
@@ -54,20 +50,26 @@ public class MyConfiguration {
     }
 
     @Bean
-    @Scope("singleton")
-    public MediatorImpl mediatorImpl() {
-        return new MediatorImpl();
+    public Map<String, StopChargingEventPublisher> stopChargingEventPublisherMap(
+            StopChargingByCSMSPublisher stopChargingByCSMSPublisher,
+            StopChargingByEVPublisher stopChargingByEVPublisher,
+            StopChargingByStationPublisher stopChargingByStationPublisher
+    ) {
+        Map<String, StopChargingEventPublisher> stopChargingEventPublisherMap = new HashMap<>();
+        stopChargingEventPublisherMap.put("None", stopChargingByStationPublisher);
+        stopChargingEventPublisherMap.put("EVCommunicationBlock", stopChargingByEVPublisher);
+        stopChargingEventPublisherMap.put("CSMSCommunicationBlock", stopChargingByCSMSPublisher);
+        return stopChargingEventPublisherMap;
     }
 
     @Bean
-    @Scope("prototype")
-    public Sender sender(@Qualifier("mediatorImpl") Mediator mediator) {
-        return new SenderImpl(mediator);
-    }
-
-    @Bean
-    @Scope("prototype")
-    public SenderChargeControlSystem senderChargeControlSystem(@Qualifier("mediatorImpl") MediatorChargeControlSystem mediatorChargeControlSystem) {
-        return new SenderChargeControlSystem(mediatorChargeControlSystem);
+    public Map<String, MeterValuesPresenter> meterValuesPresenterMap(
+            CSMSMeterValuesPresenter csmsMeterValuesPresenter,
+            EVMeterValuesPresenter evMeterValuesPresenter
+    ) {
+        Map<String, MeterValuesPresenter> meterValuesPresenterMap = new HashMap<>();
+        meterValuesPresenterMap.put("EVCommunicationBlock", evMeterValuesPresenter);
+        meterValuesPresenterMap.put("CSMSCommunicationBlock", csmsMeterValuesPresenter);
+        return meterValuesPresenterMap;
     }
 }

@@ -4,79 +4,180 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76b66a1d-1f2c-4dbf-9a80-cc7d32ab3715" name="Changes" comment="Minor cleanup Code Changes.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/CSMSCommunicationBlockSessionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/message_handlers/CoreProfileOCPPMessageHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/message_handlers/OCPPMessageHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/message_handlers/OCPPMessageHandlerContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/message_makers/CoreProfileMessageMaker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/message_makers/CoreProfileMessageMakerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/message_makers/OCPPMessageMaker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/event_listeners/ChargingAcceptEventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/event_listeners/EVAuthorizeEventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/event_listeners/EVCommunicationBlockEventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_factory/V2GMessageFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_handlers/ChargeParameterDiscoveryHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_handlers/ChargingStatusHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_handlers/PowerDeliveryHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_handlers/SessionSetupHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_handlers/SessionStopHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_handlers/V2GMessageHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_handlers/V2GMessageHandlerContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_handlers/V2GMessageHandlerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/protocol_filter/V2GDecoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/protocol_filter/V2GEncoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/main/StationEventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/ocpp_messages/OCPPMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/ocpp_messages/OCPPMessageProfiles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/ocpp_messages/core_profile/OCPPMessageCoreProfile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_events/csms_comm_events/CSMSChargingAccept.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_events/csms_comm_events/EVAuthorized.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_events/ev_comm_events/EVChargeParameterRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_events/ev_comm_events/EVChargingStatusRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_events/ev_comm_events/EVPowerDeliveryRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_events/ev_comm_events/EVSessionStopRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_events/ev_comm_events/EVStartSessionRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/thread_system/ThreadSystemBlock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CSMSCommunicationBlockTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/V2GDecoderTest.java" afterDir="false" />
+    <list default="true" id="76b66a1d-1f2c-4dbf-9a80-cc7d32ab3715" name="Changes" comment="The application architecture has been redesigned - the Charge Control System module has been removed. The interaction between the blocks is carried out through ApplicationEventPublisher and EventListener from Spring Events. The new architecture supports expansion in terms of adding new classes of message handlers and event listeners in communication blocks.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/ChargeTransferBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventlisteners/ChargeTransferEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventlisteners/MeterValuesToCSMSEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventlisteners/MeterValuesToEVEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventlisteners/StartChargingEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventpublishers/metervaluespresenters/CSMSMeterValuesPresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventpublishers/metervaluespresenters/EVMeterValuesPresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventpublishers/metervaluespresenters/MeterValuesPresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventpublishers/metervaluespresenters/MeterValuesPresenterContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventpublishers/metervaluespresenters/MeterValuesPresenterImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventpublishers/stopcharging/StopChargingByCSMSPublisher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventpublishers/stopcharging/StopChargingByEVPublisher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventpublishers/stopcharging/StopChargingByStationPublisher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventpublishers/stopcharging/StopChargingEventPublisher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventpublishers/stopcharging/StopChargingEventPublisherContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventpublishers/stopcharging/StopChargingEventPublisherImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/eventlisteners/EVDisconnectionAcceptEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/eventlisteners/MeterValuesPresentedEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/eventlisteners/StationParametersPresentedEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/evreqlocalmanager/EVLocalRequestManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/evreqlocalmanager/eventlisteners/EVChargeParameterRequestEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/evreqlocalmanager/eventlisteners/EVSessionStopRequestEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/chargetransfer/ChargingStoppedByCSMS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/chargetransfer/ChargingStoppedByEV.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/chargetransfer/ChargingStoppedByStation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/chargetransfer/MeterValuesToCSMS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/chargetransfer/MeterValuesToEV.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/evreqlocalmanager/EVDisconnectionAccept.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/evreqlocalmanager/StationParametersPresented.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/ChargeControlSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/ChargeControlSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/InitSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/InitSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_transfer/ChargeTransferBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_transfer/ChargeTransferBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/CSMSCommunicationBlockClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/CSMSCommunicationBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/CSMSCommunicationBlockInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/CSMSCommunicationBlockInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/CSMSCommunicationBlockInterfaceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/CoreProfileMessageMakerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/CSMSCommunicationBlockServer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/EVCommunicationBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/EVCommunicationBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/EVCommunicationBlockHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/EVCommunicationBlockSessionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/EVCommunicationBlockInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/EVCommunicationBlockInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/EVCommunicationBlockInterfaceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/EVCommunicationBlockInterfaceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/XMLConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/protocol_filter/XMLConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/ChargeControlSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/InitSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/MeterValuesSender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/interfaces/ChargeControlInterfaceCSMS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/interfaces/ChargeControlInterfaceCSMSImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/interfaces/ChargeControlInterfaceChargeTransfer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/interfaces/ChargeControlInterfaceChargeTransferImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/interfaces/ChargeControlInterfaceEV.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/interfaces/ChargeControlInterfaceEVImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_control/interfaces/ChargeControlInterfaceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_transfer/ChargeTransferBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/ChargeTransferBlockTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_transfer/ChargeTransferBlockInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/ChargeTransferBlockInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/charge_transfer/ChargeTransferBlockInterfaceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/CSMSCommunicationBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/CSMSCommunicationBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/CSMSCommunicationBlockInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/CSMSCommunicationBlockInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/CSMSCommunicationBlockSessionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/CSMSCommunicationBlockSessionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/CoreProfileMessageMakerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/CoreProfileMessageMakerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/LowPriorityMessagesOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/LowPriorityMessagesOperator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/message_handlers/CoreProfileOCPPMessageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_handlers/CoreProfileOCPPMessageHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/message_handlers/OCPPMessageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_handlers/OCPPMessageHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/message_handlers/OCPPMessageHandlerContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_handlers/OCPPMessageHandlerContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/message_makers/CoreProfileMessageMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_makers/CoreProfileMessageMaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/message_makers/CoreProfileMessageMakerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_makers/CoreProfileMessageMakerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/csms_communication/message_makers/OCPPMessageMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_makers/OCPPMessageMaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/EVCommunicationBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/EVCommunicationBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/EVCommunicationBlockInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/EVCommunicationBlockInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/EVCommunicationBlockInterfaceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/EVCommunicationBlockSessionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/EVCommunicationBlockSessionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/event_listeners/ChargingAcceptEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/eventlisteners/ChargingAcceptEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/event_listeners/EVAuthorizeEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/eventlisteners/EVAuthorizeEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/event_listeners/EVCommunicationBlockEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/eventlisteners/EVCommunicationBlockEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_builders/ChargeParameterDiscoveryResBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagebuilders/ChargeParameterDiscoveryResBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_builders/ChargingStatusResBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagebuilders/ChargingStatusResBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_builders/MessageBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagebuilders/MessageBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_builders/MessageBuilderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagebuilders/MessageBuilderImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_builders/MessageBuildersDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagebuilders/MessageBuildersDirector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_builders/PowerDeliveryResBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagebuilders/PowerDeliveryResBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_builders/SessionSetupResBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagebuilders/SessionSetupResBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_builders/SessionStopResBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagebuilders/SessionStopResBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_factory/V2GMessageFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_handlers/ChargeParameterDiscoveryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/ChargeParameterDiscoveryHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_handlers/ChargingStatusHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/ChargingStatusHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_handlers/PowerDeliveryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/PowerDeliveryHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_handlers/SessionSetupHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/SessionSetupHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_handlers/SessionStopHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/SessionStopHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_handlers/V2GMessageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/V2GMessageHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_handlers/V2GMessageHandlerContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/V2GMessageHandlerContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/message_handlers/V2GMessageHandlerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/V2GMessageHandlerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/protocol_filter/V2GDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/protocolfilter/V2GDecoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/protocol_filter/V2GEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/protocolfilter/V2GEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ev_communication/protocol_filter/XMLConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/protocolfilter/XMLConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/main/MyConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/main/MyConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/mediators/MediatorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/mediators/MediatorImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/mediators/receivers/CSMSCommReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/mediators/receivers/CSMSCommReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/Charge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/Charge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/EVCharacterisation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/EVCharacterisation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/V2GBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/V2GBody.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/V2GHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/V2GHeader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/V2GMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/V2GMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/req/ChargeParameterDiscoveryReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/req/ChargeParameterDiscoveryReq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/req/PowerDeliveryReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/req/PowerDeliveryReq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/req/SessionStopReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/req/SessionStopReq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/res/ChargeParameterDiscoveryRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/res/ChargeParameterDiscoveryRes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/res/ChargingStatusRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/res/ChargingStatusRes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/res/PowerDeliveryRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/res/PowerDeliveryRes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/res/SessionSetupRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/res/SessionSetupRes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/res/SessionStopRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/res/SessionStopRes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/res/V2GMessageRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/res/V2GMessageRes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/types/AC_EVChargeParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/types/AC_EVChargeParameter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/types/AC_EVSEChargeParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/types/AC_EVSEChargeParameter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/types/AC_EVSEStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/types/AC_EVSEStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/types/MeterInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/types/MeterInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/types/PhysicalValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/types/PhysicalValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ChargeTransferBlockTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ChargeTransferBlockTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/mediators/Colleague.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/mediators/Mediator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/mediators/MediatorChargeControlSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/mediators/MediatorImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/mediators/receivers/CSMSCommReceiver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/mediators/receivers/ChargeSystemReceiverCSMSComm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/mediators/receivers/ChargeSystemReceiverChargeTransfer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/mediators/receivers/ChargeSystemReceiverEVComm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/mediators/receivers/ChargeTransferReceiver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/mediators/receivers/EVCommReceiver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/mediators/receivers/Receiver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/mediators/senders/Sender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/mediators/senders/SenderChargeControlSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/mediators/senders/SenderImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/ocpp_messages/OCPPMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/ocpp/OCPPMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/ocpp_messages/OCPPMessageProfiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/ocpp/OCPPMessageProfiles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/ocpp_messages/core_profile/OCPPMessageCoreProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/ocpp/core_profile/OCPPMessageCoreProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_events/csms_comm_events/CSMSChargingAccept.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commcsms/CSMSChargingAccept.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_events/csms_comm_events/EVAuthorized.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commcsms/EVAuthorized.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_events/ev_comm_events/EVChargeParameterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commev/EVChargeParameterRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_events/ev_comm_events/EVChargingStatusRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commev/EVChargingStatusRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_events/ev_comm_events/EVPowerDeliveryRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commev/EVPowerDeliveryRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_events/ev_comm_events/EVSessionStopRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commev/EVSessionStopRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_events/ev_comm_events/EVStartSessionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commev/EVStartSessionRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/StationMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/StationMessageDescription.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/StationMessageTypes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/charge_transfer_messages/MessageFromChargeTransfer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/charge_transfer_messages/StopChargingByStationMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/control_system_messages_charge_transfer/MessageToChargeTransfer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/control_system_messages_charge_transfer/SetChargeMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/control_system_messages_csms_comm/MessageToCSMSComm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/control_system_messages_csms_comm/SendAuthorizeMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/control_system_messages_csms_comm/SendBootNotificationMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/control_system_messages_csms_comm/SendMeterValuesMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/control_system_messages_csms_comm/SendStartTransactionMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/control_system_messages_csms_comm/SendStopTransactionMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/control_system_messages_ev_comm/CloseSessionRequestMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/control_system_messages_ev_comm/GetChargingStatusMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/control_system_messages_ev_comm/MessageToEVComm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/control_system_messages_ev_comm/PrepareChargingMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/control_system_messages_ev_comm/StartAuthorizeMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/control_system_messages_ev_comm/StartChargingRequestMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/control_system_messages_ev_comm/StopChargingRequestMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/csms_messages/AuthorizedMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/csms_messages/GetAvailableMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/csms_messages/MessageFromCSMS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/csms_messages/StartChargingMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/csms_messages/UnauthorizedMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/ev_comm_messages/MessageFromEVComm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/ev_comm_messages/SendChargeParameterResMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/ev_comm_messages/SendChargingStatusResMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/ev_comm_messages/SendPowerResMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/ev_comm_messages/SendSessionSetupRes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/station_messages/ev_comm_messages/SendSessionStopResMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/V2GBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/V2GBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/V2GBodyAbstractType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/V2GBodyAbstractType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/V2GHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/V2GHeader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/V2GMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/V2GMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/V2GMessagesClassification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/V2GMessagesClassification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/V2GSessionIdCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/V2GSessionIdCounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/req/ChargeParameterDiscoveryReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/req/ChargeParameterDiscoveryReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/req/ChargingStatusReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/req/ChargingStatusReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/req/PowerDeliveryReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/req/PowerDeliveryReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/req/SessionSetupReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/req/SessionSetupReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/req/SessionStopReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/req/SessionStopReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/req/V2GMessageReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/req/V2GMessageReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/res/ChargeParameterDiscoveryRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/res/ChargeParameterDiscoveryRes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/res/ChargingStatusRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/res/ChargingStatusRes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/res/PowerDeliveryRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/res/PowerDeliveryRes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/res/SessionSetupRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/res/SessionSetupRes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/res/SessionStopRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/res/SessionStopRes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/res/V2GMessageRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/res/V2GMessageRes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/types/AC_EVChargeParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/AC_EVChargeParameter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/types/AC_EVSEChargeParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/AC_EVSEChargeParameter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/types/AC_EVSEStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/AC_EVSEStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/types/ChargeProgress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/ChargeProgress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/types/ChargingSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/ChargingSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/types/EVSENotification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/EVSENotification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/types/EVSEProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/EVSEProcessing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/types/MeterInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/MeterInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/types/PhysicalValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/PhysicalValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/types/RequestedEnergyTransferMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/RequestedEnergyTransferMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/v2g_messages/types/ResponseCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/ResponseCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/thread_system/ThreadSystemBlock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ChargeTransferBlockTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ChargeTransferBlockTaskTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SessionIdCounterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SessionIdCounterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/V2GDecoderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/V2GDecoderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/V2GMessageBuildersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/V2GMessageBuildersTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/XmlConverterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/XmlConverterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -119,9 +220,11 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.org.mycorp.main.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChargeTransferBlockTaskTest.updateMeterValuesTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.ChargeTransferBlockTest.getMeterValuesInTimeTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChargeTransferBlockTest.instantTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.ChargeTransferBlockTest.test2.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChargeTransferBlockTest.updateMeterValuesTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChargeTransferBlockTest.updateMeterValuesTest.executor&quot;: &quot;Debug&quot;,
     &quot;JUnit.SessionIdCounterTest.sessionIdCounterIncrementTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.V2GDecoderTest.messageDecodeTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.V2GMessageBuildersTest.buildMessageTest.executor&quot;: &quot;Run&quot;,
@@ -154,7 +257,7 @@
       <recent name="org.mycorp.models.v2g_messages.req" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.org.mycorp.main.Main">
+  <component name="RunManager" selected="JUnit.ChargeTransferBlockTaskTest.updateMeterValuesTest">
     <configuration name="org.mycorp.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.mycorp.main.Main" />
       <module name="EV_Charging_Point" />
@@ -168,31 +271,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChargeTransferBlockTest.getMeterValuesInTimeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ChargeTransferBlockTaskTest.getMeterValuesInTimeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EV_Charging_Point" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ChargeTransferBlockTest" />
+      <option name="MAIN_CLASS_NAME" value="ChargeTransferBlockTaskTest" />
       <option name="METHOD_NAME" value="getMeterValuesInTimeTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChargeTransferBlockTest.updateMeterValuesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ChargeTransferBlockTaskTest.instantTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EV_Charging_Point" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ChargeTransferBlockTest" />
-      <option name="METHOD_NAME" value="updateMeterValuesTest" />
+      <option name="MAIN_CLASS_NAME" value="ChargeTransferBlockTaskTest" />
+      <option name="METHOD_NAME" value="instantTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="V2GDecoderTest.messageDecodeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ChargeTransferBlockTaskTest.updateMeterValuesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EV_Charging_Point" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="V2GDecoderTest" />
-      <option name="METHOD_NAME" value="messageDecodeTest" />
+      <option name="MAIN_CLASS_NAME" value="ChargeTransferBlockTaskTest" />
+      <option name="METHOD_NAME" value="updateMeterValuesTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -210,18 +313,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.org.mycorp.main.Main" />
+      <item itemvalue="JUnit.ChargeTransferBlockTaskTest.getMeterValuesInTimeTest" />
+      <item itemvalue="JUnit.ChargeTransferBlockTaskTest.instantTest" />
+      <item itemvalue="JUnit.ChargeTransferBlockTaskTest.updateMeterValuesTest" />
       <item itemvalue="JUnit.XmlConverterTest.convertV2GToXmlTest" />
-      <item itemvalue="JUnit.V2GDecoderTest.messageDecodeTest" />
-      <item itemvalue="JUnit.ChargeTransferBlockTest.getMeterValuesInTimeTest" />
-      <item itemvalue="JUnit.ChargeTransferBlockTest.updateMeterValuesTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ChargeTransferBlockTaskTest.updateMeterValuesTest" />
+        <item itemvalue="JUnit.ChargeTransferBlockTaskTest.instantTest" />
+        <item itemvalue="JUnit.ChargeTransferBlockTaskTest.getMeterValuesInTimeTest" />
         <item itemvalue="JUnit.XmlConverterTest.convertV2GToXmlTest" />
         <item itemvalue="Application.org.mycorp.main.Main" />
-        <item itemvalue="JUnit.V2GDecoderTest.messageDecodeTest" />
-        <item itemvalue="JUnit.ChargeTransferBlockTest.getMeterValuesInTimeTest" />
-        <item itemvalue="JUnit.ChargeTransferBlockTest.updateMeterValuesTest" />
       </list>
     </recent_temporary>
   </component>
@@ -297,7 +400,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712183113942</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="The application architecture has been redesigned - the Charge Control System module has been removed. The interaction between the blocks is carried out through ApplicationEventPublisher and EventListener from Spring Events. The new architecture supports expansion in terms of adding new classes of message handlers and event listeners in communication blocks.">
+      <option name="closed" value="true" />
+      <created>1713522822478</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1713522822478</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -320,21 +431,7 @@
     <MESSAGE value="The structure of mediators has been redesigned, an additional interface has been developed, MediatorChargeControlSystem, which is inherited from Mediator. MediatorImpl implements both of these interfaces. The MediatorChargeControlSystem indirectly depends on the ChargeControlSystem. The ChargeControlSystem, EVCommunicationBlock, CSMSCommunicationBlock, and ChargeTransferBlock classes have been redesigned to use a mediator. Message sets have also been added, with the help of which the station blocks exchange information with each other." />
     <MESSAGE value="Added thread synchronization on the shared resource - StationState. The logic of ChargeTransferBlock has been slightly reworked (updating sampledValues is now considered relative to milliseconds). The logic of V2GSessionIdCounter has been significantly changed - from now on, during creation and incrementation, the counter is always stored as hexBinary. Several tests have been added - testing the ChargeTransferBlock thread, testing the MessageBuilders collector method, testing the V2GSessionIdCounter incrementCounter method." />
     <MESSAGE value="Minor cleanup Code Changes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor cleanup Code Changes." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/ChargeTransferBlockTest.java</url>
-          <line>21</line>
-          <properties class="ChargeTransferBlockTest" method="updateMeterValuesTest">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="The application architecture has been redesigned - the Charge Control System module has been removed. The interaction between the blocks is carried out through ApplicationEventPublisher and EventListener from Spring Events. The new architecture supports expansion in terms of adding new classes of message handlers and event listeners in communication blocks." />
+    <option name="LAST_COMMIT_MESSAGE" value="The application architecture has been redesigned - the Charge Control System module has been removed. The interaction between the blocks is carried out through ApplicationEventPublisher and EventListener from Spring Events. The new architecture supports expansion in terms of adding new classes of message handlers and event listeners in communication blocks." />
   </component>
 </project>

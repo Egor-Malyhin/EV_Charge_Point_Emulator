@@ -1,15 +1,15 @@
 import com.siemens.ct.exi.core.exceptions.EXIException;
 import org.junit.Test;
-import org.mycorp.ev_communication.protocol_filter.XMLConverter;
-import org.mycorp.models.v2g_messages.V2GBody;
-import org.mycorp.models.v2g_messages.V2GHeader;
-import org.mycorp.models.v2g_messages.V2GMessage;
-import org.mycorp.models.v2g_messages.V2GSessionIdCounter;
-import org.mycorp.models.v2g_messages.res.PowerDeliveryRes;
-import org.mycorp.models.v2g_messages.res.SessionSetupRes;
-import org.mycorp.models.v2g_messages.types.AC_EVSEStatus;
-import org.mycorp.models.v2g_messages.types.EVSENotification;
-import org.mycorp.models.v2g_messages.types.ResponseCode;
+import org.mycorp.commev.protocolfilter.XMLConverter;
+import org.mycorp.models.messages.v2g.V2GBody;
+import org.mycorp.models.messages.v2g.V2GHeader;
+import org.mycorp.models.messages.v2g.V2GMessage;
+import org.mycorp.models.messages.v2g.V2GSessionIdCounter;
+import org.mycorp.models.messages.v2g.res.PowerDeliveryRes;
+import org.mycorp.models.messages.v2g.res.SessionSetupRes;
+import org.mycorp.models.messages.v2g.types.AC_EVSEStatus;
+import org.mycorp.models.messages.v2g.types.EVSENotification;
+import org.mycorp.models.messages.v2g.types.ResponseCode;
 
 import javax.xml.bind.JAXBException;
 import javax.xml.transform.TransformerException;

@@ -1,14 +1,14 @@
 import org.junit.Test;
-import org.mycorp.ev_communication.message_builders.MessageBuildersDirector;
-import org.mycorp.ev_communication.message_builders.PowerDeliveryResBuilder;
-import org.mycorp.models.v2g_messages.V2GBody;
-import org.mycorp.models.v2g_messages.V2GHeader;
-import org.mycorp.models.v2g_messages.V2GMessage;
-import org.mycorp.models.v2g_messages.V2GSessionIdCounter;
-import org.mycorp.models.v2g_messages.res.PowerDeliveryRes;
-import org.mycorp.models.v2g_messages.types.AC_EVSEStatus;
-import org.mycorp.models.v2g_messages.types.EVSENotification;
-import org.mycorp.models.v2g_messages.types.ResponseCode;
+import org.mycorp.commev.messagebuilders.MessageBuildersDirector;
+import org.mycorp.commev.messagebuilders.PowerDeliveryResBuilder;
+import org.mycorp.models.messages.v2g.V2GBody;
+import org.mycorp.models.messages.v2g.V2GHeader;
+import org.mycorp.models.messages.v2g.V2GMessage;
+import org.mycorp.models.messages.v2g.V2GSessionIdCounter;
+import org.mycorp.models.messages.v2g.res.PowerDeliveryRes;
+import org.mycorp.models.messages.v2g.types.AC_EVSEStatus;
+import org.mycorp.models.messages.v2g.types.EVSENotification;
+import org.mycorp.models.messages.v2g.types.ResponseCode;
 
 import static org.junit.Assert.assertEquals;
 

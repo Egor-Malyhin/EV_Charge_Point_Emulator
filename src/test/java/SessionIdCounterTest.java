@@ -1,5 +1,5 @@
 import org.junit.Test;
-import org.mycorp.models.v2g_messages.V2GSessionIdCounter;
+import org.mycorp.models.messages.v2g.V2GSessionIdCounter;
 
 import javax.xml.bind.DatatypeConverter;
 
