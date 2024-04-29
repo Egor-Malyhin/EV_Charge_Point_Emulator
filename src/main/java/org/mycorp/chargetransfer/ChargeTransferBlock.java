@@ -6,7 +6,6 @@ import org.mycorp.chargetransfer.eventpublishers.stopcharging.StopChargingEventP
 import org.mycorp.chargetransfer.eventpublishers.stopcharging.StopChargingEventPublisherContext;
 import org.mycorp.models.Charge;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
 import java.util.concurrent.CompletableFuture;
@@ -39,8 +38,8 @@ public class ChargeTransferBlock implements ChargeTransferBlockInterface{
 
     @Override
     public void presentMeterValues(String requester) {
-        MeterValuesPresenter meterValuesPresenter = meterValuesPresenterContext.getMeterValuesPresenterContext(requester);
-        meterValuesPresenter.present(chargeTransferBlockTask.getMeterValues());
+        MeterValuesPresenter meterValuesPresenter = meterValuesPresenterContext.getMeterValuesPresenterImpl(requester);
+        meterValuesPresenter.present(chargeTransferBlockTask.getMeterValues(), chargeTransferBlockTask.isRunning());
     }
 
     @Override

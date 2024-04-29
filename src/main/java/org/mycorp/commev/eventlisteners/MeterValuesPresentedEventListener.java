@@ -20,7 +20,8 @@ public class MeterValuesPresentedEventListener extends EVCommunicationBlockEvent
     @Override
     @EventListener
     public void listenEvent(MeterValuesToEV stationEvent) {
+        EVSENotification evseNotification = stationEvent.isChargingOn() ? EVSENotification.NONE : EVSENotification.STOPCHARGING;
         MeterValues presentedMeterValues = stationEvent.getMeterValues();
-        evCommunicationBlockInterface.sendMessage(buildMessage(new ChargingStatusResBuilder(ResponseCode.OK, EVSENotification.NONE, presentedMeterValues)));
+        evCommunicationBlockInterface.sendMessage(buildMessage(new ChargingStatusResBuilder(ResponseCode.OK, evseNotification, presentedMeterValues)));
     }
 }

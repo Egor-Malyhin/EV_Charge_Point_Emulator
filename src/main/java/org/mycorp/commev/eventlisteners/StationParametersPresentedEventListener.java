@@ -19,8 +19,8 @@ public class StationParametersPresentedEventListener extends EVCommunicationBloc
     @Override
     @EventListener
     public void listenEvent(StationParametersPresented stationEvent) {
-        int ratedVoltageValue = ((StationParametersPresented) stationEvent).getRatedVoltageValue();
-        int maxCurrentValue = ((StationParametersPresented) stationEvent).getMaxCurrentValue();
+        int ratedVoltageValue = stationEvent.getRatedVoltageValue();
+        int maxCurrentValue = stationEvent.getMaxCurrentValue();
         evCommunicationBlockInterface.sendMessage(buildMessage(new ChargeParameterDiscoveryResBuilder(ResponseCode.OK, ratedVoltageValue, maxCurrentValue)));
     }
 }

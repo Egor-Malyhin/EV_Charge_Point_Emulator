@@ -24,8 +24,7 @@ public class ChargeTransferBlockTaskTest {
     public void updateMeterValuesTest() throws InterruptedException {
         chargeTransferBlockTask.setCharge(new Charge("Wh",70));
         ExecutorService executorService = Executors.newSingleThreadExecutor();
-
-        Future<String> future = executorService.submit(chargeTransferBlockTask);
+        executorService.submit(chargeTransferBlockTask);
 
        /* executorService.submit(() -> {
             while (true){
@@ -43,10 +42,8 @@ public class ChargeTransferBlockTaskTest {
 
         });*/
 
-
-
        while(chargeTransferBlockTask.getMeterValues().getSampledValue().get(0).getValue()<70){
-            //Thread.sleep(1000);
+            Thread.sleep(1000);
             System.out.println(chargeTransferBlockTask.getMeterValues());
         }
        System.out.println(executorService.isTerminated());

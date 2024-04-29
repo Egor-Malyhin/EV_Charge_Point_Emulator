@@ -1,21 +1,21 @@
 package org.mycorp.chargetransfer.eventlisteners;
 
 import org.mycorp.chargetransfer.ChargeTransferBlockInterface;
-import org.mycorp.models.events.StartCharging;
+import org.mycorp.models.events.common.StopCharging;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 @Component
-public class StartChargingEventListener extends ChargeTransferEventListener<StartCharging>{
+public class StopChargingEventListener extends ChargeTransferEventListener<StopCharging>{
     @Autowired
-    protected StartChargingEventListener(ChargeTransferBlockInterface chargeTransferBlockInterface) {
+    protected StopChargingEventListener(ChargeTransferBlockInterface chargeTransferBlockInterface) {
         super(chargeTransferBlockInterface);
     }
 
     @Override
     @EventListener
-    public void listenEvent(StartCharging stationEvent) {
-        chargeTransferBlockInterface.startChargeTransfer();
+    public void listenEvent(StopCharging stationEvent) {
+        chargeTransferBlockInterface.stopChargeTransfer(stationEvent.getShutdownInitiator());
     }
 }

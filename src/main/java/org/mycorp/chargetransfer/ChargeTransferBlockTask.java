@@ -4,7 +4,6 @@ import org.mycorp.models.Charge;
 import org.mycorp.models.MeterValues;
 import org.mycorp.models.SampledValue;
 import org.mycorp.models.StationCharacteristics;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.time.Duration;
@@ -21,7 +20,8 @@ public class ChargeTransferBlockTask implements Runnable{
     private Charge charge;
     private boolean isRunning;
     private String shutdownInitiator;
-    private final ReadWriteLock lock;
+    private final ReadWriteLock meterValuesLock;
+    private final ReadWriteLock stopChargingLock;
     private final MeterValues meterValues;
 
     public ChargeTransferBlockTask() {
@@ -29,8 +29,8 @@ public class ChargeTransferBlockTask implements Runnable{
         List<SampledValue> valueList = new ArrayList<>();
         valueList.add(new SampledValue(0, "Energy", "Outlet", "Wh"));
         this.meterValues = new MeterValues(Instant.now(), valueList);
-        this.isRunning = true;
-        this.lock = new ReentrantReadWriteLock();
+        this.meterValuesLock = new ReentrantReadWriteLock();
+        this.stopChargingLock = new ReentrantReadWriteLock();
     }
 
     @Override
@@ -39,7 +39,8 @@ public class ChargeTransferBlockTask implements Runnable{
         setShutdownInitiator("None");
         Duration durationOfCharging = setDurationTime(charge.value());
         Instant startTime = Instant.now();
-        while (Duration.between(startTime, Instant.now()).compareTo(durationOfCharging) < 0 && isRunning) {
+
+        while (Duration.between(startTime, Instant.now()).compareTo(durationOfCharging) < 0 && isRunning()) {
             try {
                 Thread.sleep(1000);
                 updateSampledValue(Duration.between(startTime, Instant.now()).toMillis());
@@ -56,22 +57,22 @@ public class ChargeTransferBlockTask implements Runnable{
     }
 
     private void updateSampledValue(float durationFromStart) {
-        lock.writeLock().lock();
+        meterValuesLock.writeLock().lock();
         try {
             SampledValue powerValue = meterValues.getSampledValue().get(0);
             powerValue.setValue(StationCharacteristics.ratedPower * 0.001f * durationFromStart);
             meterValues.setTimestamp(Instant.now());
         } finally {
-            lock.writeLock().unlock();
+            meterValuesLock.writeLock().unlock();
         }
     }
 
     public MeterValues getMeterValues() {
-        lock.readLock().lock();
+        meterValuesLock.readLock().lock();
         try {
             return meterValues.clone();
         } finally {
-            lock.readLock().unlock();
+            meterValuesLock.readLock().unlock();
         }
     }
 
@@ -80,16 +81,31 @@ public class ChargeTransferBlockTask implements Runnable{
     }
 
     public void stop(String shutdownInitiator) {
-        isRunning = false;
-        setShutdownInitiator(shutdownInitiator);
+        stopChargingLock.writeLock().lock();
+        try {
+            setShutdownInitiator(shutdownInitiator);
+            isRunning = false;
+        } finally {
+            stopChargingLock.writeLock().unlock();
+        }
     }
 
-    public boolean isRunning(){
-        return isRunning;
+    public boolean isRunning() {
+        stopChargingLock.readLock().lock();
+        try {
+            return isRunning;
+        } finally {
+            stopChargingLock.readLock().unlock();
+        }
     }
 
     public String getShutdownInitiator() {
-        return shutdownInitiator;
+        stopChargingLock.readLock().lock();
+        try {
+            return shutdownInitiator;
+        } finally {
+            stopChargingLock.readLock().unlock();
+        }
     }
 
     private void setShutdownInitiator(String shutdownInitiator) {
