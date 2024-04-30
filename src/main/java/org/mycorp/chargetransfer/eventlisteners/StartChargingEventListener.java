@@ -1,7 +1,7 @@
 package org.mycorp.chargetransfer.eventlisteners;
 
 import org.mycorp.chargetransfer.ChargeTransferBlockInterface;
-import org.mycorp.models.events.StartCharging;
+import org.mycorp.models.events.stateoperator.StartCharging;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;

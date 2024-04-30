@@ -1,5 +1,7 @@
 package org.mycorp.models;
 
+//A static class with station characteristics.
+//It contains constants such as, for example, manufacturer, maximum outgoing current, maximum output voltage, etc.
 public class StationCharacteristics {
     public static final String evseId = "1";
     public static final String chargePointVendor = "MyCorp";

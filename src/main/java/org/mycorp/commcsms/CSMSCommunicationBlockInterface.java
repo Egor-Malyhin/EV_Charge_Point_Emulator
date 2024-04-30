@@ -1,7 +1,7 @@
 package org.mycorp.commcsms;
 
-import org.mycorp.models.messages.ocpp.OCPPMessage;
+import eu.chargetime.ocpp.model.Request;
 
 public interface CSMSCommunicationBlockInterface {
-    void addToMessageQueue(OCPPMessage ocppMessage);
+    void addToMessageQueue(Request ocppRequest);
 }

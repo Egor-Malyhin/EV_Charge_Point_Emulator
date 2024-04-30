@@ -1,5 +1,7 @@
 package org.mycorp.main;
 
+import eu.chargetime.ocpp.JSONClient;
+import eu.chargetime.ocpp.feature.profile.ClientCoreProfile;
 import org.mycorp.chargetransfer.eventpublishers.metervaluespresenters.CSMSMeterValuesPresenter;
 import org.mycorp.chargetransfer.eventpublishers.metervaluespresenters.EVMeterValuesPresenter;
 import org.mycorp.chargetransfer.eventpublishers.metervaluespresenters.MeterValuesPresenter;
@@ -7,10 +9,11 @@ import org.mycorp.chargetransfer.eventpublishers.stopcharging.StopChargingByCSMS
 import org.mycorp.chargetransfer.eventpublishers.stopcharging.StopChargingByEVPublisher;
 import org.mycorp.chargetransfer.eventpublishers.stopcharging.StopChargingByStationPublisher;
 import org.mycorp.chargetransfer.eventpublishers.stopcharging.StopChargingEventPublisher;
-import org.mycorp.commcsms.message_handlers.OCPPMessageHandler;
-import org.mycorp.commcsms.message_handlers.CoreProfileOCPPMessageHandler;
+import org.mycorp.commcsms.CSMSCommunicationBlockClientHandler;
+import org.mycorp.commcsms.message_handlers.OCPPConfirmationHandler;
+import org.mycorp.commcsms.message_handlers.CoreProfileOCPPConfirmationHandler;
 import org.mycorp.commev.messagehandlers.*;
-import org.mycorp.models.messages.ocpp.OCPPMessageProfiles;
+import org.mycorp.models.messages.ocpp.CSMSConfirmationClassification;
 import org.mycorp.models.messages.v2g.V2GMessagesClassification;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -19,16 +22,27 @@ import org.springframework.context.annotation.Configuration;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.mycorp.models.messages.ocpp.OCPPMessageProfiles.CORE_PROFILE;
 import static org.mycorp.models.messages.v2g.V2GMessagesClassification.*;
 
 @Configuration
 @ComponentScan(basePackages = {"org.mycorp"})
 public class MyConfiguration {
     @Bean
-    public Map<OCPPMessageProfiles, OCPPMessageHandler> ocppMessageOperatorMap(CoreProfileOCPPMessageHandler coreProfileOCPPMessageHandler) {
-        Map<OCPPMessageProfiles, OCPPMessageHandler> ocppMessageOperatorsMap = new HashMap<>();
-        ocppMessageOperatorsMap.put(CORE_PROFILE, coreProfileOCPPMessageHandler);
+    public ClientCoreProfile clientCoreProfile(CSMSCommunicationBlockClientHandler csmsCommunicationBlockClientHandler) {
+        return new ClientCoreProfile(csmsCommunicationBlockClientHandler);
+    }
+
+    @Bean
+    public JSONClient jsonClient(ClientCoreProfile clientCoreProfile) {
+        return new JSONClient(clientCoreProfile);
+    }
+
+    @Bean
+    public Map<CSMSConfirmationClassification, OCPPConfirmationHandler> ocppMessageOperatorMap(
+            CoreProfileOCPPConfirmationHandler coreProfileOCPPMessageHandler
+    ) {
+        Map<CSMSConfirmationClassification, OCPPConfirmationHandler> ocppMessageOperatorsMap = new HashMap<>();
+        ocppMessageOperatorsMap.put(CSMSConfirmationClassification.AUTHORIZE_CONF, coreProfileOCPPMessageHandler);
         return ocppMessageOperatorsMap;
     }
 

@@ -11,7 +11,8 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 
-//Core Class of EV Communication Module. Session Communication Logic described in EVCommunicationBlockSessionHandler
+//Core Class of EV Communication Module.
+//Session Communication Logic described in EVCommunicationBlockSessionHandler.
 @Component
 public class EVCommunicationBlock implements Runnable {
     private final EVCommunicationBlockSessionHandler evCommunicationBlockSessionHandler;
@@ -32,8 +33,10 @@ public class EVCommunicationBlock implements Runnable {
         try {
             acceptor.getFilterChain().addLast("V2GFilter", new ProtocolCodecFilter(v2gEncoder, v2gDecoder));
             acceptor.bind(new InetSocketAddress(8800));
-            while (true) {}
-        } catch (IOException e) {
+            while (true) {
+                Thread.sleep(1000);
+            }
+        } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
     }

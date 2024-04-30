@@ -1,4 +1,4 @@
-package org.mycorp.models.events;
+package org.mycorp.models.events.stateoperator;
 
 import org.springframework.context.ApplicationEvent;
 

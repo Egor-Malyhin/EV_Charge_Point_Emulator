@@ -2,6 +2,7 @@ package org.mycorp.commev;
 
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;
+import org.mycorp.commev.evactionlisteners.EVActionListener;
 import org.mycorp.commev.messagehandlers.*;
 import org.mycorp.models.messages.v2g.V2GBodyAbstractType;
 import org.mycorp.models.messages.v2g.V2GMessage;
@@ -12,12 +13,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class EVCommunicationBlockSessionHandler extends IoHandlerAdapter implements EVCommunicationBlockInterface {
     private final V2GMessageHandlerContext v2GMessageHandlerContext;
+    private final EVActionListener evActionListener;
     private IoSession session;
     private boolean isEvConnected;
 
     @Autowired
-    public EVCommunicationBlockSessionHandler(V2GMessageHandlerContext v2GMessageHandlerContext) {
+    public EVCommunicationBlockSessionHandler(V2GMessageHandlerContext v2GMessageHandlerContext, EVActionListener evActionListener) {
         this.v2GMessageHandlerContext = v2GMessageHandlerContext;
+        this.evActionListener = evActionListener;
         this.isEvConnected = false;
         this.session = null;
     }
@@ -30,6 +33,7 @@ public class EVCommunicationBlockSessionHandler extends IoHandlerAdapter impleme
             isEvConnected = true;
             session = sessionReceived;
             V2GSessionIdCounter.getInstance().incrementCounter();
+            evActionListener.evConnected();
         }
     }
 
@@ -37,15 +41,19 @@ public class EVCommunicationBlockSessionHandler extends IoHandlerAdapter impleme
     public void sessionClosed(IoSession sessionClosed) throws Exception {
         isEvConnected = false;
         session = null;
+        evActionListener.evDisconnected();
     }
 
     @Override
     public void messageReceived(IoSession session, Object message) throws Exception {
         V2GMessage convertedMessage = (V2GMessage) message;
         V2GBodyAbstractType messageBody = convertedMessage.getBody().getV2GBodyAbstractType();
-        V2GMessageHandler v2gMessageHandler = v2GMessageHandlerContext.getMessageHandlerImpl(messageBody);
-
-        v2gMessageHandler.handleMessage(messageBody);
+        try {
+            V2GMessageHandler v2gMessageHandler = v2GMessageHandlerContext.getMessageHandlerImpl(messageBody);
+            v2gMessageHandler.handleMessage(messageBody);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

@@ -1,8 +1,7 @@
 package org.mycorp.commcsms;
 
-import org.mycorp.commcsms.message_handlers.OCPPMessageHandler;
+import org.mycorp.commcsms.message_handlers.OCPPConfirmationHandler;
 import org.mycorp.commcsms.message_handlers.OCPPMessageHandlerContext;
-import org.mycorp.models.messages.ocpp.OCPPMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.stomp.StompHeaders;
 import org.springframework.messaging.simp.stomp.StompSession;
@@ -28,17 +27,18 @@ public class CSMSCommunicationBlockSessionHandler extends StompSessionHandlerAda
 
     @Override
     public void handleFrame(StompHeaders headers, Object payload) {
-        try {
+        /*try {
             OCPPMessage ocppMessage = (OCPPMessage) payload;
-            OCPPMessageHandler messageHandler = ocppMessageHandlerContext.getOCPPMessageOperatorImpl(ocppMessage);
+            OCPPConfirmationHandler messageHandler = ocppMessageHandlerContext.getOCPPMessageOperatorImpl(ocppMessage);
             messageHandler.handleMessage(ocppMessage);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-        }
+        } */
     }
 
+    /*
     public void sendMessage(OCPPMessage ocppMessage) {
         if (stompSession != null && stompSession.isConnected())
             stompSession.send("/requests", ocppMessage);
-    }
+    } */
 }

@@ -1,4 +1,4 @@
-package org.mycorp.main;
+package org.mycorp.stationeventlistener;
 
 import org.springframework.context.ApplicationEvent;
 

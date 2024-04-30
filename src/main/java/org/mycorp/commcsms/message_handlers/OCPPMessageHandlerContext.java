@@ -1,33 +1,32 @@
 package org.mycorp.commcsms.message_handlers;
 
-import org.mycorp.models.messages.ocpp.OCPPMessage;
-import org.mycorp.models.messages.ocpp.OCPPMessageProfiles;
+import org.mycorp.models.messages.ocpp.CSMSConfirmationClassification;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
 @Component
 public class OCPPMessageHandlerContext {
-    private final Map<OCPPMessageProfiles, OCPPMessageHandler> ocppMessageOperatorMap;
+    private final Map<CSMSConfirmationClassification, OCPPConfirmationHandler> ocppMessageOperatorMap;
 
     @Autowired
-    public OCPPMessageHandlerContext(@Qualifier("ocppMessageOperatorMap") Map<OCPPMessageProfiles, OCPPMessageHandler> ocppMessageOperatorMap) {
+    public OCPPMessageHandlerContext(Map<CSMSConfirmationClassification, OCPPConfirmationHandler> ocppMessageOperatorMap) {
         this.ocppMessageOperatorMap = ocppMessageOperatorMap;
     }
-
-    public OCPPMessageHandler getOCPPMessageOperatorImpl(OCPPMessage ocppMessage) throws ClassNotFoundException {
-        OCPPMessageProfiles messageType = getMessageType(ocppMessage);
+/*
+    public OCPPConfirmationHandler getOCPPMessageOperatorImpl(OCPPMessage ocppMessage) throws ClassNotFoundException {
+        CSMSConfirmationClassification messageType = getMessageType(ocppMessage);
         return ocppMessageOperatorMap.get(messageType);
     }
 
-    private OCPPMessageProfiles getMessageType(OCPPMessage ocppMessage) throws ClassNotFoundException {
-        for (OCPPMessageProfiles t : OCPPMessageProfiles.values()) {
+    private CSMSConfirmationClassification getMessageType(OCPPMessage ocppMessage) throws ClassNotFoundException {
+        for (CSMSConfirmationClassification t : CSMSConfirmationClassification.values()) {
             if (t.getMessageType().isInstance(ocppMessage)) {
                 return t;
             }
         }
         throw new ClassNotFoundException("Message type not supported");
     }
+    */
 }

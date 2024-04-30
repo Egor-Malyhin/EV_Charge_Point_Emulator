@@ -1,7 +1,7 @@
 package org.mycorp.stateoperator;
 
-import org.mycorp.models.StationState;
+import org.mycorp.models.StationStateAction;
 
 public interface StateOperatorInterface {
-    void setStationState(StationState stationState);
+    void setStationState(StationStateAction stationStateAction);
 }
