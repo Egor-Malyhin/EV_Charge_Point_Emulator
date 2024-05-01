@@ -22,7 +22,7 @@ public class ChargeParameterDiscoveryRes extends V2GMessageRes {
         this.evseProcessing = evseProcessing;
     }
 
-    public ChargeParameterDiscoveryRes(){
+    public ChargeParameterDiscoveryRes() {
     }
 
     public EVSEProcessing getEvseProcessing() {

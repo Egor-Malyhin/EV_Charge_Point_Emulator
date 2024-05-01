@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CSMSMeterValuesPresenter extends MeterValuesPresenterImpl{
+public class CSMSMeterValuesPresenter extends MeterValuesPresenterImpl {
     @Autowired
     protected CSMSMeterValuesPresenter(ApplicationEventPublisher applicationEventPublisher) {
         super(applicationEventPublisher);

@@ -14,7 +14,7 @@ public class MeterValuesPresenterContext {
         this.meterValuesPresenterMap = meterValuesPresenterMap;
     }
 
-    public MeterValuesPresenter getMeterValuesPresenterImpl(String requester){
+    public MeterValuesPresenter getMeterValuesPresenterImpl(String requester) {
         return meterValuesPresenterMap.get(requester);
     }
 }

@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SessionStopHandler extends V2GMessageHandlerImpl{
+public class SessionStopHandler extends V2GMessageHandlerImpl {
     @Autowired
     protected SessionStopHandler(ApplicationEventPublisher applicationEventPublisher) {
         super(applicationEventPublisher);

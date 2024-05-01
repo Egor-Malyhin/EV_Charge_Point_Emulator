@@ -3,8 +3,8 @@ package org.mycorp.commev.eventlisteners;
 import org.mycorp.commev.EVCommunicationBlockInterface;
 import org.mycorp.commev.messagebuilders.MessageBuilder;
 import org.mycorp.commev.messagebuilders.MessageBuildersDirector;
-import org.mycorp.stationeventlistener.StationEventListener;
 import org.mycorp.models.messages.v2g.V2GMessage;
+import org.mycorp.stationeventlistener.StationEventListener;
 import org.springframework.context.ApplicationEvent;
 
 
@@ -16,8 +16,8 @@ public abstract class EVCommunicationBlockEventListener<T extends ApplicationEve
         this.evCommunicationBlockInterface = evCommunicationBlockInterface;
     }
 
-    protected V2GMessage buildMessage(MessageBuilder builder){
-       MessageBuildersDirector director = new MessageBuildersDirector(builder);
-       return director.create();
+    protected V2GMessage buildMessage(MessageBuilder builder) {
+        MessageBuildersDirector director = new MessageBuildersDirector(builder);
+        return director.create();
     }
 }

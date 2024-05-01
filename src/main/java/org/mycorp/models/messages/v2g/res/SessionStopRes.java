@@ -10,6 +10,6 @@ public class SessionStopRes extends V2GMessageRes {
         super(responseCode);
     }
 
-    public SessionStopRes(){
+    public SessionStopRes() {
     }
 }

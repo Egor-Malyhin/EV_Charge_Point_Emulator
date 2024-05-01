@@ -1,7 +1,6 @@
 package org.mycorp.commcsms.message_handlers;
 
 import eu.chargetime.ocpp.model.Confirmation;
-import eu.chargetime.ocpp.model.Request;
 import eu.chargetime.ocpp.model.core.AuthorizationStatus;
 import eu.chargetime.ocpp.model.core.AuthorizeConfirmation;
 import org.mycorp.models.events.commcsms.EVAuthorized;

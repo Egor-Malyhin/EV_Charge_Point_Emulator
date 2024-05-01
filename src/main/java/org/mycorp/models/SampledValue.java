@@ -19,28 +19,28 @@ public class SampledValue implements Cloneable {
         return value;
     }
 
-    public String getMeasurand() {
-        return measurand;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public String getUnit() {
-        return unit;
-    }
-
     public void setValue(float value) {
         this.value = value;
+    }
+
+    public String getMeasurand() {
+        return measurand;
     }
 
     public void setMeasurand(String measurand) {
         this.measurand = measurand;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public String getUnit() {
+        return unit;
     }
 
     public void setUnit(String unit) {

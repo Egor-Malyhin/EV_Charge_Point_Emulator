@@ -11,7 +11,7 @@ public class EVChargeParameterRequest extends ApplicationEvent {
         this.amount = amount;
     }
 
-    public Charge getCharge(){
+    public Charge getCharge() {
         return amount;
     }
 }

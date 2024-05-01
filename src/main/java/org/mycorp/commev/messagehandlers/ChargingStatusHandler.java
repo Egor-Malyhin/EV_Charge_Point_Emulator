@@ -1,6 +1,5 @@
 package org.mycorp.commev.messagehandlers;
 
-import org.mycorp.models.events.commev.EVChargingStatusRequest;
 import org.mycorp.models.events.common.GetMeterValues;
 import org.mycorp.models.messages.v2g.V2GBodyAbstractType;
 import org.springframework.beans.factory.annotation.Autowired;

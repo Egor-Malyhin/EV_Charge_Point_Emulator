@@ -18,12 +18,12 @@ public class MeterValues implements Cloneable {
         return timestamp;
     }
 
-    public List<SampledValue> getSampledValue() {
-        return sampledValue;
-    }
-
     public void setTimestamp(Instant timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public List<SampledValue> getSampledValue() {
+        return sampledValue;
     }
 
     public void setSampledValue(List<SampledValue> sampledValue) {

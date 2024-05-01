@@ -15,7 +15,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 
 @Component
-public class CSMSCommunicationBlock implements Runnable, CSMSCommunicationBlockInterface{
+public class CSMSCommunicationBlock implements Runnable, CSMSCommunicationBlockInterface {
     private final BlockingQueue<Request> messageQueue;
     private final OCPPConfirmationHandlerContext ocppConfirmationHandlerContext;
     private final JSONClient jsonClient;

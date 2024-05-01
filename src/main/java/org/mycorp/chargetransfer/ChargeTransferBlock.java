@@ -13,7 +13,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 @Component
-public class ChargeTransferBlock implements ChargeTransferBlockInterface{
+public class ChargeTransferBlock implements ChargeTransferBlockInterface {
     private final ExecutorService chargeTransferExecutor;
     private final ChargeTransferBlockTask chargeTransferBlockTask;
     private final StopChargingEventPublisher stopChargingEventPublisher;

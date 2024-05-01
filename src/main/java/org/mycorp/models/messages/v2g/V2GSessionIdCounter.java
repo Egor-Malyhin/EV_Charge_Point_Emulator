@@ -4,8 +4,8 @@ import javax.xml.bind.DatatypeConverter;
 import java.nio.ByteBuffer;
 
 public class V2GSessionIdCounter {
-    private byte[] sessionId;
     private static V2GSessionIdCounter instance;
+    private byte[] sessionId;
 
     private V2GSessionIdCounter() {
         sessionId = convertHexBinary(0);

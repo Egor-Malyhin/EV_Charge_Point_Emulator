@@ -21,11 +21,11 @@ public class EVActionListener {
         this.applicationEventPublisher = applicationEventPublisher;
     }
 
-    public void evConnected(){
+    public void evConnected() {
         applicationEventPublisher.publishEvent(new ConnectedEV(this));
     }
 
-    public void evDisconnected(){
+    public void evDisconnected() {
         applicationEventPublisher.publishEvent(new DisconnectedEV(this));
     }
 }

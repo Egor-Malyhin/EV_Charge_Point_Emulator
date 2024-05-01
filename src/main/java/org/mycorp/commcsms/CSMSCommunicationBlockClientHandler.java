@@ -7,14 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
-import java.util.concurrent.*;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 @Component
 public class CSMSCommunicationBlockClientHandler implements ClientCoreEventHandler {
+    private final ApplicationEventPublisher applicationEventPublisher;
     //Used CountDownLatch, since using CompletableFuture here is impractical,
     //since future will end immediately after calling publishEvent().
     private CountDownLatch countDownLatch;
-    private final ApplicationEventPublisher applicationEventPublisher;
 
     @Autowired
     public CSMSCommunicationBlockClientHandler(ApplicationEventPublisher applicationEventPublisher) {
@@ -23,7 +24,7 @@ public class CSMSCommunicationBlockClientHandler implements ClientCoreEventHandl
     }
 
     // Since the CountDownLatch counter cannot be lowered in this method, we recreate the CountDownLatch object.
-    private void resetLatch(){
+    private void resetLatch() {
         countDownLatch = new CountDownLatch(1);
     }
 

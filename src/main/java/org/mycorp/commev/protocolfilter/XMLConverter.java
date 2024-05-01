@@ -88,8 +88,7 @@ public class XMLConverter {
             Transformer transformer = transformerFactory.newTransformer();
             transformer.transform(exiSource, new StreamResult(baos));
             return baos.toByteArray();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }

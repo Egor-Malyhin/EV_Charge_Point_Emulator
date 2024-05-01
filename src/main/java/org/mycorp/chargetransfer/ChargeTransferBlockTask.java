@@ -14,15 +14,14 @@ import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 @Component
-public class ChargeTransferBlockTask implements Runnable{
-
+public class ChargeTransferBlockTask implements Runnable {
     //TODO сохранять значения после выключения програмы
-    private Charge charge;
-    private boolean isRunning;
-    private String shutdownInitiator;
     private final ReadWriteLock meterValuesLock;
     private final ReadWriteLock stopChargingLock;
     private final MeterValues meterValues;
+    private Charge charge;
+    private boolean isRunning;
+    private String shutdownInitiator;
 
     public ChargeTransferBlockTask() {
         this.charge = new Charge("Wh", 0);

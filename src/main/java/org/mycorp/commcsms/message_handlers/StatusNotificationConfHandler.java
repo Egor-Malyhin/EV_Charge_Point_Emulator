@@ -1,7 +1,6 @@
 package org.mycorp.commcsms.message_handlers;
 
 import eu.chargetime.ocpp.model.Confirmation;
-import eu.chargetime.ocpp.model.core.StatusNotificationConfirmation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;

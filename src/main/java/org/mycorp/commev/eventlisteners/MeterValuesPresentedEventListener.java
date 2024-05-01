@@ -11,7 +11,7 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MeterValuesPresentedEventListener extends EVCommunicationBlockEventListener<MeterValuesToEV>{
+public class MeterValuesPresentedEventListener extends EVCommunicationBlockEventListener<MeterValuesToEV> {
     @Autowired
     protected MeterValuesPresentedEventListener(EVCommunicationBlockInterface evCommunicationBlockInterface) {
         super(evCommunicationBlockInterface);

@@ -17,9 +17,11 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class StationEventLogger {
-    private static final Logger logger = LoggerFactory.getLogger(StationEventLogger.class);;
+    private static final Logger logger = LoggerFactory.getLogger(StationEventLogger.class);
+
     @Pointcut("execution(* org.springframework.context.ApplicationEventPublisher.publishEvent(..))")
-    public void publishEventPointcut() {}
+    public void publishEventPointcut() {
+    }
 
     @After("publishEventPointcut() && args(event)")
     public void logEvent(Object event) {

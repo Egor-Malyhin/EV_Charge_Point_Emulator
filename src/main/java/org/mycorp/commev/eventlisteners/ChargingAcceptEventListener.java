@@ -13,7 +13,7 @@ import static org.mycorp.models.messages.v2g.types.ResponseCode.FAILED_PowerDeli
 import static org.mycorp.models.messages.v2g.types.ResponseCode.OK;
 
 @Component
-public class ChargingAcceptEventListener extends EVCommunicationBlockEventListener<CSMSChargingAccept>{
+public class ChargingAcceptEventListener extends EVCommunicationBlockEventListener<CSMSChargingAccept> {
     @Autowired
     protected ChargingAcceptEventListener(EVCommunicationBlockInterface evCommunicationBlockInterface) {
         super(evCommunicationBlockInterface);

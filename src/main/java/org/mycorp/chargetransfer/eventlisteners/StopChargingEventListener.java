@@ -7,7 +7,7 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 @Component
-public class StopChargingEventListener extends ChargeTransferEventListener<StopCharging>{
+public class StopChargingEventListener extends ChargeTransferEventListener<StopCharging> {
     @Autowired
     protected StopChargingEventListener(ChargeTransferBlockInterface chargeTransferBlockInterface) {
         super(chargeTransferBlockInterface);

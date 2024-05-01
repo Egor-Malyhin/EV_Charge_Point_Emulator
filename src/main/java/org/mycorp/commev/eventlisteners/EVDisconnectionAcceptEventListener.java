@@ -9,7 +9,7 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 @Component
-public class EVDisconnectionAcceptEventListener extends EVCommunicationBlockEventListener<EVDisconnectionAccept>{
+public class EVDisconnectionAcceptEventListener extends EVCommunicationBlockEventListener<EVDisconnectionAccept> {
     @Autowired
     protected EVDisconnectionAcceptEventListener(EVCommunicationBlockInterface evCommunicationBlockInterface) {
         super(evCommunicationBlockInterface);

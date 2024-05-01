@@ -12,7 +12,7 @@ import static org.mycorp.models.messages.v2g.types.ResponseCode.FAILED;
 import static org.mycorp.models.messages.v2g.types.ResponseCode.OK_NewSessionEstablished;
 
 @Component
-public class EVAuthorizeEventListener extends EVCommunicationBlockEventListener<EVAuthorized>{
+public class EVAuthorizeEventListener extends EVCommunicationBlockEventListener<EVAuthorized> {
     @Autowired
     protected EVAuthorizeEventListener(EVCommunicationBlockInterface evCommunicationBlockInterface) {
         super(evCommunicationBlockInterface);

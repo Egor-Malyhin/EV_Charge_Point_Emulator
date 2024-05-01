@@ -7,6 +7,7 @@ import org.mycorp.models.messages.v2g.types.ResponseCode;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Objects;
+
 @XmlRootElement(name = "ChargingStatusRes", namespace = "urn:iso:15118:2:2013:MsgBody")
 public class ChargingStatusRes extends PowerDeliveryRes {
     @XmlElement(name = "EVSEID", namespace = "urn:iso:15118:2:2013:MsgBody")
@@ -20,7 +21,7 @@ public class ChargingStatusRes extends PowerDeliveryRes {
         this.meterInfo = meterInfo;
     }
 
-    public ChargingStatusRes(){
+    public ChargingStatusRes() {
     }
 
     public String getEvseId() {

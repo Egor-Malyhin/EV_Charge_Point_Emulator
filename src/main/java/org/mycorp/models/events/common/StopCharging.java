@@ -4,6 +4,7 @@ import org.springframework.context.ApplicationEvent;
 
 public class StopCharging extends ApplicationEvent {
     private final String shutdownInitiator;
+
     public StopCharging(Object source, String shutdownInitiator) {
         super(source);
         this.shutdownInitiator = shutdownInitiator;

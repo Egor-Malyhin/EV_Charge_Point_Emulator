@@ -5,6 +5,7 @@ import org.springframework.context.ApplicationEvent;
 
 public class MeterValuesToCSMS extends ApplicationEvent {
     private final MeterValues meterValues;
+
     public MeterValuesToCSMS(Object source, MeterValues meterValues) {
         super(source);
         this.meterValues = meterValues;
