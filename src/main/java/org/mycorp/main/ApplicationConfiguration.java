@@ -5,19 +5,14 @@ import eu.chargetime.ocpp.feature.profile.ClientCoreProfile;
 import org.mycorp.chargetransfer.eventpublishers.metervaluespresenters.CSMSMeterValuesPresenter;
 import org.mycorp.chargetransfer.eventpublishers.metervaluespresenters.EVMeterValuesPresenter;
 import org.mycorp.chargetransfer.eventpublishers.metervaluespresenters.MeterValuesPresenter;
-import org.mycorp.chargetransfer.eventpublishers.stopcharging.StopChargingByCSMSPublisher;
-import org.mycorp.chargetransfer.eventpublishers.stopcharging.StopChargingByEVPublisher;
-import org.mycorp.chargetransfer.eventpublishers.stopcharging.StopChargingByStationPublisher;
-import org.mycorp.chargetransfer.eventpublishers.stopcharging.StopChargingEventPublisher;
 import org.mycorp.commcsms.CSMSCommunicationBlockClientHandler;
-import org.mycorp.commcsms.message_handlers.OCPPConfirmationHandler;
-import org.mycorp.commcsms.message_handlers.CoreProfileOCPPConfirmationHandler;
+import org.mycorp.commcsms.message_handlers.*;
 import org.mycorp.commev.messagehandlers.*;
-import org.mycorp.models.messages.ocpp.CSMSConfirmationClassification;
 import org.mycorp.models.messages.v2g.V2GMessagesClassification;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,8 +20,14 @@ import java.util.Map;
 import static org.mycorp.models.messages.v2g.V2GMessagesClassification.*;
 
 @Configuration
+@EnableAspectJAutoProxy
 @ComponentScan(basePackages = {"org.mycorp"})
-public class MyConfiguration {
+public class ApplicationConfiguration {
+    @Bean
+    public String webSocketServerWS() {
+        return "ws//somews";
+    }
+
     @Bean
     public ClientCoreProfile clientCoreProfile(CSMSCommunicationBlockClientHandler csmsCommunicationBlockClientHandler) {
         return new ClientCoreProfile(csmsCommunicationBlockClientHandler);
@@ -38,12 +39,22 @@ public class MyConfiguration {
     }
 
     @Bean
-    public Map<CSMSConfirmationClassification, OCPPConfirmationHandler> ocppMessageOperatorMap(
-            CoreProfileOCPPConfirmationHandler coreProfileOCPPMessageHandler
+    public Map<String, OCPPConfirmationHandler> ocppConfirmationHandlerMap(
+            AuthorizeConfHandler authorizeConfHandler,
+            StartTransactionConfHandler startTransactionConfHandler,
+            StopTransactionConfHandler stopTransactionConfHandler,
+            BootNotificationConfHandler bootNotificationConfHandler,
+            StatusNotificationConfHandler statusNotificationConfHandler,
+            MeterValuesConfHandler meterValuesConfHandler
     ) {
-        Map<CSMSConfirmationClassification, OCPPConfirmationHandler> ocppMessageOperatorsMap = new HashMap<>();
-        ocppMessageOperatorsMap.put(CSMSConfirmationClassification.AUTHORIZE_CONF, coreProfileOCPPMessageHandler);
-        return ocppMessageOperatorsMap;
+        Map<String, OCPPConfirmationHandler> ocppConfirmationHandlerMap = new HashMap<>();
+        ocppConfirmationHandlerMap.put("AuthorizeConfirmation", authorizeConfHandler);
+        ocppConfirmationHandlerMap.put("StartTransactionConfirmation", startTransactionConfHandler);
+        ocppConfirmationHandlerMap.put("StopTransactionConfirmation", stopTransactionConfHandler);
+        ocppConfirmationHandlerMap.put("BootNotificationConfirmation", bootNotificationConfHandler);
+        ocppConfirmationHandlerMap.put("StatusNotificationConfirmation", statusNotificationConfHandler);
+        ocppConfirmationHandlerMap.put("MeterValuesConfirmation", meterValuesConfHandler);
+        return ocppConfirmationHandlerMap;
     }
 
     @Bean
@@ -61,19 +72,6 @@ public class MyConfiguration {
         v2GMessageHandlersMap.put(CHARGING_STATUS_REQ, chargingStatusHandler);
         v2GMessageHandlersMap.put(SESSION_STOP_REQ, sessionStopHandler);
         return v2GMessageHandlersMap;
-    }
-
-    @Bean
-    public Map<String, StopChargingEventPublisher> stopChargingEventPublisherMap(
-            StopChargingByCSMSPublisher stopChargingByCSMSPublisher,
-            StopChargingByEVPublisher stopChargingByEVPublisher,
-            StopChargingByStationPublisher stopChargingByStationPublisher
-    ) {
-        Map<String, StopChargingEventPublisher> stopChargingEventPublisherMap = new HashMap<>();
-        stopChargingEventPublisherMap.put("None", stopChargingByStationPublisher);
-        stopChargingEventPublisherMap.put("EVCommunicationBlock", stopChargingByEVPublisher);
-        stopChargingEventPublisherMap.put("CSMSCommunicationBlock", stopChargingByCSMSPublisher);
-        return stopChargingEventPublisherMap;
     }
 
     @Bean

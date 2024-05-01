@@ -3,7 +3,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mycorp.commev.protocolfilter.V2GDecoder;
-import org.mycorp.main.MyConfiguration;
+import org.mycorp.main.ApplicationConfiguration;
 import org.mycorp.models.messages.v2g.V2GBody;
 import org.mycorp.models.messages.v2g.V2GHeader;
 import org.mycorp.models.messages.v2g.V2GMessage;
@@ -21,7 +21,7 @@ import org.apache.mina.core.buffer.IoBuffer;
 import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = MyConfiguration.class)
+@ContextConfiguration(classes = ApplicationConfiguration.class)
 public class V2GDecoderTest {
     @Mock
     private ProtocolDecoderOutput protocolDecoderOutput;
