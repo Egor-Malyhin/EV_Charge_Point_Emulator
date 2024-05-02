@@ -2,6 +2,7 @@ package org.mycorp.models;
 
 import java.time.ZoneId;
 
+//This class stores variable station parameters in RAM, which are set during charging.
 public class StationVariables {
     private static StationVariables instance;
     private int transactionId;

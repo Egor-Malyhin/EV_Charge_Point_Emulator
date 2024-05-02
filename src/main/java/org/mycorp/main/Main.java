@@ -8,6 +8,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+//The application starts with the separate-thread execution of the components
+//EVCommunicationBlock and CSMSCommunicationBlock.
 public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
@@ -15,6 +17,8 @@ public class Main {
         ExecutorService mainExecutor = Executors.newFixedThreadPool(2);
         mainExecutor.submit(context.getBean(CSMSCommunicationBlock.class));
         mainExecutor.submit(context.getBean(EVCommunicationBlock.class));
+
+        Runtime.getRuntime().addShutdownHook(new Thread(mainExecutor::shutdown));
     }
 }
 

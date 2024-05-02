@@ -8,9 +8,8 @@ import org.mycorp.models.StationVariables;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import javax.annotation.PreDestroy;
+import java.util.concurrent.*;
 
 @Component
 public class ChargeTransferBlock implements ChargeTransferBlockInterface {
@@ -50,5 +49,10 @@ public class ChargeTransferBlock implements ChargeTransferBlockInterface {
     @Override
     public void stopChargeTransfer(String shutdownInitiator) {
         chargeTransferBlockTask.stop(shutdownInitiator);
+    }
+
+    @PreDestroy
+    private void cleanUpThreadExecutor(){
+        chargeTransferExecutor.shutdown();
     }
 }

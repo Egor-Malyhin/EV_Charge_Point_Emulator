@@ -13,7 +13,7 @@ public class V2GMessageHandlerContext {
     private final Map<V2GMessagesClassification, V2GMessageHandler> v2GMessageHandlersMap;
 
     @Autowired
-    public V2GMessageHandlerContext(@Qualifier("v2GMessageHandlersMap") Map<V2GMessagesClassification, V2GMessageHandler> v2GMessageHandlersMap) {
+    public V2GMessageHandlerContext(Map<V2GMessagesClassification, V2GMessageHandler> v2GMessageHandlersMap) {
         this.v2GMessageHandlersMap = v2GMessageHandlersMap;
     }
 

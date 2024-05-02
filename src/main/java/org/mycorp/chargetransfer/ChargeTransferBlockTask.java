@@ -41,7 +41,7 @@ public class ChargeTransferBlockTask implements Runnable {
 
         while (Duration.between(startTime, Instant.now()).compareTo(durationOfCharging) < 0 && isRunning()) {
             try {
-                Thread.sleep(1000);
+                Thread.sleep(100);
                 updateSampledValue(Duration.between(startTime, Instant.now()).toMillis());
             } catch (Exception e) {
                 throw new RuntimeException(e);

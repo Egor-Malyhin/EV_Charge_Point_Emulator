@@ -15,6 +15,6 @@ public class SessionStopHandler extends V2GMessageHandlerImpl {
 
     @Override
     public void handleMessage(V2GBodyAbstractType v2gMessageBody) {
-        applicationEventPublisher.publishEvent(new EVSessionStopRequest(this));
+        applicationEventPublisher.publishEvent(new EVSessionStopRequest());
     }
 }

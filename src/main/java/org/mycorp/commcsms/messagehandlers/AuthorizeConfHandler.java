@@ -1,4 +1,4 @@
-package org.mycorp.commcsms.message_handlers;
+package org.mycorp.commcsms.messagehandlers;
 
 import eu.chargetime.ocpp.model.Confirmation;
 import eu.chargetime.ocpp.model.core.AuthorizationStatus;
@@ -19,6 +19,6 @@ public class AuthorizeConfHandler extends OCPPConfirmationHandlerImpl {
     public void handleConfirmation(Confirmation confirmation) {
         AuthorizeConfirmation authorizeConfirmation = (AuthorizeConfirmation) confirmation;
         boolean isAccepted = authorizeConfirmation.getIdTagInfo().getStatus() == AuthorizationStatus.Accepted;
-        ocppPublisher.publishEvent(new EVAuthorized(this, isAccepted));
+        ocppPublisher.publishEvent(new EVAuthorized(isAccepted));
     }
 }

@@ -6,7 +6,7 @@ import org.mycorp.chargetransfer.eventpublishers.metervaluespresenters.CSMSMeter
 import org.mycorp.chargetransfer.eventpublishers.metervaluespresenters.EVMeterValuesPresenter;
 import org.mycorp.chargetransfer.eventpublishers.metervaluespresenters.MeterValuesPresenter;
 import org.mycorp.commcsms.CSMSCommunicationBlockClientHandler;
-import org.mycorp.commcsms.message_handlers.*;
+import org.mycorp.commcsms.messagehandlers.*;
 import org.mycorp.commev.messagehandlers.*;
 import org.mycorp.models.messages.v2g.V2GMessagesClassification;
 import org.springframework.context.annotation.Bean;
@@ -19,6 +19,8 @@ import java.util.Map;
 
 import static org.mycorp.models.messages.v2g.V2GMessagesClassification.*;
 
+//Core Configuration class of an application.
+//Add beans here that cannot be configured via @Component.
 @Configuration
 @EnableAspectJAutoProxy
 @ComponentScan(basePackages = {"org.mycorp"})
@@ -81,7 +83,7 @@ public class ApplicationConfiguration {
     ) {
         Map<String, MeterValuesPresenter> meterValuesPresenterMap = new HashMap<>();
         meterValuesPresenterMap.put("EVCommunicationBlock", evMeterValuesPresenter);
-        meterValuesPresenterMap.put("CSMSCommunicationBlock", csmsMeterValuesPresenter);
+        meterValuesPresenterMap.put("CSMSCommunicationBlockHelper", csmsMeterValuesPresenter);
         return meterValuesPresenterMap;
     }
 }

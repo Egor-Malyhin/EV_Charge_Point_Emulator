@@ -16,6 +16,9 @@ import org.springframework.statemachine.config.builders.StateMachineTransitionCo
 //The enum constants of the OCA-OCPP library are used as states,
 //and the enum constants of StationStateAction are used as transitions between states.
 //A statemachine listener is also used.
+
+//If you are extending the state machine,
+//you should also specify all extensions in this class (new states and transitions).
 @Configuration
 @EnableStateMachine
 public class StationStateMachineConfiguration extends EnumStateMachineConfigurerAdapter<ChargePointStatus, StationStateAction> {

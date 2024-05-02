@@ -8,7 +8,9 @@ import org.mycorp.models.StationCharacteristics;
 import org.mycorp.models.events.stateoperator.StateChanged;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.EventListener;
+import org.springframework.stereotype.Component;
 
+@Component
 public class StateChangedEventListener extends CSMSCommunicationBlockEventListener<StateChanged> {
     @Autowired
     protected StateChangedEventListener(CSMSCommunicationBlockInterface csmsCommunicationBlockInterface, ClientCoreProfile clientCoreProfileMessageGenerator) {

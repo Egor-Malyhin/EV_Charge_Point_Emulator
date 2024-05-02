@@ -1,4 +1,4 @@
-package org.mycorp.commcsms.message_handlers;
+package org.mycorp.commcsms.messagehandlers;
 
 import eu.chargetime.ocpp.model.Confirmation;
 import eu.chargetime.ocpp.model.core.AuthorizationStatus;
@@ -21,6 +21,6 @@ public class StartTransactionConfHandler extends OCPPConfirmationHandlerImpl {
         StartTransactionConfirmation startTransactionConfirmation = (StartTransactionConfirmation) confirmation;
         StationVariables.getInstance().setTransactionId(startTransactionConfirmation.getTransactionId());
         boolean isAccepted = startTransactionConfirmation.getIdTagInfo().getStatus() == AuthorizationStatus.Accepted;
-        ocppPublisher.publishEvent(new CSMSChargingAccept(this, isAccepted));
+        ocppPublisher.publishEvent(new CSMSChargingAccept(isAccepted));
     }
 }

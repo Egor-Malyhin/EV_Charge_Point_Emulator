@@ -1,4 +1,4 @@
-package org.mycorp.commcsms.message_handlers;
+package org.mycorp.commcsms.messagehandlers;
 
 import eu.chargetime.ocpp.model.Confirmation;
 import eu.chargetime.ocpp.model.core.BootNotificationConfirmation;

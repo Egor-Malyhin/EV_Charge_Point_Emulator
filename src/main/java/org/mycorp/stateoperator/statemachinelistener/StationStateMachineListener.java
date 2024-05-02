@@ -20,6 +20,6 @@ public class StationStateMachineListener extends StateMachineListenerAdapter<Cha
 
     @Override
     public void stateChanged(State<ChargePointStatus, StationStateAction> from, State<ChargePointStatus, StationStateAction> to) {
-        applicationEventPublisher.publishEvent(new StateChanged(this, to.getId()));
+        applicationEventPublisher.publishEvent(new StateChanged(to.getId()));
     }
 }

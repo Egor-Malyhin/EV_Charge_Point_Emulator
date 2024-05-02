@@ -1,4 +1,4 @@
-package org.mycorp.commcsms.message_handlers;
+package org.mycorp.commcsms.messagehandlers;
 
 import eu.chargetime.ocpp.model.Confirmation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.Map;
 import java.util.Optional;
 
+//
 @Component
 public class OCPPConfirmationHandlerContext {
     private final Map<String, OCPPConfirmationHandler> ocppMessageOperatorMap;

@@ -17,6 +17,6 @@ public class EVChargeParameterRequestEventListener extends EVLocalRequestManager
     @Override
     @EventListener
     public void listenEvent(EVChargeParameterRequest stationEvent) {
-        applicationEventPublisher.publishEvent(new StationParametersPresented(this, StationCharacteristics.ratedVoltage, StationCharacteristics.maxCurrent));
+        applicationEventPublisher.publishEvent(new StationParametersPresented(StationCharacteristics.ratedVoltage, StationCharacteristics.maxCurrent));
     }
 }

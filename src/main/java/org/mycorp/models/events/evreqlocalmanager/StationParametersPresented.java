@@ -2,12 +2,11 @@ package org.mycorp.models.events.evreqlocalmanager;
 
 import org.springframework.context.ApplicationEvent;
 
-public class StationParametersPresented extends ApplicationEvent {
+public class StationParametersPresented extends EVLocalRequestManagerEvent {
     private final int ratedVoltageValue;
     private final int maxCurrentValue;
 
-    public StationParametersPresented(Object source, int ratedVoltageValue, int maxCurrentValue) {
-        super(source);
+    public StationParametersPresented(int ratedVoltageValue, int maxCurrentValue) {
         this.ratedVoltageValue = ratedVoltageValue;
         this.maxCurrentValue = maxCurrentValue;
     }

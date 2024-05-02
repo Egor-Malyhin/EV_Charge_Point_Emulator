@@ -4,57 +4,88 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76b66a1d-1f2c-4dbf-9a80-cc7d32ab3715" name="Changes" comment="The stateoperator module has been developed. This module is a service that interacts with SpringStateMachine. This service can change the condition of the machine. The enum constants from the library eu.chargetime OCA-OCPP - ChargePointStatus are used as the states used in the machine, as well as personifying the state of the station. The enum constants of StationStateAction are used as state transitions. StateMachineListener has also been added, which publishes the stateChanged event when the station status changes. The redesign for the new architecture of the commcsms module has also begun">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventlisteners/StopChargingByCSMSEventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/eventlisteners/CSMSCommunicationBlockEventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/eventlisteners/ChargingStoppedEventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/eventlisteners/EVPowerDeliveryRequestEventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/eventlisteners/EVStartSessionRequestEventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/eventlisteners/MeterValuesToCSMSEventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/eventlisteners/SendBootNotificationEventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/eventlisteners/StateChangedEventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_handlers/AuthorizeConfHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_handlers/BootNotificationConfHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_handlers/MeterValuesConfHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_handlers/OCPPConfirmationHandlerContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_handlers/StartTransactionConfHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_handlers/StatusNotificationConfHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_handlers/StopTransactionConfHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/logging/StationEventLogger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/StationVariables.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/SendBootNotification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/chargetransfer/ChargingStopped.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commcsms/StopChargingByCSMS.java" afterDir="false" />
+    <list default="true" id="76b66a1d-1f2c-4dbf-9a80-cc7d32ab3715" name="Changes" comment="Minor code cleanup">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/websocketactionlistener/WebSocketActionListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsmshelper/CSMSCommunicationBlockHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsmshelper/CSMSCommunicationBlockHelperInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsmshelper/eventlisteners/CSMSChargingAcceptEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsmshelper/eventlisteners/CSMSCommunicationBlockHelperEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsmshelper/eventlisteners/ChargingStoppedEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsmshelper/eventlisteners/ClientConnectedEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/chargetransfer/ChargeTransferEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commcsms/CSMSCommunicationBlockEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commcsms/CSMSRequestEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commcsms/ClientConnected.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commcsmshelper/CSMSCommunicationBlockHelperEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commev/EVCommunicationBlockEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/common/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/evreqlocalmanager/EVLocalRequestManagerEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/stateoperator/StateOperatorEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/stateoperator/eventlisteners/ChargingStoppedEventListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/ChargeTransferBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/ChargeTransferBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventpublishers/stopcharging/StopChargingByCSMSPublisher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventpublishers/stopcharging/StopChargingByEVPublisher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventpublishers/stopcharging/StopChargingByStationPublisher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/ChargeTransferBlockTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/ChargeTransferBlockTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventlisteners/GetMeterValuesEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventlisteners/GetMeterValuesEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventlisteners/StartChargingEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventlisteners/CSMSChargingAcceptEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventlisteners/StopChargingByCSMSEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventlisteners/StopChargingByCSMSEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventlisteners/StopChargingEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventlisteners/StopChargingEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventpublishers/metervaluespresenters/CSMSMeterValuesPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventpublishers/metervaluespresenters/CSMSMeterValuesPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventpublishers/metervaluespresenters/EVMeterValuesPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventpublishers/metervaluespresenters/EVMeterValuesPresenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventpublishers/stopcharging/StopChargingEventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventpublishers/stopcharging/StopChargingEventPublisher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventpublishers/stopcharging/StopChargingEventPublisherContext.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventpublishers/stopcharging/StopChargingEventPublisherImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/CSMSCommunicationBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/CSMSCommunicationBlock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/CSMSCommunicationBlockClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/CSMSCommunicationBlockClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/CSMSCommunicationBlockSessionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/LowPriorityMessagesOperator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_handlers/CoreProfileOCPPConfirmationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_handlers/OCPPConfirmationHandlerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_handlers/OCPPMessageHandlerContext.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_makers/CoreProfileMessageMaker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_makers/CoreProfileMessageMakerImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_makers/OCPPMessageMaker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/eventlisteners/ChargingStoppedEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/eventlisteners/ChargingStoppedEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/eventlisteners/SendBootNotificationEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/eventlisteners/SendBootNotificationEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/eventlisteners/StateChangedEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/eventlisteners/StateChangedEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_handlers/AuthorizeConfHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/messagehandlers/AuthorizeConfHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_handlers/BootNotificationConfHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/messagehandlers/BootNotificationConfHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_handlers/MeterValuesConfHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/messagehandlers/MeterValuesConfHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_handlers/OCPPConfirmationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/messagehandlers/OCPPConfirmationHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_handlers/OCPPConfirmationHandlerContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/messagehandlers/OCPPConfirmationHandlerContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_handlers/OCPPConfirmationHandlerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/messagehandlers/OCPPConfirmationHandlerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_handlers/StartTransactionConfHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/messagehandlers/StartTransactionConfHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_handlers/StatusNotificationConfHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/messagehandlers/StatusNotificationConfHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/message_handlers/StopTransactionConfHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/messagehandlers/StopTransactionConfHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/evactionlisteners/EVActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/evactionlisteners/EVActionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/ChargeParameterDiscoveryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/ChargeParameterDiscoveryHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/ChargingStatusHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/ChargingStatusHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/PowerDeliveryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/PowerDeliveryHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/SessionSetupHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/SessionSetupHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/SessionStopHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/SessionStopHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/V2GMessageHandlerContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/V2GMessageHandlerContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/evreqlocalmanager/eventlisteners/EVChargeParameterRequestEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/evreqlocalmanager/eventlisteners/EVChargeParameterRequestEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/evreqlocalmanager/eventlisteners/EVSessionStopRequestEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/evreqlocalmanager/eventlisteners/EVSessionStopRequestEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/main/ApplicationConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/main/ApplicationConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/main/MyConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/main/ApplicationConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/EVCharacterisation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/StationCharacteristics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/StationCharacteristics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/chargetransfer/ChargingStoppedByCSMS.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/chargetransfer/ChargingStoppedByEV.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/chargetransfer/ChargingStoppedByStation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/stateoperator/StationStateWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CSMSCommunicationBlockTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CSMSCommunicationBlockTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ChargeTransferBlockTaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ChargeTransferBlockTaskTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/V2GDecoderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/V2GDecoderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/main/SpringEventMulticasterConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/main/SpringEventMulticasterConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/main/StationStateMachineConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/main/StationStateMachineConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/StationStateAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/StationStateAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/StationVariables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/StationVariables.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/SendBootNotification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commcsmshelper/SendBootNotification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/chargetransfer/ChargingStopped.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/chargetransfer/ChargingStopped.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/chargetransfer/MeterValuesToCSMS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/chargetransfer/MeterValuesToCSMS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/chargetransfer/MeterValuesToEV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/chargetransfer/MeterValuesToEV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commcsms/CSMSChargingAccept.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commcsms/CSMSChargingAccept.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commcsms/CSMSMeterValuesRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commcsms/CSMSMeterValuesRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commcsms/EVAuthorized.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commcsms/EVAuthorized.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commcsms/StopChargingByCSMS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commcsms/StopChargingByCSMS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commev/ConnectedEV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commev/ConnectedEV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commev/DisconnectedEV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commev/DisconnectedEV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commev/EVChargeParameterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commev/EVChargeParameterRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commev/EVChargingStatusRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commev/EVPowerDeliveryRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commev/EVPowerDeliveryRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commev/EVSessionStopRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commev/EVSessionStopRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commev/EVStartSessionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commev/EVStartSessionRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/common/GetMeterValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/common/GetMeterValues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/common/StopCharging.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/common/StopCharging.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/evreqlocalmanager/EVDisconnectionAccept.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/evreqlocalmanager/EVDisconnectionAccept.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/evreqlocalmanager/StationParametersPresented.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/evreqlocalmanager/StationParametersPresented.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/stateoperator/StartCharging.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/stateoperator/StateChanged.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/stateoperator/StateChanged.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/ocpp/CSMSConfirmationClassification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/stateoperator/eventlisteners/CSMSChargingAcceptEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/stateoperator/eventlisteners/CSMSChargingAcceptEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/stateoperator/statemachinelistener/StationStateMachineListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/stateoperator/statemachinelistener/StationStateMachineListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/stationeventlistener/StationEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/stationeventlistener/StationEventListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,9 +95,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="package-info" />
         <option value="Interface" />
         <option value="Enum" />
+        <option value="package-info" />
         <option value="Class" />
       </list>
     </option>
@@ -114,7 +145,7 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/MyProjects/Notes_App_Server&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/MyProjects/EV_Charging_Point&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
@@ -316,7 +347,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714484819910</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="The commcsms module has been redesigned for a new architecture, using the eu.chargetime Java OCA-OCPP library. New events were added, the chargetransfer module was also slightly redesigned - now, at the end, it generates only the ChargingStopped event, and the initiator of the stop is recorded in a separate shutdownInitiator field. Logging has also been added - after each event, its name and sender are recorded in the console. Logging logic in the logging module, Spring AOP was used in the implementation">
+      <option name="closed" value="true" />
+      <created>1714594604172</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1714594604172</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Minor code cleanup">
+      <option name="closed" value="true" />
+      <created>1714594728802</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1714594728802</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -344,6 +391,8 @@
     <MESSAGE value="Small code changes made, read-write synchronization added to the stop() method, some event classes added, and development of the State Operator module has been initiated." />
     <MESSAGE value="Minor Code Changes" />
     <MESSAGE value="The stateoperator module has been developed. This module is a service that interacts with SpringStateMachine. This service can change the condition of the machine. The enum constants from the library eu.chargetime OCA-OCPP - ChargePointStatus are used as the states used in the machine, as well as personifying the state of the station. The enum constants of StationStateAction are used as state transitions. StateMachineListener has also been added, which publishes the stateChanged event when the station status changes. The redesign for the new architecture of the commcsms module has also begun" />
-    <option name="LAST_COMMIT_MESSAGE" value="The stateoperator module has been developed. This module is a service that interacts with SpringStateMachine. This service can change the condition of the machine. The enum constants from the library eu.chargetime OCA-OCPP - ChargePointStatus are used as the states used in the machine, as well as personifying the state of the station. The enum constants of StationStateAction are used as state transitions. StateMachineListener has also been added, which publishes the stateChanged event when the station status changes. The redesign for the new architecture of the commcsms module has also begun" />
+    <MESSAGE value="The commcsms module has been redesigned for a new architecture, using the eu.chargetime Java OCA-OCPP library. New events were added, the chargetransfer module was also slightly redesigned - now, at the end, it generates only the ChargingStopped event, and the initiator of the stop is recorded in a separate shutdownInitiator field. Logging has also been added - after each event, its name and sender are recorded in the console. Logging logic in the logging module, Spring AOP was used in the implementation" />
+    <MESSAGE value="Minor code cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor code cleanup" />
   </component>
 </project>

@@ -1,5 +1,6 @@
 package org.mycorp.commev.messagehandlers;
 
+import org.mycorp.commev.EVCommunicationBlock;
 import org.mycorp.models.events.common.GetMeterValues;
 import org.mycorp.models.messages.v2g.V2GBodyAbstractType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,6 @@ public class ChargingStatusHandler extends V2GMessageHandlerImpl {
 
     @Override
     public void handleMessage(V2GBodyAbstractType v2gMessageBody) {
-        applicationEventPublisher.publishEvent(new GetMeterValues(this, "EVCommunicationBlock"));
+        applicationEventPublisher.publishEvent(new GetMeterValues(EVCommunicationBlock.class));
     }
 }

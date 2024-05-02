@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 import java.time.Instant;
 
-@Component
+@Component("csmsChargingStoppedEventListener")
 public class ChargingStoppedEventListener extends CSMSCommunicationBlockEventListener<ChargingStopped> {
     @Autowired
     protected ChargingStoppedEventListener(CSMSCommunicationBlockInterface csmsCommunicationBlockInterface, ClientCoreProfile clientCoreProfileMessageGenerator) {

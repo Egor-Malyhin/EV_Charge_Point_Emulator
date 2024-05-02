@@ -2,11 +2,10 @@ package org.mycorp.models.events.commev;
 
 import org.springframework.context.ApplicationEvent;
 
-public class EVStartSessionRequest extends ApplicationEvent {
+public class EVStartSessionRequest extends EVCommunicationBlockEvent {
     private final String idTag;
 
-    public EVStartSessionRequest(Object source, String idTag) {
-        super(source);
+    public EVStartSessionRequest(String idTag) {
         this.idTag = idTag;
     }
 

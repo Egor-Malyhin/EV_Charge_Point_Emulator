@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("stateOperatorCSMSChargingAcceptEventListener")
 public class CSMSChargingAcceptEventListener extends StateOperatorEventListener<CSMSChargingAccept> {
     @Autowired
     protected CSMSChargingAcceptEventListener(StateOperatorInterface stateOperatorInterface) {
@@ -17,6 +17,7 @@ public class CSMSChargingAcceptEventListener extends StateOperatorEventListener<
     @Override
     @EventListener
     public void listenEvent(CSMSChargingAccept stationEvent) {
-        stateOperatorInterface.setStationState(StationStateAction.START_CHARGING);
+        if (stationEvent.isAccepted())
+            stateOperatorInterface.setStationState(StationStateAction.START_CHARGING);
     }
 }

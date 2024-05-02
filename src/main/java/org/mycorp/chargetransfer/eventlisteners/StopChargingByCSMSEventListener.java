@@ -16,7 +16,7 @@ public class StopChargingByCSMSEventListener extends ChargeTransferEventListener
     @Override
     @EventListener
     public void listenEvent(StopChargingByCSMS stationEvent) {
-        chargeTransferBlockInterface.stopChargeTransfer(stationEvent.getShutdownInitiator());
-        stationEvent.getCsmsLatch().countDown();
+        chargeTransferBlockInterface.stopChargeTransfer(stationEvent.getSource().getClass().getName());
+        stationEvent.getCountDownLatch().countDown();
     }
 }
