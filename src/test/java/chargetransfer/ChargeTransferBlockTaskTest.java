@@ -21,9 +21,10 @@ import static org.junit.Assert.assertEquals;
 public class ChargeTransferBlockTaskTest {
     @Autowired
     private ChargeTransferBlockTask chargeTransferBlockTask;
+
     @Test
     public void taskTest() throws InterruptedException, ExecutionException {
-        chargeTransferBlockTask.setCharge(new Charge("Wh",300));
+        chargeTransferBlockTask.setCharge(new Charge("Wh", 300));
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         Future<?> future = executorService.submit(chargeTransferBlockTask);
         future.get();
@@ -32,7 +33,7 @@ public class ChargeTransferBlockTaskTest {
 
     @Test
     public void getMeterValuesInTimeTest() throws InterruptedException {
-        chargeTransferBlockTask.setCharge(new Charge("Wh",1000));
+        chargeTransferBlockTask.setCharge(new Charge("Wh", 1000));
         ExecutorService executorService = Executors.newSingleThreadExecutor();
 
         executorService.submit(chargeTransferBlockTask);
@@ -49,11 +50,11 @@ public class ChargeTransferBlockTaskTest {
 
     @Test
     public void integratedTaskTest() throws ExecutionException, InterruptedException {
-        chargeTransferBlockTask.setCharge(new Charge("Wh",300));
+        chargeTransferBlockTask.setCharge(new Charge("Wh", 300));
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         ScheduledExecutorService additionalExecutorService = Executors.newScheduledThreadPool(3);
         Future<?> future = executorService.submit(chargeTransferBlockTask);
-        for(int i =0; i<3; i++){
+        for (int i = 0; i < 3; i++) {
             additionalExecutorService.scheduleAtFixedRate(() -> {
                 System.out.println(chargeTransferBlockTask.getMeterValues());
             }, 2, 2, TimeUnit.SECONDS);
@@ -65,14 +66,14 @@ public class ChargeTransferBlockTaskTest {
 
     @Test
     public void taskCanceledTest() throws InterruptedException, ExecutionException {
-        chargeTransferBlockTask.setCharge(new Charge("Wh",300));
+        chargeTransferBlockTask.setCharge(new Charge("Wh", 300));
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         Future<?> future = executorService.submit(chargeTransferBlockTask);
         Thread.sleep(10000);
         Instant beforeStop = Instant.now();
         chargeTransferBlockTask.stop("TestClass");
         future.get();
-        System.out.println("Seconds before stop: "+ Duration.between(beforeStop, Instant.now()).toMillis() * 0.001);
+        System.out.println("Seconds before stop: " + Duration.between(beforeStop, Instant.now()).toMillis() * 0.001);
         executorService.shutdown();
     }
 
