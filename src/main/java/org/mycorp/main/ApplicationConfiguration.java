@@ -80,7 +80,7 @@ public class ApplicationConfiguration {
     ) {
         Map<String, MeterValuesPresenter> meterValuesPresenterMap = new HashMap<>();
         meterValuesPresenterMap.put("EVCommunicationBlock", evMeterValuesPresenter);
-        meterValuesPresenterMap.put("CSMSCommunicationBlockHelper", csmsMeterValuesPresenter);
+        meterValuesPresenterMap.put("CSMSCommunicationBlock", csmsMeterValuesPresenter);
         return meterValuesPresenterMap;
     }
 }

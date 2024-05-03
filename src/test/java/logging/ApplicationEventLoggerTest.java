@@ -6,6 +6,7 @@ import org.mockito.InjectMocks;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.mycorp.logging.ApplicationEventLogger;
 import org.mycorp.main.ApplicationConfiguration;
+import org.mycorp.models.events.StationEvent;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.test.context.ContextConfiguration;
 
@@ -22,7 +23,7 @@ public class ApplicationEventLoggerTest {
         applicationEventLogger.onApplicationEvent(event);
     }
 
-    private static class TestEvent extends ApplicationEvent {
+    private static class TestEvent extends StationEvent {
         public TestEvent(Object source) {
             super(source);
         }

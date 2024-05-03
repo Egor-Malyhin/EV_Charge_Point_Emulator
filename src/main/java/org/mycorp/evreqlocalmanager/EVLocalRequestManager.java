@@ -1,5 +1,6 @@
 package org.mycorp.evreqlocalmanager;
 
+import org.mycorp.models.events.StationEvent;
 import org.mycorp.stationeventlistener.StationEventListener;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationEventPublisher;
@@ -12,7 +13,7 @@ import org.springframework.context.ApplicationEventPublisher;
 //the vertical architecture of the commev module.
 
 //Extend this class if you need to process an additional minor request from EV.
-public abstract class EVLocalRequestManager<T extends ApplicationEvent> implements StationEventListener<T> {
+public abstract class EVLocalRequestManager<T extends StationEvent> implements StationEventListener<T> {
     protected final ApplicationEventPublisher applicationEventPublisher;
 
     protected EVLocalRequestManager(ApplicationEventPublisher applicationEventPublisher) {

@@ -24,7 +24,6 @@ public class CSMSCommunicationBlockHelper implements CSMSCommunicationBlockHelpe
         this.meterValuesRequesterExecutor = Executors.newSingleThreadScheduledExecutor();
     }
 
-
     @Override
     public void sendBootNotification() {
         applicationEventPublisher.publishEvent(new SendBootNotification(this));
