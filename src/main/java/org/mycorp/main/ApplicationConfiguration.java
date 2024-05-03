@@ -8,15 +8,13 @@ import org.mycorp.chargetransfer.eventpublishers.metervaluespresenters.MeterValu
 import org.mycorp.commcsms.CSMSCommunicationBlockClientHandler;
 import org.mycorp.commcsms.messagehandlers.*;
 import org.mycorp.commev.messagehandlers.*;
-import org.mycorp.logging.StationEventLogger;
-import org.mycorp.models.messages.v2g.V2GMessagesClassification;
-import org.mycorp.models.messages.v2g.req.SessionSetupReq;
-import org.springframework.context.annotation.*;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import static org.mycorp.models.messages.v2g.V2GMessagesClassification.*;
 
 //Core Configuration class of an application.
 //Add beans here that cannot be configured via @Component.

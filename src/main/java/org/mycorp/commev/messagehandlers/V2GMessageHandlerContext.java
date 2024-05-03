@@ -1,7 +1,5 @@
 package org.mycorp.commev.messagehandlers;
 
-import org.mycorp.models.messages.v2g.V2GBodyAbstractType;
-import org.mycorp.models.messages.v2g.V2GMessagesClassification;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;

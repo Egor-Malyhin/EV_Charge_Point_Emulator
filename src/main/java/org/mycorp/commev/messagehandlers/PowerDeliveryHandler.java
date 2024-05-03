@@ -1,6 +1,5 @@
 package org.mycorp.commev.messagehandlers;
 
-import org.mycorp.commev.EVCommunicationBlock;
 import org.mycorp.models.events.commev.EVPowerDeliveryRequest;
 import org.mycorp.models.events.common.StopCharging;
 import org.mycorp.models.messages.v2g.V2GBodyAbstractType;
