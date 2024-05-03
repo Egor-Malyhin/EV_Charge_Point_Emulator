@@ -1,5 +1,7 @@
 package org.mycorp.chargetransfer;
 
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.mycorp.models.Charge;
 import org.mycorp.models.MeterValues;
 import org.mycorp.models.SampledValue;
@@ -13,11 +15,13 @@ import java.util.List;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
+@Slf4j
 @Component
 public class ChargeTransferBlockTask implements Runnable {
     private final ReadWriteLock meterValuesLock;
     private final ReadWriteLock stopChargingLock;
     private final MeterValues meterValues;
+    @Setter
     private Charge charge;
     private boolean isRunning;
     private String shutdownInitiator;
@@ -37,15 +41,18 @@ public class ChargeTransferBlockTask implements Runnable {
         setShutdownInitiator("None");
         Duration durationOfCharging = setDurationTime(charge.value());
         Instant startTime = Instant.now();
-
+        log.info("Charging start");
         while (Duration.between(startTime, Instant.now()).compareTo(durationOfCharging) < 0 && isRunning()) {
             try {
-                Thread.sleep(100);
-                updateSampledValue(Duration.between(startTime, Instant.now()).toMillis());
+                Thread.sleep(1000);
+                Duration durationFromStart = Duration.between(startTime, Instant.now());
+                updateSampledValue(durationFromStart.toMillis());
+                log.info("Charging proceed: " + meterValues.getSampledValue().get(0).getValue() + meterValues.getSampledValue().get(0).getUnit() + ", Seconds from start: " + durationFromStart.toSeconds());
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
         }
+        log.info("Charging stop, shutdown initiator: " + shutdownInitiator + ", total charging time: " + Duration.between(startTime, Instant.now()).toSeconds() + " seconds.");
     }
 
     private Duration setDurationTime(float charge) {
@@ -54,7 +61,7 @@ public class ChargeTransferBlockTask implements Runnable {
         return Duration.ofNanos(longDuration);
     }
 
-    private void updateSampledValue(float durationFromStart) {
+    private void updateSampledValue(long durationFromStart) {
         meterValuesLock.writeLock().lock();
         try {
             SampledValue powerValue = meterValues.getSampledValue().get(0);
@@ -72,10 +79,6 @@ public class ChargeTransferBlockTask implements Runnable {
         } finally {
             meterValuesLock.readLock().unlock();
         }
-    }
-
-    public void setCharge(Charge charge) {
-        this.charge = charge;
     }
 
     public void stop(String shutdownInitiator) {

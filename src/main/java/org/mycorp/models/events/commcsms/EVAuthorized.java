@@ -1,11 +1,15 @@
 package org.mycorp.models.events.commcsms;
 
-public class EVAuthorized extends CSMSCommunicationBlockEvent {
+import org.springframework.context.ApplicationEvent;
+
+public class EVAuthorized extends ApplicationEvent {
     private final boolean isAuthorized;
 
-    public EVAuthorized(boolean isAuthorized) {
+    public EVAuthorized(Object source, boolean isAuthorized) {
+        super(source);
         this.isAuthorized = isAuthorized;
     }
+
 
     public boolean isAuthorized() {
         return isAuthorized;

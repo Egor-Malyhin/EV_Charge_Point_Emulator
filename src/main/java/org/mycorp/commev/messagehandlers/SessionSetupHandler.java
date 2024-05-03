@@ -19,6 +19,6 @@ public class SessionSetupHandler extends V2GMessageHandlerImpl {
     public void handleMessage(V2GBodyAbstractType v2gMessageBody) {
         String idTag = new String(((SessionSetupReq) v2gMessageBody).getEvccId());
         StationVariables.getInstance().setIdTag(idTag);
-        applicationEventPublisher.publishEvent(new EVStartSessionRequest(idTag));
+        applicationEventPublisher.publishEvent(new EVStartSessionRequest(this, idTag));
     }
 }

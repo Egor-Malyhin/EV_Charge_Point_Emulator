@@ -1,4 +1,9 @@
 package org.mycorp.models.events.commev;
 
-public class EVSessionStopRequest extends EVCommunicationBlockEvent {
+import org.springframework.context.ApplicationEvent;
+
+public class EVSessionStopRequest extends ApplicationEvent {
+    public EVSessionStopRequest(Object source) {
+        super(source);
+    }
 }

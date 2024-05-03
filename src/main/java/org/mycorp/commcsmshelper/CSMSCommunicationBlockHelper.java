@@ -27,13 +27,13 @@ public class CSMSCommunicationBlockHelper implements CSMSCommunicationBlockHelpe
 
     @Override
     public void sendBootNotification() {
-        applicationEventPublisher.publishEvent(new SendBootNotification());
+        applicationEventPublisher.publishEvent(new SendBootNotification(this));
     }
 
     @Override
     public void startMeterValuesRequester() {
         scheduledFuture = meterValuesRequesterExecutor.scheduleWithFixedDelay(() -> {
-            applicationEventPublisher.publishEvent(new GetMeterValues(CSMSCommunicationBlockHelper.class));
+            applicationEventPublisher.publishEvent(new GetMeterValues(this, "CSMSCommunicationBlock"));
         }, 2, 2, TimeUnit.SECONDS);
     }
 

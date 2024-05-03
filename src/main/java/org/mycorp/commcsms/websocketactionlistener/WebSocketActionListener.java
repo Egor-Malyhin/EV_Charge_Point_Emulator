@@ -13,6 +13,6 @@ public class WebSocketActionListener {
     }
 
     public void clientConnected() {
-        applicationEventPublisher.publishEvent(new ClientConnected());
+        applicationEventPublisher.publishEvent(new ClientConnected(this));
     }
 }

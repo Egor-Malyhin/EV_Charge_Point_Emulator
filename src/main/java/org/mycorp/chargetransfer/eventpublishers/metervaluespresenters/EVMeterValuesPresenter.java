@@ -15,6 +15,6 @@ public class EVMeterValuesPresenter extends MeterValuesPresenterImpl {
 
     @Override
     public void present(MeterValues meterValues, boolean isChargingOn) {
-        applicationEventPublisher.publishEvent(new MeterValuesToEV(meterValues, isChargingOn));
+        applicationEventPublisher.publishEvent(new MeterValuesToEV(this, meterValues, isChargingOn));
     }
 }

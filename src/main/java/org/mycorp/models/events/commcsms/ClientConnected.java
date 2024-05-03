@@ -1,4 +1,9 @@
 package org.mycorp.models.events.commcsms;
 
-public class ClientConnected extends CSMSCommunicationBlockEvent {
+import org.springframework.context.ApplicationEvent;
+
+public class ClientConnected extends ApplicationEvent {
+    public ClientConnected(Object source) {
+        super(source);
+    }
 }

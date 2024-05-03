@@ -10,9 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.time.Duration;
 import java.time.Instant;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 import static org.junit.Assert.assertEquals;
 
@@ -22,33 +22,12 @@ public class ChargeTransferBlockTaskTest {
     @Autowired
     private ChargeTransferBlockTask chargeTransferBlockTask;
     @Test
-    public void updateMeterValuesTest() throws InterruptedException {
-        chargeTransferBlockTask.setCharge(new Charge("Wh",70));
+    public void taskTest() throws InterruptedException, ExecutionException {
+        chargeTransferBlockTask.setCharge(new Charge("Wh",300));
         ExecutorService executorService = Executors.newSingleThreadExecutor();
-        executorService.submit(chargeTransferBlockTask);
-
-       /* executorService.submit(() -> {
-            while (true){
-                    Thread.sleep(50);
-                    System.out.println("1: " + chargeTransferBlockTask.getMeterValues());
-            }
-
-        });*/
-
-        /*executorService.submit(() -> {
-            while (true){
-                    Thread.sleep(50);
-                    System.out.println("2: " + chargeTransferBlockTask.getMeterValues());
-            }
-
-        });*/
-
-       while(chargeTransferBlockTask.getMeterValues().getSampledValue().get(0).getValue()<70){
-            Thread.sleep(1000);
-            System.out.println(chargeTransferBlockTask.getMeterValues());
-        }
-       System.out.println(executorService.isTerminated());
-       executorService.shutdown();
+        Future<?> future = executorService.submit(chargeTransferBlockTask);
+        future.get();
+        executorService.shutdown();
     }
 
     @Test
@@ -69,13 +48,32 @@ public class ChargeTransferBlockTaskTest {
     }
 
     @Test
-    public void instantTest() throws InterruptedException {
-        String timeString = "2021-04-20T15:30:00Z";
-        Instant customInstant = Instant.parse(timeString);
-
-        Thread.sleep(2000);
-
-        System.out.println(Instant.now());
-        System.out.println(customInstant);
+    public void integratedTaskTest() throws ExecutionException, InterruptedException {
+        chargeTransferBlockTask.setCharge(new Charge("Wh",300));
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        ScheduledExecutorService additionalExecutorService = Executors.newScheduledThreadPool(3);
+        Future<?> future = executorService.submit(chargeTransferBlockTask);
+        for(int i =0; i<3; i++){
+            additionalExecutorService.scheduleAtFixedRate(() -> {
+                System.out.println(chargeTransferBlockTask.getMeterValues());
+            }, 2, 2, TimeUnit.SECONDS);
+        }
+        future.get();
+        executorService.shutdown();
+        additionalExecutorService.shutdown();
     }
+
+    @Test
+    public void taskCanceledTest() throws InterruptedException, ExecutionException {
+        chargeTransferBlockTask.setCharge(new Charge("Wh",300));
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        Future<?> future = executorService.submit(chargeTransferBlockTask);
+        Thread.sleep(10000);
+        Instant beforeStop = Instant.now();
+        chargeTransferBlockTask.stop("TestClass");
+        future.get();
+        System.out.println("Seconds before stop: "+ Duration.between(beforeStop, Instant.now()).toMillis() * 0.001);
+        executorService.shutdown();
+    }
+
 }

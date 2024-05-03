@@ -19,6 +19,6 @@ public class AuthorizeConfHandler extends OCPPConfirmationHandlerImpl {
     public void handleConfirmation(Confirmation confirmation) {
         AuthorizeConfirmation authorizeConfirmation = (AuthorizeConfirmation) confirmation;
         boolean isAccepted = authorizeConfirmation.getIdTagInfo().getStatus() == AuthorizationStatus.Accepted;
-        ocppPublisher.publishEvent(new EVAuthorized(isAccepted));
+        ocppPublisher.publishEvent(new EVAuthorized(this, isAccepted));
     }
 }

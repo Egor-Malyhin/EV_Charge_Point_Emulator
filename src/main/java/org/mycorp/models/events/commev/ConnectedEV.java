@@ -1,4 +1,9 @@
 package org.mycorp.models.events.commev;
 
-public class ConnectedEV extends EVCommunicationBlockEvent {
+import org.springframework.context.ApplicationEvent;
+
+public class ConnectedEV extends ApplicationEvent {
+    public ConnectedEV(Object source) {
+        super(source);
+    }
 }

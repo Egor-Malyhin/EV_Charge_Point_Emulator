@@ -1,4 +1,9 @@
 package org.mycorp.models.events.evreqlocalmanager;
 
-public class EVDisconnectionAccept extends EVLocalRequestManagerEvent {
+import org.springframework.context.ApplicationEvent;
+
+public class EVDisconnectionAccept extends ApplicationEvent {
+    public EVDisconnectionAccept(Object source) {
+        super(source);
+    }
 }

@@ -15,6 +15,6 @@ public class CSMSMeterValuesPresenter extends MeterValuesPresenterImpl {
 
     @Override
     public void present(MeterValues meterValues, boolean isChargingOn) {
-        applicationEventPublisher.publishEvent(new MeterValuesToCSMS(meterValues));
+        applicationEventPublisher.publishEvent(new MeterValuesToCSMS(this, meterValues));
     }
 }

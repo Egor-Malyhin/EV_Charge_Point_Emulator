@@ -1,7 +1,12 @@
 package org.mycorp.models;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Objects;
 
+@Setter
+@Getter
 public class SampledValue implements Cloneable {
     private float value;
     private String measurand;
@@ -12,38 +17,6 @@ public class SampledValue implements Cloneable {
         this.value = value;
         this.measurand = measurand;
         this.location = location;
-        this.unit = unit;
-    }
-
-    public float getValue() {
-        return value;
-    }
-
-    public void setValue(float value) {
-        this.value = value;
-    }
-
-    public String getMeasurand() {
-        return measurand;
-    }
-
-    public void setMeasurand(String measurand) {
-        this.measurand = measurand;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public String getUnit() {
-        return unit;
-    }
-
-    public void setUnit(String unit) {
         this.unit = unit;
     }
 

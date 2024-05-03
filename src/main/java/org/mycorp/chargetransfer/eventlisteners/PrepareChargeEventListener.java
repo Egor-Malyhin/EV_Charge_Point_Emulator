@@ -16,6 +16,6 @@ public class PrepareChargeEventListener extends ChargeTransferEventListener<EVCh
     @Override
     @EventListener
     public void listenEvent(EVChargeParameterRequest stationEvent) {
-        chargeTransferBlockInterface.setCharge(stationEvent.getCharge());
+        chargeTransferBlockInterface.setCharge(stationEvent.getAmount());
     }
 }

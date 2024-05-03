@@ -1,4 +1,9 @@
 package org.mycorp.models.events.commev;
 
-public class DisconnectedEV extends EVCommunicationBlockEvent {
+import org.springframework.context.ApplicationEvent;
+
+public class DisconnectedEV extends ApplicationEvent {
+    public DisconnectedEV(Object source) {
+        super(source);
+    }
 }

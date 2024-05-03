@@ -1,13 +1,14 @@
 package org.mycorp.models.events.commev;
 
-public class EVStartSessionRequest extends EVCommunicationBlockEvent {
+import lombok.Getter;
+import org.springframework.context.ApplicationEvent;
+
+@Getter
+public class EVStartSessionRequest extends ApplicationEvent {
     private final String idTag;
 
-    public EVStartSessionRequest(String idTag) {
+    public EVStartSessionRequest(Object source, String idTag) {
+        super(source);
         this.idTag = idTag;
-    }
-
-    public String getIdTag() {
-        return idTag;
     }
 }

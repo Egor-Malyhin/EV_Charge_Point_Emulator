@@ -39,7 +39,7 @@ public class CSMSCommunicationBlockClientHandler implements ClientCoreEventHandl
     @Override
     public RemoteStopTransactionConfirmation handleRemoteStopTransactionRequest(RemoteStopTransactionRequest remoteStopTransactionRequest) {
         try {
-            applicationEventPublisher.publishEvent(new StopChargingByCSMS(countDownLatch));
+            applicationEventPublisher.publishEvent(new StopChargingByCSMS(this, countDownLatch));
             boolean isContinue = countDownLatch.await(2, TimeUnit.SECONDS);
             return new RemoteStopTransactionConfirmation(isContinue ? RemoteStartStopStatus.Accepted : RemoteStartStopStatus.Rejected);
         } catch (InterruptedException e) {

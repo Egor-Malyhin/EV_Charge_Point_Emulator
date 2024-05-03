@@ -18,6 +18,6 @@ public class EVSessionStopRequestEventListener extends EVLocalRequestManager<EVS
     @Override
     @EventListener
     public void listenEvent(EVSessionStopRequest stationEvent) {
-        applicationEventPublisher.publishEvent(new EVDisconnectionAccept());
+        applicationEventPublisher.publishEvent(new EVDisconnectionAccept(this));
     }
 }

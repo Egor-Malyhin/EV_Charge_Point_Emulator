@@ -16,6 +16,6 @@ public class ChargingStatusHandler extends V2GMessageHandlerImpl {
 
     @Override
     public void handleMessage(V2GBodyAbstractType v2gMessageBody) {
-        applicationEventPublisher.publishEvent(new GetMeterValues(EVCommunicationBlock.class));
+        applicationEventPublisher.publishEvent(new GetMeterValues(this, "EVCommunicationBlock"));
     }
 }

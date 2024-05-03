@@ -16,6 +16,6 @@ public class StopChargingEventListener extends ChargeTransferEventListener<StopC
     @Override
     @EventListener
     public void listenEvent(StopCharging stationEvent) {
-        chargeTransferBlockInterface.stopChargeTransfer(stationEvent.getSource().getClass().getName());
+        chargeTransferBlockInterface.stopChargeTransfer(stationEvent.getRequesterBlock());
     }
 }

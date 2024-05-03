@@ -22,10 +22,10 @@ public class PowerDeliveryHandler extends V2GMessageHandlerImpl {
         ChargeProgress chargeProgress = ((PowerDeliveryReq) v2gMessageBody).getChargeProgress();
         switch (chargeProgress) {
             case START:
-                applicationEventPublisher.publishEvent(new EVPowerDeliveryRequest());
+                applicationEventPublisher.publishEvent(new EVPowerDeliveryRequest(this));
                 break;
             case STOP:
-                applicationEventPublisher.publishEvent(new StopCharging(EVCommunicationBlock.class));
+                applicationEventPublisher.publishEvent(new StopCharging(this, "EVCommunicationBlock"));
         }
     }
 }

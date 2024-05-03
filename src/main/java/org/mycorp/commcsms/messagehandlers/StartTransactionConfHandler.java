@@ -21,6 +21,6 @@ public class StartTransactionConfHandler extends OCPPConfirmationHandlerImpl {
         StartTransactionConfirmation startTransactionConfirmation = (StartTransactionConfirmation) confirmation;
         StationVariables.getInstance().setTransactionId(startTransactionConfirmation.getTransactionId());
         boolean isAccepted = startTransactionConfirmation.getIdTagInfo().getStatus() == AuthorizationStatus.Accepted;
-        ocppPublisher.publishEvent(new CSMSChargingAccept(isAccepted));
+        ocppPublisher.publishEvent(new CSMSChargingAccept(this, isAccepted));
     }
 }

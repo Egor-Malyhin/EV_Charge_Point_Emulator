@@ -1,19 +1,16 @@
 package org.mycorp.models.events.evreqlocalmanager;
 
-public class StationParametersPresented extends EVLocalRequestManagerEvent {
+import lombok.Getter;
+import org.springframework.context.ApplicationEvent;
+
+@Getter
+public class StationParametersPresented extends ApplicationEvent {
     private final int ratedVoltageValue;
     private final int maxCurrentValue;
 
-    public StationParametersPresented(int ratedVoltageValue, int maxCurrentValue) {
+    public StationParametersPresented(Object source, int ratedVoltageValue, int maxCurrentValue) {
+        super(source);
         this.ratedVoltageValue = ratedVoltageValue;
         this.maxCurrentValue = maxCurrentValue;
-    }
-
-    public int getRatedVoltageValue() {
-        return ratedVoltageValue;
-    }
-
-    public int getMaxCurrentValue() {
-        return maxCurrentValue;
     }
 }

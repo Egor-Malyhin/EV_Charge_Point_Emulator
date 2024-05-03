@@ -15,6 +15,6 @@ public class StopChargingEventPublisher {
     }
 
     public void publishStopChargingEvent(String shutdownInitiator) {
-        applicationEventPublisher.publishEvent(new ChargingStopped(shutdownInitiator));
+        applicationEventPublisher.publishEvent(new ChargingStopped(this, shutdownInitiator));
     }
 }

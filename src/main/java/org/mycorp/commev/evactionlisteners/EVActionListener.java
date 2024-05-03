@@ -22,10 +22,10 @@ public class EVActionListener {
     }
 
     public void evConnected() {
-        applicationEventPublisher.publishEvent(new ConnectedEV());
+        applicationEventPublisher.publishEvent(new ConnectedEV(this));
     }
 
     public void evDisconnected() {
-        applicationEventPublisher.publishEvent(new DisconnectedEV());
+        applicationEventPublisher.publishEvent(new DisconnectedEV(this));
     }
 }

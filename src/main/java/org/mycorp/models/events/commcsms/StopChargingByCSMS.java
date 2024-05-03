@@ -1,9 +1,11 @@
 package org.mycorp.models.events.commcsms;
 
+import org.springframework.context.ApplicationEvent;
+
 import java.util.concurrent.CountDownLatch;
 
 public class StopChargingByCSMS extends CSMSRequestEvent {
-    public StopChargingByCSMS(CountDownLatch countDownLatch) {
-        super(countDownLatch);
+    public StopChargingByCSMS(Object source, CountDownLatch countDownLatch) {
+        super(source, countDownLatch);
     }
 }
