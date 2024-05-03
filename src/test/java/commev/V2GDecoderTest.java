@@ -1,3 +1,5 @@
+package commev;
+
 import org.apache.mina.filter.codec.ProtocolDecoderOutput;
 import org.junit.Test;
 import org.junit.runner.RunWith;

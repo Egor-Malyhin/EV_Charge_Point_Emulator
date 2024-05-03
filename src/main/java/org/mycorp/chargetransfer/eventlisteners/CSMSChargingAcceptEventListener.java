@@ -16,7 +16,7 @@ public class CSMSChargingAcceptEventListener extends ChargeTransferEventListener
     @Override
     @EventListener
     public void listenEvent(CSMSChargingAccept stationEvent) {
-        if(stationEvent.isAccepted())
+        if (stationEvent.isAccepted())
             chargeTransferBlockInterface.startChargeTransfer();
     }
 }

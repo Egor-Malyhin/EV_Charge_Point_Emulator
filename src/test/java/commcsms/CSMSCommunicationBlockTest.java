@@ -1,3 +1,5 @@
+package commcsms;
+
 import org.junit.runner.RunWith;
 import org.mycorp.main.ApplicationConfiguration;
 import org.springframework.test.context.ContextConfiguration;

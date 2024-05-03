@@ -1,3 +1,5 @@
+package commev;
+
 import org.junit.Test;
 import org.mycorp.commev.messagebuilders.MessageBuildersDirector;
 import org.mycorp.commev.messagebuilders.PowerDeliveryResBuilder;

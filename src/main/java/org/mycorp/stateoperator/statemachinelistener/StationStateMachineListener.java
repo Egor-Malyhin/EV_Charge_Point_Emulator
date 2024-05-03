@@ -5,6 +5,7 @@ import org.mycorp.models.StationStateAction;
 import org.mycorp.models.events.stateoperator.StateChanged;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.messaging.Message;
 import org.springframework.statemachine.listener.StateMachineListenerAdapter;
 import org.springframework.statemachine.state.State;
 import org.springframework.stereotype.Component;
@@ -16,6 +17,11 @@ public class StationStateMachineListener extends StateMachineListenerAdapter<Cha
     @Autowired
     public StationStateMachineListener(ApplicationEventPublisher applicationEventPublisher) {
         this.applicationEventPublisher = applicationEventPublisher;
+    }
+
+    @Override
+    public void eventNotAccepted(Message<StationStateAction> event) {
+        throw new IllegalStateException("Invalid transition: " + event.getPayload());
     }
 
     @Override

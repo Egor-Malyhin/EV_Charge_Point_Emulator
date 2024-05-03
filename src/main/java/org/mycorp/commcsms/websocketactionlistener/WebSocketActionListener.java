@@ -12,7 +12,7 @@ public class WebSocketActionListener {
         this.applicationEventPublisher = applicationEventPublisher;
     }
 
-    public void clientConnected(){
+    public void clientConnected() {
         applicationEventPublisher.publishEvent(new ClientConnected());
     }
 }

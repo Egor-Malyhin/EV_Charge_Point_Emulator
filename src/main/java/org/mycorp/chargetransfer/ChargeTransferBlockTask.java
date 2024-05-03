@@ -15,7 +15,6 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 @Component
 public class ChargeTransferBlockTask implements Runnable {
-    //TODO сохранять значения после выключения програмы
     private final ReadWriteLock meterValuesLock;
     private final ReadWriteLock stopChargingLock;
     private final MeterValues meterValues;

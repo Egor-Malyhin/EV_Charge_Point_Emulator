@@ -37,24 +37,22 @@ public class XMLConverter {
             this.context = JAXBContext.newInstance(V2GMessage.class);
             this.exiFactory = DefaultEXIFactory.newInstance();
         } catch (JAXBException e) {
-            e.printStackTrace();
             throw new RuntimeException(e);
         }
     }
 
-    private byte[] convertToXML(V2GMessage message) {
+    private byte[] convertToXML(V2GMessage message) throws JAXBException {
         try (ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             marshaller.marshal(message, baos);
             return baos.toByteArray();
-        } catch (JAXBException | IOException e) {
-            e.printStackTrace();
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public byte[] convertToEXIMessage(V2GMessage v2GMessage) {
+    public byte[] convertToEXIMessage(V2GMessage v2GMessage) throws SAXException, EXIException, ParserConfigurationException, JAXBException {
         byte[] v2GMessageXML = convertToXML(v2GMessage);
         try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
              ByteArrayInputStream xmlInputStream = new ByteArrayInputStream(v2GMessageXML)) {
@@ -72,7 +70,7 @@ public class XMLConverter {
             xmlReader.parse(new InputSource(xmlInputStream));
 
             return baos.toByteArray();
-        } catch (IOException | SAXException | EXIException | ParserConfigurationException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }

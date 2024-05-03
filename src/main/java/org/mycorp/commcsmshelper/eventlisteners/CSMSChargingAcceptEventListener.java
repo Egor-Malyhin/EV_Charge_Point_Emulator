@@ -17,7 +17,7 @@ public class CSMSChargingAcceptEventListener extends CSMSCommunicationBlockHelpe
     @Override
     @EventListener
     public void listenEvent(CSMSChargingAccept stationEvent) {
-        if(stationEvent.isAccepted())
+        if (stationEvent.isAccepted())
             csmsCommunicationBlockHelperInterface.startMeterValuesRequester();
     }
 }

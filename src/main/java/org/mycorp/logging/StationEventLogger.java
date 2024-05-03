@@ -1,8 +1,7 @@
 package org.mycorp.logging;
 
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationEvent;
@@ -14,18 +13,19 @@ import org.springframework.stereotype.Component;
 //AOP is used for logging, in particular spring-aop.
 //After calling the publishEvent(ApplicationEvent event) method,
 //the logEvent(Object event) method is called.
-@Aspect
 @Component
+@Aspect
 public class StationEventLogger {
     private static final Logger logger = LoggerFactory.getLogger(StationEventLogger.class);
 
-    @Pointcut("execution(* org.springframework.context.ApplicationEventPublisher.publishEvent(..))")
-    public void publishEventPointcut() {
-    }
+    /*
+    @Before("execution(* org.springframework.context.ApplicationEventPublisher.publishEvent(Object)) && args(event)")
+    public void logEvent(ApplicationEvent event) {
+        logger.info("Event published: " + event.getClass().getName() + " by: " + event.getSource().getClass().getSimpleName());
+    }*/
 
-    @After("publishEventPointcut() && args(event)")
-    public void logEvent(Object event) {
-        ApplicationEvent applicationEvent = (ApplicationEvent) event;
-        logger.info("Event published: " + applicationEvent.getClass().getName() + " by: " + applicationEvent.getSource().getClass().getName());
+    @AfterThrowing(pointcut = "execution(* org.mycorp.*.*.*(..))", throwing = "ex")
+    public void logException(Throwable ex) {
+        logger.error("Exception caught: ", ex);
     }
 }

@@ -11,6 +11,8 @@ import org.mycorp.models.messages.v2g.V2GSessionIdCounter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 @Component
 public class EVCommunicationBlockSessionHandler extends IoHandlerAdapter implements EVCommunicationBlockInterface {
     private final V2GMessageHandlerContext v2GMessageHandlerContext;
@@ -27,7 +29,7 @@ public class EVCommunicationBlockSessionHandler extends IoHandlerAdapter impleme
     }
 
     @Override
-    public void sessionOpened(IoSession sessionReceived) throws Exception {
+    public void sessionOpened(IoSession sessionReceived) {
         if (isEvConnected)
             sessionReceived.closeNow();
         else {
@@ -39,19 +41,19 @@ public class EVCommunicationBlockSessionHandler extends IoHandlerAdapter impleme
     }
 
     @Override
-    public void sessionClosed(IoSession sessionClosed) throws Exception {
+    public void sessionClosed(IoSession sessionClosed) {
         isEvConnected = false;
         session = null;
         evActionListener.evDisconnected();
     }
 
     @Override
-    public void messageReceived(IoSession session, Object message) throws Exception {
+    public void messageReceived(IoSession session, Object message) {
         V2GMessage convertedMessage = (V2GMessage) message;
         V2GBodyAbstractType messageBody = convertedMessage.getBody().getV2GBodyAbstractType();
         try {
-            V2GMessageHandler v2gMessageHandler = v2GMessageHandlerContext.getMessageHandlerImpl(messageBody);
-            v2gMessageHandler.handleMessage(messageBody);
+            Optional<V2GMessageHandler> v2GMessageHandler = v2GMessageHandlerContext.getMessageHandlerImpl(messageBody.getClass().getSimpleName());
+            v2GMessageHandler.orElseThrow(() -> new ClassNotFoundException("Not supported v2g message handler")).handleMessage(messageBody);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }

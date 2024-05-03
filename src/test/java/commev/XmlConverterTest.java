@@ -1,3 +1,5 @@
+package commev;
+
 import com.siemens.ct.exi.core.exceptions.EXIException;
 import org.junit.Test;
 import org.mycorp.commev.protocolfilter.XMLConverter;
@@ -10,8 +12,10 @@ import org.mycorp.models.messages.v2g.res.SessionSetupRes;
 import org.mycorp.models.messages.v2g.types.AC_EVSEStatus;
 import org.mycorp.models.messages.v2g.types.EVSENotification;
 import org.mycorp.models.messages.v2g.types.ResponseCode;
+import org.xml.sax.SAXException;
 
 import javax.xml.bind.JAXBException;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 import java.lang.reflect.Method;
 
@@ -57,7 +61,7 @@ public class XmlConverterTest {
     }
 
     @Test
-    public void convertV2GToExiTest() throws JAXBException, EXIException, TransformerException {
+    public void convertV2GToExiTest() throws JAXBException, EXIException, TransformerException, ParserConfigurationException, SAXException {
         SessionSetupRes sessionSetupRes = new SessionSetupRes(ResponseCode.OK, "1", 3);
         V2GMessage v2GMessage = new V2GMessage(new V2GHeader(new byte[]{0x01}), new V2GBody(sessionSetupRes));
 

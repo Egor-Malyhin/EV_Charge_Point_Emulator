@@ -41,7 +41,7 @@ public class CSMSCommunicationBlock implements Runnable, CSMSCommunicationBlockI
                 Request request = messageQueue.take();
                 jsonClient.send(request).whenComplete((s, ex) -> {
                     try {
-                        Optional<OCPPConfirmationHandler> ocppConfirmationHandler = ocppConfirmationHandlerContext.getOCPPConfirmationHandlerImpl(s);
+                        Optional<OCPPConfirmationHandler> ocppConfirmationHandler = ocppConfirmationHandlerContext.getOCPPConfirmationHandlerImpl(s.getClass().getSimpleName());
                         ocppConfirmationHandler.orElseThrow(() -> new ClassNotFoundException("Not supported confirmation handler")).handleConfirmation(s);
                     } catch (ClassNotFoundException e) {
                         e.printStackTrace();

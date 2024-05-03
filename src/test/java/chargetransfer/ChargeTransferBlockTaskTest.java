@@ -1,3 +1,5 @@
+package chargetransfer;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mycorp.chargetransfer.ChargeTransferBlockTask;

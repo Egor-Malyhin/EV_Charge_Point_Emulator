@@ -7,7 +7,10 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PreDestroy;
-import java.util.concurrent.*;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
 @Component
 public class CSMSCommunicationBlockHelper implements CSMSCommunicationBlockHelperInterface {
@@ -40,7 +43,7 @@ public class CSMSCommunicationBlockHelper implements CSMSCommunicationBlockHelpe
     }
 
     @PreDestroy
-    private void clearMeterValuesRequesterExecutor(){
+    private void clearMeterValuesRequesterExecutor() {
         meterValuesRequesterExecutor.shutdown();
     }
 }

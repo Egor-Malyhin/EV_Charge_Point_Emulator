@@ -9,7 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PreDestroy;
-import java.util.concurrent.*;
+import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 @Component
 public class ChargeTransferBlock implements ChargeTransferBlockInterface {
@@ -37,8 +40,12 @@ public class ChargeTransferBlock implements ChargeTransferBlockInterface {
 
     @Override
     public void presentMeterValues(String requester) {
-        MeterValuesPresenter meterValuesPresenter = meterValuesPresenterContext.getMeterValuesPresenterImpl(requester);
-        meterValuesPresenter.present(chargeTransferBlockTask.getMeterValues(), chargeTransferBlockTask.isRunning());
+        try {
+            Optional<MeterValuesPresenter> meterValuesPresenter = meterValuesPresenterContext.getMeterValuesPresenterImpl(requester);
+            meterValuesPresenter.orElseThrow(() -> new ClassNotFoundException("Not supported meterValuesPresenter")).present(chargeTransferBlockTask.getMeterValues(), chargeTransferBlockTask.isRunning());
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -52,7 +59,7 @@ public class ChargeTransferBlock implements ChargeTransferBlockInterface {
     }
 
     @PreDestroy
-    private void cleanUpThreadExecutor(){
+    private void cleanUpThreadExecutor() {
         chargeTransferExecutor.shutdown();
     }
 }

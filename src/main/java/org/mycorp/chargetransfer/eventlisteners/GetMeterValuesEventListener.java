@@ -16,6 +16,6 @@ public class GetMeterValuesEventListener extends ChargeTransferEventListener<Get
     @Override
     @EventListener
     public void listenEvent(GetMeterValues stationEvent) {
-        chargeTransferBlockInterface.presentMeterValues(stationEvent.getSource().getClass().getName());
+        chargeTransferBlockInterface.presentMeterValues(stationEvent.getSource().getClass().getSimpleName());
     }
 }

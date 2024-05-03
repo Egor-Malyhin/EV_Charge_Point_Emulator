@@ -7,27 +7,18 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
+import java.util.Optional;
 
 @Component
 public class V2GMessageHandlerContext {
-    private final Map<V2GMessagesClassification, V2GMessageHandler> v2GMessageHandlersMap;
+    private final Map<String, V2GMessageHandler> v2GMessageHandlersMap;
 
     @Autowired
-    public V2GMessageHandlerContext(Map<V2GMessagesClassification, V2GMessageHandler> v2GMessageHandlersMap) {
+    public V2GMessageHandlerContext(@Qualifier("v2gMessageHandlersMap") Map<String, V2GMessageHandler> v2GMessageHandlersMap) {
         this.v2GMessageHandlersMap = v2GMessageHandlersMap;
     }
 
-    public V2GMessageHandler getMessageHandlerImpl(V2GBodyAbstractType v2GBodyAbstractType) throws ClassNotFoundException {
-        V2GMessagesClassification messageType = getMessageType(v2GBodyAbstractType);
-        return v2GMessageHandlersMap.get(messageType);
-    }
-
-    private V2GMessagesClassification getMessageType(V2GBodyAbstractType receivedMessageBodyType) throws ClassNotFoundException {
-        for (V2GMessagesClassification t : V2GMessagesClassification.values()) {
-            if (t.getMessageType().isInstance(receivedMessageBodyType)) {
-                return t;
-            }
-        }
-        throw new ClassNotFoundException();
+    public Optional<V2GMessageHandler> getMessageHandlerImpl(String messageHandlerSimpleClassName) {
+        return Optional.ofNullable(v2GMessageHandlersMap.get(messageHandlerSimpleClassName));
     }
 }

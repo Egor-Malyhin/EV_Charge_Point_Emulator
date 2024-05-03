@@ -1,7 +1,5 @@
 package org.mycorp.models.events.evreqlocalmanager;
 
-import org.springframework.context.ApplicationEvent;
-
 public class StationParametersPresented extends EVLocalRequestManagerEvent {
     private final int ratedVoltageValue;
     private final int maxCurrentValue;

@@ -8,11 +8,10 @@ import org.mycorp.chargetransfer.eventpublishers.metervaluespresenters.MeterValu
 import org.mycorp.commcsms.CSMSCommunicationBlockClientHandler;
 import org.mycorp.commcsms.messagehandlers.*;
 import org.mycorp.commev.messagehandlers.*;
+import org.mycorp.logging.StationEventLogger;
 import org.mycorp.models.messages.v2g.V2GMessagesClassification;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.mycorp.models.messages.v2g.req.SessionSetupReq;
+import org.springframework.context.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,7 +21,7 @@ import static org.mycorp.models.messages.v2g.V2GMessagesClassification.*;
 //Core Configuration class of an application.
 //Add beans here that cannot be configured via @Component.
 @Configuration
-@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy(proxyTargetClass = true)
 @ComponentScan(basePackages = {"org.mycorp"})
 public class ApplicationConfiguration {
     @Bean
@@ -40,7 +39,7 @@ public class ApplicationConfiguration {
         return new JSONClient(clientCoreProfile);
     }
 
-    @Bean
+    @Bean("ocppConfirmationHandlerMap")
     public Map<String, OCPPConfirmationHandler> ocppConfirmationHandlerMap(
             AuthorizeConfHandler authorizeConfHandler,
             StartTransactionConfHandler startTransactionConfHandler,
@@ -59,24 +58,24 @@ public class ApplicationConfiguration {
         return ocppConfirmationHandlerMap;
     }
 
-    @Bean
-    public Map<V2GMessagesClassification, V2GMessageHandler> v2GMessageHandlersMap(
+    @Bean("v2gMessageHandlersMap")
+    public Map<String, V2GMessageHandler> v2GMessageHandlersMap(
             ChargeParameterDiscoveryHandler chargeParameterDiscoveryHandler,
             ChargingStatusHandler chargingStatusHandler,
             PowerDeliveryHandler powerDeliveryHandler,
             SessionSetupHandler sessionSetupHandler,
             SessionStopHandler sessionStopHandler
     ) {
-        Map<V2GMessagesClassification, V2GMessageHandler> v2GMessageHandlersMap = new HashMap<>();
-        v2GMessageHandlersMap.put(SESSION_SETUP_REQ, sessionSetupHandler);
-        v2GMessageHandlersMap.put(CHARGE_PARAMETER_DISCOVERY_REQ, chargeParameterDiscoveryHandler);
-        v2GMessageHandlersMap.put(POWER_DELIVERY_REQ, powerDeliveryHandler);
-        v2GMessageHandlersMap.put(CHARGING_STATUS_REQ, chargingStatusHandler);
-        v2GMessageHandlersMap.put(SESSION_STOP_REQ, sessionStopHandler);
+        Map<String, V2GMessageHandler> v2GMessageHandlersMap = new HashMap<>();
+        v2GMessageHandlersMap.put("SessionSetupReq", sessionSetupHandler);
+        v2GMessageHandlersMap.put("ChargeParameterDiscoveryReq", chargeParameterDiscoveryHandler);
+        v2GMessageHandlersMap.put("PowerDeliveryReq", powerDeliveryHandler);
+        v2GMessageHandlersMap.put("ChargingStatusReq", chargingStatusHandler);
+        v2GMessageHandlersMap.put("SessionStopReq", sessionStopHandler);
         return v2GMessageHandlersMap;
     }
 
-    @Bean
+    @Bean("meterValuesPresenterMap")
     public Map<String, MeterValuesPresenter> meterValuesPresenterMap(
             CSMSMeterValuesPresenter csmsMeterValuesPresenter,
             EVMeterValuesPresenter evMeterValuesPresenter
