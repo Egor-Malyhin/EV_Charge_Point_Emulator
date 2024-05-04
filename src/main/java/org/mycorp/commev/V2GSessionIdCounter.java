@@ -1,8 +1,11 @@
-package org.mycorp.models.messages.v2g;
+package org.mycorp.commev;
+
+import lombok.Getter;
 
 import javax.xml.bind.DatatypeConverter;
 import java.nio.ByteBuffer;
 
+@Getter
 public class V2GSessionIdCounter {
     private static V2GSessionIdCounter instance;
     private byte[] sessionId;
@@ -17,11 +20,7 @@ public class V2GSessionIdCounter {
         return instance;
     }
 
-    public byte[] getSessionId() {
-        return sessionId;
-    }
-
-    public void incrementCounter() {
+    void incrementCounter() {
         int intId = convertToInt(sessionId);
         intId++;
         sessionId = convertHexBinary(intId);

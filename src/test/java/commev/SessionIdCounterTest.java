@@ -1,7 +1,7 @@
 package commev;
 
 import org.junit.Test;
-import org.mycorp.models.messages.v2g.V2GSessionIdCounter;
+import org.mycorp.commev.V2GSessionIdCounter;
 
 import javax.xml.bind.DatatypeConverter;
 

@@ -44,7 +44,7 @@ public class ChargeTransferBlock implements ChargeTransferBlockInterface {
             Optional<MeterValuesPresenter> meterValuesPresenter = meterValuesPresenterContext.getMeterValuesPresenterImpl(requester);
             meterValuesPresenter.orElseThrow(() -> new ClassNotFoundException("Not supported meterValuesPresenter")).present(chargeTransferBlockTask.getMeterValues(), chargeTransferBlockTask.isRunning());
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 

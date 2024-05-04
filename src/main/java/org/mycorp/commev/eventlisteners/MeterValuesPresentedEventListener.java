@@ -2,6 +2,7 @@ package org.mycorp.commev.eventlisteners;
 
 import org.mycorp.commev.EVCommunicationBlockInterface;
 import org.mycorp.commev.messagebuilders.ChargingStatusResBuilder;
+import org.mycorp.commev.messagefactory.V2GMessageResFactory;
 import org.mycorp.models.MeterValues;
 import org.mycorp.models.events.chargetransfer.MeterValuesToEV;
 import org.mycorp.models.messages.v2g.types.EVSENotification;
@@ -22,6 +23,6 @@ public class MeterValuesPresentedEventListener extends EVCommunicationBlockEvent
     public void listenEvent(MeterValuesToEV stationEvent) {
         EVSENotification evseNotification = stationEvent.isChargingOn() ? EVSENotification.NONE : EVSENotification.STOPCHARGING;
         MeterValues presentedMeterValues = stationEvent.getMeterValues();
-        evCommunicationBlockInterface.sendMessage(buildMessage(new ChargingStatusResBuilder(ResponseCode.OK, evseNotification, presentedMeterValues)));
+        evCommunicationBlockInterface.sendMessage(V2GMessageResFactory.createChargingStatusRes(ResponseCode.OK, evseNotification, presentedMeterValues));
     }
 }

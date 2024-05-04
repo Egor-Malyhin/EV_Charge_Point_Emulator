@@ -1,7 +1,7 @@
 package org.mycorp.commev.eventlisteners;
 
 import org.mycorp.commev.EVCommunicationBlockInterface;
-import org.mycorp.commev.messagebuilders.ChargeParameterDiscoveryResBuilder;
+import org.mycorp.commev.messagefactory.V2GMessageResFactory;
 import org.mycorp.models.events.evreqlocalmanager.StationParametersPresented;
 import org.mycorp.models.messages.v2g.types.ResponseCode;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +20,6 @@ public class StationParametersPresentedEventListener extends EVCommunicationBloc
     public void listenEvent(StationParametersPresented stationEvent) {
         int ratedVoltageValue = stationEvent.getRatedVoltageValue();
         int maxCurrentValue = stationEvent.getMaxCurrentValue();
-        evCommunicationBlockInterface.sendMessage(buildMessage(new ChargeParameterDiscoveryResBuilder(ResponseCode.OK, ratedVoltageValue, maxCurrentValue)));
+        evCommunicationBlockInterface.sendMessage(V2GMessageResFactory.createChargeParameterDiscoveryResMessage(ResponseCode.OK, ratedVoltageValue, maxCurrentValue));
     }
 }

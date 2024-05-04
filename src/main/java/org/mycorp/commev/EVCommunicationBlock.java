@@ -32,11 +32,8 @@ public class EVCommunicationBlock implements Runnable {
         acceptor.setHandler(evCommunicationBlockSessionHandler);
         try {
             acceptor.getFilterChain().addLast("V2GFilter", new ProtocolCodecFilter(v2gEncoder, v2gDecoder));
-            acceptor.bind(new InetSocketAddress(8800));
-            while (true) {
-                Thread.sleep(1000);
-            }
-        } catch (IOException | InterruptedException e) {
+            acceptor.bind(new InetSocketAddress(8008));
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }

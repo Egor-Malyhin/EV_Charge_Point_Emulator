@@ -37,8 +37,7 @@ public class ChargeTransferBlockTask implements Runnable {
 
     @Override
     public void run() {
-        isRunning = true;
-        setShutdownInitiator("None");
+        start();
         Duration durationOfCharging = setDurationTime(charge.value());
         Instant startTime = Instant.now();
         log.info("Charging start");
@@ -84,8 +83,8 @@ public class ChargeTransferBlockTask implements Runnable {
     public void stop(String shutdownInitiator) {
         stopChargingLock.writeLock().lock();
         try {
-            setShutdownInitiator(shutdownInitiator);
             isRunning = false;
+            this.shutdownInitiator = shutdownInitiator;
         } finally {
             stopChargingLock.writeLock().unlock();
         }
@@ -109,7 +108,13 @@ public class ChargeTransferBlockTask implements Runnable {
         }
     }
 
-    private void setShutdownInitiator(String shutdownInitiator) {
-        this.shutdownInitiator = shutdownInitiator;
+    private void start() {
+        stopChargingLock.writeLock().lock();
+        try {
+            isRunning = true;
+            shutdownInitiator = "None";
+        } finally {
+            stopChargingLock.writeLock().unlock();
+        }
     }
 }

@@ -2,6 +2,7 @@ package org.mycorp.commev.eventlisteners;
 
 import org.mycorp.commev.EVCommunicationBlockInterface;
 import org.mycorp.commev.messagebuilders.PowerDeliveryResBuilder;
+import org.mycorp.commev.messagefactory.V2GMessageResFactory;
 import org.mycorp.models.events.commcsms.CSMSChargingAccept;
 import org.mycorp.models.messages.v2g.types.ResponseCode;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,6 @@ public class ChargingAcceptEventListener extends EVCommunicationBlockEventListen
     @EventListener
     public void listenEvent(CSMSChargingAccept stationEvent) {
         ResponseCode responseCode = stationEvent.isAccepted() ? OK : FAILED_PowerDelivery_NotApplied;
-        evCommunicationBlockInterface.sendMessage(buildMessage(new PowerDeliveryResBuilder(responseCode, NONE)));
+        evCommunicationBlockInterface.sendMessage(V2GMessageResFactory.createPowerDeliveryRes(responseCode, NONE));
     }
 }

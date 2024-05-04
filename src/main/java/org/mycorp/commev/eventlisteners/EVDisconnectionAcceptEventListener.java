@@ -2,6 +2,7 @@ package org.mycorp.commev.eventlisteners;
 
 import org.mycorp.commev.EVCommunicationBlockInterface;
 import org.mycorp.commev.messagebuilders.SessionStopResBuilder;
+import org.mycorp.commev.messagefactory.V2GMessageResFactory;
 import org.mycorp.models.events.evreqlocalmanager.EVDisconnectionAccept;
 import org.mycorp.models.messages.v2g.types.ResponseCode;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,6 @@ public class EVDisconnectionAcceptEventListener extends EVCommunicationBlockEven
     @Override
     @EventListener
     public void listenEvent(EVDisconnectionAccept stationEvent) {
-        evCommunicationBlockInterface.sendMessage(buildMessage(new SessionStopResBuilder(ResponseCode.OK)));
+        evCommunicationBlockInterface.sendMessage(V2GMessageResFactory.createSessionStopResMessage(ResponseCode.OK));
     }
 }

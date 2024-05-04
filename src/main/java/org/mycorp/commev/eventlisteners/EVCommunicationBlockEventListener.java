@@ -16,9 +16,4 @@ public abstract class EVCommunicationBlockEventListener<T extends StationEvent> 
     protected EVCommunicationBlockEventListener(EVCommunicationBlockInterface evCommunicationBlockInterface) {
         this.evCommunicationBlockInterface = evCommunicationBlockInterface;
     }
-
-    protected V2GMessage buildMessage(MessageBuilder builder) {
-        MessageBuildersDirector director = new MessageBuildersDirector(builder);
-        return director.create();
-    }
 }

@@ -5,6 +5,8 @@ import org.apache.mina.core.buffer.IoBuffer;
 import org.apache.mina.core.session.IoSession;
 import org.apache.mina.filter.codec.ProtocolDecoderAdapter;
 import org.apache.mina.filter.codec.ProtocolDecoderOutput;
+import org.mycorp.commev.messagefactory.V2GMessageResFactory;
+import org.mycorp.models.messages.v2g.types.ResponseCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -21,15 +23,14 @@ public class V2GDecoder extends ProtocolDecoderAdapter {
     }
 
     @Override
-    public void decode(IoSession session, IoBuffer in, ProtocolDecoderOutput out) throws Exception {
+    public void decode(IoSession session, IoBuffer in, ProtocolDecoderOutput out) {
         try {
             byte[] inputMessage = new byte[in.remaining()];
             in.get(inputMessage);
-
             out.write(xmlConverter.convertToObject(inputMessage));
         } catch (EXIException | TransformerException | JAXBException e) {
-            e.printStackTrace();
-            session.write("Wrong message format");
+            session.write(V2GMessageResFactory.createSessionSetupResMessage(ResponseCode.FAILED));
+            throw new RuntimeException("Cannot decode client message", e);
         }
     }
 }

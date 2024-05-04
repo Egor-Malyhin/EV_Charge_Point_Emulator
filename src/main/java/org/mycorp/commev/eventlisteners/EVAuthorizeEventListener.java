@@ -2,6 +2,7 @@ package org.mycorp.commev.eventlisteners;
 
 import org.mycorp.commev.EVCommunicationBlockInterface;
 import org.mycorp.commev.messagebuilders.SessionSetupResBuilder;
+import org.mycorp.commev.messagefactory.V2GMessageResFactory;
 import org.mycorp.models.events.commcsms.EVAuthorized;
 import org.mycorp.models.messages.v2g.types.ResponseCode;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,6 @@ public class EVAuthorizeEventListener extends EVCommunicationBlockEventListener<
     @EventListener
     public void listenEvent(EVAuthorized stationEvent) {
         ResponseCode responseCode = stationEvent.isAuthorized() ? OK_NewSessionEstablished : FAILED;
-        evCommunicationBlockInterface.sendMessage(buildMessage(new SessionSetupResBuilder(responseCode)));
+        evCommunicationBlockInterface.sendMessage(V2GMessageResFactory.createSessionSetupResMessage(responseCode));
     }
 }

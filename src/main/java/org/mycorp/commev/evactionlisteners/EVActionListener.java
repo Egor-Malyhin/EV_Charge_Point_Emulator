@@ -1,5 +1,6 @@
 package org.mycorp.commev.evactionlisteners;
 
+import org.mycorp.models.StationVariables;
 import org.mycorp.models.events.commev.ConnectedEV;
 import org.mycorp.models.events.commev.DisconnectedEV;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,8 @@ public class EVActionListener {
     }
 
     public void evDisconnected() {
+        StationVariables stationVariables = StationVariables.getInstance();
+        stationVariables.setIdTag(null);
         applicationEventPublisher.publishEvent(new DisconnectedEV(this));
     }
 }

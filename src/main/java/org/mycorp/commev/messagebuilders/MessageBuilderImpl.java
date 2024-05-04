@@ -1,5 +1,6 @@
 package org.mycorp.commev.messagebuilders;
 
+import org.mycorp.commev.V2GSessionIdCounter;
 import org.mycorp.models.messages.v2g.*;
 import org.mycorp.models.messages.v2g.types.ResponseCode;
 
