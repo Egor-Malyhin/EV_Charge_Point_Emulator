@@ -2,11 +2,11 @@ package commev;
 
 import com.siemens.ct.exi.core.exceptions.EXIException;
 import org.junit.Test;
+import org.mycorp.commev.V2GSessionIdCounter;
 import org.mycorp.commev.protocolfilter.XMLConverter;
 import org.mycorp.models.messages.v2g.V2GBody;
 import org.mycorp.models.messages.v2g.V2GHeader;
 import org.mycorp.models.messages.v2g.V2GMessage;
-import org.mycorp.commev.V2GSessionIdCounter;
 import org.mycorp.models.messages.v2g.res.PowerDeliveryRes;
 import org.mycorp.models.messages.v2g.res.SessionSetupRes;
 import org.mycorp.models.messages.v2g.types.AC_EVSEStatus;

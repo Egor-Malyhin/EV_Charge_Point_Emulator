@@ -1,7 +1,6 @@
 package org.mycorp.commev.eventlisteners;
 
 import org.mycorp.commev.EVCommunicationBlockInterface;
-import org.mycorp.commev.messagebuilders.PowerDeliveryResBuilder;
 import org.mycorp.commev.messagefactory.V2GMessageResFactory;
 import org.mycorp.models.events.commcsms.CSMSChargingAccept;
 import org.mycorp.models.messages.v2g.types.ResponseCode;

@@ -2,7 +2,6 @@ package org.mycorp.models.events.chargetransfer;
 
 import lombok.Getter;
 import org.mycorp.models.events.StationEvent;
-import org.springframework.context.ApplicationEvent;
 
 @Getter
 public class ChargingStopped extends StationEvent {

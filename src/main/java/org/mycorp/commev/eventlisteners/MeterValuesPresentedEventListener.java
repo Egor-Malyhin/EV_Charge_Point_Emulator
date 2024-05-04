@@ -1,7 +1,6 @@
 package org.mycorp.commev.eventlisteners;
 
 import org.mycorp.commev.EVCommunicationBlockInterface;
-import org.mycorp.commev.messagebuilders.ChargingStatusResBuilder;
 import org.mycorp.commev.messagefactory.V2GMessageResFactory;
 import org.mycorp.models.MeterValues;
 import org.mycorp.models.events.chargetransfer.MeterValuesToEV;

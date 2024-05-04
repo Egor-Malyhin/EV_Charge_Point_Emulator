@@ -54,7 +54,7 @@ public class EVCommunicationBlockSessionHandler extends IoHandlerAdapter impleme
         V2GMessage convertedMessage = (V2GMessage) message;
         V2GBodyAbstractType messageBody = convertedMessage.getBody().getV2GBodyAbstractType();
 
-        if(!idSessionValidator(convertedMessage.getHeader().getSessionId(), messageBody.getClass().getSimpleName()))
+        if (!idSessionValidator(convertedMessage.getHeader().getSessionId(), messageBody.getClass().getSimpleName()))
             session.write(getFaultedMessage(messageBody.getClass().getSimpleName()));
 
         try {
@@ -85,8 +85,7 @@ public class EVCommunicationBlockSessionHandler extends IoHandlerAdapter impleme
                     V2GMessageResFactory.createChargingStatusRes(ResponseCode.FAILED_UnknownSession, null, null);
             case "PowerDeliveryReq" ->
                     V2GMessageResFactory.createPowerDeliveryRes(ResponseCode.FAILED_UnknownSession, null);
-            default ->
-                    throw new IllegalArgumentException("Wrong v2gMessageType");
+            default -> throw new IllegalArgumentException("Wrong v2gMessageType");
         };
     }
 }

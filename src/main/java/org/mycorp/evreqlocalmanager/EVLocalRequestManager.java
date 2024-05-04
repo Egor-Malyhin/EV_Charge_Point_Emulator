@@ -2,7 +2,6 @@ package org.mycorp.evreqlocalmanager;
 
 import org.mycorp.models.events.StationEvent;
 import org.mycorp.stationeventlistener.StationEventListener;
-import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationEventPublisher;
 
 

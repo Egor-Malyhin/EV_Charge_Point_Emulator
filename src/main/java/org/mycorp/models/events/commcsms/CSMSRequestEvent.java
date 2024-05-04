@@ -2,7 +2,6 @@ package org.mycorp.models.events.commcsms;
 
 import lombok.Getter;
 import org.mycorp.models.events.StationEvent;
-import org.springframework.context.ApplicationEvent;
 
 import java.util.concurrent.CountDownLatch;
 

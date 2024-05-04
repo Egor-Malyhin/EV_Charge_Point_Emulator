@@ -20,7 +20,7 @@ public class V2GSessionIdCounter {
         return instance;
     }
 
-    void incrementCounter() {
+    public void incrementCounter() {
         int intId = convertToInt(sessionId);
         intId++;
         sessionId = convertHexBinary(intId);

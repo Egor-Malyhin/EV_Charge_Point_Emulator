@@ -1,7 +1,10 @@
 package org.mycorp.commev.messagebuilders;
 
 import org.mycorp.commev.V2GSessionIdCounter;
-import org.mycorp.models.messages.v2g.*;
+import org.mycorp.models.messages.v2g.V2GBody;
+import org.mycorp.models.messages.v2g.V2GBodyAbstractType;
+import org.mycorp.models.messages.v2g.V2GHeader;
+import org.mycorp.models.messages.v2g.V2GMessage;
 import org.mycorp.models.messages.v2g.types.ResponseCode;
 
 public abstract class MessageBuilderImpl implements MessageBuilder {

@@ -2,7 +2,6 @@ package org.mycorp.models.events.evreqlocalmanager;
 
 import lombok.Getter;
 import org.mycorp.models.events.StationEvent;
-import org.springframework.context.ApplicationEvent;
 
 @Getter
 public class StationParametersPresented extends StationEvent {

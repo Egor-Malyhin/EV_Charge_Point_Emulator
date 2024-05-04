@@ -23,10 +23,6 @@ public class StationVariables {
         return Holder.instance;
     }
 
-    private static class Holder {
-        static StationVariables instance = new StationVariables();
-    }
-
     public int getTransactionId() {
         return transactionId.get();
     }
@@ -57,5 +53,9 @@ public class StationVariables {
 
     public void setIdTag(String idTag) {
         this.idTag.set(idTag);
+    }
+
+    private static class Holder {
+        static StationVariables instance = new StationVariables();
     }
 }

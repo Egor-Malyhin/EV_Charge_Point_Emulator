@@ -1,12 +1,12 @@
 package commev;
 
 import org.junit.Test;
+import org.mycorp.commev.V2GSessionIdCounter;
 import org.mycorp.commev.messagebuilders.MessageBuildersDirector;
 import org.mycorp.commev.messagebuilders.PowerDeliveryResBuilder;
 import org.mycorp.models.messages.v2g.V2GBody;
 import org.mycorp.models.messages.v2g.V2GHeader;
 import org.mycorp.models.messages.v2g.V2GMessage;
-import org.mycorp.commev.V2GSessionIdCounter;
 import org.mycorp.models.messages.v2g.res.PowerDeliveryRes;
 import org.mycorp.models.messages.v2g.types.AC_EVSEStatus;
 import org.mycorp.models.messages.v2g.types.EVSENotification;

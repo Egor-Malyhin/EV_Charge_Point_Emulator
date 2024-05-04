@@ -7,7 +7,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 import org.mycorp.logging.ApplicationEventLogger;
 import org.mycorp.main.ApplicationConfiguration;
 import org.mycorp.models.events.StationEvent;
-import org.springframework.context.ApplicationEvent;
 import org.springframework.test.context.ContextConfiguration;
 
 @RunWith(MockitoJUnitRunner.class)
