@@ -1,6 +1,5 @@
 package org.mycorp.v2g;
 
-import org.mycorp.v2g.req.*;
 import org.mycorp.v2g.res.*;
 
 public enum V2GMessagesClassification {

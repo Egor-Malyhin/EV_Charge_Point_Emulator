@@ -11,6 +11,7 @@ import javax.xml.transform.TransformerException;
 
 public class V2GDecoder extends ProtocolDecoderAdapter {
     private final XMLConverter xmlConverter;
+
     public V2GDecoder(XMLConverter xmlConverter) {
         this.xmlConverter = xmlConverter;
     }

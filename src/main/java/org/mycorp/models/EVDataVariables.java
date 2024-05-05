@@ -11,12 +11,12 @@ public class EVDataVariables {
     private PhysicalValue eAmount;
     private RequestedEnergyTransferMode requestedEnergyTransferMode;
 
-    private EVDataVariables(){
+    private EVDataVariables() {
         eAmount = new PhysicalValue(1, "kWh", 10000);
         requestedEnergyTransferMode = RequestedEnergyTransferMode.AC_single_phase_core;
     }
 
-    public static EVDataVariables getInstance(){
+    public static EVDataVariables getInstance() {
         return Holder.instance;
     }
 

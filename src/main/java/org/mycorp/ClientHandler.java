@@ -49,7 +49,7 @@ public class ClientHandler extends IoHandlerAdapter {
 
     @Override
     public void exceptionCaught(IoSession session, Throwable cause) {
-        cause.printStackTrace();
+        log.warn("Exception caught: ", cause);
     }
 
 

@@ -2,7 +2,6 @@ package org.mycorp.v2g.req;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "SessionSetupReq", namespace = "urn:iso:15118:2:2013:MsgBody")
 public class SessionSetupReq extends V2GMessageReq {
@@ -12,7 +11,9 @@ public class SessionSetupReq extends V2GMessageReq {
     public SessionSetupReq(byte[] evccId) {
         this.evccId = evccId;
     }
-    public SessionSetupReq(){}
+
+    public SessionSetupReq() {
+    }
 
     public byte[] getEvccId() {
         return evccId;
