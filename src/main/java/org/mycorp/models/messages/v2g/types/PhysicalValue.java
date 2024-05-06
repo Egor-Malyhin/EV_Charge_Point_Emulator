@@ -1,9 +1,12 @@
 package org.mycorp.models.messages.v2g.types;
 
+import lombok.Getter;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 
+@Getter
 @XmlAccessorType(XmlAccessType.FIELD)
 public class PhysicalValue {
     @XmlElement(name = "Multiplier", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
@@ -20,17 +23,5 @@ public class PhysicalValue {
         this.multiplier = multiplier;
         this.unit = unit;
         this.value = value;
-    }
-
-    public int getMultiplier() {
-        return multiplier;
-    }
-
-    public String getUnit() {
-        return unit;
-    }
-
-    public int getValue() {
-        return value;
     }
 }

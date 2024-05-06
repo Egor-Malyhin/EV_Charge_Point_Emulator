@@ -1,5 +1,6 @@
 package org.mycorp.models.messages.v2g.res;
 
+import lombok.Getter;
 import org.mycorp.models.messages.v2g.types.AC_EVSEStatus;
 import org.mycorp.models.messages.v2g.types.enums.ResponseCode;
 
@@ -8,6 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import java.util.Objects;
 
+@Getter
 @XmlRootElement(name = "PowerDeliveryRes", namespace = "urn:iso:15118:2:2013:MsgBody")
 @XmlSeeAlso({ChargingStatusRes.class})
 public class PowerDeliveryRes extends V2GMessageRes {
@@ -20,10 +22,6 @@ public class PowerDeliveryRes extends V2GMessageRes {
     }
 
     public PowerDeliveryRes() {
-    }
-
-    public AC_EVSEStatus getAc_evseStatus() {
-        return ac_evseStatus;
     }
 
     @Override

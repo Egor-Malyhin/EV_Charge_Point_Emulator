@@ -1,8 +1,11 @@
 package org.mycorp.models.messages.v2g;
 
+import lombok.Getter;
+
 import javax.xml.bind.annotation.XmlElement;
 import java.util.Arrays;
 
+@Getter
 public class V2GHeader {
     @XmlElement(name = "SESSIONID", namespace = "urn:iso:15118:2:2013:MsgHeader")
     private byte[] sessionId;
@@ -12,10 +15,6 @@ public class V2GHeader {
     }
 
     public V2GHeader() {
-    }
-
-    public byte[] getSessionId() {
-        return sessionId;
     }
 
     @Override

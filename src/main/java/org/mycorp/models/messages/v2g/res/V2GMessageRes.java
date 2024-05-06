@@ -1,11 +1,13 @@
 package org.mycorp.models.messages.v2g.res;
 
+import lombok.Getter;
 import org.mycorp.models.messages.v2g.V2GBodyAbstractType;
 import org.mycorp.models.messages.v2g.types.enums.ResponseCode;
 
 import javax.xml.bind.annotation.*;
 import java.util.Objects;
 
+@Getter
 @XmlRootElement
 @XmlSeeAlso({ChargeParameterDiscoveryRes.class, PowerDeliveryRes.class, SessionSetupRes.class, SessionStopRes.class})
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -18,10 +20,6 @@ public abstract class V2GMessageRes extends V2GBodyAbstractType {
     }
 
     public V2GMessageRes() {
-    }
-
-    public ResponseCode getResponseCode() {
-        return responseCode;
     }
 
     @Override

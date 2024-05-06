@@ -1,5 +1,6 @@
 package org.mycorp.models.messages.v2g.res;
 
+import lombok.Getter;
 import org.mycorp.models.messages.v2g.types.AC_EVSEStatus;
 import org.mycorp.models.messages.v2g.types.MeterInfo;
 import org.mycorp.models.messages.v2g.types.enums.ResponseCode;
@@ -8,6 +9,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Objects;
 
+@Getter
 @XmlRootElement(name = "ChargingStatusRes", namespace = "urn:iso:15118:2:2013:MsgBody")
 public class ChargingStatusRes extends PowerDeliveryRes {
     @XmlElement(name = "EVSEID", namespace = "urn:iso:15118:2:2013:MsgBody")
@@ -22,14 +24,6 @@ public class ChargingStatusRes extends PowerDeliveryRes {
     }
 
     public ChargingStatusRes() {
-    }
-
-    public String getEvseId() {
-        return evseId;
-    }
-
-    public MeterInfo getMeterInfo() {
-        return meterInfo;
     }
 
     @Override

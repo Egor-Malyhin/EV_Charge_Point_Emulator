@@ -1,9 +1,12 @@
 package org.mycorp.models.messages.v2g.types;
 
+import lombok.Getter;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 
+@Getter
 @XmlAccessorType(XmlAccessType.FIELD)
 public class AC_EVChargeParameter {
     @XmlElement(name = "EАmount", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
@@ -23,21 +26,5 @@ public class AC_EVChargeParameter {
         this.evMaxVoltage = evMaxVoltage;
         this.evMaxCurrent = evMaxCurrent;
         this.evMinCurrent = evMinCurrent;
-    }
-
-    public PhysicalValue geteАmount() {
-        return eАmount;
-    }
-
-    public PhysicalValue getEvMaxVoltage() {
-        return evMaxVoltage;
-    }
-
-    public PhysicalValue getEvMaxCurrent() {
-        return evMaxCurrent;
-    }
-
-    public PhysicalValue getEvMinCurrent() {
-        return evMinCurrent;
     }
 }

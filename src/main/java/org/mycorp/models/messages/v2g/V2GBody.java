@@ -1,8 +1,11 @@
 package org.mycorp.models.messages.v2g;
 
+import lombok.Getter;
+
 import javax.xml.bind.annotation.XmlElementRef;
 import java.util.Objects;
 
+@Getter
 public class V2GBody {
     @XmlElementRef
     private V2GBodyAbstractType v2GBodyAbstractType;
@@ -12,10 +15,6 @@ public class V2GBody {
     }
 
     public V2GBody() {
-    }
-
-    public V2GBodyAbstractType getV2GBodyAbstractType() {
-        return v2GBodyAbstractType;
     }
 
     @Override

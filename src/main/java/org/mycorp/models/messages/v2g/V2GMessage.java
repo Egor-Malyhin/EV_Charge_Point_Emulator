@@ -1,9 +1,12 @@
 package org.mycorp.models.messages.v2g;
 
+import lombok.Getter;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Objects;
 
+@Getter
 @XmlRootElement(name = "V2GMessage", namespace = "urn:iso:15118:2:2013:MsgDef")
 public class V2GMessage {
     @XmlElement(name = "Header", namespace = "urn:iso:15118:2:2013:MsgDef")
@@ -18,14 +21,6 @@ public class V2GMessage {
     }
 
     public V2GMessage() {
-    }
-
-    public V2GHeader getHeader() {
-        return header;
-    }
-
-    public V2GBody getBody() {
-        return body;
     }
 
     @Override

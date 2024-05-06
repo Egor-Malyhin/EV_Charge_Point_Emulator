@@ -1,11 +1,13 @@
 package org.mycorp.models.messages.v2g.req;
 
+import lombok.Getter;
 import org.mycorp.models.messages.v2g.types.AC_EVChargeParameter;
 import org.mycorp.models.messages.v2g.types.enums.RequestedEnergyTransferMode;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+@Getter
 @XmlRootElement(name = "ChargeParameterDiscoveryReq", namespace = "urn:iso:15118:2:2013:MsgBody")
 public class ChargeParameterDiscoveryReq extends V2GMessageReq {
     @XmlElement(name = "RequestedEnergyTransferMode", namespace = "urn:iso:15118:2:2013:MsgBody")
@@ -21,11 +23,4 @@ public class ChargeParameterDiscoveryReq extends V2GMessageReq {
     public ChargeParameterDiscoveryReq() {
     }
 
-    public RequestedEnergyTransferMode getRequestedEnergyTransferMode() {
-        return requestedEnergyTransferMode;
-    }
-
-    public AC_EVChargeParameter getAcEvChargeParameter() {
-        return acEvChargeParameter;
-    }
 }

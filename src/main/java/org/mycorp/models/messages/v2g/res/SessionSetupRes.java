@@ -1,11 +1,13 @@
 package org.mycorp.models.messages.v2g.res;
 
+import lombok.Getter;
 import org.mycorp.models.messages.v2g.types.enums.ResponseCode;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Objects;
 
+@Getter
 @XmlRootElement(name = "SessionSetupRes", namespace = "urn:iso:15118:2:2013:MsgBody")
 public class SessionSetupRes extends V2GMessageRes {
     @XmlElement(name = "EVSEID", namespace = "urn:iso:15118:2:2013:MsgBody")
@@ -20,14 +22,6 @@ public class SessionSetupRes extends V2GMessageRes {
     }
 
     public SessionSetupRes() {
-    }
-
-    public String getEvseId() {
-        return evseId;
-    }
-
-    public long getEvseTimeStamp() {
-        return evseTimeStamp;
     }
 
     @Override

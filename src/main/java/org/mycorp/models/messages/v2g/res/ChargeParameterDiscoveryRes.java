@@ -1,5 +1,6 @@
 package org.mycorp.models.messages.v2g.res;
 
+import lombok.Getter;
 import org.mycorp.models.messages.v2g.types.AC_EVSEChargeParameter;
 import org.mycorp.models.messages.v2g.types.enums.EVSEProcessing;
 import org.mycorp.models.messages.v2g.types.enums.ResponseCode;
@@ -8,6 +9,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Objects;
 
+@Getter
 @XmlRootElement(name = "ChargeParameterDiscoveryRes", namespace = "urn:iso:15118:2:2013:MsgBody")
 public class ChargeParameterDiscoveryRes extends V2GMessageRes {
     @XmlElement(name = "EVSEProcessing", namespace = "urn:iso:15118:2:2013:MsgBody")
@@ -23,14 +25,6 @@ public class ChargeParameterDiscoveryRes extends V2GMessageRes {
     }
 
     public ChargeParameterDiscoveryRes() {
-    }
-
-    public EVSEProcessing getEvseProcessing() {
-        return evseProcessing;
-    }
-
-    public AC_EVSEChargeParameter getAc_evseChargeParameter() {
-        return ac_evseChargeParameter;
     }
 
     @Override

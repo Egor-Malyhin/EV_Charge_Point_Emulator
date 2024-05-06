@@ -1,8 +1,11 @@
 package org.mycorp.models.messages.v2g.req;
 
+import lombok.Getter;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+@Getter
 @XmlRootElement(name = "SessionSetupReq", namespace = "urn:iso:15118:2:2013:MsgBody")
 public class SessionSetupReq extends V2GMessageReq {
     @XmlElement(name = "EVCCID", namespace = "urn:iso:15118:2:2013:MsgBody")
@@ -13,13 +16,5 @@ public class SessionSetupReq extends V2GMessageReq {
     }
 
     public SessionSetupReq() {
-    }
-
-    public byte[] getEvccId() {
-        return evccId;
-    }
-
-    public void setEvccId(byte[] evccId) {
-        this.evccId = evccId;
     }
 }
