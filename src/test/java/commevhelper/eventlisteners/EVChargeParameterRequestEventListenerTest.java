@@ -23,7 +23,7 @@ public class EVChargeParameterRequestEventListenerTest {
     EVChargeParameterRequestEventListener evChargeParameterRequestEventListener;
 
     @Test
-    public void listenEventTest(){
+    public void listenEventTest() {
         evChargeParameterRequestEventListener.listenEvent(new EVChargeParameterRequest(this, new Charge("kwh", 5)));
         Mockito.verify(evCommunicationBlockHelperInterface, Mockito.times(1)).presentChargeParameter();
     }

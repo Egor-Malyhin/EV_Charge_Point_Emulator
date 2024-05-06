@@ -1,6 +1,5 @@
 package org.mycorp.models.events.commevhelper;
 
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import org.mycorp.models.events.StationEvent;
 

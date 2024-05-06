@@ -1,12 +1,8 @@
 package org.mycorp.commev;
 
 import org.apache.mina.core.filterchain.DefaultIoFilterChainBuilder;
-import org.apache.mina.core.filterchain.IoFilterChain;
-import org.apache.mina.core.filterchain.IoFilterChainBuilder;
 import org.apache.mina.core.service.IoAcceptor;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
-import org.apache.mina.filter.logging.LogLevel;
-import org.apache.mina.filter.logging.LoggingFilter;
 import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
 import org.mycorp.commev.protocolfilter.V2GDecoder;
 import org.mycorp.commev.protocolfilter.V2GEncoder;

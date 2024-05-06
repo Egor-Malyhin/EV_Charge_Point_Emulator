@@ -1,8 +1,8 @@
 package org.mycorp.commev.messagebuilders;
 
 import org.mycorp.models.messages.v2g.res.ChargingStatusRes;
-import org.mycorp.models.messages.v2g.types.enums.EVSENotification;
 import org.mycorp.models.messages.v2g.types.MeterInfo;
+import org.mycorp.models.messages.v2g.types.enums.EVSENotification;
 import org.mycorp.models.messages.v2g.types.enums.ResponseCode;
 
 import static org.mycorp.models.messages.v2g.types.enums.ResponseCode.OK;

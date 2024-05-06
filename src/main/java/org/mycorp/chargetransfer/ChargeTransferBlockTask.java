@@ -41,7 +41,7 @@ public class ChargeTransferBlockTask implements Runnable {
         Duration durationOfCharging = setDurationTime(charge.value());
         Instant startTime = Instant.now();
         log.info("Charging start");
-        while(isRunning()) {
+        while (isRunning()) {
             while (Duration.between(startTime, Instant.now()).compareTo(durationOfCharging) < 0) {
                 try {
                     Thread.sleep(100);

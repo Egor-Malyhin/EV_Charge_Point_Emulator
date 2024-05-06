@@ -1,7 +1,9 @@
 package org.mycorp.commev.messagebuilders;
 
 import org.mycorp.models.messages.v2g.res.ChargeParameterDiscoveryRes;
-import org.mycorp.models.messages.v2g.types.*;
+import org.mycorp.models.messages.v2g.types.AC_EVSEChargeParameter;
+import org.mycorp.models.messages.v2g.types.AC_EVSEStatus;
+import org.mycorp.models.messages.v2g.types.PhysicalValue;
 import org.mycorp.models.messages.v2g.types.enums.EVSENotification;
 import org.mycorp.models.messages.v2g.types.enums.ResponseCode;
 

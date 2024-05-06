@@ -13,8 +13,9 @@ public class PhysicalValue {
     @XmlElement(name = "Value", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
     private int value;
 
-    public PhysicalValue(){
+    public PhysicalValue() {
     }
+
     public PhysicalValue(int multiplier, String unit, int value) {
         this.multiplier = multiplier;
         this.unit = unit;

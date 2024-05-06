@@ -17,6 +17,7 @@ public class AC_EVChargeParameter {
 
     public AC_EVChargeParameter() {
     }
+
     public AC_EVChargeParameter(PhysicalValue eАmount, PhysicalValue evMaxVoltage, PhysicalValue evMaxCurrent, PhysicalValue evMinCurrent) {
         this.eАmount = eАmount;
         this.evMaxVoltage = evMaxVoltage;

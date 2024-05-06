@@ -1,14 +1,11 @@
 package org.mycorp.commevhelper;
 
-import lombok.EqualsAndHashCode;
 import org.mycorp.models.StationCharacteristics;
 import org.mycorp.models.events.commevhelper.EVDisconnectionAccept;
 import org.mycorp.models.events.commevhelper.StationParametersPresented;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
-
-import java.util.Objects;
 
 
 //This module contains the logic for processing those requests from an electric vehicle

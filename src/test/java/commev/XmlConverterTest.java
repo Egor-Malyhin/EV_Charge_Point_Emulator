@@ -21,7 +21,6 @@ import java.lang.reflect.Method;
 import java.time.Instant;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
 
 public class XmlConverterTest {
 
@@ -149,7 +148,7 @@ public class XmlConverterTest {
 
     @Test
     public void convertV2GToXmlTestCaseChargingStatusRes() throws Exception {
-        V2GMessage chargingStatusResMessage = V2GMessageResFactory.createChargingStatusRes(ResponseCode.OK, EVSENotification.NONE, StationCharacteristics.evseId, 100, StationCharacteristics.meterId );
+        V2GMessage chargingStatusResMessage = V2GMessageResFactory.createChargingStatusRes(ResponseCode.OK, EVSENotification.NONE, StationCharacteristics.evseId, 100, StationCharacteristics.meterId);
 
         byte[] convertedMessage = (byte[]) usingInvokedConvertToXML(chargingStatusResMessage);
         String messageString = new String((convertedMessage));

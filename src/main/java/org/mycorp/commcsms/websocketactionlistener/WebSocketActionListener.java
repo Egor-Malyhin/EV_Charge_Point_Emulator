@@ -6,8 +6,6 @@ import org.mycorp.models.events.commcsms.ClientConnected;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
-import java.net.ConnectException;
-
 @Component
 public class WebSocketActionListener implements ClientEvents {
     private final ApplicationEventPublisher applicationEventPublisher;

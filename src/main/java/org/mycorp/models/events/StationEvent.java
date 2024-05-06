@@ -1,6 +1,5 @@
 package org.mycorp.models.events;
 
-import lombok.EqualsAndHashCode;
 import org.springframework.context.ApplicationEvent;
 
 //Just a wrapper over Spring ApplicationEvent.

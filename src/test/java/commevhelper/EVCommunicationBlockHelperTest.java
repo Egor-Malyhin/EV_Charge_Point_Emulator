@@ -8,14 +8,10 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.mycorp.commevhelper.EVCommunicationBlockHelper;
 import org.mycorp.main.ApplicationConfiguration;
-import org.mycorp.models.StationCharacteristics;
-import org.mycorp.models.events.commevhelper.StationParametersPresented;
-import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.test.context.ContextConfiguration;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.eq;
 
 @RunWith(MockitoJUnitRunner.class)
 @ContextConfiguration(classes = ApplicationConfiguration.class)
