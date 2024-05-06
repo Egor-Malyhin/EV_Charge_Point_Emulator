@@ -1,10 +1,16 @@
 package org.mycorp.commev;
 
+import org.apache.mina.core.filterchain.DefaultIoFilterChainBuilder;
+import org.apache.mina.core.filterchain.IoFilterChain;
+import org.apache.mina.core.filterchain.IoFilterChainBuilder;
 import org.apache.mina.core.service.IoAcceptor;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
+import org.apache.mina.filter.logging.LogLevel;
+import org.apache.mina.filter.logging.LoggingFilter;
 import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
 import org.mycorp.commev.protocolfilter.V2GDecoder;
 import org.mycorp.commev.protocolfilter.V2GEncoder;
+import org.mycorp.logging.EVMessagesLogger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -18,12 +24,15 @@ public class EVCommunicationBlock implements Runnable {
     private final EVCommunicationBlockSessionHandler evCommunicationBlockSessionHandler;
     private final V2GDecoder v2gDecoder;
     private final V2GEncoder v2gEncoder;
+    private final EVMessagesLogger evMessagesLogger;
+
 
     @Autowired
-    public EVCommunicationBlock(EVCommunicationBlockSessionHandler evCommunicationBlockSessionHandler, V2GDecoder v2gDecoder, V2GEncoder v2gEncoder) {
+    public EVCommunicationBlock(EVCommunicationBlockSessionHandler evCommunicationBlockSessionHandler, V2GDecoder v2gDecoder, V2GEncoder v2gEncoder, EVMessagesLogger evMessagesLogger) {
         this.evCommunicationBlockSessionHandler = evCommunicationBlockSessionHandler;
         this.v2gDecoder = v2gDecoder;
         this.v2gEncoder = v2gEncoder;
+        this.evMessagesLogger = evMessagesLogger;
     }
 
     @Override
@@ -31,7 +40,9 @@ public class EVCommunicationBlock implements Runnable {
         IoAcceptor acceptor = new NioSocketAcceptor();
         acceptor.setHandler(evCommunicationBlockSessionHandler);
         try {
-            acceptor.getFilterChain().addLast("V2GFilter", new ProtocolCodecFilter(v2gEncoder, v2gDecoder));
+            DefaultIoFilterChainBuilder filterChainBuilder = acceptor.getFilterChain();
+            filterChainBuilder.addLast("V2GFilter", new ProtocolCodecFilter(v2gEncoder, v2gDecoder));
+            filterChainBuilder.addLast("LoggingFilter", evMessagesLogger);
             acceptor.bind(new InetSocketAddress(8008));
         } catch (IOException e) {
             throw new RuntimeException(e);

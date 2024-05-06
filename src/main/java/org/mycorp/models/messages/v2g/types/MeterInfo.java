@@ -7,9 +7,12 @@ import javax.xml.bind.annotation.XmlElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class MeterInfo {
     @XmlElement(name = "MeterId", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
-    private final int meterId;
+    private int meterId;
     @XmlElement(name = "MeterReading", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
-    private final long meterReading;
+    private long meterReading;
+
+    public MeterInfo() {
+    }
 
     public MeterInfo(int meterId, long meterReading) {
         this.meterId = meterId;

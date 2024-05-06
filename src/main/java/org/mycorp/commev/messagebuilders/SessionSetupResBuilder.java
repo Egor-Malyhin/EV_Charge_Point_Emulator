@@ -1,20 +1,21 @@
 package org.mycorp.commev.messagebuilders;
 
-import org.mycorp.models.StationCharacteristics;
 import org.mycorp.models.messages.v2g.res.SessionSetupRes;
-import org.mycorp.models.messages.v2g.types.ResponseCode;
-
-import java.time.Instant;
+import org.mycorp.models.messages.v2g.types.enums.ResponseCode;
 
 public class SessionSetupResBuilder extends MessageBuilderImpl {
+    private final String evseId;
+    private final long stationTimeStamp;
 
-    public SessionSetupResBuilder(ResponseCode responseCode) {
+    public SessionSetupResBuilder(ResponseCode responseCode, String evseId, long stationTimeStamp) {
         super(responseCode);
+        this.evseId = evseId;
+        this.stationTimeStamp = stationTimeStamp;
     }
 
     @Override
     public MessageBuilder createBodyType() {
-        v2GBodyAbstractType = new SessionSetupRes(responseCode, StationCharacteristics.evseId, Instant.now().toEpochMilli());
+        v2GBodyAbstractType = new SessionSetupRes(responseCode, evseId, stationTimeStamp);
         return this;
     }
 }

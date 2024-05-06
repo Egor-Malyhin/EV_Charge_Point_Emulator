@@ -4,6 +4,7 @@ import eu.chargetime.ocpp.JSONClient;
 import eu.chargetime.ocpp.OccurenceConstraintException;
 import eu.chargetime.ocpp.UnsupportedFeatureException;
 import eu.chargetime.ocpp.model.Request;
+import lombok.extern.slf4j.Slf4j;
 import org.mycorp.commcsms.messagehandlers.OCPPConfirmationHandler;
 import org.mycorp.commcsms.messagehandlers.OCPPConfirmationHandlerContext;
 import org.mycorp.commcsms.websocketactionlistener.WebSocketActionListener;
@@ -14,7 +15,7 @@ import java.util.Optional;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-
+@Slf4j
 @Component
 public class CSMSCommunicationBlock implements Runnable, CSMSCommunicationBlockInterface {
     private final BlockingQueue<Request> messageQueue;
@@ -34,21 +35,22 @@ public class CSMSCommunicationBlock implements Runnable, CSMSCommunicationBlockI
 
     @Override
     public void run() {
-        jsonClient.connect(websocketServerWS, null);
-        webSocketActionListener.clientConnected();
+        connectToCSMS();
         while (true) {
             try {
                 Request request = messageQueue.take();
+                log.info("Send Request to CSMS: " + request.getClass().getSimpleName());
                 jsonClient.send(request).whenComplete((s, ex) -> {
                     try {
+                        log.info("Received Confirmation from CSMS: " + s.getClass().getSimpleName());
                         Optional<OCPPConfirmationHandler> ocppConfirmationHandler = ocppConfirmationHandlerContext.getOCPPConfirmationHandlerImpl(s.getClass().getSimpleName());
                         ocppConfirmationHandler.orElseThrow(() -> new ClassNotFoundException("Not supported confirmation handler")).handleConfirmation(s);
                     } catch (ClassNotFoundException e) {
-                        e.printStackTrace();
+                        throw new RuntimeException(e);
                     }
                 });
             } catch (InterruptedException | OccurenceConstraintException | UnsupportedFeatureException e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
         }
     }
@@ -56,5 +58,10 @@ public class CSMSCommunicationBlock implements Runnable, CSMSCommunicationBlockI
     @Override
     public void addToMessageQueue(Request ocppRequest) {
         messageQueue.add(ocppRequest);
+    }
+
+    @Override
+    public void connectToCSMS() {
+        jsonClient.connect(websocketServerWS, webSocketActionListener);
     }
 }

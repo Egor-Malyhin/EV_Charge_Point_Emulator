@@ -7,12 +7,14 @@ import javax.xml.bind.annotation.XmlElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class PhysicalValue {
     @XmlElement(name = "Multiplier", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
-    private final int multiplier;
+    private int multiplier;
     @XmlElement(name = "Unit", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
-    private final String unit;
+    private String unit;
     @XmlElement(name = "Value", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
-    private final int value;
+    private int value;
 
+    public PhysicalValue(){
+    }
     public PhysicalValue(int multiplier, String unit, int value) {
         this.multiplier = multiplier;
         this.unit = unit;

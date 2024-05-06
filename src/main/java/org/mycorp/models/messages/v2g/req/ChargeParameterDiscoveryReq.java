@@ -1,7 +1,7 @@
 package org.mycorp.models.messages.v2g.req;
 
 import org.mycorp.models.messages.v2g.types.AC_EVChargeParameter;
-import org.mycorp.models.messages.v2g.types.RequestedEnergyTransferMode;
+import org.mycorp.models.messages.v2g.types.enums.RequestedEnergyTransferMode;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;

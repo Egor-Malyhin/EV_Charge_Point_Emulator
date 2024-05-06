@@ -4,4 +4,6 @@ import eu.chargetime.ocpp.model.Request;
 
 public interface CSMSCommunicationBlockInterface {
     void addToMessageQueue(Request ocppRequest);
+
+    void connectToCSMS();
 }

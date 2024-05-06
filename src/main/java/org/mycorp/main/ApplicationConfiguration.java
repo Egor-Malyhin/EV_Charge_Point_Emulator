@@ -24,7 +24,7 @@ import java.util.Map;
 public class ApplicationConfiguration {
     @Bean
     public String webSocketServerWS() {
-        return "ws//somews";
+        return "ws://localhost:8887";
     }
 
     @Bean

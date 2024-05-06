@@ -2,8 +2,10 @@ package org.mycorp.commev.messagebuilders;
 
 import org.mycorp.models.messages.v2g.res.ChargeParameterDiscoveryRes;
 import org.mycorp.models.messages.v2g.types.*;
+import org.mycorp.models.messages.v2g.types.enums.EVSENotification;
+import org.mycorp.models.messages.v2g.types.enums.ResponseCode;
 
-import static org.mycorp.models.messages.v2g.types.EVSEProcessing.FINISHED;
+import static org.mycorp.models.messages.v2g.types.enums.EVSEProcessing.FINISHED;
 
 public class ChargeParameterDiscoveryResBuilder extends MessageBuilderImpl {
     private final int ratedVoltageValue;

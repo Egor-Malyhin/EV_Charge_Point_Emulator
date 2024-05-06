@@ -7,14 +7,16 @@ import javax.xml.bind.annotation.XmlElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class AC_EVChargeParameter {
     @XmlElement(name = "EАmount", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
-    private final PhysicalValue eАmount;
+    private PhysicalValue eАmount;
     @XmlElement(name = "EVMaxVoltage", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
-    private final PhysicalValue evMaxVoltage;
+    private PhysicalValue evMaxVoltage;
     @XmlElement(name = "EVMaxCurrent", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
-    private final PhysicalValue evMaxCurrent;
+    private PhysicalValue evMaxCurrent;
     @XmlElement(name = "EVMinCurrent", namespace = "urn:iso:15118:2:2013:MsgDataTypes")
-    private final PhysicalValue evMinCurrent;
+    private PhysicalValue evMinCurrent;
 
+    public AC_EVChargeParameter() {
+    }
     public AC_EVChargeParameter(PhysicalValue eАmount, PhysicalValue evMaxVoltage, PhysicalValue evMaxCurrent, PhysicalValue evMinCurrent) {
         this.eАmount = eАmount;
         this.evMaxVoltage = evMaxVoltage;

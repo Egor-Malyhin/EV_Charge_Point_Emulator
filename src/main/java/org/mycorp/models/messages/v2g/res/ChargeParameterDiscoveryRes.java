@@ -1,8 +1,8 @@
 package org.mycorp.models.messages.v2g.res;
 
 import org.mycorp.models.messages.v2g.types.AC_EVSEChargeParameter;
-import org.mycorp.models.messages.v2g.types.EVSEProcessing;
-import org.mycorp.models.messages.v2g.types.ResponseCode;
+import org.mycorp.models.messages.v2g.types.enums.EVSEProcessing;
+import org.mycorp.models.messages.v2g.types.enums.ResponseCode;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;

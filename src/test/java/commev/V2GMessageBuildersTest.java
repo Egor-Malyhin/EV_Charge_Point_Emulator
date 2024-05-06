@@ -9,8 +9,8 @@ import org.mycorp.models.messages.v2g.V2GHeader;
 import org.mycorp.models.messages.v2g.V2GMessage;
 import org.mycorp.models.messages.v2g.res.PowerDeliveryRes;
 import org.mycorp.models.messages.v2g.types.AC_EVSEStatus;
-import org.mycorp.models.messages.v2g.types.EVSENotification;
-import org.mycorp.models.messages.v2g.types.ResponseCode;
+import org.mycorp.models.messages.v2g.types.enums.EVSENotification;
+import org.mycorp.models.messages.v2g.types.enums.ResponseCode;
 
 import static org.junit.Assert.assertEquals;
 

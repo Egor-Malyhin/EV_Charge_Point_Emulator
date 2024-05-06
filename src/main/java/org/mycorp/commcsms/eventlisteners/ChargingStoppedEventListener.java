@@ -21,10 +21,8 @@ public class ChargingStoppedEventListener extends CSMSCommunicationBlockEventLis
     @Override
     @EventListener
     public void listenEvent(ChargingStopped stationEvent) {
-        if (!stationEvent.getShutdownInitiator().equals("CSMSCommunicationBlock")) {
-            StationVariables stationVariables = StationVariables.getInstance();
-            Request stopTransactionRequest = clientCoreProfileMessageGenerator.createStopTransactionRequest(stationVariables.getMeterCurrent(), Instant.now().atZone(stationVariables.getZoneId()), stationVariables.getTransactionId());
-            csmsCommunicationBlockInterface.addToMessageQueue(stopTransactionRequest);
-        }
+        StationVariables stationVariables = StationVariables.getInstance();
+        Request stopTransactionRequest = clientCoreProfileMessageGenerator.createStopTransactionRequest(stationVariables.getMeterCurrent(), Instant.now().atZone(stationVariables.getZoneId()), stationVariables.getTransactionId());
+        csmsCommunicationBlockInterface.addToMessageQueue(stopTransactionRequest);
     }
 }

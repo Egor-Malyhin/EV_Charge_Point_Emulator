@@ -65,6 +65,14 @@ public class StationStateMachineConfiguration extends EnumStateMachineConfigurer
                 .and()
                 .withExternal()
                 .source(ChargePointStatus.Finishing).target(ChargePointStatus.Available)
+                .event(StationStateAction.GET_AVAILABLE)
+                .and()
+                .withExternal()
+                .source(ChargePointStatus.Preparing).target(ChargePointStatus.Available)
+                .event(StationStateAction.GET_AVAILABLE)
+                .and()
+                .withExternal()
+                .source(ChargePointStatus.Charging).target(ChargePointStatus.Available)
                 .event(StationStateAction.GET_AVAILABLE);
     }
 }

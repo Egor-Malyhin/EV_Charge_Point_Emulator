@@ -1,6 +1,6 @@
 package org.mycorp.models.messages.v2g.req;
 
-import org.mycorp.models.messages.v2g.types.ChargingSession;
+import org.mycorp.models.messages.v2g.types.enums.ChargingSession;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;

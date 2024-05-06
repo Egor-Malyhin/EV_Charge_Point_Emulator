@@ -21,11 +21,7 @@ public class StationStateMachineListener extends StateMachineListenerAdapter<Cha
 
     @Override
     public void eventNotAccepted(Message<StationStateAction> event) {
-        try {
-            throw new IllegalStateException("Invalid transition: " + event.getPayload());
-        } catch (IllegalStateException e) {
-            e.printStackTrace();
-        }
+        throw new IllegalStateException("Invalid transition: " + event.getPayload());
     }
 
     @Override

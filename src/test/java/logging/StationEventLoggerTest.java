@@ -4,22 +4,20 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.mycorp.logging.ApplicationEventLogger;
+import org.mycorp.logging.StationEventLogger;
 import org.mycorp.main.ApplicationConfiguration;
 import org.mycorp.models.events.StationEvent;
 import org.springframework.test.context.ContextConfiguration;
 
-@RunWith(MockitoJUnitRunner.class)
-@ContextConfiguration(classes = ApplicationConfiguration.class)
-public class ApplicationEventLoggerTest {
+public class StationEventLoggerTest {
 
-    @InjectMocks
-    private ApplicationEventLogger applicationEventLogger;
+    private StationEventLogger stationEventLogger;
 
     @Test
     public void testEventLogging() {
         TestEvent event = new TestEvent(this);
-        applicationEventLogger.onApplicationEvent(event);
+        stationEventLogger.onApplicationEvent(event);
+
     }
 
     private static class TestEvent extends StationEvent {

@@ -4,7 +4,7 @@ import org.mycorp.models.events.commev.EVPowerDeliveryRequest;
 import org.mycorp.models.events.common.StopCharging;
 import org.mycorp.models.messages.v2g.V2GBodyAbstractType;
 import org.mycorp.models.messages.v2g.req.PowerDeliveryReq;
-import org.mycorp.models.messages.v2g.types.ChargeProgress;
+import org.mycorp.models.messages.v2g.types.enums.ChargeProgress;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;

@@ -2,6 +2,7 @@ package org.mycorp.commcsms;
 
 import eu.chargetime.ocpp.feature.profile.ClientCoreEventHandler;
 import eu.chargetime.ocpp.model.core.*;
+import lombok.extern.slf4j.Slf4j;
 import org.mycorp.models.events.commcsms.StopChargingByCSMS;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
@@ -13,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 //Implementation of the ClientCoreEventHandler interface
 //from the eu.chargetime Java OCA-OCPP library.
 //Handles requests initiated by the CSMS.
+@Slf4j
 @Component
 public class CSMSCommunicationBlockClientHandler implements ClientCoreEventHandler {
     private final ApplicationEventPublisher applicationEventPublisher;
@@ -39,8 +41,10 @@ public class CSMSCommunicationBlockClientHandler implements ClientCoreEventHandl
     @Override
     public RemoteStopTransactionConfirmation handleRemoteStopTransactionRequest(RemoteStopTransactionRequest remoteStopTransactionRequest) {
         try {
+            log.info("Received Request from CSMS: " + remoteStopTransactionRequest.getClass().getSimpleName());
             applicationEventPublisher.publishEvent(new StopChargingByCSMS(this, countDownLatch));
             boolean isContinue = countDownLatch.await(2, TimeUnit.SECONDS);
+            log.info("Send Confirmation to CSMS: " + RemoteStopTransactionConfirmation.class.getSimpleName());
             return new RemoteStopTransactionConfirmation(isContinue ? RemoteStartStopStatus.Accepted : RemoteStartStopStatus.Rejected);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);

@@ -1,4 +1,4 @@
-package org.mycorp.models.messages.v2g.types;
+package org.mycorp.models.messages.v2g.types.enums;
 
 public enum ResponseCode {
     OK,

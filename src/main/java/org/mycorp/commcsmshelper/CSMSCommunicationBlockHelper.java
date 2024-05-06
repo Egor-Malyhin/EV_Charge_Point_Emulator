@@ -1,6 +1,7 @@
 package org.mycorp.commcsmshelper;
 
 import org.mycorp.models.events.commcsmshelper.SendBootNotification;
+import org.mycorp.models.events.commcsmshelper.TryConnecting;
 import org.mycorp.models.events.common.GetMeterValues;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
@@ -22,6 +23,11 @@ public class CSMSCommunicationBlockHelper implements CSMSCommunicationBlockHelpe
     public CSMSCommunicationBlockHelper(ApplicationEventPublisher applicationEventPublisher) {
         this.applicationEventPublisher = applicationEventPublisher;
         this.meterValuesRequesterExecutor = Executors.newSingleThreadScheduledExecutor();
+    }
+
+    @Override
+    public void tryConnecting() {
+        applicationEventPublisher.publishEvent(new TryConnecting(this));
     }
 
     @Override

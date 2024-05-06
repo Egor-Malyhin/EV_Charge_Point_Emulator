@@ -29,7 +29,7 @@ public class ChargeTransferBlockTask implements Runnable {
     public ChargeTransferBlockTask() {
         this.charge = new Charge("Wh", 0);
         List<SampledValue> valueList = new ArrayList<>();
-        valueList.add(new SampledValue(0, "Energy", "Outlet", "Wh"));
+        valueList.add(new SampledValue(0, "Energy", "Outlet", "kWh"));
         this.meterValues = new MeterValues(Instant.now(), valueList);
         this.meterValuesLock = new ReentrantReadWriteLock();
         this.stopChargingLock = new ReentrantReadWriteLock();
@@ -41,15 +41,18 @@ public class ChargeTransferBlockTask implements Runnable {
         Duration durationOfCharging = setDurationTime(charge.value());
         Instant startTime = Instant.now();
         log.info("Charging start");
-        while (Duration.between(startTime, Instant.now()).compareTo(durationOfCharging) < 0 && isRunning()) {
-            try {
-                Thread.sleep(1000);
-                Duration durationFromStart = Duration.between(startTime, Instant.now());
-                updateSampledValue(durationFromStart.toMillis());
-                log.info("Charging proceed: " + meterValues.getSampledValue().get(0).getValue() + meterValues.getSampledValue().get(0).getUnit() + ", Seconds from start: " + durationFromStart.toSeconds());
-            } catch (Exception e) {
-                throw new RuntimeException(e);
+        while(isRunning()) {
+            while (Duration.between(startTime, Instant.now()).compareTo(durationOfCharging) < 0) {
+                try {
+                    Thread.sleep(100);
+                    Duration durationFromStart = Duration.between(startTime, Instant.now());
+                    updateSampledValue(durationFromStart.toMillis());
+                    log.info("Charging proceed: " + meterValues.getSampledValue().get(0).getValue() + meterValues.getSampledValue().get(0).getUnit() + ", Seconds from start: " + durationFromStart.toSeconds());
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
+            stop("None");
         }
         log.info("Charging stop, shutdown initiator: " + shutdownInitiator + ", total charging time: " + Duration.between(startTime, Instant.now()).toSeconds() + " seconds.");
     }
@@ -112,7 +115,6 @@ public class ChargeTransferBlockTask implements Runnable {
         stopChargingLock.writeLock().lock();
         try {
             isRunning = true;
-            shutdownInitiator = "None";
         } finally {
             stopChargingLock.writeLock().unlock();
         }

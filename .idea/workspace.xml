@@ -4,51 +4,82 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76b66a1d-1f2c-4dbf-9a80-cc7d32ab3715" name="Changes" comment="Added a new abstract class for all application events - StationEvent. This class serves as a wrapper over the ApplicationEvent class. This class is needed for logging - to intercept only those events that are defined in the application. Existing parameterized interfaces and abstract classes have been refactored to use this class as their base.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagefactory/V2GMessageResFactory.java" afterDir="false" />
+    <list default="true" id="76b66a1d-1f2c-4dbf-9a80-cc7d32ab3715" name="Changes" comment="Minor code formatting changes">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/eventlisteners/TryConnectingEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsmshelper/eventlisteners/CSMSDisconnectEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commevhelper/EVCommunicationBlockHelperInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commevhelper/eventlisteners/EVCommunicationBlockHelperEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/logging/EVMessagesLogger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/logging/ExceptionLogger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commcsms/CSMSDisconnect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commcsmshelper/TryConnecting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/commevhelper/EVCommunicationBlockHelperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/commevhelper/eventlisteners/EVChargeParameterRequestEventListenerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/commevhelper/eventlisteners/EVSessionStopRequestEventListenerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/ChargeTransferBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/ChargeTransferBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/ChargeTransferBlockTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/ChargeTransferBlockTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/CSMSCommunicationBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/CSMSCommunicationBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/CSMSCommunicationBlockClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/CSMSCommunicationBlockClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/CSMSCommunicationBlockInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/CSMSCommunicationBlockInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/eventlisteners/ChargingStoppedEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/eventlisteners/ChargingStoppedEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/websocketactionlistener/WebSocketActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/websocketactionlistener/WebSocketActionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsmshelper/CSMSCommunicationBlockHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsmshelper/CSMSCommunicationBlockHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsmshelper/CSMSCommunicationBlockHelperInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsmshelper/CSMSCommunicationBlockHelperInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/EVCommunicationBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/EVCommunicationBlock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/EVCommunicationBlockSessionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/EVCommunicationBlockSessionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/eventlisteners/ChargingAcceptEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/eventlisteners/ChargingAcceptEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/eventlisteners/EVAuthorizeEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/eventlisteners/EVAuthorizeEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/eventlisteners/EVDisconnectionAcceptEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/eventlisteners/EVDisconnectionAcceptEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/eventlisteners/MeterValuesPresentedEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/eventlisteners/MeterValuesPresentedEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/eventlisteners/StationParametersPresentedEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/eventlisteners/StationParametersPresentedEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagebuilders/ChargeParameterDiscoveryResBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagebuilders/ChargeParameterDiscoveryResBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagebuilders/ChargingStatusResBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagebuilders/ChargingStatusResBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagebuilders/MessageBuilderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagebuilders/MessageBuilderImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagebuilders/PowerDeliveryResBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagebuilders/PowerDeliveryResBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagebuilders/SessionSetupResBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagebuilders/SessionSetupResBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagebuilders/SessionStopResBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagebuilders/SessionStopResBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagefactory/V2GMessageResFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagefactory/V2GMessageResFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/PowerDeliveryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/PowerDeliveryHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/protocolfilter/V2GDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/protocolfilter/V2GDecoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/protocolfilter/V2GEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/protocolfilter/V2GEncoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/StationVariables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/StationVariables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/V2GBody.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/V2GBodyAbstractType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/V2GHeader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/V2GMessage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/V2GMessagesClassification.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/V2GSessionIdCounter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/package-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/req/ChargeParameterDiscoveryReq.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/req/ChargingStatusReq.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/req/PowerDeliveryReq.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/req/SessionSetupReq.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/req/SessionStopReq.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/req/V2GMessageReq.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/res/ChargeParameterDiscoveryRes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/res/ChargingStatusRes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/res/PowerDeliveryRes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/res/SessionSetupRes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/res/SessionStopRes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/res/V2GMessageRes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/AC_EVChargeParameter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/AC_EVSEChargeParameter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/AC_EVSEStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/ChargeProgress.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/ChargingSession.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/EVSENotification.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/EVSEProcessing.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/MeterInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/PhysicalValue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/RequestedEnergyTransferMode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/ResponseCode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/commev/SessionIdCounterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/commev/SessionIdCounterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/evreqlocalmanager/EVLocalRequestManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commevhelper/EVCommunicationBlockHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/evreqlocalmanager/eventlisteners/EVChargeParameterRequestEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commevhelper/eventlisteners/EVChargeParameterRequestEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/evreqlocalmanager/eventlisteners/EVSessionStopRequestEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commevhelper/eventlisteners/EVSessionStopRequestEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/logging/ApplicationEventLogger.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/logging/StationEventLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/logging/StationEventLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/main/ApplicationConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/main/ApplicationConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/main/SpringEventMulticasterConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/main/SpringEventMulticasterConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/main/StationStateMachineConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/main/StationStateMachineConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/StationEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/StationEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/evreqlocalmanager/EVDisconnectionAccept.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commevhelper/EVDisconnectionAccept.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/evreqlocalmanager/StationParametersPresented.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commevhelper/StationParametersPresented.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/req/ChargeParameterDiscoveryReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/req/ChargeParameterDiscoveryReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/req/PowerDeliveryReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/req/PowerDeliveryReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/req/SessionStopReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/req/SessionStopReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/res/ChargeParameterDiscoveryRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/res/ChargeParameterDiscoveryRes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/res/ChargingStatusRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/res/ChargingStatusRes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/res/PowerDeliveryRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/res/PowerDeliveryRes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/res/SessionSetupRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/res/SessionSetupRes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/res/SessionStopRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/res/SessionStopRes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/res/V2GMessageRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/res/V2GMessageRes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/AC_EVChargeParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/AC_EVChargeParameter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/AC_EVSEChargeParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/AC_EVSEChargeParameter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/AC_EVSEStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/AC_EVSEStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/ChargeProgress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/enums/ChargeProgress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/ChargingSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/enums/ChargingSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/EVSENotification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/enums/EVSENotification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/EVSEProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/enums/EVSEProcessing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/MeterInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/MeterInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/PhysicalValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/PhysicalValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/RequestedEnergyTransferMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/enums/RequestedEnergyTransferMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/ResponseCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/messages/v2g/types/enums/ResponseCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/stateoperator/statemachinelistener/StationStateMachineListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/stateoperator/statemachinelistener/StationStateMachineListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/commev/V2GDecoderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/commev/V2GDecoderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/commev/V2GMessageBuildersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/commev/V2GMessageBuildersTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/commev/XmlConverterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/commev/XmlConverterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/logging/ApplicationEventLoggerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/logging/StationEventLoggerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,9 +89,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
         <option value="package-info" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -102,6 +133,10 @@
     "JUnit.ChargeTransferBlockTest.instantTest.executor": "Run",
     "JUnit.ChargeTransferBlockTest.test2.executor": "Run",
     "JUnit.ChargeTransferBlockTest.updateMeterValuesTest.executor": "Debug",
+    "JUnit.EVChargeParameterRequestEventListenerTest.listenEventTest.executor": "Run",
+    "JUnit.EVCommunicationBlockHelperTest.acceptSessionClose.executor": "Run",
+    "JUnit.EVCommunicationBlockHelperTest.presentChargeParameterTest.executor": "Run",
+    "JUnit.EVSessionStopRequestEventListenerTest.listenEventTest.executor": "Run",
     "JUnit.SessionIdCounterTest.sessionIdCounterIncrementTest.executor": "Run",
     "JUnit.StationEventLoggerTest.executor": "Run",
     "JUnit.StationEventLoggerTest.testEventLogging.executor": "Run",
@@ -112,6 +147,12 @@
     "JUnit.XmlConverterTest (1).executor": "Run",
     "JUnit.XmlConverterTest.convertV2GToExiTest.executor": "Run",
     "JUnit.XmlConverterTest.convertV2GToXmlTest.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCaseChargeParameterDiscoveryRes.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCaseChargingStatusRes.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCaseException.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCasePowerDeliveryRes.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCaseSessionSetupRes.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCaseSessionStopRes.executor": "Run",
     "JUnit.XmlConverterTest.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -119,7 +160,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/MyProjects/Simple_EVCC_Tcp_Client",
+    "last_opened_file_path": "C:/MyProjects/Notes_App_Server",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -152,65 +193,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApplicationEventLoggerTest.testEventLogging" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EVChargeParameterRequestEventListenerTest.listenEventTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EV_Charging_Point" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="logging.*" />
+          <option name="PATTERN" value="commevhelper.eventlisteners.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="logging" />
-      <option name="MAIN_CLASS_NAME" value="logging.ApplicationEventLoggerTest" />
-      <option name="METHOD_NAME" value="testEventLogging" />
+      <option name="PACKAGE_NAME" value="commevhelper.eventlisteners" />
+      <option name="MAIN_CLASS_NAME" value="commevhelper.eventlisteners.EVChargeParameterRequestEventListenerTest" />
+      <option name="METHOD_NAME" value="listenEventTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChargeTransferBlockTaskTest.getMeterValuesInTimeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EVCommunicationBlockHelperTest.acceptSessionClose" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EV_Charging_Point" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="chargetransfer.*" />
+          <option name="PATTERN" value="commevhelper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="chargetransfer" />
-      <option name="MAIN_CLASS_NAME" value="chargetransfer.ChargeTransferBlockTaskTest" />
-      <option name="METHOD_NAME" value="getMeterValuesInTimeTest" />
+      <option name="PACKAGE_NAME" value="commevhelper" />
+      <option name="MAIN_CLASS_NAME" value="commevhelper.EVCommunicationBlockHelperTest" />
+      <option name="METHOD_NAME" value="acceptSessionClose" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChargeTransferBlockTaskTest.taskCanceledTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EVCommunicationBlockHelperTest.presentChargeParameterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EV_Charging_Point" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="chargetransfer.*" />
+          <option name="PATTERN" value="commevhelper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="chargetransfer" />
-      <option name="MAIN_CLASS_NAME" value="chargetransfer.ChargeTransferBlockTaskTest" />
-      <option name="METHOD_NAME" value="taskCanceledTest" />
+      <option name="PACKAGE_NAME" value="commevhelper" />
+      <option name="MAIN_CLASS_NAME" value="commevhelper.EVCommunicationBlockHelperTest" />
+      <option name="METHOD_NAME" value="presentChargeParameterTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChargeTransferBlockTaskTest.taskTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EVSessionStopRequestEventListenerTest.listenEventTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EV_Charging_Point" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="chargetransfer.*" />
+          <option name="PATTERN" value="commevhelper.eventlisteners.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="chargetransfer" />
-      <option name="MAIN_CLASS_NAME" value="chargetransfer.ChargeTransferBlockTaskTest" />
-      <option name="METHOD_NAME" value="taskTest" />
+      <option name="PACKAGE_NAME" value="commevhelper.eventlisteners" />
+      <option name="MAIN_CLASS_NAME" value="commevhelper.eventlisteners.EVSessionStopRequestEventListenerTest" />
+      <option name="METHOD_NAME" value="listenEventTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -218,18 +259,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.ApplicationEventLoggerTest.testEventLogging" />
-      <item itemvalue="JUnit.ChargeTransferBlockTaskTest.getMeterValuesInTimeTest" />
-      <item itemvalue="JUnit.ChargeTransferBlockTaskTest.taskCanceledTest" />
-      <item itemvalue="JUnit.ChargeTransferBlockTaskTest.taskTest" />
+      <item itemvalue="JUnit.EVChargeParameterRequestEventListenerTest.listenEventTest" />
+      <item itemvalue="JUnit.EVCommunicationBlockHelperTest.acceptSessionClose" />
+      <item itemvalue="JUnit.EVCommunicationBlockHelperTest.presentChargeParameterTest" />
+      <item itemvalue="JUnit.EVSessionStopRequestEventListenerTest.listenEventTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.ChargeTransferBlockTaskTest.taskCanceledTest" />
-        <item itemvalue="JUnit.ChargeTransferBlockTaskTest.taskTest" />
-        <item itemvalue="JUnit.ChargeTransferBlockTaskTest.getMeterValuesInTimeTest" />
-        <item itemvalue="JUnit.ApplicationEventLoggerTest.testEventLogging" />
+        <item itemvalue="JUnit.EVSessionStopRequestEventListenerTest.listenEventTest" />
+        <item itemvalue="JUnit.EVChargeParameterRequestEventListenerTest.listenEventTest" />
+        <item itemvalue="JUnit.EVCommunicationBlockHelperTest.acceptSessionClose" />
+        <item itemvalue="JUnit.EVCommunicationBlockHelperTest.presentChargeParameterTest" />
       </list>
     </recent_temporary>
   </component>
@@ -401,7 +442,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714774331524</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="&#10;Changes have been made to V2G message objects, and the V2GEncoder has also been debugged (it now writes byte arrays to the buffer). An additional session ID check has been added in EVCommunicationBlockSessionHandler when receiving a message from EV. A factory for V2G Response messages has been created, and event listeners in the comm ev module no longer depend on builder classes. Synchronization has been added to StationVariables - all fields are now represented as atomics, and initialization is lazy. A minor code refactoring in ChargeTransferBlockTask - a private synchronized method start() has been added, which is called when starting ChargeTransferBlockTask.">
+      <option name="closed" value="true" />
+      <created>1714854561218</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1714854561218</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Minor code formatting changes">
+      <option name="closed" value="true" />
+      <created>1714854688605</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1714854688605</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -436,6 +493,39 @@
     <MESSAGE value="Minor code reformat changes" />
     <MESSAGE value="Minor tests reformat changes" />
     <MESSAGE value="Added a new abstract class for all application events - StationEvent. This class serves as a wrapper over the ApplicationEvent class. This class is needed for logging - to intercept only those events that are defined in the application. Existing parameterized interfaces and abstract classes have been refactored to use this class as their base." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a new abstract class for all application events - StationEvent. This class serves as a wrapper over the ApplicationEvent class. This class is needed for logging - to intercept only those events that are defined in the application. Existing parameterized interfaces and abstract classes have been refactored to use this class as their base." />
+    <MESSAGE value="&#10;Changes have been made to V2G message objects, and the V2GEncoder has also been debugged (it now writes byte arrays to the buffer). An additional session ID check has been added in EVCommunicationBlockSessionHandler when receiving a message from EV. A factory for V2G Response messages has been created, and event listeners in the comm ev module no longer depend on builder classes. Synchronization has been added to StationVariables - all fields are now represented as atomics, and initialization is lazy. A minor code refactoring in ChargeTransferBlockTask - a private synchronized method start() has been added, which is called when starting ChargeTransferBlockTask." />
+    <MESSAGE value="Minor code formatting changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor code formatting changes" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/ChargeParameterDiscoveryHandler.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventlisteners/PrepareChargeEventListener.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventlisteners/PrepareChargeEventListener.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/ChargeTransferBlock.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/ChargeTransferBlock.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

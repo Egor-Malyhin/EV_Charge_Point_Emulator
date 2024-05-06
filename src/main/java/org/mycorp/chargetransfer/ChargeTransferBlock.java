@@ -1,5 +1,6 @@
 package org.mycorp.chargetransfer;
 
+import lombok.extern.slf4j.Slf4j;
 import org.mycorp.chargetransfer.eventpublishers.metervaluespresenters.MeterValuesPresenter;
 import org.mycorp.chargetransfer.eventpublishers.metervaluespresenters.MeterValuesPresenterContext;
 import org.mycorp.chargetransfer.eventpublishers.stopcharging.StopChargingEventPublisher;
@@ -14,6 +15,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+@Slf4j
 @Component
 public class ChargeTransferBlock implements ChargeTransferBlockInterface {
     private final ExecutorService chargeTransferExecutor;
@@ -51,6 +53,7 @@ public class ChargeTransferBlock implements ChargeTransferBlockInterface {
     @Override
     public void setCharge(Charge charge) {
         chargeTransferBlockTask.setCharge(charge);
+        log.info("CHAAAAAAAAAAAAAAAAAAAAAARGE");
     }
 
     @Override

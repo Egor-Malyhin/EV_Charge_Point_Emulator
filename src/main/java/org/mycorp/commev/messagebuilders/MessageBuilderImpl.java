@@ -5,7 +5,7 @@ import org.mycorp.models.messages.v2g.V2GBody;
 import org.mycorp.models.messages.v2g.V2GBodyAbstractType;
 import org.mycorp.models.messages.v2g.V2GHeader;
 import org.mycorp.models.messages.v2g.V2GMessage;
-import org.mycorp.models.messages.v2g.types.ResponseCode;
+import org.mycorp.models.messages.v2g.types.enums.ResponseCode;
 
 public abstract class MessageBuilderImpl implements MessageBuilder {
     protected V2GBodyAbstractType v2GBodyAbstractType;

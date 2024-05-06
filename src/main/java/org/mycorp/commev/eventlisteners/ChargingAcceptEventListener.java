@@ -3,14 +3,14 @@ package org.mycorp.commev.eventlisteners;
 import org.mycorp.commev.EVCommunicationBlockInterface;
 import org.mycorp.commev.messagefactory.V2GMessageResFactory;
 import org.mycorp.models.events.commcsms.CSMSChargingAccept;
-import org.mycorp.models.messages.v2g.types.ResponseCode;
+import org.mycorp.models.messages.v2g.types.enums.ResponseCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
-import static org.mycorp.models.messages.v2g.types.EVSENotification.NONE;
-import static org.mycorp.models.messages.v2g.types.ResponseCode.FAILED_PowerDelivery_NotApplied;
-import static org.mycorp.models.messages.v2g.types.ResponseCode.OK;
+import static org.mycorp.models.messages.v2g.types.enums.EVSENotification.NONE;
+import static org.mycorp.models.messages.v2g.types.enums.ResponseCode.FAILED_PowerDelivery_NotApplied;
+import static org.mycorp.models.messages.v2g.types.enums.ResponseCode.OK;
 
 @Component
 public class ChargingAcceptEventListener extends EVCommunicationBlockEventListener<CSMSChargingAccept> {

@@ -1,4 +1,4 @@
-package org.mycorp.models.events.evreqlocalmanager;
+package org.mycorp.models.events.commevhelper;
 
 import org.mycorp.models.events.StationEvent;
 
