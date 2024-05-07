@@ -12,9 +12,6 @@ import org.springframework.statemachine.listener.StateMachineListenerAdapter;
 import org.springframework.statemachine.state.State;
 import org.springframework.stereotype.Component;
 
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-
 @Component
 @Slf4j
 public class StationStateMachineListener extends StateMachineListenerAdapter<ChargePointStatus, StationStateAction> {

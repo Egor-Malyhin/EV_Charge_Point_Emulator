@@ -12,7 +12,6 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Callable;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
@@ -56,7 +55,7 @@ public class ChargeTransferBlockTask implements Runnable {
             stopNormally();
 
         String stoppingEmergency = isEmergencyStopping ? "emergency" : "normally";
-        log.info("Charging stop " + stoppingEmergency  + ", total charging time: " + Duration.between(startTime, Instant.now()).toSeconds() + " seconds.");
+        log.info("Charging stop " + stoppingEmergency + ", total charging time: " + Duration.between(startTime, Instant.now()).toSeconds() + " seconds.");
     }
 
     private Duration setDurationTime(float charge) {

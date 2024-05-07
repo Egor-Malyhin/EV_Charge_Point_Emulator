@@ -18,7 +18,7 @@ public class DisconnectedEVEventListener extends ConnectorManagerEventListener<D
     @Override
     @EventListener
     public void listenEvent(DisconnectedEV stationEvent) {
-        if(!stationEvent.isDisconnectionAccept() && StationVariables.getInstance().getChargePointStatusPast()== ChargePointStatus.Charging)
+        if (!stationEvent.isDisconnectionAccept() && StationVariables.getInstance().getChargePointStatusPast() == ChargePointStatus.Charging)
             connectorManagerInterface.requestStopChargingEmergency();
         else
             connectorManagerInterface.unlockConnector();

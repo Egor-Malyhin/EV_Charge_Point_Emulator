@@ -1,7 +1,7 @@
 package org.mycorp.connectormanager;
 
-import org.mycorp.models.events.connectormanager.UnlockConnector;
 import org.mycorp.models.events.common.StopChargingEmergency;
+import org.mycorp.models.events.connectormanager.UnlockConnector;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;

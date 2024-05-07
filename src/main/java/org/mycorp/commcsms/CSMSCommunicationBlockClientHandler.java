@@ -29,10 +29,10 @@ public class CSMSCommunicationBlockClientHandler implements ClientCoreEventHandl
     //and also do not forget to use the resetLatch() method in finally block.
     @Override
     public RemoteStopTransactionConfirmation handleRemoteStopTransactionRequest(RemoteStopTransactionRequest remoteStopTransactionRequest) {
-            log.info("Received Request from CSMS: " + remoteStopTransactionRequest.getClass().getSimpleName());
-            applicationEventPublisher.publishEvent(new StopChargingNormally(this));
-            log.info("Send Confirmation to CSMS: " + RemoteStopTransactionConfirmation.class.getSimpleName());
-            return new RemoteStopTransactionConfirmation(RemoteStartStopStatus.Accepted);
+        log.info("Received Request from CSMS: " + remoteStopTransactionRequest.getClass().getSimpleName());
+        applicationEventPublisher.publishEvent(new StopChargingNormally(this));
+        log.info("Send Confirmation to CSMS: " + RemoteStopTransactionConfirmation.class.getSimpleName());
+        return new RemoteStopTransactionConfirmation(RemoteStartStopStatus.Accepted);
     }
 
     @Override
