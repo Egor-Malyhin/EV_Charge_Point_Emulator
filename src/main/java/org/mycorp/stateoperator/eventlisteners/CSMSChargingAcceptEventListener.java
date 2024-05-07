@@ -5,6 +5,8 @@ import org.mycorp.models.events.commcsms.CSMSChargingAccept;
 import org.mycorp.stateoperator.StateOperatorInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.EventListener;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component("stateOperatorCSMSChargingAcceptEventListener")
@@ -16,6 +18,7 @@ public class CSMSChargingAcceptEventListener extends StateOperatorEventListener<
 
     @Override
     @EventListener
+    @Order(Ordered.HIGHEST_PRECEDENCE)
     public void listenEvent(CSMSChargingAccept stationEvent) {
         if (stationEvent.isAccepted())
             stateOperatorInterface.setStationState(StationStateAction.START_CHARGING);

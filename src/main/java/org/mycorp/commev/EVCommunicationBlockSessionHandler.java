@@ -13,41 +13,45 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.net.ConnectException;
+import java.net.SocketException;
 import java.util.Arrays;
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 @Component
 public class EVCommunicationBlockSessionHandler extends IoHandlerAdapter implements EVCommunicationBlockInterface {
     private final V2GMessageHandlerContext v2GMessageHandlerContext;
     private final EVActionListener evActionListener;
     private IoSession session;
-    private boolean isEvConnected;
+    private final AtomicBoolean isAvailable;
+    private final AtomicBoolean isDisconnectionAccept;
 
     @Autowired
     public EVCommunicationBlockSessionHandler(V2GMessageHandlerContext v2GMessageHandlerContext, EVActionListener evActionListener) {
         this.v2GMessageHandlerContext = v2GMessageHandlerContext;
         this.evActionListener = evActionListener;
-        this.isEvConnected = false;
+        this.isAvailable = new AtomicBoolean(true);
+        this.isDisconnectionAccept = new AtomicBoolean();
         this.session = null;
     }
 
     @Override
     public void sessionOpened(IoSession sessionReceived) {
-        if (isEvConnected)
+        if (!isAvailable.get())
             sessionReceived.closeNow();
         else {
-            isEvConnected = true;
+            isAvailable.set(false);
             session = sessionReceived;
             V2GSessionIdCounter.getInstance().incrementCounter();
+            isDisconnectionAccept.set(false);
             evActionListener.evConnected();
         }
     }
 
     @Override
     public void sessionClosed(IoSession sessionClosed) {
-        isEvConnected = false;
         session = null;
-        evActionListener.evDisconnected();
+        evActionListener.evDisconnected(isDisconnectionAccept.get());
     }
 
     @Override
@@ -79,6 +83,16 @@ public class EVCommunicationBlockSessionHandler extends IoHandlerAdapter impleme
     @Override
     public void exceptionCaught(IoSession session, Throwable cause) {
         throw new RuntimeException(cause);
+    }
+
+    @Override
+    public void availableConnection() {
+        isAvailable.compareAndSet(false, true);
+    }
+
+    @Override
+    public void acceptDisconnect() {
+        isDisconnectionAccept.compareAndSet(false, true);
     }
 
     private boolean idSessionValidator(byte[] sessionId, String messageType) {

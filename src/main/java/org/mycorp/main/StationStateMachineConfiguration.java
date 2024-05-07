@@ -44,7 +44,8 @@ public class StationStateMachineConfiguration extends EnumStateMachineConfigurer
                 .initial(ChargePointStatus.Available)
                 .state(ChargePointStatus.Preparing)
                 .state(ChargePointStatus.Charging)
-                .state(ChargePointStatus.Finishing);
+                .state(ChargePointStatus.Finishing)
+                .state(ChargePointStatus.Unavailable);
     }
 
     @Override
@@ -64,15 +65,19 @@ public class StationStateMachineConfiguration extends EnumStateMachineConfigurer
                 .event(StationStateAction.FINISH_CHARGING)
                 .and()
                 .withExternal()
-                .source(ChargePointStatus.Finishing).target(ChargePointStatus.Available)
-                .event(StationStateAction.GET_AVAILABLE)
+                .source(ChargePointStatus.Finishing).target(ChargePointStatus.Unavailable)
+                .event(StationStateAction.GET_UNAVAILABLE)
                 .and()
                 .withExternal()
-                .source(ChargePointStatus.Preparing).target(ChargePointStatus.Available)
-                .event(StationStateAction.GET_AVAILABLE)
+                .source(ChargePointStatus.Preparing).target(ChargePointStatus.Unavailable)
+                .event(StationStateAction.GET_UNAVAILABLE)
                 .and()
                 .withExternal()
-                .source(ChargePointStatus.Charging).target(ChargePointStatus.Available)
+                .source(ChargePointStatus.Charging).target(ChargePointStatus.Unavailable)
+                .event(StationStateAction.GET_UNAVAILABLE)
+                .and()
+                .withExternal()
+                .source(ChargePointStatus.Unavailable).target(ChargePointStatus.Available)
                 .event(StationStateAction.GET_AVAILABLE);
     }
 }

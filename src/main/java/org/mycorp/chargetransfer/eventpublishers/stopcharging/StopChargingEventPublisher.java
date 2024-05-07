@@ -1,6 +1,7 @@
 package org.mycorp.chargetransfer.eventpublishers.stopcharging;
 
-import org.mycorp.models.events.chargetransfer.ChargingStopped;
+import org.mycorp.models.events.chargetransfer.ChargingStoppedNormally;
+import org.mycorp.models.events.chargetransfer.ChargingStoppedEmergency;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
@@ -14,7 +15,10 @@ public class StopChargingEventPublisher {
         this.applicationEventPublisher = applicationEventPublisher;
     }
 
-    public void publishStopChargingEvent(String shutdownInitiator) {
-        applicationEventPublisher.publishEvent(new ChargingStopped(this, shutdownInitiator));
+    public void publishStopChargingEvent(boolean isEmergencyStopping) {
+        if (isEmergencyStopping)
+            applicationEventPublisher.publishEvent(new ChargingStoppedEmergency(this));
+        else
+            applicationEventPublisher.publishEvent(new ChargingStoppedNormally(this));
     }
 }

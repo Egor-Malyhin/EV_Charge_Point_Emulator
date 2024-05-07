@@ -12,6 +12,7 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Callable;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
@@ -24,10 +25,10 @@ public class ChargeTransferBlockTask implements Runnable {
     @Setter
     private Charge charge;
     private boolean isRunning;
-    private String shutdownInitiator;
+    private boolean isEmergencyStopping;
 
     public ChargeTransferBlockTask() {
-        this.charge = new Charge("Wh", 0);
+        this.charge = new Charge("kWh", 0);
         List<SampledValue> valueList = new ArrayList<>();
         valueList.add(new SampledValue(0, "Energy", "Outlet", "kWh"));
         this.meterValues = new MeterValues(Instant.now(), valueList);
@@ -41,20 +42,21 @@ public class ChargeTransferBlockTask implements Runnable {
         Duration durationOfCharging = setDurationTime(charge.value());
         Instant startTime = Instant.now();
         log.info("Charging start");
-        while (isRunning()) {
-            while (Duration.between(startTime, Instant.now()).compareTo(durationOfCharging) < 0) {
-                try {
-                    Thread.sleep(100);
-                    Duration durationFromStart = Duration.between(startTime, Instant.now());
-                    updateSampledValue(durationFromStart.toMillis());
-                    log.info("Charging proceed: " + meterValues.getSampledValue().get(0).getValue() + meterValues.getSampledValue().get(0).getUnit() + ", Seconds from start: " + durationFromStart.toSeconds());
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
+        while ((Duration.between(startTime, Instant.now()).compareTo(durationOfCharging) < 0 && isRunning())) {
+            try {
+                Thread.sleep(100);
+                Duration durationFromStart = Duration.between(startTime, Instant.now());
+                updateSampledValue(durationFromStart.toMillis());
+                log.info("Charging proceed: " + meterValues.getSampledValue().get(0).getValue() + meterValues.getSampledValue().get(0).getUnit() + ", Seconds from start: " + durationFromStart.toSeconds());
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
-            stop("None");
         }
-        log.info("Charging stop, shutdown initiator: " + shutdownInitiator + ", total charging time: " + Duration.between(startTime, Instant.now()).toSeconds() + " seconds.");
+        if (isRunning())
+            stopNormally();
+
+        String stoppingEmergency = isEmergencyStopping ? "emergency" : "normally";
+        log.info("Charging stop " + stoppingEmergency  + ", total charging time: " + Duration.between(startTime, Instant.now()).toSeconds() + " seconds.");
     }
 
     private Duration setDurationTime(float charge) {
@@ -83,13 +85,31 @@ public class ChargeTransferBlockTask implements Runnable {
         }
     }
 
-    public void stop(String shutdownInitiator) {
+    public void stopNormally() {
         stopChargingLock.writeLock().lock();
         try {
             isRunning = false;
-            this.shutdownInitiator = shutdownInitiator;
         } finally {
             stopChargingLock.writeLock().unlock();
+        }
+    }
+
+    public void stopEmergency() {
+        stopChargingLock.writeLock().lock();
+        try {
+            isRunning = false;
+            isEmergencyStopping = true;
+        } finally {
+            stopChargingLock.writeLock().unlock();
+        }
+    }
+
+    public boolean isEmergencyStopping() {
+        stopChargingLock.readLock().lock();
+        try {
+            return isEmergencyStopping;
+        } finally {
+            stopChargingLock.readLock().unlock();
         }
     }
 
@@ -102,19 +122,11 @@ public class ChargeTransferBlockTask implements Runnable {
         }
     }
 
-    public String getShutdownInitiator() {
-        stopChargingLock.readLock().lock();
-        try {
-            return shutdownInitiator;
-        } finally {
-            stopChargingLock.readLock().unlock();
-        }
-    }
-
     private void start() {
         stopChargingLock.writeLock().lock();
         try {
             isRunning = true;
+            isEmergencyStopping = false;
         } finally {
             stopChargingLock.writeLock().unlock();
         }

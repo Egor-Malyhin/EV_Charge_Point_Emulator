@@ -17,8 +17,8 @@ public class ChargeParameterDiscoveryHandler extends V2GMessageHandlerImpl {
 
     @Override
     public void handleMessage(V2GBodyAbstractType v2gMessageBody) {
-        String unit = ((ChargeParameterDiscoveryReq) v2gMessageBody).getAcEvChargeParameter().geteАmount().getUnit();
-        int value = ((ChargeParameterDiscoveryReq) v2gMessageBody).getAcEvChargeParameter().geteАmount().getValue();
+        String unit = ((ChargeParameterDiscoveryReq) v2gMessageBody).getAcEvChargeParameter().getEАmount().getUnit();
+        int value = ((ChargeParameterDiscoveryReq) v2gMessageBody).getAcEvChargeParameter().getEАmount().getValue();
         Charge charge = new Charge(unit, value);
 
         applicationEventPublisher.publishEvent(new EVChargeParameterRequest(this, charge));

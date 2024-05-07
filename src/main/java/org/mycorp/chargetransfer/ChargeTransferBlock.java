@@ -14,6 +14,7 @@ import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.function.Supplier;
 
 @Slf4j
 @Component
@@ -36,7 +37,7 @@ public class ChargeTransferBlock implements ChargeTransferBlockInterface {
         CompletableFuture<Void> future = CompletableFuture.runAsync(chargeTransferBlockTask, chargeTransferExecutor);
         future.thenRun(() -> {
             StationVariables.getInstance().setMeterCurrent((int) chargeTransferBlockTask.getMeterValues().getSampledValue().get(0).getValue());
-            stopChargingEventPublisher.publishStopChargingEvent(chargeTransferBlockTask.getShutdownInitiator());
+            stopChargingEventPublisher.publishStopChargingEvent(chargeTransferBlockTask.isEmergencyStopping());
         });
     }
 
@@ -53,12 +54,16 @@ public class ChargeTransferBlock implements ChargeTransferBlockInterface {
     @Override
     public void setCharge(Charge charge) {
         chargeTransferBlockTask.setCharge(charge);
-        log.info("CHAAAAAAAAAAAAAAAAAAAAAARGE");
     }
 
     @Override
-    public void stopChargeTransfer(String shutdownInitiator) {
-        chargeTransferBlockTask.stop(shutdownInitiator);
+    public void stopChargeTransferNormally() {
+        chargeTransferBlockTask.stopNormally();
+    }
+
+    @Override
+    public void stopChargeTransferEmergency() {
+        chargeTransferBlockTask.stopEmergency();
     }
 
     @PreDestroy

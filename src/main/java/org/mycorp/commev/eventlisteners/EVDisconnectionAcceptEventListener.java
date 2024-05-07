@@ -18,6 +18,7 @@ public class EVDisconnectionAcceptEventListener extends EVCommunicationBlockEven
     @Override
     @EventListener
     public void listenEvent(EVDisconnectionAccept stationEvent) {
+        evCommunicationBlockInterface.acceptDisconnect();
         evCommunicationBlockInterface.sendMessage(V2GMessageResFactory.createSessionStopResMessage(ResponseCode.OK));
     }
 }

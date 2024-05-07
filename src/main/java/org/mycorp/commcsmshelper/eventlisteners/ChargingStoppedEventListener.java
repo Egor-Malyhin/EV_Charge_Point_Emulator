@@ -2,6 +2,7 @@ package org.mycorp.commcsmshelper.eventlisteners;
 
 import org.mycorp.commcsmshelper.CSMSCommunicationBlockHelperInterface;
 import org.mycorp.models.events.chargetransfer.ChargingStopped;
+import org.mycorp.models.events.chargetransfer.ChargingStoppedNormally;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
@@ -12,6 +13,7 @@ public class ChargingStoppedEventListener extends CSMSCommunicationBlockHelperEv
     protected ChargingStoppedEventListener(CSMSCommunicationBlockHelperInterface csmsCommunicationBlockHelperInterface) {
         super(csmsCommunicationBlockHelperInterface);
     }
+
 
     @Override
     @EventListener

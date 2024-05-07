@@ -1,7 +1,6 @@
 package org.mycorp.commev.messagehandlers;
 
 import org.mycorp.models.events.commev.EVPowerDeliveryRequest;
-import org.mycorp.models.events.common.StopCharging;
 import org.mycorp.models.messages.v2g.V2GBodyAbstractType;
 import org.mycorp.models.messages.v2g.req.PowerDeliveryReq;
 import org.mycorp.models.messages.v2g.types.enums.ChargeProgress;
@@ -24,7 +23,7 @@ public class PowerDeliveryHandler extends V2GMessageHandlerImpl {
                 applicationEventPublisher.publishEvent(new EVPowerDeliveryRequest(this));
                 break;
             case STOP:
-                applicationEventPublisher.publishEvent(new StopCharging(this, "EVCommunicationBlock"));
+                //applicationEventPublisher.publishEvent(new StopChargingNormally(this, "EVCommunicationBlock", "EVCommunicationBlockRequest"));
         }
     }
 }

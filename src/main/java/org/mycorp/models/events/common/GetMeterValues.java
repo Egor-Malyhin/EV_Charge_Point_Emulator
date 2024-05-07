@@ -1,7 +1,13 @@
 package org.mycorp.models.events.common;
 
-public class GetMeterValues extends CommonEvent {
+import lombok.Getter;
+import org.mycorp.models.events.StationEvent;
+
+@Getter
+public class GetMeterValues extends StationEvent {
+    private final String requesterBlock;
     public GetMeterValues(Object source, String requesterBlock) {
-        super(source, requesterBlock);
+        super(source);
+        this.requesterBlock = requesterBlock;
     }
 }

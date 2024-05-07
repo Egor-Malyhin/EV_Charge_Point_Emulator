@@ -26,9 +26,9 @@ public class EVActionListener {
         applicationEventPublisher.publishEvent(new ConnectedEV(this));
     }
 
-    public void evDisconnected() {
+    public void evDisconnected(boolean isDisconnectionAccept) {
         StationVariables stationVariables = StationVariables.getInstance();
         stationVariables.setIdTag(null);
-        applicationEventPublisher.publishEvent(new DisconnectedEV(this));
+        applicationEventPublisher.publishEvent(new DisconnectedEV(this, isDisconnectionAccept));
     }
 }

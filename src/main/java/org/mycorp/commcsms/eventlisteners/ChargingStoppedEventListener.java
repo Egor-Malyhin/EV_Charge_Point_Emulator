@@ -18,6 +18,7 @@ public class ChargingStoppedEventListener extends CSMSCommunicationBlockEventLis
         super(csmsCommunicationBlockInterface, clientCoreProfileMessageGenerator);
     }
 
+
     @Override
     @EventListener
     public void listenEvent(ChargingStopped stationEvent) {

@@ -8,7 +8,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 //The configuration class for the Spring ApplicationEventMulticaster.
 //It sets the ExecutorService for asynchronous execution of EventListeners.
-@Configuration
+//@Configuration
 public class SpringEventMulticasterConfiguration {
     @Bean
     public AsyncTaskExecutor taskExecutor() {

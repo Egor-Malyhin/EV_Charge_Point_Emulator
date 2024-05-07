@@ -5,5 +5,6 @@ public enum StationStateAction {
     START_CHARGING,
     PREPARE_CHARGING,
     FINISH_CHARGING,
-    GET_AVAILABLE
+    GET_AVAILABLE,
+    GET_UNAVAILABLE
 }

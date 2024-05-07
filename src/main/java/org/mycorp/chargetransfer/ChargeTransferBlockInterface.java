@@ -9,5 +9,7 @@ public interface ChargeTransferBlockInterface {
 
     void setCharge(Charge charge);
 
-    void stopChargeTransfer(String shutdownInitiator);
+    void stopChargeTransferNormally();
+
+    void stopChargeTransferEmergency();
 }
