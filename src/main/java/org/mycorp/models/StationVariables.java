@@ -5,7 +5,6 @@ import eu.chargetime.ocpp.model.core.ChargePointStatus;
 import java.time.ZoneId;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
@@ -16,9 +15,9 @@ public class StationVariables {
     private final AtomicInteger meterCurrent;
     private final AtomicReference<ZoneId> zoneId;
     private final AtomicReference<String> idTag;
+    private final ReadWriteLock chargePointStatusLock;
     private ChargePointStatus chargePointStatusCurrent;
     private ChargePointStatus chargePointStatusPast;
-    private final ReadWriteLock chargePointStatusLock;
 
     private StationVariables() {
         transactionId = new AtomicInteger();

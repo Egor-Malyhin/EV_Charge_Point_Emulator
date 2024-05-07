@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.net.ConnectException;
-import java.net.SocketException;
 import java.util.Arrays;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -22,9 +21,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class EVCommunicationBlockSessionHandler extends IoHandlerAdapter implements EVCommunicationBlockInterface {
     private final V2GMessageHandlerContext v2GMessageHandlerContext;
     private final EVActionListener evActionListener;
-    private IoSession session;
     private final AtomicBoolean isAvailable;
     private final AtomicBoolean isDisconnectionAccept;
+    private IoSession session;
 
     @Autowired
     public EVCommunicationBlockSessionHandler(V2GMessageHandlerContext v2GMessageHandlerContext, EVActionListener evActionListener) {
