@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="76b66a1d-1f2c-4dbf-9a80-cc7d32ab3715" name="Changes" comment="Minor code reformat changes using Lombok">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventlisteners/StopChargingEmergencyEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/eventlisteners/UnlockConnectorEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/connectormanager/ConnectorManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/connectormanager/ConnectorManagerInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/connectormanager/eventlisteners/ChargingStoppedEmergencyEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/connectormanager/eventlisteners/ConnectorManagerEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/connectormanager/eventlisteners/DisconnectedEVEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/chargetransfer/ChargingStoppedEmergency.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/chargetransfer/ChargingStoppedNormally.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/common/StopChargingEmergency.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/common/StopChargingNormally.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/connectormanager/UnlockConnector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/stateoperator/eventlisteners/UnlockConnectorEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/ChargeTransferBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/ChargeTransferBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/ChargeTransferBlockInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/ChargeTransferBlockInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/ChargeTransferBlockTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/ChargeTransferBlockTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventlisteners/StopChargingByCSMSEventListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventlisteners/StopChargingEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventlisteners/StopChargingNormallyEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventpublishers/stopcharging/StopChargingEventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/chargetransfer/eventpublishers/stopcharging/StopChargingEventPublisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/CSMSCommunicationBlockClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/CSMSCommunicationBlockClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/eventlisteners/ChargingStoppedEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsms/eventlisteners/ChargingStoppedEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsmshelper/eventlisteners/ChargingStoppedEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commcsmshelper/eventlisteners/ChargingStoppedEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/EVCommunicationBlockInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/EVCommunicationBlockInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/EVCommunicationBlockSessionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/EVCommunicationBlockSessionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/evactionlisteners/EVActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/evactionlisteners/EVActionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/eventlisteners/EVDisconnectionAcceptEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/eventlisteners/EVDisconnectionAcceptEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/ChargeParameterDiscoveryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/ChargeParameterDiscoveryHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/PowerDeliveryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/commev/messagehandlers/PowerDeliveryHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/logging/EVMessagesLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/logging/EVMessagesLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/main/SpringEventMulticasterConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/main/SpringEventMulticasterConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/main/StationStateMachineConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/main/StationStateMachineConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/StationStateAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/StationStateAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/StationVariables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/StationVariables.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/chargetransfer/ChargingStopped.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/chargetransfer/ChargingStopped.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commev/DisconnectedEV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/commev/DisconnectedEV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/common/CommonEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/common/GetMeterValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/common/GetMeterValues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/events/common/StopCharging.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/stateoperator/eventlisteners/CSMSChargingAcceptEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/stateoperator/eventlisteners/CSMSChargingAcceptEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/stateoperator/eventlisteners/ChargingStoppedEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/stateoperator/eventlisteners/ChargingStoppedNormallyEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/stateoperator/eventlisteners/ConnectedEVEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/stateoperator/eventlisteners/ConnectedEVEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/stateoperator/eventlisteners/DisconnectedEVEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/stateoperator/eventlisteners/DisconnectedEVEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/stateoperator/statemachinelistener/StationStateMachineListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/stateoperator/statemachinelistener/StationStateMachineListener.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="package-info" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenRunner">
+    <option name="vmOptions" value="--add-opens java.base/java.lang=ALL-UNNAMED" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2dctEdscHFGSs02YjcYYdfhPyA1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Main.executor": "Run",
+    "Application.org.mycorp.main.Main.executor": "Run",
+    "JUnit.ApplicationEventLoggerTest.executor": "Run",
+    "JUnit.ApplicationEventLoggerTest.testEventLogging.executor": "Run",
+    "JUnit.ChargeTransferBlockTaskTest.executor": "Run",
+    "JUnit.ChargeTransferBlockTaskTest.getMeterValuesInTimeTest.executor": "Run",
+    "JUnit.ChargeTransferBlockTaskTest.integratedChargeTransferBlockTaskTest.executor": "Run",
+    "JUnit.ChargeTransferBlockTaskTest.taskCanceledTest.executor": "Run",
+    "JUnit.ChargeTransferBlockTaskTest.taskTest.executor": "Run",
+    "JUnit.ChargeTransferBlockTaskTest.updateMeterValuesTest.executor": "Run",
+    "JUnit.ChargeTransferBlockTest.getMeterValuesInTimeTest.executor": "Run",
+    "JUnit.ChargeTransferBlockTest.instantTest.executor": "Run",
+    "JUnit.ChargeTransferBlockTest.test2.executor": "Run",
+    "JUnit.ChargeTransferBlockTest.updateMeterValuesTest.executor": "Debug",
+    "JUnit.EVChargeParameterRequestEventListenerTest.listenEventTest.executor": "Run",
+    "JUnit.EVCommunicationBlockHelperTest.acceptSessionClose.executor": "Run",
+    "JUnit.EVCommunicationBlockHelperTest.presentChargeParameterTest.executor": "Run",
+    "JUnit.EVSessionStopRequestEventListenerTest.listenEventTest.executor": "Run",
+    "JUnit.SessionIdCounterTest.sessionIdCounterIncrementTest.executor": "Run",
+    "JUnit.StationEventLoggerTest.executor": "Run",
+    "JUnit.StationEventLoggerTest.testEventLogging.executor": "Run",
+    "JUnit.V2GDecoderTest.messageDecodeTest.executor": "Run",
+    "JUnit.V2GMessageBuildersTest.buildMessageTest.executor": "Run",
+    "JUnit.V2GMessageHandlerContextTest.getMessageHandlerImplExceptionTest.executor": "Run",
+    "JUnit.V2GMessageHandlerContextTest.getMessageHandlerImplTest.executor": "Debug",
+    "JUnit.XmlConverterTest (1).executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToExiTest.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTest.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCaseChargeParameterDiscoveryRes.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCaseChargingStatusRes.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCaseException.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCasePowerDeliveryRes.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCaseSessionSetupRes.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCaseSessionStopRes.executor": "Run",
+    "JUnit.XmlConverterTest.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/MyProjects/Simple_CSMS_Server",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\MyProjects\EV_Charging_Point\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\MyProjects\EV_Charging_Point\src\main\resources" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.mycorp.models.v2g_messages.req" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.mycorp.main.Main" />
+      <module name="EV_Charging_Point" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.mycorp.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EVChargeParameterRequestEventListenerTest.listenEventTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EV_Charging_Point" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="commevhelper.eventlisteners.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="commevhelper.eventlisteners" />
+      <option name="MAIN_CLASS_NAME" value="commevhelper.eventlisteners.EVChargeParameterRequestEventListenerTest" />
+      <option name="METHOD_NAME" value="listenEventTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EVCommunicationBlockHelperTest.acceptSessionClose" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EV_Charging_Point" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="commevhelper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="commevhelper" />
+      <option name="MAIN_CLASS_NAME" value="commevhelper.EVCommunicationBlockHelperTest" />
+      <option name="METHOD_NAME" value="acceptSessionClose" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EVCommunicationBlockHelperTest.presentChargeParameterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EV_Charging_Point" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="commevhelper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="commevhelper" />
+      <option name="MAIN_CLASS_NAME" value="commevhelper.EVCommunicationBlockHelperTest" />
+      <option name="METHOD_NAME" value="presentChargeParameterTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EVSessionStopRequestEventListenerTest.listenEventTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EV_Charging_Point" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="commevhelper.eventlisteners.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="commevhelper.eventlisteners" />
+      <option name="MAIN_CLASS_NAME" value="commevhelper.eventlisteners.EVSessionStopRequestEventListenerTest" />
+      <option name="METHOD_NAME" value="listenEventTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.EVChargeParameterRequestEventListenerTest.listenEventTest" />
+      <item itemvalue="JUnit.EVCommunicationBlockHelperTest.acceptSessionClose" />
+      <item itemvalue="JUnit.EVCommunicationBlockHelperTest.presentChargeParameterTest" />
+      <item itemvalue="JUnit.EVSessionStopRequestEventListenerTest.listenEventTest" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.EVSessionStopRequestEventListenerTest.listenEventTest" />
+        <item itemvalue="JUnit.EVChargeParameterRequestEventListenerTest.listenEventTest" />
+        <item itemvalue="JUnit.EVCommunicationBlockHelperTest.acceptSessionClose" />
+        <item itemvalue="JUnit.EVCommunicationBlockHelperTest.presentChargeParameterTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="76b66a1d-1f2c-4dbf-9a80-cc7d32ab3715" name="Changes" comment="" />
+      <created>1710319085332</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710319085332</updated>
+    </task>
+    <task id="LOCAL-00001" summary="&#10;The development of the project carcass has been initiated. The main charging management module was created, along with a module reflecting the physical charging process. Interfaces for all program modules were also developed. Additionally, classes representing V2G messages and specifically response (RES) messages were created. A class was implemented to convert message class objects into XML format first, and then into EXI.">
+      <option name="closed" value="true" />
+      <created>1711115395648</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1711115395648</updated>
+    </task>
+    <task id="LOCAL-00002" summary="&#10;The structure of the EV communication block handler was developed, V2G message builders were created, the format of the Station Characteristics class was refactored from singleton to a static class, and new model classes were added to the v2g_messages package, including V2GMessagesClassification, an enum linked to V2G message types. Additionally, an interface for the interaction between the EV communication block and the charging system was developed - EvCommunicationBlockInterface, along with its implementation - EvCommunicationBlockInterfaceImpl. Within this class, V2G messages are assembled using builders and sent via the sendMessage method of the handler to the EVCC.">
+      <option name="closed" value="true" />
+      <created>1711386530559</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1711386530559</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Classes of Req messages were added, and an enum characterizing these messages was also completed. The EVCommunicationBlock handler was developed and refactored, and interfaces implementing the interaction between ChargingSystem and EVCommunicationBlock were designed. The logic of ChargingSystem operation, mainly the algorithm, was revised. Thread management logic was added to the InitSystem class. Sending meter values to the server moved to a separate thread. The ability to stop the ChargeTransferBlock and MeterValuesSender threads from outside added.">
+      <option name="closed" value="true" />
+      <created>1711567603447</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1711567603447</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Revised the interaction between the blocks: now it is done through messages. Mediators have been added as an intermediate module for communication between blocks. Messages are processed by classes implementing the receiver interface. Depending on the message, they invoke methods of the receiving block's interface.">
+      <option name="closed" value="true" />
+      <created>1711814603413</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1711814603413</updated>
+    </task>
+    <task id="LOCAL-00005" summary="The structure of mediators has been redesigned, an additional interface has been developed, MediatorChargeControlSystem, which is inherited from Mediator. MediatorImpl implements both of these interfaces. The MediatorChargeControlSystem indirectly depends on the ChargeControlSystem. The ChargeControlSystem, EVCommunicationBlock, CSMSCommunicationBlock, and ChargeTransferBlock classes have been redesigned to use a mediator. Message sets have also been added, with the help of which the station blocks exchange information with each other.">
+      <option name="closed" value="true" />
+      <created>1712054545329</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712054545329</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added thread synchronization on the shared resource - StationState. The logic of ChargeTransferBlock has been slightly reworked (updating sampledValues is now considered relative to milliseconds). The logic of V2GSessionIdCounter has been significantly changed - from now on, during creation and incrementation, the counter is always stored as hexBinary. Several tests have been added - testing the ChargeTransferBlock thread, testing the MessageBuilders collector method, testing the V2GSessionIdCounter incrementCounter method.">
+      <option name="closed" value="true" />
+      <created>1712182984664</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712182984664</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Minor cleanup Code Changes.">
+      <option name="closed" value="true" />
+      <created>1712183113942</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1712183113942</updated>
+    </task>
+    <task id="LOCAL-00008" summary="The application architecture has been redesigned - the Charge Control System module has been removed. The interaction between the blocks is carried out through ApplicationEventPublisher and EventListener from Spring Events. The new architecture supports expansion in terms of adding new classes of message handlers and event listeners in communication blocks.">
+      <option name="closed" value="true" />
+      <created>1713522822478</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1713522822478</updated>
+    </task>
+    <task id="LOCAL-00009" summary="The module chargetransfer has been redesigned for a new architecture. Event listeners and event publishers have been added. Now, the interaction logic based on event-driven architecture is encapsulated within the ChargeTransferBlock class, while the original logic of the class has been moved to ChargeTransferBlockTask. The ChargeTransferBlockInterface interface has been reworked.&#10;&#10;Now, when calling the startCharging() method, the run method of the ChargeTransferBlockTask class will be executed by the executor in a separate thread. After the task completes, one of the implementations of StopChargingEventPublisher will generate an event indicating the end of charging (the event type depends on the shutdown initiator).">
+      <option name="closed" value="true" />
+      <created>1713958018024</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1713958018024</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Small code changes made, read-write synchronization added to the stop() method, some event classes added, and development of the State Operator module has been initiated.">
+      <option name="closed" value="true" />
+      <created>1714385744545</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1714385744545</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Minor Code Changes">
+      <option name="closed" value="true" />
+      <created>1714385764495</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1714385764495</updated>
+    </task>
+    <task id="LOCAL-00012" summary="The stateoperator module has been developed. This module is a service that interacts with SpringStateMachine. This service can change the condition of the machine. The enum constants from the library eu.chargetime OCA-OCPP - ChargePointStatus are used as the states used in the machine, as well as personifying the state of the station. The enum constants of StationStateAction are used as state transitions. StateMachineListener has also been added, which publishes the stateChanged event when the station status changes. The redesign for the new architecture of the commcsms module has also begun">
+      <option name="closed" value="true" />
+      <created>1714484819910</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1714484819910</updated>
+    </task>
+    <task id="LOCAL-00013" summary="The commcsms module has been redesigned for a new architecture, using the eu.chargetime Java OCA-OCPP library. New events were added, the chargetransfer module was also slightly redesigned - now, at the end, it generates only the ChargingStopped event, and the initiator of the stop is recorded in a separate shutdownInitiator field. Logging has also been added - after each event, its name and sender are recorded in the console. Logging logic in the logging module, Spring AOP was used in the implementation">
+      <option name="closed" value="true" />
+      <created>1714594604172</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1714594604172</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Minor code cleanup">
+      <option name="closed" value="true" />
+      <created>1714594728802</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1714594728802</updated>
+    </task>
+    <task id="LOCAL-00015" summary="&#10;Events have been reworked - now each module has its own abstract class inheriting from ApplicationEvent. The source in them is specified as the Class of the module's main class, for example - SomeAdditionalBlock.class. Additionally, there are common events in the common package, they inherit directly from ApplicationEvent. When using them in the program, the source should specify the Class of the module's main class. Also, the CSMS Communication Helper module has been developed. This module reacts to connections to CSMS and, after the start of charging, publishes a meterValues request to CSMS on a timer in a separate thread.">
+      <option name="closed" value="true" />
+      <created>1714661349965</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1714661349965</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Old event classes have been restored. Now, each class publishing an event should specify its own object as the source field. This change was made to simplify event handling and enable more convenient logging. Additionally, the ChargeTransferBlockTaskTest class has been enhanced. This class includes the following methods: taskTest(), which demonstrates the execution of the electric vehicle charging process; integratedTaskTest(), which verifies how locking works and whether threads are mutually blocked; taskCanceledTest(), which concludes the task execution via the stop(String shutdownInitiator) method and also outputs information about the number of seconds from the start of the stop() method until the task is stopped. Furthermore, many classes have been refactored using Lombok, with the addition of annotations such as @Getter, @Setter, and @Slf4j.">
+      <option name="closed" value="true" />
+      <created>1714772046555</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1714772046555</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Minor code reformat changes">
+      <option name="closed" value="true" />
+      <created>1714772104793</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1714772104793</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Minor tests reformat changes">
+      <option name="closed" value="true" />
+      <created>1714772162654</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1714772162654</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Added a new abstract class for all application events - StationEvent. This class serves as a wrapper over the ApplicationEvent class. This class is needed for logging - to intercept only those events that are defined in the application. Existing parameterized interfaces and abstract classes have been refactored to use this class as their base.">
+      <option name="closed" value="true" />
+      <created>1714774331524</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1714774331524</updated>
+    </task>
+    <task id="LOCAL-00020" summary="&#10;Changes have been made to V2G message objects, and the V2GEncoder has also been debugged (it now writes byte arrays to the buffer). An additional session ID check has been added in EVCommunicationBlockSessionHandler when receiving a message from EV. A factory for V2G Response messages has been created, and event listeners in the comm ev module no longer depend on builder classes. Synchronization has been added to StationVariables - all fields are now represented as atomics, and initialization is lazy. A minor code refactoring in ChargeTransferBlockTask - a private synchronized method start() has been added, which is called when starting ChargeTransferBlockTask.">
+      <option name="closed" value="true" />
+      <created>1714854561218</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1714854561218</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Minor code formatting changes">
+      <option name="closed" value="true" />
+      <created>1714854688605</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1714854688605</updated>
+    </task>
+    <task id="LOCAL-00022" summary="&#10;Classes EVMessageLogger and ExceptionLogger have been added as loggers. WebSocketActionListener class has been added, which sends events after the session starts and tries to reconnect three times every 2 seconds after disconnection. Module evreqlocalmanager has been renamed to commevhelper, and the logic has been refactored (now event listeners are in a separate package and do not inherit from evlocalreqmanager). Tests for converting objects to XML have been added, as well as unit tests for the EVCommunicationBlockHelper class and its event listeners.">
+      <option name="closed" value="true" />
+      <created>1715031173416</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1715031173416</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Minor code reformat changes">
+      <option name="closed" value="true" />
+      <created>1715031223956</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1715031223956</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Minor code reformat changes using Lombok">
+      <option name="closed" value="true" />
+      <created>1715031524668</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1715031524668</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="&#10;The development of the project carcass has been initiated. The main charging management module was created, along with a module reflecting the physical charging process. Interfaces for all program modules were also developed. Additionally, classes representing V2G messages and specifically response (RES) messages were created. A class was implemented to convert message class objects into XML format first, and then into EXI." />
+    <MESSAGE value="&#10;The structure of the EV communication block handler was developed, V2G message builders were created, the format of the Station Characteristics class was refactored from singleton to a static class, and new model classes were added to the v2g_messages package, including V2GMessagesClassification, an enum linked to V2G message types. Additionally, an interface for the interaction between the EV communication block and the charging system was developed - EvCommunicationBlockInterface, along with its implementation - EvCommunicationBlockInterfaceImpl. Within this class, V2G messages are assembled using builders and sent via the sendMessage method of the handler to the EVCC." />
+    <MESSAGE value="Classes of Req messages were added, and an enum characterizing these messages was also completed. The EVCommunicationBlock handler was developed and refactored, and interfaces implementing the interaction between ChargingSystem and EVCommunicationBlock were designed. The logic of ChargingSystem operation, mainly the algorithm, was revised. Thread management logic was added to the InitSystem class. Sending meter values to the server moved to a separate thread. The ability to stop the ChargeTransferBlock and MeterValuesSender threads from outside added." />
+    <MESSAGE value="Revised the interaction between the blocks: now it is done through messages. Mediators have been added as an intermediate module for communication between blocks. Messages are processed by classes implementing the receiver interface. Depending on the message, they invoke methods of the receiving block's interface." />
+    <MESSAGE value="The structure of mediators has been redesigned, an additional interface has been developed, MediatorChargeControlSystem, which is inherited from Mediator. MediatorImpl implements both of these interfaces. The MediatorChargeControlSystem indirectly depends on the ChargeControlSystem. The ChargeControlSystem, EVCommunicationBlock, CSMSCommunicationBlock, and ChargeTransferBlock classes have been redesigned to use a mediator. Message sets have also been added, with the help of which the station blocks exchange information with each other." />
+    <MESSAGE value="Added thread synchronization on the shared resource - StationState. The logic of ChargeTransferBlock has been slightly reworked (updating sampledValues is now considered relative to milliseconds). The logic of V2GSessionIdCounter has been significantly changed - from now on, during creation and incrementation, the counter is always stored as hexBinary. Several tests have been added - testing the ChargeTransferBlock thread, testing the MessageBuilders collector method, testing the V2GSessionIdCounter incrementCounter method." />
+    <MESSAGE value="Minor cleanup Code Changes." />
+    <MESSAGE value="The application architecture has been redesigned - the Charge Control System module has been removed. The interaction between the blocks is carried out through ApplicationEventPublisher and EventListener from Spring Events. The new architecture supports expansion in terms of adding new classes of message handlers and event listeners in communication blocks." />
+    <MESSAGE value="The module chargetransfer has been redesigned for a new architecture. Event listeners and event publishers have been added. Now, the interaction logic based on event-driven architecture is encapsulated within the ChargeTransferBlock class, while the original logic of the class has been moved to ChargeTransferBlockTask. The ChargeTransferBlockInterface interface has been reworked.&#10;&#10;Now, when calling the startCharging() method, the run method of the ChargeTransferBlockTask class will be executed by the executor in a separate thread. After the task completes, one of the implementations of StopChargingEventPublisher will generate an event indicating the end of charging (the event type depends on the shutdown initiator)." />
+    <MESSAGE value="Small code changes made, read-write synchronization added to the stop() method, some event classes added, and development of the State Operator module has been initiated." />
+    <MESSAGE value="Minor Code Changes" />
+    <MESSAGE value="The stateoperator module has been developed. This module is a service that interacts with SpringStateMachine. This service can change the condition of the machine. The enum constants from the library eu.chargetime OCA-OCPP - ChargePointStatus are used as the states used in the machine, as well as personifying the state of the station. The enum constants of StationStateAction are used as state transitions. StateMachineListener has also been added, which publishes the stateChanged event when the station status changes. The redesign for the new architecture of the commcsms module has also begun" />
+    <MESSAGE value="The commcsms module has been redesigned for a new architecture, using the eu.chargetime Java OCA-OCPP library. New events were added, the chargetransfer module was also slightly redesigned - now, at the end, it generates only the ChargingStopped event, and the initiator of the stop is recorded in a separate shutdownInitiator field. Logging has also been added - after each event, its name and sender are recorded in the console. Logging logic in the logging module, Spring AOP was used in the implementation" />
+    <MESSAGE value="Minor code cleanup" />
+    <MESSAGE value="&#10;Events have been reworked - now each module has its own abstract class inheriting from ApplicationEvent. The source in them is specified as the Class of the module's main class, for example - SomeAdditionalBlock.class. Additionally, there are common events in the common package, they inherit directly from ApplicationEvent. When using them in the program, the source should specify the Class of the module's main class. Also, the CSMS Communication Helper module has been developed. This module reacts to connections to CSMS and, after the start of charging, publishes a meterValues request to CSMS on a timer in a separate thread." />
+    <MESSAGE value="Old event classes have been restored. Now, each class publishing an event should specify its own object as the source field. This change was made to simplify event handling and enable more convenient logging. Additionally, the ChargeTransferBlockTaskTest class has been enhanced. This class includes the following methods: taskTest(), which demonstrates the execution of the electric vehicle charging process; integratedTaskTest(), which verifies how locking works and whether threads are mutually blocked; taskCanceledTest(), which concludes the task execution via the stop(String shutdownInitiator) method and also outputs information about the number of seconds from the start of the stop() method until the task is stopped. Furthermore, many classes have been refactored using Lombok, with the addition of annotations such as @Getter, @Setter, and @Slf4j." />
+    <MESSAGE value="Minor tests reformat changes" />
+    <MESSAGE value="Added a new abstract class for all application events - StationEvent. This class serves as a wrapper over the ApplicationEvent class. This class is needed for logging - to intercept only those events that are defined in the application. Existing parameterized interfaces and abstract classes have been refactored to use this class as their base." />
+    <MESSAGE value="&#10;Changes have been made to V2G message objects, and the V2GEncoder has also been debugged (it now writes byte arrays to the buffer). An additional session ID check has been added in EVCommunicationBlockSessionHandler when receiving a message from EV. A factory for V2G Response messages has been created, and event listeners in the comm ev module no longer depend on builder classes. Synchronization has been added to StationVariables - all fields are now represented as atomics, and initialization is lazy. A minor code refactoring in ChargeTransferBlockTask - a private synchronized method start() has been added, which is called when starting ChargeTransferBlockTask." />
+    <MESSAGE value="Minor code formatting changes" />
+    <MESSAGE value="&#10;Classes EVMessageLogger and ExceptionLogger have been added as loggers. WebSocketActionListener class has been added, which sends events after the session starts and tries to reconnect three times every 2 seconds after disconnection. Module evreqlocalmanager has been renamed to commevhelper, and the logic has been refactored (now event listeners are in a separate package and do not inherit from evlocalreqmanager). Tests for converting objects to XML have been added, as well as unit tests for the EVCommunicationBlockHelper class and its event listeners." />
+    <MESSAGE value="Minor code reformat changes" />
+    <MESSAGE value="Minor code reformat changes using Lombok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor code reformat changes using Lombok" />
+  </component>
+</project>
