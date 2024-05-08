@@ -1,0 +1,2 @@
+commev.host.server = localhost
+commcsms.connect.ws = ws://localhost:8887
