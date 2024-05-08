@@ -1,0 +1,8 @@
+logging\StationEventLoggerTest.class
+logging\StationEventLoggerTest$TestEvent.class
+commev\SessionIdCounterTest.class
+commevhelper\EVCommunicationBlockHelperTest.class
+chargetransfer\ChargeTransferBlockTaskTest.class
+commevhelper\eventlisteners\EVChargeParameterRequestEventListenerTest.class
+commev\V2GMessageHandlerContextTest.class
+commevhelper\eventlisteners\EVSessionStopRequestEventListenerTest.class

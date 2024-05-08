@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b3194e76-e6c0-4164-bf7d-a8ee320bfbca" name="Changes" comment="Changes to the code after moving the V2G message classes into a separate module.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2fyZNKMBivLTXdZ1HX7vS28sfXa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "JUnit.EVCCIdTest.evccIDTest.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/MyProjects/V2G_Protocol_Messages"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\MyProjects\Simple_EVCC_Tcp_Client\src\main\java\org\mycorp\messagebuilders" />
+      <recent name="C:\MyProjects\Simple_EVCC_Tcp_Client\src\main\java\org\mycorp" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.mycorp.Main" />
+      <module name="Simple_EVCC_Tcp_Client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.mycorp.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EVCCIdTest.evccIDTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Simple_EVCC_Tcp_Client" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="EVCCIdTest" />
+      <option name="METHOD_NAME" value="evccIDTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.EVCCIdTest.evccIDTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b3194e76-e6c0-4164-bf7d-a8ee320bfbca" name="Changes" comment="" />
+      <created>1714775238813</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714775238813</updated>
+    </task>
+    <task id="LOCAL-00001" summary="The first version of a simple TCP client for EVCC. The client implements basic logic, sending messages according to the charging algorithm under normal conditions. It utilizes the V2G protocol defined in the ISO 15118-2 standard.">
+      <option name="closed" value="true" />
+      <created>1714938461578</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1714938461578</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Minor code reformat changes">
+      <option name="closed" value="true" />
+      <created>1714938793444</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714938793444</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Changes to the code after moving the V2G message classes into a separate module.">
+      <option name="closed" value="true" />
+      <created>1715193405775</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715193405775</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="The first version of a simple TCP client for EVCC. The client implements basic logic, sending messages according to the charging algorithm under normal conditions. It utilizes the V2G protocol defined in the ISO 15118-2 standard." />
+    <MESSAGE value="Minor code reformat changes" />
+    <MESSAGE value="Changes to the code after moving the V2G message classes into a separate module." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes to the code after moving the V2G message classes into a separate module." />
+  </component>
+</project>

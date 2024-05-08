@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="XmlConverterTest" time="0.535" tests="6" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1251"/>
+    <property name="java.class.path" value="C:\MyProjects\V2G_Protocol_Messages\target\test-classes;C:\MyProjects\V2G_Protocol_Messages\target\classes;C:\Users\Admin\.m2\repository\org\projectlombok\lombok\1.18.32\lombok-1.18.32.jar;C:\Users\Admin\.m2\repository\javax\xml\bind\jaxb-api\2.3.1\jaxb-api-2.3.1.jar;C:\Users\Admin\.m2\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar;C:\Users\Admin\.m2\repository\com\sun\xml\bind\jaxb-impl\2.3.3\jaxb-impl-2.3.3.jar;C:\Users\Admin\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\2.3.3\jakarta.xml.bind-api-2.3.3.jar;C:\Users\Admin\.m2\repository\com\sun\activation\jakarta.activation\1.2.2\jakarta.activation-1.2.2.jar;C:\Users\Admin\.m2\repository\com\siemens\ct\exi\exificient\1.0.7\exificient-1.0.7.jar;C:\Users\Admin\.m2\repository\com\siemens\ct\exi\exificient-core\1.0.7\exificient-core-1.0.7.jar;C:\Users\Admin\.m2\repository\com\siemens\ct\exi\exificient-grammars\1.0.7\exificient-grammars-1.0.7.jar;C:\Users\Admin\.m2\repository\xerces\xercesImpl\2.12.2\xercesImpl-2.12.2.jar;C:\Users\Admin\.m2\repository\xml-apis\xml-apis\1.4.01\xml-apis-1.4.01.jar;C:\Users\Admin\.m2\repository\org\slf4j\slf4j-api\2.0.6\slf4j-api-2.0.6.jar;C:\Users\Admin\.m2\repository\xmlpull\xmlpull\1.1.3.1\xmlpull-1.1.3.1.jar;C:\Users\Admin\.m2\repository\javax\activation\activation\1.1.1\activation-1.1.1.jar;C:\Users\Admin\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\Admin\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Novosibirsk"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
+    <property name="sun.java.command" value="C:\Users\Admin\AppData\Local\Temp\surefire16757379161494858591\surefirebooter-20240509022652904_3.jar C:\Users\Admin\AppData\Local\Temp\surefire16757379161494858591 2024-05-09T02-26-52_781-jvmRun1 surefire-20240509022652904_1tmp surefire_0-20240509022652904_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\MyProjects\V2G_Protocol_Messages\target\test-classes;C:\MyProjects\V2G_Protocol_Messages\target\classes;C:\Users\Admin\.m2\repository\org\projectlombok\lombok\1.18.32\lombok-1.18.32.jar;C:\Users\Admin\.m2\repository\javax\xml\bind\jaxb-api\2.3.1\jaxb-api-2.3.1.jar;C:\Users\Admin\.m2\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar;C:\Users\Admin\.m2\repository\com\sun\xml\bind\jaxb-impl\2.3.3\jaxb-impl-2.3.3.jar;C:\Users\Admin\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\2.3.3\jakarta.xml.bind-api-2.3.3.jar;C:\Users\Admin\.m2\repository\com\sun\activation\jakarta.activation\1.2.2\jakarta.activation-1.2.2.jar;C:\Users\Admin\.m2\repository\com\siemens\ct\exi\exificient\1.0.7\exificient-1.0.7.jar;C:\Users\Admin\.m2\repository\com\siemens\ct\exi\exificient-core\1.0.7\exificient-core-1.0.7.jar;C:\Users\Admin\.m2\repository\com\siemens\ct\exi\exificient-grammars\1.0.7\exificient-grammars-1.0.7.jar;C:\Users\Admin\.m2\repository\xerces\xercesImpl\2.12.2\xercesImpl-2.12.2.jar;C:\Users\Admin\.m2\repository\xml-apis\xml-apis\1.4.01\xml-apis-1.4.01.jar;C:\Users\Admin\.m2\repository\org\slf4j\slf4j-api\2.0.6\slf4j-api-2.0.6.jar;C:\Users\Admin\.m2\repository\xmlpull\xmlpull\1.1.3.1\xmlpull-1.1.3.1.jar;C:\Users\Admin\.m2\repository\javax\activation\activation\1.1.1\activation-1.1.1.jar;C:\Users\Admin\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\Admin\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Admin"/>
+    <property name="user.language" value="ru"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-01-16"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-21"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\MyProjects\V2G_Protocol_Messages"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\Admin\AppData\Local\Temp\surefire16757379161494858591\surefirebooter-20240509022652904_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.2+13-LTS-58"/>
+    <property name="user.name" value="Admin"/>
+    <property name="stdout.encoding" value="Cp1251"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\Admin\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\Admin\AppData\Local\Temp\"/>
+    <property name="java.version" value="21.0.2"/>
+    <property name="user.dir" value="C:\MyProjects\V2G_Protocol_Messages"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1251"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-21\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Git\cmd;C:\Users\Admin\AppData\Local\.meteor/;C:\Program Files\nodejs\node_modules\npm\node_modules\npm-lifecycle\node-gyp-bin;C:\Users\Admin\AppData\Roaming\npm\node_modules\meteor\node_modules\.bin;C:\Users\Admin\AppData\Roaming\npm\node_modules\.bin;C:\Users\Admin\AppData\Roaming\npm;C:\Program Files\nodejs\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\Admin\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\bin;;C:\apache-maven-3.9.6\bin;;C:\Users\Admin\AppData\Local\Microsoft\WindowsApps;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1251"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="21.0.2+13-LTS-58"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="convertV2GToXmlTestCaseChargeParameterDiscoveryRes" classname="XmlConverterTest" time="0.238">
+    <system-out><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<v2gci_d:V2GMessage xmlns:v2gci_h="urn:iso:15118:2:2013:MsgHeader" xmlns:v2gci_t="urn:iso:15118:2:2013:MsgDataTypes" xmlns:v2gci_b="urn:iso:15118:2:2013:MsgBody" xmlns:v2gci_d="urn:iso:15118:2:2013:MsgDef">
+    <v2gci_d:Header>
+        <v2gci_h:SESSIONID>AA==</v2gci_h:SESSIONID>
+    </v2gci_d:Header>
+    <v2gci_d:Body>
+        <v2gci_b:ChargeParameterDiscoveryRes>
+            <v2gci_b:ResponseCode>OK</v2gci_b:ResponseCode>
+            <v2gci_b:EVSEProcessing>FINISHED</v2gci_b:EVSEProcessing>
+            <v2gci_t:AC_EVSEChargeParameter>
+                <v2gci_t:AC_EVSEStatus>
+                    <v2gci_t:RCD>true</v2gci_t:RCD>
+                    <v2gci_t:NotificationMaxDelay>5</v2gci_t:NotificationMaxDelay>
+                    <v2gci_t:EVSENotification>NONE</v2gci_t:EVSENotification>
+                </v2gci_t:AC_EVSEStatus>
+                <v2gci_t:EVSENominalVoltage>
+                    <v2gci_t:Multiplier>1</v2gci_t:Multiplier>
+                    <v2gci_t:Unit>V</v2gci_t:Unit>
+                    <v2gci_t:Value>100</v2gci_t:Value>
+                </v2gci_t:EVSENominalVoltage>
+                <v2gci_t:EVSEMaxCurrent>
+                    <v2gci_t:Multiplier>1</v2gci_t:Multiplier>
+                    <v2gci_t:Unit>A</v2gci_t:Unit>
+                    <v2gci_t:Value>100</v2gci_t:Value>
+                </v2gci_t:EVSEMaxCurrent>
+            </v2gci_t:AC_EVSEChargeParameter>
+        </v2gci_b:ChargeParameterDiscoveryRes>
+    </v2gci_d:Body>
+</v2gci_d:V2GMessage>
+
+]]></system-out>
+  </testcase>
+  <testcase name="convertV2GToXmlTestCaseSessionSetupRes" classname="XmlConverterTest" time="0.011">
+    <system-out><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<v2gci_d:V2GMessage xmlns:v2gci_h="urn:iso:15118:2:2013:MsgHeader" xmlns:v2gci_t="urn:iso:15118:2:2013:MsgDataTypes" xmlns:v2gci_b="urn:iso:15118:2:2013:MsgBody" xmlns:v2gci_d="urn:iso:15118:2:2013:MsgDef">
+    <v2gci_d:Header>
+        <v2gci_h:SESSIONID>AA==</v2gci_h:SESSIONID>
+    </v2gci_d:Header>
+    <v2gci_d:Body>
+        <v2gci_b:SessionSetupRes>
+            <v2gci_b:ResponseCode>OK_NewSessionEstablished</v2gci_b:ResponseCode>
+            <v2gci_b:EVSEID>1</v2gci_b:EVSEID>
+            <v2gci_t:EVSETimeStamp>1715196413559</v2gci_t:EVSETimeStamp>
+        </v2gci_b:SessionSetupRes>
+    </v2gci_d:Body>
+</v2gci_d:V2GMessage>
+
+]]></system-out>
+  </testcase>
+  <testcase name="convertV2GToXmlTestCaseChargingStatusRes" classname="XmlConverterTest" time="0.019">
+    <system-out><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<v2gci_d:V2GMessage xmlns:v2gci_h="urn:iso:15118:2:2013:MsgHeader" xmlns:v2gci_t="urn:iso:15118:2:2013:MsgDataTypes" xmlns:v2gci_b="urn:iso:15118:2:2013:MsgBody" xmlns:v2gci_d="urn:iso:15118:2:2013:MsgDef">
+    <v2gci_d:Header>
+        <v2gci_h:SESSIONID>AA==</v2gci_h:SESSIONID>
+    </v2gci_d:Header>
+    <v2gci_d:Body>
+        <v2gci_b:ChargingStatusRes>
+            <v2gci_b:ResponseCode>OK</v2gci_b:ResponseCode>
+            <v2gci_t:AC_EVSEStatus>
+                <v2gci_t:RCD>true</v2gci_t:RCD>
+                <v2gci_t:NotificationMaxDelay>5</v2gci_t:NotificationMaxDelay>
+                <v2gci_t:EVSENotification>NONE</v2gci_t:EVSENotification>
+            </v2gci_t:AC_EVSEStatus>
+            <v2gci_b:EVSEID>1</v2gci_b:EVSEID>
+            <v2gci_t:MeterInfo>
+                <v2gci_t:MeterId>1</v2gci_t:MeterId>
+                <v2gci_t:MeterReading>100</v2gci_t:MeterReading>
+            </v2gci_t:MeterInfo>
+        </v2gci_b:ChargingStatusRes>
+    </v2gci_d:Body>
+</v2gci_d:V2GMessage>
+
+]]></system-out>
+  </testcase>
+  <testcase name="convertV2GToExiTest" classname="XmlConverterTest" time="0.158"/>
+  <testcase name="convertV2GToXmlTestCaseSessionStopRes" classname="XmlConverterTest" time="0.016">
+    <system-out><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<v2gci_d:V2GMessage xmlns:v2gci_h="urn:iso:15118:2:2013:MsgHeader" xmlns:v2gci_t="urn:iso:15118:2:2013:MsgDataTypes" xmlns:v2gci_b="urn:iso:15118:2:2013:MsgBody" xmlns:v2gci_d="urn:iso:15118:2:2013:MsgDef">
+    <v2gci_d:Header>
+        <v2gci_h:SESSIONID>AA==</v2gci_h:SESSIONID>
+    </v2gci_d:Header>
+    <v2gci_d:Body>
+        <v2gci_b:SessionStopRes>
+            <v2gci_b:ResponseCode>OK</v2gci_b:ResponseCode>
+        </v2gci_b:SessionStopRes>
+    </v2gci_d:Body>
+</v2gci_d:V2GMessage>
+
+]]></system-out>
+  </testcase>
+  <testcase name="convertV2GToXmlTestCasePowerDeliveryRes" classname="XmlConverterTest" time="0.017">
+    <system-out><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<v2gci_d:V2GMessage xmlns:v2gci_h="urn:iso:15118:2:2013:MsgHeader" xmlns:v2gci_t="urn:iso:15118:2:2013:MsgDataTypes" xmlns:v2gci_b="urn:iso:15118:2:2013:MsgBody" xmlns:v2gci_d="urn:iso:15118:2:2013:MsgDef">
+    <v2gci_d:Header>
+        <v2gci_h:SESSIONID>AA==</v2gci_h:SESSIONID>
+    </v2gci_d:Header>
+    <v2gci_d:Body>
+        <v2gci_b:PowerDeliveryRes>
+            <v2gci_b:ResponseCode>OK</v2gci_b:ResponseCode>
+            <v2gci_t:AC_EVSEStatus>
+                <v2gci_t:RCD>true</v2gci_t:RCD>
+                <v2gci_t:NotificationMaxDelay>5</v2gci_t:NotificationMaxDelay>
+                <v2gci_t:EVSENotification>NONE</v2gci_t:EVSENotification>
+            </v2gci_t:AC_EVSEStatus>
+        </v2gci_b:PowerDeliveryRes>
+    </v2gci_d:Body>
+</v2gci_d:V2GMessage>
+
+]]></system-out>
+  </testcase>
+</testsuite>
