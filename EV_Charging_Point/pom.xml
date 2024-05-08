@@ -17,7 +17,7 @@
     <dependencies>
         <dependency>
             <groupId>org.mycorp</groupId>
-            <artifactId>V2GProtocolMessages</artifactId>
+            <artifactId>V2G_Protocol_Messages</artifactId>
             <version>1.0</version>
         </dependency>
 
