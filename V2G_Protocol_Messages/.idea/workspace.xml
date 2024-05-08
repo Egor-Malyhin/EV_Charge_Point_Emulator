@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8e91f556-fbdb-4df7-8418-79326290c69a" name="Changes" comment="Сonsolidated all V2G message objects as well as the converter into a separate project.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2gC10E2UvjhI3P3FxOlNklwDdVK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCaseChargeParameterDiscoveryRes.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCaseChargingStatusRes.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCasePowerDeliveryRes.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCaseSessionSetupRes.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCaseSessionStopRes.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/MyProjects/V2G_Protocol_Messages"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\MyProjects\V2GProtocolMessages\src\main\java\org\mycorp\messagebuilders\req" />
+      <recent name="C:\MyProjects\V2GProtocolMessages\src\main\java\org\mycorp\messagebuilders" />
+      <recent name="C:\MyProjects\V2GProtocolMessages\src\main\java\org\mycorp" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="org.mycorp.messagefactory" />
+      <recent name="org.mycorp" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.XmlConverterTest.convertV2GToXmlTestCaseChargingStatusRes">
+    <configuration name="XmlConverterTest.convertV2GToXmlTestCaseChargeParameterDiscoveryRes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="V2GProtocolMessages" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="XmlConverterTest" />
+      <option name="METHOD_NAME" value="convertV2GToXmlTestCaseChargeParameterDiscoveryRes" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XmlConverterTest.convertV2GToXmlTestCaseChargingStatusRes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="V2GProtocolMessages" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="XmlConverterTest" />
+      <option name="METHOD_NAME" value="convertV2GToXmlTestCaseChargingStatusRes" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XmlConverterTest.convertV2GToXmlTestCasePowerDeliveryRes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="V2GProtocolMessages" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="XmlConverterTest" />
+      <option name="METHOD_NAME" value="convertV2GToXmlTestCasePowerDeliveryRes" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XmlConverterTest.convertV2GToXmlTestCaseSessionSetupRes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="V2GProtocolMessages" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="XmlConverterTest" />
+      <option name="METHOD_NAME" value="convertV2GToXmlTestCaseSessionSetupRes" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XmlConverterTest.convertV2GToXmlTestCaseSessionStopRes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="V2GProtocolMessages" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="XmlConverterTest" />
+      <option name="METHOD_NAME" value="convertV2GToXmlTestCaseSessionStopRes" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.XmlConverterTest.convertV2GToXmlTestCaseChargingStatusRes" />
+        <item itemvalue="JUnit.XmlConverterTest.convertV2GToXmlTestCaseChargeParameterDiscoveryRes" />
+        <item itemvalue="JUnit.XmlConverterTest.convertV2GToXmlTestCaseSessionStopRes" />
+        <item itemvalue="JUnit.XmlConverterTest.convertV2GToXmlTestCaseSessionSetupRes" />
+        <item itemvalue="JUnit.XmlConverterTest.convertV2GToXmlTestCasePowerDeliveryRes" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8e91f556-fbdb-4df7-8418-79326290c69a" name="Changes" comment="" />
+      <created>1715186522359</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1715186522359</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Сonsolidated all V2G message objects as well as the converter into a separate project.">
+      <option name="closed" value="true" />
+      <created>1715189925008</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715189925008</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Сonsolidated all V2G message objects as well as the converter into a separate project." />
+    <option name="LAST_COMMIT_MESSAGE" value="Сonsolidated all V2G message objects as well as the converter into a separate project." />
+  </component>
+</project>
