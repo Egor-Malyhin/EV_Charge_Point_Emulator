@@ -1,8 +1,11 @@
-package org.mycorp.v2g;
+package org.mycorp.models;
 
-import org.mycorp.v2g.res.*;
+import lombok.Getter;
+import org.mycorp.messages.V2GBodyAbstractType;
+import org.mycorp.messages.res.*;
 
-public enum V2GMessagesClassification {
+@Getter
+public enum V2GMessagesResClassification {
     CHARGE_PARAMETER_DISCOVERY_RES(ChargeParameterDiscoveryRes.class),
     SESSION_SETUP_RES(SessionSetupRes.class),
     POWER_DELIVERY_RES(PowerDeliveryRes.class),
@@ -11,11 +14,8 @@ public enum V2GMessagesClassification {
 
     private final Class<? extends V2GBodyAbstractType> messageType;
 
-    V2GMessagesClassification(Class<? extends V2GBodyAbstractType> messageType) {
+    V2GMessagesResClassification(Class<? extends V2GBodyAbstractType> messageType) {
         this.messageType = messageType;
     }
 
-    public Class<? extends V2GBodyAbstractType> getMessageType() {
-        return messageType;
-    }
 }

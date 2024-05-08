@@ -1,6 +1,7 @@
 package org.mycorp.models;
 
-import org.mycorp.v2g.types.PhysicalValue;
+
+import org.mycorp.messages.types.PhysicalValue;
 
 public class EVCharacteristics {
     public static byte[] evccId = "MyEVCCID1234".getBytes();

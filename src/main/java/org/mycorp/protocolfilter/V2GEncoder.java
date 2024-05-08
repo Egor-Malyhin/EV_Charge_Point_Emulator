@@ -5,7 +5,8 @@ import org.apache.mina.core.buffer.IoBuffer;
 import org.apache.mina.core.session.IoSession;
 import org.apache.mina.filter.codec.ProtocolEncoderAdapter;
 import org.apache.mina.filter.codec.ProtocolEncoderOutput;
-import org.mycorp.v2g.V2GMessage;
+import org.mycorp.XMLConverter;
+import org.mycorp.messages.V2GMessage;
 import org.xml.sax.SAXException;
 
 import javax.xml.bind.JAXBException;
@@ -14,8 +15,8 @@ import javax.xml.parsers.ParserConfigurationException;
 public class V2GEncoder extends ProtocolEncoderAdapter {
     private final XMLConverter xmlConverter;
 
-    public V2GEncoder(XMLConverter xmlConverter) {
-        this.xmlConverter = xmlConverter;
+    public V2GEncoder() {
+        this.xmlConverter = new XMLConverter();
     }
 
     @Override
@@ -26,7 +27,7 @@ public class V2GEncoder extends ProtocolEncoderAdapter {
             out.write(IoBuffer.wrap(byteArray));
         } catch (SAXException | EXIException | ParserConfigurationException | JAXBException e) {
             e.printStackTrace();
-            //throw new RuntimeException("Cannot convert object message to EXI", e);
+            throw new RuntimeException("Cannot convert object message to EXI", e);
         }
     }
 }

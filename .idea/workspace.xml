@@ -4,14 +4,57 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3194e76-e6c0-4164-bf7d-a8ee320bfbca" name="Changes" comment="The first version of a simple TCP client for EVCC. The client implements basic logic, sending messages according to the charging algorithm under normal conditions. It utilizes the V2G protocol defined in the ISO 15118-2 standard.">
+    <list default="true" id="b3194e76-e6c0-4164-bf7d-a8ee320bfbca" name="Changes" comment="Minor code reformat changes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/IoServiceListenerAdapter.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/messagebuilders/ChargeParameterReqMessageBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/messagebuilders/ChargingStatusReqMessageBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/messagebuilders/MessageBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/messagebuilders/MessageBuilderImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/messagebuilders/MessageBuildersDirector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/messagebuilders/PowerDeliveryReqMessageBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/messagebuilders/SessionSetupReqMessageBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/messagebuilders/SessionStopReqMessageBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/messagefactory/V2GMessageReqFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/EVCharacteristics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/EVCharacteristics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/EVDataVariables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/EVDataVariables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/models/SessionId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/SessionId.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/V2GDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/V2GDecoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/V2GMessagesClassification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/V2GMessagesClassification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/req/SessionSetupReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/req/SessionSetupReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/V2GEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/V2GEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/V2GBody.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/V2GBodyAbstractType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/V2GHeader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/V2GMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/V2GMessagesClassification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/models/V2GMessagesResClassification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/V2GSessionIdCounter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/req/ChargeParameterDiscoveryReq.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/req/ChargingStatusReq.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/req/PowerDeliveryReq.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/req/SessionSetupReq.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/req/SessionStopReq.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/req/V2GMessageReq.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/res/ChargeParameterDiscoveryRes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/res/ChargingStatusRes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/res/PowerDeliveryRes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/res/SessionSetupRes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/res/SessionStopRes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/res/V2GMessageRes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/types/AC_EVChargeParameter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/types/AC_EVSEChargeParameter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/types/AC_EVSEStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/types/ChargeProgress.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/types/ChargingSession.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/types/EVSENotification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/types/EVSEProcessing.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/types/MeterInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/types/PhysicalValue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/types/RequestedEnergyTransferMode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/v2g/types/ResponseCode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/EVCCIdTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +70,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -47,7 +93,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/MyProjects/Simple_EVCC_Tcp_Client"
+    "last_opened_file_path": "C:/MyProjects/EV_Charging_Point"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -111,190 +157,20 @@
       <option name="project" value="LOCAL" />
       <updated>1714938461578</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Minor code reformat changes">
+      <option name="closed" value="true" />
+      <created>1714938793444</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714938793444</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="The first version of a simple TCP client for EVCC. The client implements basic logic, sending messages according to the charging algorithm under normal conditions. It utilizes the V2G protocol defined in the ISO 15118-2 standard." />
-    <option name="LAST_COMMIT_MESSAGE" value="The first version of a simple TCP client for EVCC. The client implements basic logic, sending messages according to the charging algorithm under normal conditions. It utilizes the V2G protocol defined in the ISO 15118-2 standard." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/V2GEncoder.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/V2GEncoder.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>92</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>93</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>94</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>95</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>97</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/V2GEncoder.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>67</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>69</line>
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>71</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/V2GEncoder.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>41</line>
-          <properties class="org.mycorp.protocolfilter.XMLConverter" method="convertToXML">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/mycorp/protocolfilter/XMLConverter.java</url>
-          <line>52</line>
-          <properties class="org.mycorp.protocolfilter.XMLConverter" method="convertToEXIMessage">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Minor code reformat changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor code reformat changes" />
   </component>
 </project>

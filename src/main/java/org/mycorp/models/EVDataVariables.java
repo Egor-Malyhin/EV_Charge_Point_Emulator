@@ -2,8 +2,8 @@ package org.mycorp.models;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.mycorp.v2g.types.PhysicalValue;
-import org.mycorp.v2g.types.RequestedEnergyTransferMode;
+import org.mycorp.messages.types.PhysicalValue;
+import org.mycorp.messages.types.enums.RequestedEnergyTransferMode;
 
 @Setter
 @Getter
@@ -12,7 +12,7 @@ public class EVDataVariables {
     private RequestedEnergyTransferMode requestedEnergyTransferMode;
 
     private EVDataVariables() {
-        eAmount = new PhysicalValue(1, "kWh", 10000);
+        eAmount = new PhysicalValue(1, "kWh", 100);
         requestedEnergyTransferMode = RequestedEnergyTransferMode.AC_single_phase_core;
     }
 

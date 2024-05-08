@@ -5,6 +5,7 @@ import org.apache.mina.core.buffer.IoBuffer;
 import org.apache.mina.core.session.IoSession;
 import org.apache.mina.filter.codec.ProtocolDecoderAdapter;
 import org.apache.mina.filter.codec.ProtocolDecoderOutput;
+import org.mycorp.XMLConverter;
 
 import javax.xml.bind.JAXBException;
 import javax.xml.transform.TransformerException;
@@ -12,8 +13,8 @@ import javax.xml.transform.TransformerException;
 public class V2GDecoder extends ProtocolDecoderAdapter {
     private final XMLConverter xmlConverter;
 
-    public V2GDecoder(XMLConverter xmlConverter) {
-        this.xmlConverter = xmlConverter;
+    public V2GDecoder() {
+        this.xmlConverter = new XMLConverter();
     }
 
     @Override
