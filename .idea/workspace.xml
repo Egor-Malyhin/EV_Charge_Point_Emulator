@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8e91f556-fbdb-4df7-8418-79326290c69a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/XMLConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messagebuilders/MessageBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messagebuilders/MessageBuilderImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messagebuilders/MessageBuildersDirector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messagebuilders/req/ChargeParameterReqMessageBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messagebuilders/req/ChargingStatusReqMessageBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messagebuilders/req/PowerDeliveryReqMessageBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messagebuilders/req/SessionSetupReqMessageBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messagebuilders/req/SessionStopReqMessageBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messagebuilders/res/ChargeParameterDiscoveryResBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messagebuilders/res/ChargingStatusResBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messagebuilders/res/MessageBuilderRes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messagebuilders/res/PowerDeliveryResBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messagebuilders/res/SessionSetupResBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messagebuilders/res/SessionStopResBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messagefactory/V2GMessageReqFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messagefactory/V2GMessageResFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/V2GBody.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/V2GBodyAbstractType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/V2GHeader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/V2GMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/req/ChargeParameterDiscoveryReq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/req/ChargingStatusReq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/req/PowerDeliveryReq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/req/SessionSetupReq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/req/SessionStopReq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/req/V2GMessageReq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/res/ChargeParameterDiscoveryRes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/res/ChargingStatusRes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/res/PowerDeliveryRes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/res/SessionSetupRes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/res/SessionStopRes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/res/V2GMessageRes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/types/AC_EVChargeParameter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/types/AC_EVSEChargeParameter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/types/AC_EVSEStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/types/MeterInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/types/PhysicalValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/types/enums/ChargeProgress.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/types/enums/ChargingSession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/types/enums/EVSENotification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/types/enums/EVSEProcessing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/types/enums/RequestedEnergyTransferMode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/messages/types/enums/ResponseCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/XmlConverterTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2gC10E2UvjhI3P3FxOlNklwDdVK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCasePowerDeliveryRes.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/MyProjects/V2GProtocolMessages/src/main/java/org/mycorp/messagebuilders/req"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\MyProjects\V2GProtocolMessages\src\main\java\org\mycorp\messagebuilders\req" />
+      <recent name="C:\MyProjects\V2GProtocolMessages\src\main\java\org\mycorp\messagebuilders" />
+      <recent name="C:\MyProjects\V2GProtocolMessages\src\main\java\org\mycorp" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="org.mycorp.messagefactory" />
+      <recent name="org.mycorp" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.XmlConverterTest.convertV2GToXmlTestCaseChargingStatusRes">
+    <configuration name="XmlConverterTest.convertV2GToXmlTestCaseChargeParameterDiscoveryRes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="V2GProtocolMessages" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="XmlConverterTest" />
+      <option name="METHOD_NAME" value="convertV2GToXmlTestCaseChargeParameterDiscoveryRes" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XmlConverterTest.convertV2GToXmlTestCaseChargingStatusRes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="V2GProtocolMessages" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="XmlConverterTest" />
+      <option name="METHOD_NAME" value="convertV2GToXmlTestCaseChargingStatusRes" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XmlConverterTest.convertV2GToXmlTestCasePowerDeliveryRes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="V2GProtocolMessages" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="XmlConverterTest" />
+      <option name="METHOD_NAME" value="convertV2GToXmlTestCasePowerDeliveryRes" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XmlConverterTest.convertV2GToXmlTestCaseSessionSetupRes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="V2GProtocolMessages" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="XmlConverterTest" />
+      <option name="METHOD_NAME" value="convertV2GToXmlTestCaseSessionSetupRes" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XmlConverterTest.convertV2GToXmlTestCaseSessionStopRes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="V2GProtocolMessages" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="XmlConverterTest" />
+      <option name="METHOD_NAME" value="convertV2GToXmlTestCaseSessionStopRes" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.XmlConverterTest.convertV2GToXmlTestCaseChargingStatusRes" />
+        <item itemvalue="JUnit.XmlConverterTest.convertV2GToXmlTestCaseChargeParameterDiscoveryRes" />
+        <item itemvalue="JUnit.XmlConverterTest.convertV2GToXmlTestCaseSessionStopRes" />
+        <item itemvalue="JUnit.XmlConverterTest.convertV2GToXmlTestCaseSessionSetupRes" />
+        <item itemvalue="JUnit.XmlConverterTest.convertV2GToXmlTestCasePowerDeliveryRes" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8e91f556-fbdb-4df7-8418-79326290c69a" name="Changes" comment="" />
+      <created>1715186522359</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1715186522359</updated>
+    </task>
+    <servers />
+  </component>
+</project>
