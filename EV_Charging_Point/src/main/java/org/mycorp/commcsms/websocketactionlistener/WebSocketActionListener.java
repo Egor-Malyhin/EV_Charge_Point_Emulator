@@ -12,9 +12,7 @@ import org.springframework.stereotype.Component;
 public class WebSocketActionListener extends StationEventPublisher implements ClientEvents {
     private int connectionTryingCounter;
 
-    @Autowired
-    protected WebSocketActionListener(ApplicationEventPublisher applicationEventPublisher) {
-        super(applicationEventPublisher);
+    protected WebSocketActionListener() {
         this.connectionTryingCounter = 0;
     }
 
@@ -27,7 +25,7 @@ public class WebSocketActionListener extends StationEventPublisher implements Cl
     public void connectionClosed() {
         if (connectionTryingCounter < 3) {
             try {
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 connectionTryingCounter++;
                 applicationEventPublisher.publishEvent(new CSMSDisconnect(this));
             } catch (InterruptedException ex) {

@@ -8,11 +8,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SessionStopHandler extends V2GMessageHandlerImpl {
-    @Autowired
-    protected SessionStopHandler(ApplicationEventPublisher applicationEventPublisher) {
-        super(applicationEventPublisher);
-    }
-
     @Override
     public void handleMessage(V2GBodyAbstractType v2gMessageBody) {
         applicationEventPublisher.publishEvent(new EVSessionStopRequest(this));

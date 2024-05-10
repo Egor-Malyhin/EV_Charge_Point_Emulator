@@ -32,8 +32,7 @@ public class ChargeTransferBlock implements ChargeTransferBlockInterface {
 
     @Override
     public void startChargeTransfer() {
-        CompletableFuture<Void> future = CompletableFuture.runAsync(chargeTransferBlockTask, chargeTransferExecutor);
-        future.thenRun(() -> {
+        CompletableFuture.runAsync(chargeTransferBlockTask, chargeTransferExecutor).thenRun(() -> {
             stopChargingEventPublisher.publishStopChargingEvent(chargeTransferBlockTask.isEmergencyStopping());
         });
     }

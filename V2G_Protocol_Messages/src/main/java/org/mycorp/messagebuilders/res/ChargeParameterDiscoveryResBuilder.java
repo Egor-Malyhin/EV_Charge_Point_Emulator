@@ -22,7 +22,7 @@ public class ChargeParameterDiscoveryResBuilder extends MessageBuilderRes {
 
     @Override
     public MessageBuilder createBodyType() {
-        this.v2GBodyAbstractType = new ChargeParameterDiscoveryRes(responseCode, createChargeParameter(), FINISHED);
+        this.v2GBodyAbstractType = new ChargeParameterDiscoveryRes(responseCode, FINISHED, createChargeParameter());
         return this;
     }
 

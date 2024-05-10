@@ -11,11 +11,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class PowerDeliveryHandler extends V2GMessageHandlerImpl {
-    @Autowired
-    protected PowerDeliveryHandler(ApplicationEventPublisher applicationEventPublisher) {
-        super(applicationEventPublisher);
-    }
-
     @Override
     public void handleMessage(V2GBodyAbstractType v2gMessageBody) {
         ChargeProgress chargeProgress = ((PowerDeliveryReq) v2gMessageBody).getChargeProgress();

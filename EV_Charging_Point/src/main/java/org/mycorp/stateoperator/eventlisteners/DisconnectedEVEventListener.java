@@ -19,7 +19,7 @@ public class DisconnectedEVEventListener extends StateOperatorEventListener<Disc
 
     @Override
     @EventListener
-    @Order(1)
+    @Order(0)
     public void listenEvent(DisconnectedEV stationEvent) {
         stateOperatorInterface.setStationState(StationStateAction.GET_UNAVAILABLE);
     }

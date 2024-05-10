@@ -4,7 +4,62 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76b66a1d-1f2c-4dbf-9a80-cc7d32ab3715" name="Changes" comment="Minor code reformat changes" />
+    <list default="true" id="76b66a1d-1f2c-4dbf-9a80-cc7d32ab3715" name="Changes" comment="Minor code reformat changes">
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messagebuilders/res/ChargeParameterDiscoveryResBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messagebuilders/res/ChargeParameterDiscoveryResBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/V2GBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/V2GBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/V2GBodyAbstractType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/V2GBodyAbstractType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/V2GHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/V2GHeader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/V2GMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/V2GMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/req/ChargeParameterDiscoveryReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/req/ChargeParameterDiscoveryReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/req/ChargingStatusReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/req/ChargingStatusReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/req/PowerDeliveryReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/req/PowerDeliveryReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/req/SessionSetupReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/req/SessionSetupReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/req/SessionStopReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/req/SessionStopReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/req/V2GMessageReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/req/V2GMessageReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/res/ChargeParameterDiscoveryRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/res/ChargeParameterDiscoveryRes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/res/ChargingStatusRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/res/ChargingStatusRes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/res/PowerDeliveryRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/res/PowerDeliveryRes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/res/SessionSetupRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/res/SessionSetupRes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/res/SessionStopRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/res/SessionStopRes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/res/V2GMessageRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/res/V2GMessageRes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/types/AC_EVChargeParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/types/AC_EVChargeParameter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/types/AC_EVSEChargeParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/types/AC_EVSEChargeParameter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/types/AC_EVSEStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/types/AC_EVSEStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/types/MeterInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/types/MeterInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/types/PhysicalValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/src/main/java/org/mycorp/messages/types/PhysicalValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messagebuilders/res/ChargeParameterDiscoveryResBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messagebuilders/res/ChargeParameterDiscoveryResBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/V2GBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/V2GBody.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/V2GHeader.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/V2GHeader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/V2GMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/V2GMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/req/ChargeParameterDiscoveryReq.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/req/ChargeParameterDiscoveryReq.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/req/ChargingStatusReq.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/req/ChargingStatusReq.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/req/PowerDeliveryReq.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/req/PowerDeliveryReq.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/req/SessionSetupReq.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/req/SessionSetupReq.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/req/SessionStopReq.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/req/SessionStopReq.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/req/V2GMessageReq.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/req/V2GMessageReq.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/res/ChargeParameterDiscoveryRes.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/res/ChargeParameterDiscoveryRes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/res/ChargingStatusRes.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/res/ChargingStatusRes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/res/PowerDeliveryRes.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/res/PowerDeliveryRes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/res/SessionSetupRes.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/res/SessionSetupRes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/res/SessionStopRes.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/res/SessionStopRes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/res/V2GMessageRes.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/res/V2GMessageRes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/types/AC_EVChargeParameter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/types/AC_EVChargeParameter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/types/AC_EVSEChargeParameter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/types/AC_EVSEChargeParameter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/types/AC_EVSEStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/types/AC_EVSEStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/types/MeterInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/types/MeterInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/types/PhysicalValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/types/PhysicalValue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/types/enums/ChargeProgress.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/types/enums/ChargeProgress.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/types/enums/ChargingSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/types/enums/ChargingSession.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/types/enums/EVSENotification.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/types/enums/EVSENotification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/types/enums/EVSEProcessing.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/types/enums/EVSEProcessing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/types/enums/RequestedEnergyTransferMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/types/enums/RequestedEnergyTransferMode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/types/enums/ResponseCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/classes/org/mycorp/messages/types/enums/ResponseCode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/test-classes/XmlConverterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../V2G_Protocol_Messages/target/test-classes/XmlConverterTest.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,65 +95,69 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.org.mycorp.main.Main.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ApplicationEventLoggerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ApplicationEventLoggerTest.testEventLogging.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChargeTransferBlockTaskTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChargeTransferBlockTaskTest.getMeterValuesInTimeTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChargeTransferBlockTaskTest.integratedChargeTransferBlockTaskTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChargeTransferBlockTaskTest.taskCanceledTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChargeTransferBlockTaskTest.taskTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChargeTransferBlockTaskTest.updateMeterValuesTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChargeTransferBlockTest.getMeterValuesInTimeTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChargeTransferBlockTest.instantTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChargeTransferBlockTest.test2.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChargeTransferBlockTest.updateMeterValuesTest.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.EVChargeParameterRequestEventListenerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EVChargeParameterRequestEventListenerTest.listenEventTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EVCommunicationBlockHelperTest.acceptSessionClose.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EVCommunicationBlockHelperTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EVCommunicationBlockHelperTest.presentChargeParameterTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EVSessionStopRequestEventListenerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EVSessionStopRequestEventListenerTest.listenEventTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SessionIdCounterTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SessionIdCounterTest.sessionIdCounterIncrementTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StationEventLoggerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StationEventLoggerTest.testEventLogging.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.V2GDecoderTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.V2GDecoderTest.messageDecodeTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.V2GMessageBuildersTest.buildMessageTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.V2GMessageBuildersTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.V2GMessageHandlerContextTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.V2GMessageHandlerContextTest.getMessageHandlerImplExceptionTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.V2GMessageHandlerContextTest.getMessageHandlerImplTest.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.XmlConverterTest (1).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.XmlConverterTest.convertV2GToExiTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.XmlConverterTest.convertV2GToXmlTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.XmlConverterTest.convertV2GToXmlTestCaseChargeParameterDiscoveryRes.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.XmlConverterTest.convertV2GToXmlTestCaseChargingStatusRes.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.XmlConverterTest.convertV2GToXmlTestCaseException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.XmlConverterTest.convertV2GToXmlTestCasePowerDeliveryRes.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.XmlConverterTest.convertV2GToXmlTestCaseSessionSetupRes.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.XmlConverterTest.convertV2GToXmlTestCaseSessionStopRes.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.XmlConverterTest.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/MyProjects/EV_Charging_Point&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Main.executor": "Run",
+    "Application.org.mycorp.main.Main.executor": "Run",
+    "JUnit.ApplicationEventLoggerTest.executor": "Run",
+    "JUnit.ApplicationEventLoggerTest.testEventLogging.executor": "Run",
+    "JUnit.ChargeTransferBlockTaskTest.executor": "Run",
+    "JUnit.ChargeTransferBlockTaskTest.getMeterValuesInTimeTest.executor": "Run",
+    "JUnit.ChargeTransferBlockTaskTest.integratedChargeTransferBlockTaskTest.executor": "Run",
+    "JUnit.ChargeTransferBlockTaskTest.taskCanceledTest.executor": "Run",
+    "JUnit.ChargeTransferBlockTaskTest.taskTest.executor": "Run",
+    "JUnit.ChargeTransferBlockTaskTest.updateMeterValuesTest.executor": "Run",
+    "JUnit.ChargeTransferBlockTest.getMeterValuesInTimeTest.executor": "Run",
+    "JUnit.ChargeTransferBlockTest.instantTest.executor": "Run",
+    "JUnit.ChargeTransferBlockTest.presentMeterValuesTest.executor": "Run",
+    "JUnit.ChargeTransferBlockTest.setPreparedChargeTest.executor": "Run",
+    "JUnit.ChargeTransferBlockTest.startTest.executor": "Run",
+    "JUnit.ChargeTransferBlockTest.stopEmergencyTest.executor": "Run",
+    "JUnit.ChargeTransferBlockTest.test2.executor": "Run",
+    "JUnit.ChargeTransferBlockTest.updateMeterValuesTest.executor": "Debug",
+    "JUnit.EVChargeParameterRequestEventListenerTest.executor": "Run",
+    "JUnit.EVChargeParameterRequestEventListenerTest.listenEventTest.executor": "Run",
+    "JUnit.EVCommunicationBlockHelperTest.acceptSessionClose.executor": "Run",
+    "JUnit.EVCommunicationBlockHelperTest.executor": "Run",
+    "JUnit.EVCommunicationBlockHelperTest.presentChargeParameterTest.executor": "Run",
+    "JUnit.EVSessionStopRequestEventListenerTest.executor": "Run",
+    "JUnit.EVSessionStopRequestEventListenerTest.listenEventTest.executor": "Run",
+    "JUnit.SessionIdCounterTest.executor": "Run",
+    "JUnit.SessionIdCounterTest.sessionIdCounterIncrementTest.executor": "Run",
+    "JUnit.StationEventLoggerTest.executor": "Run",
+    "JUnit.StationEventLoggerTest.testEventLogging.executor": "Run",
+    "JUnit.V2GDecoderTest.executor": "Run",
+    "JUnit.V2GDecoderTest.messageDecodeTest.executor": "Run",
+    "JUnit.V2GMessageBuildersTest.buildMessageTest.executor": "Run",
+    "JUnit.V2GMessageBuildersTest.executor": "Run",
+    "JUnit.V2GMessageHandlerContextTest.executor": "Run",
+    "JUnit.V2GMessageHandlerContextTest.getMessageHandlerImplExceptionTest.executor": "Run",
+    "JUnit.V2GMessageHandlerContextTest.getMessageHandlerImplTest.executor": "Debug",
+    "JUnit.XmlConverterTest (1).executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToExiTest.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTest.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCaseChargeParameterDiscoveryRes.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCaseChargingStatusRes.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCaseException.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCasePowerDeliveryRes.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCaseSessionSetupRes.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCaseSessionStopRes.executor": "Run",
+    "JUnit.XmlConverterTest.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/MyProjects/EV_Charging_Point",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\MyProjects\EV_Charging_Point\src\main\resources" />
@@ -112,8 +171,11 @@
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="envFilePaths">
+        <option value="$PROJECT_DIR$/src/main/resources/application" />
+      </option>
       <option name="MAIN_CLASS_NAME" value="org.mycorp.main.Main" />
-      <module name="EV_Charging_Point" />
+      <module name="EV_Charging_Point_Emulator" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.mycorp.main.*" />
@@ -124,63 +186,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StationEventLoggerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="EV_Charging_Point" />
+    <configuration name="ChargeTransferBlockTest.presentMeterValuesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EV_Charging_Point_Emulator" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="logging.*" />
+          <option name="PATTERN" value="chargetransfer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="logging" />
-      <option name="MAIN_CLASS_NAME" value="logging.StationEventLoggerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StationEventLoggerTest.testEventLogging" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="EV_Charging_Point" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="logging.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="logging" />
-      <option name="MAIN_CLASS_NAME" value="logging.StationEventLoggerTest" />
-      <option name="METHOD_NAME" value="testEventLogging" />
+      <option name="PACKAGE_NAME" value="chargetransfer" />
+      <option name="MAIN_CLASS_NAME" value="chargetransfer.ChargeTransferBlockTest" />
+      <option name="METHOD_NAME" value="presentMeterValuesTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XmlConverterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="EV_Charging_Point" />
+    <configuration name="ChargeTransferBlockTest.setPreparedChargeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EV_Charging_Point_Emulator" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="commev.*" />
+          <option name="PATTERN" value="chargetransfer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="commev" />
-      <option name="MAIN_CLASS_NAME" value="commev.XmlConverterTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="chargetransfer" />
+      <option name="MAIN_CLASS_NAME" value="chargetransfer.ChargeTransferBlockTest" />
+      <option name="METHOD_NAME" value="setPreparedChargeTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XmlConverterTest.convertV2GToXmlTestCaseChargeParameterDiscoveryRes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="EV_Charging_Point" />
+    <configuration name="ChargeTransferBlockTest.startTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EV_Charging_Point_Emulator" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="commev.*" />
+          <option name="PATTERN" value="chargetransfer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="commev" />
-      <option name="MAIN_CLASS_NAME" value="commev.XmlConverterTest" />
-      <option name="METHOD_NAME" value="convertV2GToXmlTestCaseChargeParameterDiscoveryRes" />
+      <option name="PACKAGE_NAME" value="chargetransfer" />
+      <option name="MAIN_CLASS_NAME" value="chargetransfer.ChargeTransferBlockTest" />
+      <option name="METHOD_NAME" value="startTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChargeTransferBlockTest.stopEmergencyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EV_Charging_Point_Emulator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="chargetransfer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="chargetransfer" />
+      <option name="MAIN_CLASS_NAME" value="chargetransfer.ChargeTransferBlockTest" />
+      <option name="METHOD_NAME" value="stopEmergencyTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -188,18 +252,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.StationEventLoggerTest" />
-      <item itemvalue="JUnit.StationEventLoggerTest.testEventLogging" />
-      <item itemvalue="JUnit.XmlConverterTest" />
-      <item itemvalue="JUnit.XmlConverterTest.convertV2GToXmlTestCaseChargeParameterDiscoveryRes" />
+      <item itemvalue="JUnit.ChargeTransferBlockTest.presentMeterValuesTest" />
+      <item itemvalue="JUnit.ChargeTransferBlockTest.setPreparedChargeTest" />
+      <item itemvalue="JUnit.ChargeTransferBlockTest.startTest" />
+      <item itemvalue="JUnit.ChargeTransferBlockTest.stopEmergencyTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.XmlConverterTest" />
-        <item itemvalue="JUnit.XmlConverterTest.convertV2GToXmlTestCaseChargeParameterDiscoveryRes" />
-        <item itemvalue="JUnit.StationEventLoggerTest" />
-        <item itemvalue="JUnit.StationEventLoggerTest.testEventLogging" />
+        <item itemvalue="JUnit.ChargeTransferBlockTest.startTest" />
+        <item itemvalue="JUnit.ChargeTransferBlockTest.presentMeterValuesTest" />
+        <item itemvalue="JUnit.ChargeTransferBlockTest.stopEmergencyTest" />
+        <item itemvalue="JUnit.ChargeTransferBlockTest.setPreparedChargeTest" />
       </list>
     </recent_temporary>
   </component>

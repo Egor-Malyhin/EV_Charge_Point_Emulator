@@ -5,6 +5,7 @@ import org.mycorp.models.events.chargetransfer.ChargingStoppedNormally;
 import org.mycorp.stateoperator.StateOperatorInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.EventListener;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component("stateOperatorChargingStoppedEventListener")
@@ -16,6 +17,7 @@ public class ChargingStoppedNormallyEventListener extends StateOperatorEventList
 
     @Override
     @EventListener
+    @Order(0)
     public void listenEvent(ChargingStoppedNormally stationEvent) {
         stateOperatorInterface.setStationState(StationStateAction.FINISH_CHARGING);
     }

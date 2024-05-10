@@ -7,11 +7,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class MeterValuesConfHandler extends OCPPConfirmationHandlerImpl {
-    @Autowired
-    protected MeterValuesConfHandler(ApplicationEventPublisher applicationEventPublisher) {
-        super(applicationEventPublisher);
-    }
-
     //Left this method empty so that an exception would not be thrown,
     //since the protocol does not provide for processing this message.
     @Override

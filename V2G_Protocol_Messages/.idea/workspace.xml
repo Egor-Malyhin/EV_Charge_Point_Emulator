@@ -5,8 +5,113 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e91f556-fbdb-4df7-8418-79326290c69a" name="Changes" comment="Сonsolidated all V2G message objects as well as the converter into a separate project.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/chargetransfer/ChargeTransferBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/chargetransfer/ChargeTransferBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/chargetransfer/eventpublishers/metervaluespresenters/CSMSMeterValuesPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/chargetransfer/eventpublishers/metervaluespresenters/CSMSMeterValuesPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/chargetransfer/eventpublishers/metervaluespresenters/EVMeterValuesPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/chargetransfer/eventpublishers/metervaluespresenters/EVMeterValuesPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/chargetransfer/eventpublishers/metervaluespresenters/MeterValuesPresenterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/chargetransfer/eventpublishers/metervaluespresenters/MeterValuesPresenterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/chargetransfer/eventpublishers/stopcharging/StopChargingEventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/chargetransfer/eventpublishers/stopcharging/StopChargingEventPublisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commcsms/CSMSCommunicationBlockClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commcsms/CSMSCommunicationBlockClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commcsms/messagehandlers/AuthorizeConfHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commcsms/messagehandlers/AuthorizeConfHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commcsms/messagehandlers/BootNotificationConfHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commcsms/messagehandlers/BootNotificationConfHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commcsms/messagehandlers/MeterValuesConfHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commcsms/messagehandlers/MeterValuesConfHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commcsms/messagehandlers/OCPPConfirmationHandlerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commcsms/messagehandlers/OCPPConfirmationHandlerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commcsms/messagehandlers/StartTransactionConfHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commcsms/messagehandlers/StartTransactionConfHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commcsms/messagehandlers/StatusNotificationConfHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commcsms/messagehandlers/StatusNotificationConfHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commcsms/messagehandlers/StopTransactionConfHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commcsms/messagehandlers/StopTransactionConfHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commcsms/websocketactionlistener/WebSocketActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commcsms/websocketactionlistener/WebSocketActionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commcsmshelper/CSMSCommunicationBlockHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commcsmshelper/CSMSCommunicationBlockHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commev/EVCommunicationBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commev/EVCommunicationBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commev/V2GSessionIdCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commev/V2GSessionIdCounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commev/evactionlisteners/EVActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commev/evactionlisteners/EVActionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commev/messagehandlers/ChargeParameterDiscoveryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commev/messagehandlers/ChargeParameterDiscoveryHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commev/messagehandlers/ChargingStatusHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commev/messagehandlers/ChargingStatusHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commev/messagehandlers/PowerDeliveryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commev/messagehandlers/PowerDeliveryHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commev/messagehandlers/SessionSetupHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commev/messagehandlers/SessionSetupHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commev/messagehandlers/SessionStopHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commev/messagehandlers/SessionStopHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commev/messagehandlers/V2GMessageHandlerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commev/messagehandlers/V2GMessageHandlerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commevhelper/EVCommunicationBlockHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/commevhelper/EVCommunicationBlockHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/connectormanager/ConnectorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/connectormanager/ConnectorManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/logging/ExceptionLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/logging/ExceptionLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/logging/StationEventLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/logging/StationEventLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/stateoperator/eventlisteners/CSMSChargingAcceptEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/stateoperator/eventlisteners/CSMSChargingAcceptEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/stateoperator/eventlisteners/ChargingStoppedNormallyEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/stateoperator/eventlisteners/ChargingStoppedNormallyEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/stateoperator/eventlisteners/ConnectedEVEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/stateoperator/eventlisteners/ConnectedEVEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/stateoperator/eventlisteners/DisconnectedEVEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/stateoperator/eventlisteners/DisconnectedEVEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/stateoperator/statemachinelistener/StateChangedPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/stateoperator/statemachinelistener/StateChangedPublisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/stationeventpublisher/StationEventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/main/java/org/mycorp/stationeventpublisher/StationEventPublisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/src/test/java/chargetransfer/ChargeTransferBlockTaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/src/test/java/chargetransfer/ChargeTransferBlockTaskTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/chargetransfer/ChargeTransferBlock.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/chargetransfer/ChargeTransferBlock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/chargetransfer/ChargeTransferBlockTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/chargetransfer/ChargeTransferBlockTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/chargetransfer/eventlisteners/CSMSChargingAcceptEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/chargetransfer/eventlisteners/CSMSChargingAcceptEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/chargetransfer/eventlisteners/GetMeterValuesEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/chargetransfer/eventlisteners/GetMeterValuesEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/chargetransfer/eventlisteners/PrepareChargeEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/chargetransfer/eventlisteners/PrepareChargeEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/chargetransfer/eventlisteners/StopChargingEmergencyEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/chargetransfer/eventlisteners/StopChargingEmergencyEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/chargetransfer/eventlisteners/StopChargingNormallyEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/chargetransfer/eventlisteners/StopChargingNormallyEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/chargetransfer/eventpublishers/metervaluespresenters/CSMSMeterValuesPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/chargetransfer/eventpublishers/metervaluespresenters/CSMSMeterValuesPresenter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/chargetransfer/eventpublishers/metervaluespresenters/EVMeterValuesPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/chargetransfer/eventpublishers/metervaluespresenters/EVMeterValuesPresenter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/chargetransfer/eventpublishers/metervaluespresenters/MeterValuesPresenterImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/chargetransfer/eventpublishers/metervaluespresenters/MeterValuesPresenterImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/chargetransfer/eventpublishers/stopcharging/StopChargingEventPublisher.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/chargetransfer/eventpublishers/stopcharging/StopChargingEventPublisher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/CSMSCommunicationBlock.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/CSMSCommunicationBlock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/CSMSCommunicationBlockClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/CSMSCommunicationBlockClientHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/eventlisteners/ChargingStoppedEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/eventlisteners/ChargingStoppedEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/eventlisteners/EVPowerDeliveryRequestEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/eventlisteners/EVPowerDeliveryRequestEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/eventlisteners/EVStartSessionRequestEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/eventlisteners/EVStartSessionRequestEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/eventlisteners/MeterValuesToCSMSEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/eventlisteners/MeterValuesToCSMSEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/eventlisteners/SendBootNotificationEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/eventlisteners/SendBootNotificationEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/eventlisteners/StateChangedEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/eventlisteners/StateChangedEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/eventlisteners/TryConnectingEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/eventlisteners/TryConnectingEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/messagehandlers/AuthorizeConfHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/messagehandlers/AuthorizeConfHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/messagehandlers/BootNotificationConfHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/messagehandlers/BootNotificationConfHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/messagehandlers/MeterValuesConfHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/messagehandlers/MeterValuesConfHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/messagehandlers/OCPPConfirmationHandlerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/messagehandlers/OCPPConfirmationHandlerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/messagehandlers/StartTransactionConfHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/messagehandlers/StartTransactionConfHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/messagehandlers/StatusNotificationConfHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/messagehandlers/StatusNotificationConfHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/messagehandlers/StopTransactionConfHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/messagehandlers/StopTransactionConfHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/websocketactionlistener/WebSocketActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsms/websocketactionlistener/WebSocketActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsmshelper/CSMSCommunicationBlockHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsmshelper/CSMSCommunicationBlockHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsmshelper/eventlisteners/CSMSChargingAcceptEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsmshelper/eventlisteners/CSMSChargingAcceptEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsmshelper/eventlisteners/CSMSDisconnectEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsmshelper/eventlisteners/CSMSDisconnectEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsmshelper/eventlisteners/ChargingStoppedEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsmshelper/eventlisteners/ChargingStoppedEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsmshelper/eventlisteners/ClientConnectedEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commcsmshelper/eventlisteners/ClientConnectedEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/EVCommunicationBlock.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/EVCommunicationBlock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/EVCommunicationBlockSessionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/EVCommunicationBlockSessionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/V2GSessionIdCounter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/V2GSessionIdCounter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/evactionlisteners/EVActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/evactionlisteners/EVActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/eventlisteners/ChargingAcceptEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/eventlisteners/ChargingAcceptEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/eventlisteners/EVAuthorizeEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/eventlisteners/EVAuthorizeEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/eventlisteners/EVDisconnectionAcceptEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/eventlisteners/EVDisconnectionAcceptEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/eventlisteners/MeterValuesToEVEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/eventlisteners/MeterValuesToEVEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/eventlisteners/StationParametersPresentedEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/eventlisteners/StationParametersPresentedEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/eventlisteners/UnlockConnectorEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/eventlisteners/UnlockConnectorEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/messagehandlers/ChargeParameterDiscoveryHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/messagehandlers/ChargeParameterDiscoveryHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/messagehandlers/ChargingStatusHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/messagehandlers/ChargingStatusHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/messagehandlers/PowerDeliveryHandler$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/messagehandlers/PowerDeliveryHandler$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/messagehandlers/PowerDeliveryHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/messagehandlers/PowerDeliveryHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/messagehandlers/SessionSetupHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/messagehandlers/SessionSetupHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/messagehandlers/SessionStopHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/messagehandlers/SessionStopHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/messagehandlers/V2GMessageHandlerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commev/messagehandlers/V2GMessageHandlerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commevhelper/EVCommunicationBlockHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commevhelper/EVCommunicationBlockHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commevhelper/eventlisteners/EVChargeParameterRequestEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commevhelper/eventlisteners/EVChargeParameterRequestEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commevhelper/eventlisteners/EVSessionStopRequestEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/commevhelper/eventlisteners/EVSessionStopRequestEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/connectormanager/ConnectorManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/connectormanager/ConnectorManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/connectormanager/eventlisteners/ChargingStoppedEmergencyEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/connectormanager/eventlisteners/ChargingStoppedEmergencyEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/connectormanager/eventlisteners/DisconnectedEVEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/connectormanager/eventlisteners/DisconnectedEVEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/logging/EVMessagesLogger.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/logging/EVMessagesLogger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/logging/StationEventLogger.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/logging/StationEventLogger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/models/StationStateAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/models/StationStateAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/models/events/common/package-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/stateoperator/eventlisteners/CSMSChargingAcceptEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/stateoperator/eventlisteners/CSMSChargingAcceptEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/stateoperator/eventlisteners/ChargingStoppedNormallyEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/stateoperator/eventlisteners/ChargingStoppedNormallyEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/stateoperator/eventlisteners/ConnectedEVEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/stateoperator/eventlisteners/ConnectedEVEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/stateoperator/eventlisteners/DisconnectedEVEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/stateoperator/eventlisteners/DisconnectedEVEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/stateoperator/eventlisteners/UnlockConnectorEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/stateoperator/eventlisteners/UnlockConnectorEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/stateoperator/statemachinelistener/StationStateMachineListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/stateoperator/statemachinelistener/StationStateMachineListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/stationeventpublisher/StationEventPublisher.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/classes/org/mycorp/stationeventpublisher/StationEventPublisher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/test-classes/chargetransfer/ChargeTransferBlockTaskTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/test-classes/chargetransfer/ChargeTransferBlockTaskTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EV_Charging_Point/target/test-classes/commev/V2GMessageHandlerContextTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../EV_Charging_Point/target/test-classes/commev/V2GMessageHandlerContextTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +126,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -37,11 +142,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.XmlConverterTest.convertV2GToExiTest.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCaseChargeParameterDiscoveryRes (1).executor": "Run",
     "JUnit.XmlConverterTest.convertV2GToXmlTestCaseChargeParameterDiscoveryRes.executor": "Run",
     "JUnit.XmlConverterTest.convertV2GToXmlTestCaseChargingStatusRes.executor": "Run",
+    "JUnit.XmlConverterTest.convertV2GToXmlTestCasePowerDeliveryRes (1).executor": "Run",
     "JUnit.XmlConverterTest.convertV2GToXmlTestCasePowerDeliveryRes.executor": "Run",
     "JUnit.XmlConverterTest.convertV2GToXmlTestCaseSessionSetupRes.executor": "Run",
     "JUnit.XmlConverterTest.convertV2GToXmlTestCaseSessionStopRes.executor": "Run",
+    "JUnit.XmlConverterTest.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -63,9 +172,28 @@
       <recent name="org.mycorp" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.XmlConverterTest.convertV2GToXmlTestCaseChargingStatusRes">
-    <configuration name="XmlConverterTest.convertV2GToXmlTestCaseChargeParameterDiscoveryRes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="V2GProtocolMessages" />
+  <component name="RunManager" selected="JUnit.XmlConverterTest.convertV2GToExiTest">
+    <configuration name="XmlConverterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="V2G_Protocol_Messages" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="XmlConverterTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XmlConverterTest.convertV2GToExiTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="V2G_Protocol_Messages" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="XmlConverterTest" />
+      <option name="METHOD_NAME" value="convertV2GToExiTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XmlConverterTest.convertV2GToXmlTestCaseChargeParameterDiscoveryRes (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="V2G_Protocol_Messages" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="XmlConverterTest" />
       <option name="METHOD_NAME" value="convertV2GToXmlTestCaseChargeParameterDiscoveryRes" />
@@ -84,8 +212,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XmlConverterTest.convertV2GToXmlTestCasePowerDeliveryRes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="V2GProtocolMessages" />
+    <configuration name="XmlConverterTest.convertV2GToXmlTestCasePowerDeliveryRes (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="V2G_Protocol_Messages" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="XmlConverterTest" />
       <option name="METHOD_NAME" value="convertV2GToXmlTestCasePowerDeliveryRes" />
@@ -94,33 +222,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XmlConverterTest.convertV2GToXmlTestCaseSessionSetupRes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="V2GProtocolMessages" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="XmlConverterTest" />
-      <option name="METHOD_NAME" value="convertV2GToXmlTestCaseSessionSetupRes" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="XmlConverterTest.convertV2GToXmlTestCaseSessionStopRes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="V2GProtocolMessages" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="XmlConverterTest" />
-      <option name="METHOD_NAME" value="convertV2GToXmlTestCaseSessionStopRes" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.XmlConverterTest.convertV2GToExiTest" />
+        <item itemvalue="JUnit.XmlConverterTest.convertV2GToXmlTestCaseChargeParameterDiscoveryRes (1)" />
+        <item itemvalue="JUnit.XmlConverterTest" />
+        <item itemvalue="JUnit.XmlConverterTest.convertV2GToXmlTestCasePowerDeliveryRes (1)" />
         <item itemvalue="JUnit.XmlConverterTest.convertV2GToXmlTestCaseChargingStatusRes" />
-        <item itemvalue="JUnit.XmlConverterTest.convertV2GToXmlTestCaseChargeParameterDiscoveryRes" />
-        <item itemvalue="JUnit.XmlConverterTest.convertV2GToXmlTestCaseSessionStopRes" />
-        <item itemvalue="JUnit.XmlConverterTest.convertV2GToXmlTestCaseSessionSetupRes" />
-        <item itemvalue="JUnit.XmlConverterTest.convertV2GToXmlTestCasePowerDeliveryRes" />
       </list>
     </recent_temporary>
   </component>

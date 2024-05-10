@@ -11,11 +11,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class StartTransactionConfHandler extends OCPPConfirmationHandlerImpl {
-    @Autowired
-    protected StartTransactionConfHandler(ApplicationEventPublisher applicationEventPublisher) {
-        super(applicationEventPublisher);
-    }
-
     @Override
     public void handleConfirmation(Confirmation confirmation) {
         StartTransactionConfirmation startTransactionConfirmation = (StartTransactionConfirmation) confirmation;

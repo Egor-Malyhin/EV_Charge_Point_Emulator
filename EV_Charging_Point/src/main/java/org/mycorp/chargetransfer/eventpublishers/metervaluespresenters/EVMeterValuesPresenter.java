@@ -8,11 +8,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class EVMeterValuesPresenter extends MeterValuesPresenterImpl {
-    @Autowired
-    protected EVMeterValuesPresenter(ApplicationEventPublisher applicationEventPublisher) {
-        super(applicationEventPublisher);
-    }
-
     @Override
     public void present(MeterValues meterValues, boolean isChargingOn) {
         applicationEventPublisher.publishEvent(new MeterValuesToEV(this, meterValues, isChargingOn));

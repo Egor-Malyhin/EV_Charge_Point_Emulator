@@ -10,11 +10,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class AuthorizeConfHandler extends OCPPConfirmationHandlerImpl {
-    @Autowired
-    protected AuthorizeConfHandler(ApplicationEventPublisher applicationEventPublisher) {
-        super(applicationEventPublisher);
-    }
-
     @Override
     public void handleConfirmation(Confirmation confirmation) {
         AuthorizeConfirmation authorizeConfirmation = (AuthorizeConfirmation) confirmation;

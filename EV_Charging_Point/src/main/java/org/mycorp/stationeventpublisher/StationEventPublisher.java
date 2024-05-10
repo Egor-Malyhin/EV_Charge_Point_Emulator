@@ -1,14 +1,14 @@
 package org.mycorp.stationeventpublisher;
 
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.context.ApplicationEventPublisherAware;
 
 //Extend this class if your class needs to publish StationEvent
-//Don't forget to annotate the subclass with @Component,
-//and annotate the constructor that calls the superclass constructor with @Autowired.
-public abstract class StationEventPublisher {
-    protected final ApplicationEventPublisher applicationEventPublisher;
+public abstract class StationEventPublisher implements ApplicationEventPublisherAware {
+    protected ApplicationEventPublisher applicationEventPublisher;
 
-    protected StationEventPublisher(ApplicationEventPublisher applicationEventPublisher) {
+    @Override
+    public void setApplicationEventPublisher(ApplicationEventPublisher applicationEventPublisher) {
         this.applicationEventPublisher = applicationEventPublisher;
     }
 }

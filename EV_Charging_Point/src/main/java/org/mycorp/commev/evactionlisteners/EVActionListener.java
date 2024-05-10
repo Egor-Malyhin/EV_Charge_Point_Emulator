@@ -16,11 +16,6 @@ import org.springframework.stereotype.Component;
 //since all other interactions with an electric car occur according to the protocol.
 @Component
 public class EVActionListener extends StationEventPublisher {
-    @Autowired
-    protected EVActionListener(ApplicationEventPublisher applicationEventPublisher) {
-        super(applicationEventPublisher);
-    }
-
     public void evConnected() {
         applicationEventPublisher.publishEvent(new ConnectedEV(this));
     }

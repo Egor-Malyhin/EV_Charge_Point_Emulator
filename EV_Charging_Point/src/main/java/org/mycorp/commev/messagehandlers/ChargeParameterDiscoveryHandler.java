@@ -10,11 +10,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ChargeParameterDiscoveryHandler extends V2GMessageHandlerImpl {
-    @Autowired
-    protected ChargeParameterDiscoveryHandler(ApplicationEventPublisher applicationEventPublisher) {
-        super(applicationEventPublisher);
-    }
-
     @Override
     public void handleMessage(V2GBodyAbstractType v2gMessageBody) {
         String unit = ((ChargeParameterDiscoveryReq) v2gMessageBody).getAcEvChargeParameter().getEАmount().getUnit();

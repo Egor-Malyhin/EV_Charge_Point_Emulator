@@ -5,6 +5,7 @@ import org.mycorp.models.events.commev.ConnectedEV;
 import org.mycorp.stateoperator.StateOperatorInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.EventListener;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -16,6 +17,7 @@ public class ConnectedEVEventListener extends StateOperatorEventListener<Connect
 
     @Override
     @EventListener
+    @Order(0)
     public void listenEvent(ConnectedEV stationEvent) {
         stateOperatorInterface.setStationState(StationStateAction.PREPARE_CHARGING);
     }

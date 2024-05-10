@@ -59,7 +59,6 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass></mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

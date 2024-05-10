@@ -17,7 +17,7 @@ import java.net.InetSocketAddress;
 //Core Class of EV Communication Module.
 //Session Communication Logic described in EVCommunicationBlockSessionHandler.
 @Component
-public class EVCommunicationBlock implements Runnable {
+public class EVCommunicationBlock {
     private final EVCommunicationBlockSessionHandler evCommunicationBlockSessionHandler;
     private final V2GDecoder v2gDecoder;
     private final V2GEncoder v2gEncoder;
@@ -34,8 +34,8 @@ public class EVCommunicationBlock implements Runnable {
         this.evMessagesLogger = evMessagesLogger;
     }
 
-    @Override
-    public void run() {
+    //A method to initialize the EVCommunicationBlock server in the main thread
+    public void initializeServer() {
         IoAcceptor acceptor = new NioSocketAcceptor();
         acceptor.setHandler(evCommunicationBlockSessionHandler);
         try {

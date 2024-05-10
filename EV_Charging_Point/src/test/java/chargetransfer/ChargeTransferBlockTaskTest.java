@@ -76,5 +76,4 @@ public class ChargeTransferBlockTaskTest {
         System.out.println("Seconds before stop: " + Duration.between(beforeStop, Instant.now()).toMillis() * 0.001);
         executorService.shutdown();
     }
-
 }

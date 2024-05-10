@@ -4,7 +4,4 @@ import org.mycorp.stationeventpublisher.StationEventPublisher;
 import org.springframework.context.ApplicationEventPublisher;
 
 public abstract class MeterValuesPresenterImpl extends StationEventPublisher implements MeterValuesPresenter {
-    protected MeterValuesPresenterImpl(ApplicationEventPublisher applicationEventPublisher) {
-        super(applicationEventPublisher);
-    }
 }

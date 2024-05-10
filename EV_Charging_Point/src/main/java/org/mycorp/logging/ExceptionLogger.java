@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 //After throwing the exception
 //the logException(Throwable ex) method is called.
 
-//When extending the application,
+//When expanding the application,
 //keep in mind that exceptions caught within a catch block are not logged,
 //so after handling the exception,
 //it's necessary to rethrow it further down the stack

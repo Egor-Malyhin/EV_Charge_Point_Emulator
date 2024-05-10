@@ -9,11 +9,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class BootNotificationConfHandler extends OCPPConfirmationHandlerImpl {
-    @Autowired
-    protected BootNotificationConfHandler(ApplicationEventPublisher applicationEventPublisher) {
-        super(applicationEventPublisher);
-    }
-
     @Override
     public void handleConfirmation(Confirmation confirmation) {
         BootNotificationConfirmation bootNotificationConfirmation = (BootNotificationConfirmation) confirmation;

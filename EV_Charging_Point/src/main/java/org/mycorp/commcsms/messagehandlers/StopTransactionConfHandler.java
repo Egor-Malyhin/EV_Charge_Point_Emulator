@@ -8,11 +8,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class StopTransactionConfHandler extends OCPPConfirmationHandlerImpl {
-    @Autowired
-    protected StopTransactionConfHandler(ApplicationEventPublisher applicationEventPublisher) {
-        super(applicationEventPublisher);
-    }
-
     @Override
     public void handleConfirmation(Confirmation confirmation) {
         StationVariables.getInstance().setTransactionId(0);

@@ -4,6 +4,7 @@ import eu.chargetime.ocpp.feature.profile.ClientCoreEventHandler;
 import eu.chargetime.ocpp.model.core.*;
 import lombok.extern.slf4j.Slf4j;
 import org.mycorp.models.events.common.StopChargingNormally;
+import org.mycorp.stationeventpublisher.StationEventPublisher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
@@ -13,14 +14,7 @@ import org.springframework.stereotype.Component;
 //Handles requests initiated by the CSMS.
 @Slf4j
 @Component
-public class CSMSCommunicationBlockClientHandler implements ClientCoreEventHandler {
-    private final ApplicationEventPublisher applicationEventPublisher;
-
-    @Autowired
-    public CSMSCommunicationBlockClientHandler(ApplicationEventPublisher applicationEventPublisher) {
-        this.applicationEventPublisher = applicationEventPublisher;
-    }
-
+public class CSMSCommunicationBlockClientHandler extends StationEventPublisher implements ClientCoreEventHandler {
     @Override
     public RemoteStopTransactionConfirmation handleRemoteStopTransactionRequest(RemoteStopTransactionRequest remoteStopTransactionRequest) {
         log.info("Received Request from CSMS: " + remoteStopTransactionRequest.getClass().getSimpleName());

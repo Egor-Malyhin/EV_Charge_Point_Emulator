@@ -10,11 +10,6 @@ import org.springframework.stereotype.Component;
 //
 @Component
 public class ConnectorManager extends StationEventPublisher implements ConnectorManagerInterface {
-    @Autowired
-    protected ConnectorManager(ApplicationEventPublisher applicationEventPublisher) {
-        super(applicationEventPublisher);
-    }
-
     @Override
     public void unlockConnector() {
         applicationEventPublisher.publishEvent(new UnlockConnector(this));

@@ -8,11 +8,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CSMSMeterValuesPresenter extends MeterValuesPresenterImpl {
-    @Autowired
-    protected CSMSMeterValuesPresenter(ApplicationEventPublisher applicationEventPublisher) {
-        super(applicationEventPublisher);
-    }
-
     @Override
     public void present(MeterValues meterValues, boolean isChargingOn) {
         applicationEventPublisher.publishEvent(new MeterValuesToCSMS(this, meterValues));

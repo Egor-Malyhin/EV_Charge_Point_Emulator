@@ -18,11 +18,6 @@ import org.springframework.stereotype.Component;
 //Expand this class if you need to process an additional minor request from EV.
 @Component
 public class EVCommunicationBlockHelper extends StationEventPublisher implements EVCommunicationBlockHelperInterface {
-    @Autowired
-    protected EVCommunicationBlockHelper(ApplicationEventPublisher applicationEventPublisher) {
-        super(applicationEventPublisher);
-    }
-
     @Override
     public void presentChargeParameter() {
         applicationEventPublisher.publishEvent(new StationParametersPresented(this, StationCharacteristics.ratedVoltage, StationCharacteristics.maxCurrent));

@@ -19,9 +19,7 @@ public class CSMSCommunicationBlockHelper extends StationEventPublisher implemen
     private final ScheduledExecutorService meterValuesRequesterExecutor;
     private ScheduledFuture<?> scheduledFuture;
 
-    @Autowired
-    protected CSMSCommunicationBlockHelper(ApplicationEventPublisher applicationEventPublisher) {
-        super(applicationEventPublisher);
+    public CSMSCommunicationBlockHelper() {
         this.meterValuesRequesterExecutor = Executors.newSingleThreadScheduledExecutor();
     }
 

@@ -4,26 +4,40 @@ import lombok.Getter;
 
 import javax.xml.bind.DatatypeConverter;
 import java.nio.ByteBuffer;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-@Getter
 public class V2GSessionIdCounter {
-    private static V2GSessionIdCounter instance;
     private byte[] sessionId;
+    private final ReadWriteLock sessionIdCounterLock;
 
     private V2GSessionIdCounter() {
         sessionId = convertHexBinary(0);
+        sessionIdCounterLock = new ReentrantReadWriteLock();
     }
 
     public static V2GSessionIdCounter getInstance() {
-        if (instance == null)
-            instance = new V2GSessionIdCounter();
-        return instance;
+        return Holder.instance;
     }
 
     public void incrementCounter() {
         int intId = convertToInt(sessionId);
         intId++;
-        sessionId = convertHexBinary(intId);
+        sessionIdCounterLock.writeLock().lock();
+        try {
+            sessionId = convertHexBinary(intId);
+        } finally {
+            sessionIdCounterLock.writeLock().unlock();
+        }
+    }
+
+    public byte[] getSessionId () {
+        sessionIdCounterLock.readLock().lock();
+        try {
+            return sessionId;
+        } finally {
+            sessionIdCounterLock.readLock().unlock();
+        }
     }
 
     private byte[] convertHexBinary(int value) {
@@ -41,5 +55,8 @@ public class V2GSessionIdCounter {
             return buffer.getShort();
         else
             return buffer.get();
+    }
+    private static class Holder {
+        static V2GSessionIdCounter instance = new V2GSessionIdCounter();
     }
 }

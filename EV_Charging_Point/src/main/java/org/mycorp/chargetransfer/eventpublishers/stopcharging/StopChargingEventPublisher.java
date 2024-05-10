@@ -8,10 +8,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class StopChargingEventPublisher extends StationEventPublisher {
-    protected StopChargingEventPublisher(ApplicationEventPublisher applicationEventPublisher) {
-        super(applicationEventPublisher);
-    }
-
     public void publishStopChargingEvent(boolean isEmergencyStopping) {
         if (isEmergencyStopping)
             applicationEventPublisher.publishEvent(new ChargingStoppedEmergency(this));

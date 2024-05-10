@@ -14,11 +14,14 @@ public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
 
-        ExecutorService mainExecutor = Executors.newFixedThreadPool(2);
-        mainExecutor.submit(context.getBean(CSMSCommunicationBlock.class));
-        mainExecutor.submit(context.getBean(EVCommunicationBlock.class));
+        ExecutorService mainExecutor = Executors.newSingleThreadExecutor();
 
+        //The code that will be executed before shutting down the application
+        //It is needed to release resources occupied during the initialization of mainExecutor
         Runtime.getRuntime().addShutdownHook(new Thread(mainExecutor::shutdown));
+
+        mainExecutor.submit(context.getBean(CSMSCommunicationBlock.class));
+        context.getBean(EVCommunicationBlock.class).initializeServer();
     }
 }
 

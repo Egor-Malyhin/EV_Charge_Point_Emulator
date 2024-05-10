@@ -1,6 +1,8 @@
 package org.mycorp.messages.res;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.mycorp.messages.types.enums.ResponseCode;
 
 import javax.xml.bind.annotation.XmlElement;
@@ -8,6 +10,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Objects;
 
 @Getter
+@NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 @XmlRootElement(name = "SessionSetupRes", namespace = "urn:iso:15118:2:2013:MsgBody")
 public class SessionSetupRes extends V2GMessageRes {
     @XmlElement(name = "EVSEID", namespace = "urn:iso:15118:2:2013:MsgBody")
@@ -19,21 +23,5 @@ public class SessionSetupRes extends V2GMessageRes {
         super(responseCode);
         this.evseId = evseId;
         this.evseTimeStamp = evseTimeStamp;
-    }
-
-    public SessionSetupRes() {
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof SessionSetupRes that)) return false;
-        if (!super.equals(o)) return false;
-        return getEvseTimeStamp() == that.getEvseTimeStamp() && Objects.equals(getEvseId(), that.getEvseId());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), getEvseId(), getEvseTimeStamp());
     }
 }
