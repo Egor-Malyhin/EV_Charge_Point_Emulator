@@ -17,7 +17,7 @@ The charging station emulator is a multithreaded application, it implements:
 <div align="center">
      <img src=".\src\main\resources\images\Application_Architecture.jpg">
 </div>
-<div align="center">Application Architecture</div>
+<div align="center">**Application Architecture**</div>
 
 ## Description of the implemented modules
 
