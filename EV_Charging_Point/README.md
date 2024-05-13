@@ -40,7 +40,7 @@ The charging station emulator is a multithreading application, it implements:
   these modules are collected only on the basis of received event objects from other modules, it was decided to process
   some messages and events into separate helper modules. These modules process messages that do not need to communicate
   with other modules of the application to process, and these modules also perform other auxiliary actions (for example,
-  running in a separate stream of requests to get the meter value).
+  running in a separate thread of requests to get the meter value).
 
 ## How to expand it
 
@@ -66,7 +66,7 @@ in the project can use
 
 * Interface **StationEventListener<T extends StationEvent>** is a parameterized interface which are implemented, in the
   program, by classes listening for events. During implementation, it is necessary to specify as a parameter the class
-  of the co-existence object that listens to the event listener class. Also, the class implementing this interface must
+  of the event-object that listens to the event listener class. Also, the class implementing this interface must
   be a Spring Component, and the redefined method must be marked with the @EventListener annotation.
 
 <div align="center">
@@ -95,8 +95,7 @@ in the project can use
 
 * Each module must contain a core class that contains some kind of logic
 * Each module must provide its own API that implements the core class.
-* Each module must have classes that listen for events, these classes must be dependent on the API of the main class of
-  the module and implement the StationEventListener interface, specify the event class that it listens to as a
+* Each module must have classes that listen events, these classes must be dependent on the module API and implement the StationEventListener interface, specify the event class that it listens to as a
   parameter.
 * Each module may include a class or classes that publish events. These classes must inherit StationEventPublisher. In
   some cases, the core class of the module may be the event publisher and inherit from the StationEventPublisher class.
