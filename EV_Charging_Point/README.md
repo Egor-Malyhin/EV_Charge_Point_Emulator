@@ -61,7 +61,7 @@ in the project can use
      <img src=".\src\main\resources\images\StationEvent_Class.jpg">
 </div>
 <div align="center">StationEvent Class</div>
-
+<br/>
 
 * Interface **StationEventListener<T extends StationEvent>** is a parameterized interface which are implemented, in the
   program, by classes listening for events. During implementation, it is necessary to specify as a parameter the class
@@ -72,7 +72,7 @@ in the project can use
       <img src=".\src\main\resources\images\StationEventListener_Interface.jpg">
 </div>
 <div align="center">StationEventListener Interface</div>
-
+<br/>
 
 * Abstract class **StationEventPublisher** is a class that implements the Spring interface
   ApplicationEventPublisherAware. This interface, by means of Spring, establishes a dependency on the implementation of
