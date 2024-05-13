@@ -31,6 +31,6 @@ public class StationStateMachineListener extends StateMachineListenerAdapter<Cha
         StationVariables stationVariables = StationVariables.getInstance();
         stationVariables.setChargePointStatus(to.getId(), pastStatus);
         log.info("New Session State: " + to.getId() + ", Past Session State: " + pastStatus);
-        stateChangedPublisher.stateChanged(to.getId());
+        stateChangedPublisher.publishStateChangedEvent(to.getId());
     }
 }

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: chargetransfer.ChargeTransferBlockTaskTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 17.67 s -- in chargetransfer.ChargeTransferBlockTaskTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 21.02 s -- in chargetransfer.ChargeTransferBlockTaskTest

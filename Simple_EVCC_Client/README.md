@@ -1,0 +1,2 @@
+# Simple_EVCC_Client
+A simple EVCC model. It does not contain complex logic, sends messages in the sequence defined by the ISO 15118 protocol, with a delay of 2.5 seconds. It is needed to simulate the charging process.

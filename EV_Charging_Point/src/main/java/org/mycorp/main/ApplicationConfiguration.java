@@ -49,7 +49,7 @@ public class ApplicationConfiguration {
         return ocppConfirmationHandlerMap;
     }
 
-    @Bean("v2gMessageHandlersMap")
+    @Bean("v2gMessageHandlerMap")
     public Map<String, V2GMessageHandler> v2GMessageHandlersMap(
             ChargeParameterDiscoveryHandler chargeParameterDiscoveryHandler,
             ChargingStatusHandler chargingStatusHandler,

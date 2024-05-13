@@ -1,0 +1,12 @@
+version: "3"
+services:
+  ev_charging_point_emulator:
+    build: EV_Charging_Point/
+    ports:
+      - 8008:8008
+    network_mode: host
+  evcc_client:
+    build: Simple_EVCC_Client/
+    network_mode: host
+    depends_on:
+      - ev_charging_point_emulator

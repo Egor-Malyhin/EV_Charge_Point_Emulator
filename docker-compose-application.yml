@@ -1,0 +1,20 @@
+version: "3"
+services:
+  csms_server:
+    build: Simple_CSMS_Server/
+    ports:
+      - 8887:8887
+    network_mode: host
+  ev_charging_point_emulator:
+    build: EV_Charging_Point/
+    ports:
+      - 8008:8008
+    network_mode: host
+    depends_on:
+      - csms_server
+  evcc_client:
+    build: Simple_EVCC_Client/
+    network_mode: host
+    restart: on-failure
+    depends_on:
+      - ev_charging_point_emulator

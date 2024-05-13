@@ -21,17 +21,17 @@ public class V2GSessionIdCounter {
     }
 
     public void incrementCounter() {
-        int intId = convertToInt(sessionId);
-        intId++;
-        sessionIdCounterLock.writeLock().lock();
         try {
+            sessionIdCounterLock.writeLock().lock();
+            int intId = convertToInt(sessionId);
+            intId++;
             sessionId = convertHexBinary(intId);
         } finally {
             sessionIdCounterLock.writeLock().unlock();
         }
     }
 
-    public byte[] getSessionId () {
+    public byte[] getSessionId() {
         sessionIdCounterLock.readLock().lock();
         try {
             return sessionId;

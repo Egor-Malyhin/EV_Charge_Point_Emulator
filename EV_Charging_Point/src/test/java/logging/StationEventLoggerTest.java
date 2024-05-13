@@ -11,7 +11,7 @@ public class StationEventLoggerTest {
     @Test
     public void testEventLogging() {
         TestEvent event = new TestEvent(this);
-        stationEventLogger.onApplicationEvent(event);
+        stationEventLogger.listenEvent(event);
     }
 
     private static class TestEvent extends StationEvent {

@@ -23,7 +23,6 @@ public class CSMSCommunicationBlockHelper extends StationEventPublisher implemen
         this.meterValuesRequesterExecutor = Executors.newSingleThreadScheduledExecutor();
     }
 
-
     @Override
     public void tryConnecting() {
         applicationEventPublisher.publishEvent(new TryConnecting(this));

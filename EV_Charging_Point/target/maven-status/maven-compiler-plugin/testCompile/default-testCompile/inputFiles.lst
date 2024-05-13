@@ -1,7 +1,8 @@
-C:\MyProjects\EV_Charging_Point\src\test\java\commev\SessionIdCounterTest.java
-C:\MyProjects\EV_Charging_Point\src\test\java\commevhelper\EVCommunicationBlockHelperTest.java
-C:\MyProjects\EV_Charging_Point\src\test\java\logging\StationEventLoggerTest.java
-C:\MyProjects\EV_Charging_Point\src\test\java\chargetransfer\ChargeTransferBlockTaskTest.java
-C:\MyProjects\EV_Charging_Point\src\test\java\commev\V2GMessageHandlerContextTest.java
-C:\MyProjects\EV_Charging_Point\src\test\java\commevhelper\eventlisteners\EVChargeParameterRequestEventListenerTest.java
-C:\MyProjects\EV_Charging_Point\src\test\java\commevhelper\eventlisteners\EVSessionStopRequestEventListenerTest.java
+C:\MyProjects\EV_Charging_Point_Emulator_Project\EV_Charging_Point\src\test\java\chargetransfer\ChargeTransferBlockTaskTest.java
+C:\MyProjects\EV_Charging_Point_Emulator_Project\EV_Charging_Point\src\test\java\chargetransfer\ChargeTransferBlockTest.java
+C:\MyProjects\EV_Charging_Point_Emulator_Project\EV_Charging_Point\src\test\java\commev\V2GMessageHandlerContextTest.java
+C:\MyProjects\EV_Charging_Point_Emulator_Project\EV_Charging_Point\src\test\java\commevhelper\eventlisteners\EVSessionStopRequestEventListenerTest.java
+C:\MyProjects\EV_Charging_Point_Emulator_Project\EV_Charging_Point\src\test\java\commevhelper\eventlisteners\EVChargeParameterRequestEventListenerTest.java
+C:\MyProjects\EV_Charging_Point_Emulator_Project\EV_Charging_Point\src\test\java\logging\StationEventLoggerTest.java
+C:\MyProjects\EV_Charging_Point_Emulator_Project\EV_Charging_Point\src\test\java\commev\SessionIdCounterTest.java
+C:\MyProjects\EV_Charging_Point_Emulator_Project\EV_Charging_Point\src\test\java\commevhelper\EVCommunicationBlockHelperTest.java

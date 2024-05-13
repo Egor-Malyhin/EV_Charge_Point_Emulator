@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 //as the StationStateMachineListener class already inherits from StateMachineListenerAdapter.
 @Component
 public class StateChangedPublisher extends StationEventPublisher {
-    public void stateChanged(ChargePointStatus chargePointStatus) {
+    public void publishStateChangedEvent(ChargePointStatus chargePointStatus) {
         applicationEventPublisher.publishEvent(new StateChanged(this, chargePointStatus));
     }
 }

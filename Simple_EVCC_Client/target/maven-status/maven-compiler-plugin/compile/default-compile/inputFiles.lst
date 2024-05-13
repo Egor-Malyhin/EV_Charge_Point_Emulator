@@ -1,8 +1,8 @@
-C:\MyProjects\Simple_EVCC_Tcp_Client\src\main\java\org\mycorp\Main.java
-C:\MyProjects\Simple_EVCC_Tcp_Client\src\main\java\org\mycorp\models\EVCharacteristics.java
-C:\MyProjects\Simple_EVCC_Tcp_Client\src\main\java\org\mycorp\models\SessionId.java
-C:\MyProjects\Simple_EVCC_Tcp_Client\src\main\java\org\mycorp\protocolfilter\V2GDecoder.java
-C:\MyProjects\Simple_EVCC_Tcp_Client\src\main\java\org\mycorp\ClientHandler.java
-C:\MyProjects\Simple_EVCC_Tcp_Client\src\main\java\org\mycorp\protocolfilter\V2GEncoder.java
-C:\MyProjects\Simple_EVCC_Tcp_Client\src\main\java\org\mycorp\models\EVDataVariables.java
-C:\MyProjects\Simple_EVCC_Tcp_Client\src\main\java\org\mycorp\models\V2GMessagesResClassification.java
+C:\MyProjects\EV_Charging_Point_Emulator_Project\Simple_EVCC_Client\src\main\java\org\mycorp\protocolfilter\V2GEncoder.java
+C:\MyProjects\EV_Charging_Point_Emulator_Project\Simple_EVCC_Client\src\main\java\org\mycorp\models\EVDataVariables.java
+C:\MyProjects\EV_Charging_Point_Emulator_Project\Simple_EVCC_Client\src\main\java\org\mycorp\ClientHandler.java
+C:\MyProjects\EV_Charging_Point_Emulator_Project\Simple_EVCC_Client\src\main\java\org\mycorp\models\EVCharacteristics.java
+C:\MyProjects\EV_Charging_Point_Emulator_Project\Simple_EVCC_Client\src\main\java\org\mycorp\protocolfilter\V2GDecoder.java
+C:\MyProjects\EV_Charging_Point_Emulator_Project\Simple_EVCC_Client\src\main\java\org\mycorp\models\V2GMessagesResClassification.java
+C:\MyProjects\EV_Charging_Point_Emulator_Project\Simple_EVCC_Client\src\main\java\org\mycorp\models\SessionId.java
+C:\MyProjects\EV_Charging_Point_Emulator_Project\Simple_EVCC_Client\src\main\java\org\mycorp\Main.java

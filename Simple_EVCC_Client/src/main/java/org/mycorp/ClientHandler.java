@@ -46,15 +46,19 @@ public class ClientHandler extends IoHandlerAdapter {
 
         switch (Objects.requireNonNull(messageType)) {
             case SESSION_SETUP_RES:
+                Thread.sleep(2500);
                 handleSessionSetupResponse(session, v2GMessage.getHeader().getSessionId());
                 break;
             case CHARGE_PARAMETER_DISCOVERY_RES:
+                Thread.sleep(2500);
                 handleChargeParameterDiscoveryResponse(session);
                 break;
             case POWER_DELIVERY_RES:
+                Thread.sleep(2500);
                 handlePowerDeliveryResponse(session);
                 break;
             case CHARGING_STATUS_RES:
+                Thread.sleep(2500);
                 handleChargingStatusResponse(session, v2GMessageBody);
                 break;
             case SESSION_STOP_RES:
@@ -105,7 +109,6 @@ public class ClientHandler extends IoHandlerAdapter {
     }
 
     private void sendChargingStatusReq(IoSession session) throws InterruptedException {
-        Thread.sleep(2000);
         V2GMessage chargingStatusReqMessage = V2GMessageReqFactory.createChargingStatusReq(SessionId.getInstance().getSessionIdValue());
         session.write(chargingStatusReqMessage);
     }
