@@ -17,7 +17,7 @@ The charging station emulator is a multithreaded application, it implements:
 <div align="center">
      <img src=".\src\main\resources\images\Application_Architecture.jpg">
 </div>
-<p style="text-align: center;">Application Architecture</p>
+<div align="center">Application Architecture</div>
 
 ## Description of the implemented modules
 
@@ -60,7 +60,7 @@ in the project can use
 <div align="center">
      <img src=".\src\main\resources\images\StationEvent_Class.jpg">
 </div>
-<p style="text-align: center;">StationEvent Class</p>
+<div align="center">StationEvent Class</div>
 
 * Interface **StationEventListener<T extends StationEvent>** is a parameterized interface which are implemented, in the
   program, by classes listening for events. During implementation, it is necessary to specify as a parameter the class
@@ -70,7 +70,7 @@ in the project can use
 <div align="center">
       <img src=".\src\main\resources\images\StationEventListener_Interface.jpg">
 </div>
-<p style="text-align: center;">StationEventListener Interface</p>
+<div align="center">StationEventListener Interface</div>
 
 * Abstract class **StationEventPublisher** is a class that implements the Spring interface
   ApplicationEventPublisherAware. This interface, by means of Spring, establishes a dependency on the implementation of
@@ -86,7 +86,7 @@ in the project can use
 <div align="center">
       <img src=".\src\main\resources\images\StationEventPublisher_Class.jpg">
 </div>
-<p style="text-align: center;">StationEventPublisher Class</p>
+<div align="center">StationEventPublisher Class</div>
 
 ### Rules for adding new modules
 
@@ -101,4 +101,4 @@ in the project can use
 <div align="center">
        <img src=".\src\main\resources\images\Generalized_Module_Architecture.jpg">
 </div>
-<p style="text-align: center;">Generalized module architecture</p>
+<div align="center">Generalized module architecture</div>
